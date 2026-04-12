@@ -18,7 +18,8 @@ claude-code-workspace/
 ├── .claude/
 │   ├── settings.json              # Hook 設定（SessionStart + PostToolUse）
 │   └── hooks/
-│       ├── session-init.sh        # Session 啟動：拉取最新指令（本機 + 雲端）
+│       ├── session-init.sh        # SessionStart：拉取最新指令（本機 + 雲端）
+│       ├── memory-pull.sh         # PreToolUse：讀取 Memory.md 前拉取最新版
 │       ├── memory-sync.sh         # Memory.md 同步：commit 並推送回 GitHub
 │       └── memory-update-hook.sh  # PostToolUse：偵測 Memory.md 修改後觸發同步
 ├── CLAUDE.md                      # Claude Code 專案指令（每次對話自動載入）
@@ -114,7 +115,10 @@ claude-code-workspace/
 │                        ↓                                │
 │                   正常工作中...                           │
 │                        ↓                                │
-│   Memory.md 被修改（PostToolUse Hook 偵測）               │
+│   讀取 Memory.md（PreToolUse Hook）                       │
+│   └── memory-pull.sh：從 GitHub 拉取最新版本              │
+│                        ↓                                │
+│   Memory.md 被修改（PostToolUse Hook）                    │
 │   └── memory-update-hook.sh → memory-sync.sh             │
 │       └── 自動 commit + push 回 GitHub                   │
 └─────────────────────────────────────────────────────────┘

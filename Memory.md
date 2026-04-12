@@ -17,6 +17,12 @@
 - 加入 compaction 指引，確保對話壓縮時保留關鍵資訊
 - 加入驗證與品質區塊，符合官方「提供驗證機制」建議
 
+### 自動化架構（完成）
+- **SessionStart Hook** (`session-init.sh`): 本機 git pull / 雲端 git clone，自動建立 `~/.claude/CLAUDE.md`
+- **PreToolUse Hook** (`memory-pull.sh`): 讀取 Memory.md 前從 GitHub 拉取最新版
+- **PostToolUse Hook** (`memory-update-hook.sh` → `memory-sync.sh`): Memory.md 修改後自動 commit + push
+- 三組 Hook 完整覆蓋 session 生命週期：啟動 → 讀取 → 寫入
+
 ### 技術備註
 - Git 分支：`claude/update-claude-instructions-N0AZg`
 - 所有變更皆 merge 至 `main` 並推送到 GitHub

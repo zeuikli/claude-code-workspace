@@ -4,6 +4,18 @@
 
 ---
 
+## 2026-04-12 (4)
+
+### 新增
+- `.claude/hooks/memory-pull.sh` — PreToolUse Hook，讀取 Memory.md 前自動從 GitHub 拉取最新版本
+
+### 更新
+- `.claude/settings.json` — 加入 PreToolUse Hook（Read），三組 Hook 完整覆蓋 Session 生命週期
+- `CLAUDE.md` — 補充 PreToolUse 說明，標記 Memory.md 同步為全自動
+- `README.md` — 更新流程圖與檔案結構，加入 PreToolUse 階段
+
+---
+
 ## 2026-04-12 (3)
 
 ### 新增
