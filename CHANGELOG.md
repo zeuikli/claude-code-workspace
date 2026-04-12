@@ -4,6 +4,17 @@
 
 ---
 
+## 2026-04-12 (2)
+
+### 新增
+- `.claude/hooks/session-init.sh` — SessionStart Hook，雲端 session 啟動時自動 clone repo 並建立全域 CLAUDE.md
+- `.claude/settings.json` — Hook 設定檔，註冊 SessionStart 事件
+
+### 更新
+- `README.md` — 新增本機端與雲端 / 手機的完整設定指引，更新檔案結構圖
+
+---
+
 ## 2026-04-12
 
 ### 新增

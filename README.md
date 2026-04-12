@@ -15,10 +15,14 @@
 
 ```
 claude-code-workspace/
-├── CLAUDE.md        # Claude Code 專案指令（每次對話自動載入）
-├── Memory.md        # 跨對話記憶摘要（上下文保存與恢復）
-├── CHANGELOG.md     # 專案變更紀錄
-└── README.md        # 本文件
+├── .claude/
+│   ├── settings.json          # Hook 設定（SessionStart 自動初始化）
+│   └── hooks/
+│       └── session-init.sh    # 雲端 session 啟動腳本
+├── CLAUDE.md                  # Claude Code 專案指令（每次對話自動載入）
+├── Memory.md                  # 跨對話記憶摘要（上下文保存與恢復）
+├── CHANGELOG.md               # 專案變更紀錄
+└── README.md                  # 本文件
 ```
 
 ## 核心配置說明
@@ -45,19 +49,51 @@ claude-code-workspace/
 
 ## 使用方式
 
+### 本機端（CLI / Desktop）
+
 1. **Clone 此 repo**
    ```bash
    git clone https://github.com/zeuikli/claude-code-workspace.git
    cd claude-code-workspace
    ```
 
-2. **啟動 Claude Code**
+2. **設定全域載入**（讓所有專案都自動套用此指令）
    ```bash
-   claude
+   mkdir -p ~/.claude
+   cat > ~/.claude/CLAUDE.md << 'EOF'
+   @~/claude-code-workspace/CLAUDE.md
+   @~/claude-code-workspace/Memory.md
+   EOF
    ```
-   Claude Code 會自動讀取 `CLAUDE.md`，套用所有專案指令。
 
-3. **開始工作** — 直接用中文或英文下達指令即可。
+3. **啟動 Claude Code** — 在任何專案執行 `claude` 即會自動載入。
+
+### 雲端 / 手機（claude.ai/code）
+
+雲端 VM 每次 session 都是全新環境，`~/.claude/` 不會保留。本專案透過 **SessionStart Hook** 自動處理：
+
+1. **開啟此專案** — 在 claude.ai/code 連接此 GitHub repo
+2. **自動初始化** — session 啟動時，Hook 會自動：
+   - Clone 此 repo 到 `/tmp/claude-code-workspace`
+   - 建立 `~/.claude/CLAUDE.md` 並引用所有指令檔
+3. **跨專案共用** — 在其他專案的 `.claude/settings.json` 加入相同的 SessionStart Hook 即可：
+   ```json
+   {
+     "hooks": {
+       "SessionStart": [
+         {
+           "matcher": "",
+           "hooks": [
+             {
+               "type": "command",
+               "command": "bash -c 'git clone --quiet https://github.com/zeuikli/claude-code-workspace.git /tmp/claude-code-workspace 2>/dev/null; mkdir -p ~/.claude; echo \"@/tmp/claude-code-workspace/CLAUDE.md\" > ~/.claude/CLAUDE.md; echo \"@/tmp/claude-code-workspace/Memory.md\" >> ~/.claude/CLAUDE.md'"
+             }
+           ]
+         }
+       ]
+     }
+   }
+   ```
 
 ## 自訂與擴展
 
