@@ -41,6 +41,12 @@
 - 若專案有測試套件，優先跑單一相關測試而非全部測試（提升效能）。
 - UI 變更時，嘗試截圖比對或啟動 dev server 驗證。
 
+## 自動化同步機制
+
+- **SessionStart Hook**: 每次 session 啟動時自動拉取最新的 CLAUDE.md 與 Memory.md（本機 git pull / 雲端 git clone）。
+- **PostToolUse Hook**: 偵測 Memory.md 被寫入後，自動 commit 並推送回 GitHub。
+- **跨專案共用**: 其他專案只需在 `.claude/settings.json` 加入相同的 SessionStart Hook，即可自動載入此 workspace 的設定。
+
 ## 參考文件
 
 - 專案總覽：@README.md

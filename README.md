@@ -16,13 +16,15 @@
 ```
 claude-code-workspace/
 ├── .claude/
-│   ├── settings.json          # Hook 設定（SessionStart 自動初始化）
+│   ├── settings.json              # Hook 設定（SessionStart + PostToolUse）
 │   └── hooks/
-│       └── session-init.sh    # 雲端 session 啟動腳本
-├── CLAUDE.md                  # Claude Code 專案指令（每次對話自動載入）
-├── Memory.md                  # 跨對話記憶摘要（上下文保存與恢復）
-├── CHANGELOG.md               # 專案變更紀錄
-└── README.md                  # 本文件
+│       ├── session-init.sh        # Session 啟動：拉取最新指令（本機 + 雲端）
+│       ├── memory-sync.sh         # Memory.md 同步：commit 並推送回 GitHub
+│       └── memory-update-hook.sh  # PostToolUse：偵測 Memory.md 修改後觸發同步
+├── CLAUDE.md                      # Claude Code 專案指令（每次對話自動載入）
+├── Memory.md                      # 跨對話記憶摘要（上下文保存與恢復）
+├── CHANGELOG.md                   # 專案變更紀錄
+└── README.md                      # 本文件
 ```
 
 ## 核心配置說明
@@ -94,6 +96,51 @@ claude-code-workspace/
      }
    }
    ```
+
+## 自動化同步機制
+
+本專案內建完整的自動化流程，確保所有 session 讀取最新設定、Memory.md 變更自動回傳：
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    Session 啟動                          │
+│                        ↓                                │
+│   session-init.sh 執行（SessionStart Hook）              │
+│   ├── 本機：git pull 最新版本                             │
+│   ├── 雲端：git clone 到 /tmp/claude-code-workspace      │
+│   └── 確保 ~/.claude/CLAUDE.md 存在且正確引用             │
+│                        ↓                                │
+│   Claude Code 載入 CLAUDE.md + Memory.md                 │
+│                        ↓                                │
+│                   正常工作中...                           │
+│                        ↓                                │
+│   Memory.md 被修改（PostToolUse Hook 偵測）               │
+│   └── memory-update-hook.sh → memory-sync.sh             │
+│       └── 自動 commit + push 回 GitHub                   │
+└─────────────────────────────────────────────────────────┘
+```
+
+### 在其他專案啟用自動載入
+
+在任何專案的 `.claude/settings.json` 加入以下內容，即可自動載入 workspace 設定：
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'REPO=https://github.com/zeuikli/claude-code-workspace.git; DIR=/tmp/claude-code-workspace; if [ -d $DIR/.git ]; then git -C $DIR pull -q origin main; else git clone -q --depth 1 $REPO $DIR; fi; mkdir -p ~/.claude; echo \"@${DIR}/CLAUDE.md\" > ~/.claude/CLAUDE.md; echo \"@${DIR}/Memory.md\" >> ~/.claude/CLAUDE.md'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
 ## 自訂與擴展
 
