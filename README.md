@@ -2,6 +2,14 @@
 
 針對 [Claude Code](https://code.claude.com) 優化的個人開發工作區，內建專案指令、對話記憶管理與自動化工作流程配置。
 
+## 快速開始
+
+將以下 Prompt 貼進任何 Claude Code session 即可立即套用所有設定：
+
+```
+請執行 git clone --depth 1 https://github.com/zeuikli/claude-code-workspace.git /tmp/claude-code-workspace 2>/dev/null || git -C /tmp/claude-code-workspace pull -q origin main，然後讀取 /tmp/claude-code-workspace/CLAUDE.md 並遵循所有指令。
+```
+
 ## 專案概述
 
 本專案作為 Claude Code 的工作環境，透過精心設計的 `CLAUDE.md` 指令檔，實現：
