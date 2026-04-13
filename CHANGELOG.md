@@ -4,6 +4,24 @@
 
 ---
 
+## 2026-04-13 (3)
+
+### 新增
+- `.claude/agents/researcher.md` — Haiku 搜尋探索型 Sub Agent
+- `.claude/agents/implementer.md` — Sonnet 實作驗證型 Sub Agent
+- `.claude/agents/reviewer.md` — Opus 架構審查型 Sub Agent（顧問角色）
+
+### 優化
+- 基於四篇官方文件全面重構：
+  - [Multi-Agent Coordination Patterns](https://claude.com/blog/multi-agent-coordination-patterns)
+  - [Subagents in Claude Code](https://claude.com/blog/subagents-in-claude-code)
+  - [Harnessing Claude's Intelligence](https://claude.com/blog/harnessing-claudes-intelligence)
+  - [Claude Managed Agents](https://claude.com/blog/claude-managed-agents)
+- `CLAUDE.md` — 將策略從文字描述落實為 `.claude/agents/` 定義
+- `README.md` — 更新檔案結構，反映新增的 agents 目錄
+
+---
+
 ## 2026-04-13 (2)
 
 ### 新增
