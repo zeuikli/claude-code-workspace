@@ -69,3 +69,5 @@
 - 專案總覽：@README.md
 - 對話記憶：@Memory.md
 - 變更紀錄：@CHANGELOG.md
+- 萬用 Prompt：@prompts.md
+- Advisor 模式：@docs/advisor-strategy.md

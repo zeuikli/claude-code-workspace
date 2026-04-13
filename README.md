@@ -24,6 +24,7 @@ claude-code-workspace/
 │       └── memory-update-hook.sh  # PostToolUse：偵測 Memory.md 修改後觸發同步
 ├── docs/
 │   └── advisor-strategy.md        # Advisor 模式完整說明（架構、API、效能基準）
+├── prompts.md                     # 萬用 Prompt 集（各情境開場 Prompt）
 ├── CLAUDE.md                      # Claude Code 專案指令（每次對話自動載入）
 ├── Memory.md                      # 跨對話記憶摘要（上下文保存與恢復）
 ├── CHANGELOG.md                   # 專案變更紀錄

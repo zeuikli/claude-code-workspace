@@ -4,6 +4,17 @@
 
 ---
 
+## 2026-04-13 (2)
+
+### 新增
+- `prompts.md` — 萬用 Prompt 集，包含 6 種情境：標準開場、極簡驗證、接續工作、新專案初始化、完整載入、結束 Session
+
+### 更新
+- `CLAUDE.md` — 參考文件加入 prompts.md 與 advisor-strategy.md 引用
+- `README.md` — 檔案結構加入 prompts.md
+
+---
+
 ## 2026-04-13
 
 ### 新增
