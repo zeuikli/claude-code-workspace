@@ -1,0 +1,43 @@
+name: Fetch Claude Blog Articles
+
+on:
+  schedule:
+    # 每天早上 9:00 UTC+8（= 01:00 UTC）
+    - cron: '0 1 * * *'
+  workflow_dispatch: # 手動觸發
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-archive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout blog-archive branch
+        uses: actions/checkout@v4
+        with:
+          ref: blog-archive
+          fetch-depth: 0
+
+      - name: Fetch blog articles
+        run: bash scripts/fetch-blog.sh
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Archive Claude blog articles — $(date '+%Y-%m-%d')"
+          git push origin blog-archive

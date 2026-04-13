@@ -1,0 +1,513 @@
+---
+title: "Preparing your security program for AI-accelerated offense"
+url: https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense
+slug: preparing-your-security-program-for-ai-accelerated-offense
+fetched: 2026-04-13 01:11 UTC
+---
+
+# Preparing your security program for AI-accelerated offense
+
+> Source: https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense
+
+
+
+Try ClaudeTry ClaudeTry Claude
+- BlogBlog/
+- Preparing your security program for AI-accelerated offenseExplore here
+- 
+Ask questions about this page
+- 
+Copy as markdown
+# Preparing your security program for AI-accelerated offense
+AI is changing the speed at which vulnerabilities are found and exploited. We&#x27;re publishing an initial set of recommendations to shore up your defenses based on our own findings and security practices.
+.button_main_icon {
+  transition: color 300ms ease;
+}
+.button_main_wrap:hover .button_main_icon {
+  color: var(--_button-style---icon-hover); 
+}
+.button_main_wrap:focus-within .button_main_icon {
+  color: var(--_button-style---text-hover) !important;
+}
+.button_main_wrap:focus-within {
+  color: var(--_button-style---text-hover) !important;
+}
+.button_main_icon {
+  transition: color 300ms ease;
+}
+.button_main_wrap:hover .button_main_icon {
+  color: var(--_button-style---icon-hover); 
+}
+.button_main_wrap:focus-within .button_main_icon {
+  color: var(--_button-style---text-hover) !important;
+}
+.button_main_wrap:focus-within {
+  color: var(--_button-style---text-hover) !important;
+}
+- 
+CategoryAgents
+- 
+ProductClaude Enterprise
+- 
+DateApril 10, 2026
+- 
+Reading time5min
+- 
+ShareCopy linkhttps://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense
+Earlier this week, we announced Project Glasswing—our urgent attempt to put the strong cybersecurity capabilities of our newest frontier model, Claude Mythos Preview, to use for defensive purposes. In the announcement—and the accompanying technical blog post—we described how AI models are rapidly reducing the required resources, time, and skill required to find and exploit vulnerabilities in software.
+With an eye on the lightning-fast progress of AI, we also noted that it will not be long before models of similar capability levels are widely available. Within the next 24 months, vast numbers of bugs that sat unnoticed in code, possibly for years, will be found by AI models and chained into working exploits. Indeed, it is already the case that publicly available, sub-Mythos-level models can find serious vulnerabilities that traditional reviews have missed for long periods of time.
+Thankfully, this works both ways: although attackers can use AI to move faster, so can defenders who adopt AI tools to secure themselves. In this post, we offer security recommendations and practical tips based on what our security teams and researchers have observed and learned from using frontier AI models to secure real codebases and systems. We hope security teams and others will find this advice useful as we enter the age of AI-driven cybersecurity.
+Many of the pieces of advice below are already part of the existing security consensus; we have prioritized them according to which controls we have seen hold and which we have seen degrade. If your organization reports against SOC 2 and ISO 27001, these will map directly onto controls you are already tracking.
+We’ll update this guidance as we and our Project Glasswing partners continue our cybersecurity work.
+## What to do now
+### 1. Close your patch gap
+AI models are very effective at recognizing the signatures of known, already-patched vulnerabilities in unpatched systems. Reversing a patch into a working exploit is exactly the kind of mechanical analysis at which these models excel. This means that the window between a patch being published and an exploit becoming available is shrinking.
+- Patch everything on the CISA Known Exploited Vulnerabilities (KEV) catalog immediately. This catalog contains vulnerabilities that are confirmed to be under active exploitation. Anything on this list which is reachable from a network should be treated as an emergency.
+- Use EPSS to prioritize the rest. Exploit Prediction Scoring System (EPSS) provides a daily-updated probability that a given Common Vulnerability and Exposure (CVE) will be exploited in the next 30 days. Patching the KEV list first and then everything above a chosen EPSS threshold will help you turn thousands of open CVEs into a manageable queue.
+- Reduce time-to-patch on internet-exposed systems. We recommend patching internet-facing applications within 24 hours of an exploit becoming available, and within days for other vulnerabilities.
+- Automate patch deployment and reboots where the risk of an automated update causing an outage is acceptable. Manual approval steps add delay, and delay is now the primary risk.
+Practical tip: Most cloud and OS vendors already ship patch automation; enabling it is often a simple configuration change. For container images and dependency manifests, several open-source scanners run as a single continuous integration step and annotate CVEs with data from the KEV catalogue and EPSS, so prioritization is built in.
+### 2. Prepare to handle a much higher volume of vulnerability reports
+Over approximately the next two years, the processes you use to receive, prioritize, and fix vulnerabilities (both in your own code and in the software you buy from vendors) will be under far more pressure than they are today. Your Vulnerability Management process should plan for many more patches, from vendors and upstream.
+- Plan for an order-of-magnitude increase in finding volume. Aspects like intake, triage, and remediation tracking need to keep pace with the increasing numbers of vulnerabilities being exposed. If your security meetings are still built around a spreadsheet and a weekly meeting, it’s unlikely that you’ll keep up. It’s worth considering some amount of automation—with, of course, humans in the loop, to assist with the sheer volume here.
+- Check the security of your open-source dependencies. Most software supply chains are mostly open source. Most open-source projects have no service-level agreement or commitment to maintain a high level of security. OpenSSF Scorecard automatically scores every dependency on signals like branch protection, fuzzing coverage, signed releases, and maintainer activity. It runs in CI and helps to identify unmaintained packages.
+- Apply the same expectations to your vendors. Your third-party risk management process should ask suppliers how they are themselves preparing for accelerated exploit timelines and whether they are scanning their own code.
+‍Practical tip: Look into open source software and third-party services that evaluate the reachability of vulnerable code. Build automated processes that continuously deliver new software updates to your IT and production infrastructure, by doing regression testing on updates to gain confidence that you can deploy them quickly.
+Above we mentioned automation of these processes. There are a number of important ways that AI can assist: 
+- Speeding up triage Triage is a bottleneck, because it requires expert review and classification. A frontier model can deduplicate findings against an existing backlog, use its knowledge of your assets to estimate exposure, and draft remediation tickets where the affected code paths are pre-identified. 
+- Check your dependencies for redundancy. Most large codebases accumulate multiple libraries doing the same job (several HTTP clients; several JSON parsers). This gives attackers more opportunity, all for no functional gain on your part. Pointing an LLM at a lockfile and asking which dependencies overlap (and what migration and consolidation would look like) is a one-hour exercise that often pays off.
+- AI upgrade automation. Frontier models are increasingly capable of generating patches to include alongside vulnerability reports. When the report is clear and thorough, maybe even with a proof-of-concept, the model can directly test the patch to confirm that the exploit path is closed. It can also directly automate the process of accepting the upstream patch, validating that the upgrade doesn’t break tests or internal systems.
+- AI vendoring. Some small dependencies will score poorly on the OpenSSF Scorecard—perhaps because they’re not actively maintained. You shouldn’t continue to rely on these; instead, you should consider having an LLM write its own code to reimplement the functionality you actually use.
+### 3. Find bugs before you ship them
+Prevention is always better than cure. You should assume that bugs that reach production will eventually be found, so your security testing needs to happen well before.
+- Add static analysis and AI-assisted code review to your continuous integration pipeline, and block merges on high-confidence findings. If false positives make this impractical, you should keep the check, but address the tooling. The OWASP Application Security Verification Standard defines what “passing” a test looks like at three different levels of rigor.
+- Add automated penetration testing to your continuous delivery pipeline. You can run the same scanning for staging that attackers will run against your production systems.
+- Secure the build pipeline. An attacker who can inject code between commit and deployment does not need to find a vulnerability. The SLSA security framework provides a graded path: lower levels establish which commit produced which artifact, and higher levels make the build itself verifiable.
+- Adopt Secure by Design practices. CISA’s pledge commitments (multi-factor authentication by default; no default passwords; transparent vulnerability reporting) are a reasonable minimum bar.
+- Prefer memory-safe languages for new code. A large share of severe vulnerabilities are memory-safety bugs that do not occur in Rust, Go, or managed runtimes. CISA, the NSA, and the NCSC have published useful roadmaps. Existing C/C++ code does not need to be rewritten, but new C/C++ code should require a justification. AI assisted rewrites are increasingly viable, as well.
+Practical tip: Static application security testing (SAST)  tooling that runs as a CI action with OWASP Top 10 and language-specific rule sets is widely available, both open-source and built into code hosting platforms (CodeQL on GitHub being the most common starting point). To assess build provenance, OpenSSF publishes a reusable workflow that produces SLSA Level 3 attestations from GitHub Actions; adopting it is significantly less work than the SLSA spec suggests.
+As before, there are some clear opportunities for accelerating this work with AI: 
+- AI vulnerability scanning. The logic here is straightforward: you should scan your own code and systems with the same kind of model an attacker would use, before they do. This approach just requires an isolated agent, a verification step to filter noise, and a path into your existing triage process. You can do this with an LLM today. If you implement one thing from this section, implement this. 
+- Patch generation. When SAST or a scanner produces a finding, a frontier model can usually propose a patch for it. This does not remove the need for review, but it changes the developer’s job from “understand the bug and write a fix” to “verify a proposed fix is correct.” The latter is faster. The same approach applies to memory-safe migration: LLMs can port a self-contained C module to Rust with tests; a reviewer can validate the equivalence rather than writing the whole thing from scratch.
+### 4. Find the vulnerabilities already in your code
+Patching addresses known vulnerabilities in software you depend on. But your own codebase contains unknown ones. Most long-running production code has been reviewed by humans many times, but has never been examined by a frontier model, and that kind of analysis tends to surface new, previously-overlooked issues. Proactively scanning can identify vulnerabilities that are within the reach of modern LLMs before attackers discover them themselves.
+- Prioritize by exposure. Start with code that parses untrusted input, enforces an authentication or authorization decision, or is reachable from the internet. These are the paths where a finding is most likely to matter.
+- Include legacy code. Code that predates current review practices, or whose original authors have moved on, often has the least recent scrutiny. That’s where you have the most to gain from a fresh pass.
+- Budget for remediation. A well-structured model scan of older code typically produces fewer findings than a SAST rollout, but a higher share of them are real. Plan engineering time to fix the bugs.
+Practical tip: Pick one internet-facing service with few current owners and scan its input handling and auth logic. Run the agent in isolation and add a verification step so you’re acting on confirmed findings. One service done properly is a reasonable basis for estimating what a broader program will cost.
+### 5. Design for breach
+Attackers will try to get a foothold somewhere. You need to limit what they can reach from there.
+Mitigations whose value comes from friction—making an attack tedious—rather than a hard barrier (extra pivot hops, rate limits, non-standard ports, SMS-based MFA) are much less effective against an adversary that can grind through those tedious steps. Our recommendations below favor controls that hold even when the attacker has unlimited patience: hardware-bound credentials, expiring tokens, and network paths that do not exist rather than paths that are merely inconvenient.
+- Adopt zero trust architecture. Authenticate and authorize every request between services as if it came from the internet. CISA&#x27;s Zero Trust Maturity Model and the NCSC&#x27;s zero trust principles both provide staged adoption paths.
+- Tie access to verified hardware rather than credentials. Production systems and sensitive internal tools should only be reachable from managed employee devices with attested hardware identity, paired with phishing-resistant 2FA (FIDO2 or passkeys). Stolen credentials alone should never be sufficient to gain access. Even calls between production services should be rooted in hardware identity.
+- Isolate services by identity. A compromised build server should not be able to query production databases. A compromised laptop should not be able to reach build infrastructure. Enforce this at the receiving end: every workload should carry its own cryptographic identity, and each service should accept connections only from the specific callers of its policy names. Network segmentation can still reduce blast radius and noise, but it is a backstop.
+- Replace long-lived secrets with short-lived tokens. Static API keys, embedded credentials, and shared service-account passwords are among the first things an attacker with model-assisted code analysis will find. Use short-lived, narrowly-scoped tokens issued by an identity provider.
+Practical tip: Full zero-trust is a multi-year program, but an identity-aware access proxy puts device-verified, MFA-gated access in front of internal services without having to fundamentally change their architecture. Each major cloud provider offers a native option, and several open-source and commercial alternatives exist for on-premises or multi-cloud environments. For secrets, every major cloud has a managed secrets store; moving the single most widely-shared credential into one and rotating it is a useful forcing function for the rest.
+### 6. Reduce and inventory what you expose
+This section is based on two important principles. First, you cannot defend systems you don’t know about. Second, the smaller the exposed surface, the less there is to attack.
+- Maintain a current inventory of every internet-facing host, service, and API endpoint in your systems. Attackers can run automated reconnaissance; your inventory should be at least as accurate. Include these systems in your pentests and red-teaming.
+- Decommission unused systems. Legacy services with no clear owner are typically also unpatched.
+- Minimize what each service exposes. Default-deny network ingress and limit API surface area to what is actually required.
+Practical tip: Internet-wide scan indexes are publicly searchable; querying one for your own IP ranges and domains shows you what an attacker’s reconnaissance sees. For cloud assets, native inventory tools (AWS Config, Azure Resource Graph, GCP Asset Inventory) already exist; the work is in querying them.
+AI can help directly here, too:
+- Pruning stale code and systems. Identifying unused code is tedious—but as noted above, AI models are good at tedious tasks. A model with read access to a codebase and traffic logs can list endpoints that have no callers and have not received traffic; from there, it can explain what removing each one would affect.
+- Autonomous external red-teaming. Point an AI offensive agent at your own perimeter from the outside, with no credentials and no source access. Then, let it do what an attacker would: work out what is reachable, fingerprint it, and attempt to chain what it finds into a foothold. This kind of automated red-teaming can catch things source scanning doesn’t see: forgotten hosts, exposed management interfaces, default credentials, and misconfigured storage. Run it on the same cadence as your inventory refresh.
+### 7. Shorten your incident response time
+Exploits can appear within hours of a patch. Response processes that take days are too slow. Here are some ideas for how to reduce your incident response time:
+- Put a model at the front of your alert queue. Every inbound alert should get an automated first-pass investigation before a human sees it. This kind of “triage agent” with read-only access to your Security Information and Event Management (SIEM) platform and a well-scoped set of query tools can direct your attention to the alerts that need human judgement most.
+- Put instrument dwell time and coverage before anything else. These are the two metrics that AI automation has the greatest ability to move; both matter most when exploit windows shorten.
+- Automate the bookkeeping around incidents. During an active incident, models should be taking notes, capturing artifacts, pursuing parallel investigation tracks, and drafting the postmortem and root-cause analysis. On the other hand, humans should be making the containment calls, disclosure calls, and customer-comms calls. Human decision speed during an incident should never be rate-limited on aspects that would be better handed to an AI, like evidence collection or write-ups.
+- Let models drive the detection flywheel. Ingesting threat intelligence, generating candidate detections, hunting for matches, and tuning what fires are all now within reach of frontier models, who can run the process end-to-end.
+- Run a tabletop for five simultaneous incidents. The standard exercise assumes one critical CVE with a working exploit hits on a Monday. Given the improved AI capabilities we’re seeing, this might be unwise. To truly stress-test your responses, you should run the version where five incidents hit in the same week.
+- Map detection coverage against MITRE ATT&CK. ATT&CK provides a standard vocabulary of attacker techniques that most detection tools already use. Knowing which techniques you can detect (and which you can’t), is more useful than a general goal to “improve detection.” You should prioritize coverage for lateral movement and credential access.
+- Establish emergency change procedures in advance. A two-week change-approval cycle for production patches is itself a security risk. The same applies to emergency containment actions (like taking a service offline, rotating a credential, or blocking a network path). You should decide in advance who can authorize these and how fast.
+Practical tip: Pick one noisy rule with a known-high false positive rate. Wire a frontier model into its alert stream with read-only access to the underlying data, and have it produce a structured disposition for every firing. Measure agreement against a human reviewer for two weeks. If the agreement rate is tolerable, expand to the next rule. It’s not worth trying to automate the whole queue at once. Separately, Atomic Red Team is an open-source library of small, safe tests mapped to ATT&CK techniques; running a handful and checking which ones your existing logging actually detected is a one-afternoon exercise that produces a concrete coverage map.
+Here are some ways AI can assist with response times: 
+- First-pass triage at 100% coverage.A well-scoped triage agent can investigate every alert (where humans might look only at those above a given severity threshold), and produce a structured disposition a human can accept, reject, or escalate. The mechanism that makes this work is giving your model a minimal tool set (query, think, report), letting it choose its own investigation strategy, and measuring the output against operational metrics.
+- Incident scribe and parallel investigator. During an active incident, a model can take contemporaneous notes, timestamp artifacts as they are collected, pursue independent investigation tracks the responder has not gotten to yet, and draft the postmortem from the transcript once the incident closes. This is the least glamorous application of frontier models to security work—but it’s probably the highest-impact one.
+- Proactive hunting against your own environment. The same kind of agent that can find vulnerabilities in source code can hunt for misconfigurations and indicators of compromise across your telemetry. You can run it on the same cadence as your external attack-surface scan.
+## Advice for submitting vulnerability reports to others
+If you are scanning code—your own dependencies, open-source projects, or vendor products—and reporting findings upstream, the quality of those reports determines whether anyone acts on them. Open-source maintainers are already receiving large volumes of low-quality automated reports, and many have started ignoring anything that looks AI-generated. Adding to that volume without adding signal makes the problem worse for everyone, including you.
+A report should be sent only when a human has verified it and is willing to put their name on it. Concretely:
+- State the bug and its impact in plain language. A maintainer should be able to understand what is wrong and why it matters from the first paragraph, without running anything.
+- Walk through the code path. Show where the input enters, where it is mishandled, and where the consequence occurs. This is the part that distinguishes a real finding from a pattern match.
+- Provide a working reproduction. A proof-of-concept the maintainer can run, or a test case that fails, is more credible than any amount of explanation.
+- Include a proposed patch you would accept if you were the maintainer. A patch demonstrates that the reporter understands the codebase well enough to fix the problem in a way that fits the project’s conventions.
+- Disclose AI involvement upfront. If a model found the bug or drafted the report, say so in the first line. Maintainers will find out anyway; concealing it costs more credibility than disclosing it.
+- Defer to the maintainer&#x27;s judgment. If they decline the report, you should make peace with that. The goodwill from being easy to work with is worth more than winning an argument over one bug.
+Practical tip: A useful self-check before sending a vulnerability report is to close the editor and explain the bug from memory. If you cannot describe what goes wrong without referring back to the model output, you do not understand it well enough to report it.
+## If you don’t have a security team
+Most of the above advice assumes that your organization has a dedicated security function. If you are a small organization, a solo developer, or an open-source maintainer, the same risks apply but the actions are simpler:
+- Turn on automatic updates for your operating system, browser, and every application that offers it. This is the single most effective action available and requires no ongoing effort.
+- Prefer managed services over self-hosting. Letting a provider with a security team run the database, authentication, and email shifts the patching burden to them. The cost of a managed service like this is almost always lower than the cost of one incident.
+- Use passkeys or hardware security keys on every account that supports them. SMS codes can be intercepted and passwords get reused; a hardware key cannot be phished.
+- Enable the free security tooling on your code host. GitHub&#x27;s Dependabot, secret scanning, and CodeQL are free for public repositories and catch a meaningful share of what enterprise tools catch. Enabling them takes minutes.
+If you maintain an open-source project, publish a `SECURITY.md`` `stating who to contact and what to expect when they’re contacted. AI-assisted scanning means you will receive more vulnerability reports than before. Some will be valuable; some will be automated noise. A clear intake process helps you tell them apart, and signals to good-faith reporters that their effort will not be wasted.
+          Topic
+          Reference
+          Patch prioritization
+            CISA KEV Catalog,
+            FIRST EPSS,
+            CISA BOD 22-01
+          Baseline controls
+            ACSC Essential Eight,
+            CISA CPGs,
+            CIS Controls v8,
+            NCSC 10 Steps
+          Secure development
+            NIST SSDF (SP 800-218),
+            OWASP ASVS,
+            OWASP SAMM,
+            CISA Secure by Design
+          Memory safety
+            CISA/NSA Memory Safe Roadmaps
+          Supply chain & build integrity
+            SLSA,
+            OpenSSF Scorecards,
+            CISA SBOM resources,
+            NIST SP 800-161
+          Zero trust
+            CISA Zero Trust Maturity Model,
+            NIST SP 800-207,
+            NCSC Zero Trust Principles
+          Detection & response
+            MITRE ATT&CK,
+            MITRE D3FEND
+          Program framework
+            NIST Cybersecurity Framework 2.0,
+            NCSC Cyber Assessment Framework
+### Acknowledgements
+This article was written by members of Anthropic’s Security Engineering and Research teams, including Donny Greenberg, Jason Clinton, Michael Moore, Abel Ribbink, and Jackie Bow, with contributions from Jannet Park, Gabby Curtis, and Stuart Ritchie. 
+[data-slider-shell]{ display: none; }
+[data-slider-track] > [data-slider-card]{
+  flex: 0 0 auto;
+  width: auto; 
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+[data-slider-prev],
+[data-slider-next] {
+  transition: opacity 0.3s ease;
+}
+[data-slider-prev].is-disabled,
+[data-slider-next].is-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: default;
+}
+[data-slider-dot] {
+    width: 1.75rem;
+    justify-content: center;
+    display: flex;
+    height: 1.75rem;
+    align-items: center;
+}
+[data-slider-dot] span {
+	display: block;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  border-radius: 999px;
+  background: var(--_theme---border-secondary);
+  transition: background 0.3s ease;
+}
+[data-slider-dot].is-active span {
+  background: var(--_theme---foreground-primary);
+}
+  document.addEventListener("DOMContentLoaded", function () {
+    try {
+      gsap.registerPlugin(Draggable);
+    } catch (e) {
+      return;
+    }
+    if (typeof Draggable === "undefined") return;
+    function debounce(fn, wait) {
+      let t;
+      return (...a) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn(...a), wait);
+      };
+    }
+    document.querySelectorAll("[data-slider]").forEach(function (root) {
+      if (root.dataset.scriptInitialized) return;
+      root.dataset.scriptInitialized = "true";
+      var viewportConfigs = {
+        desktop: { minWidth: 1200, slidesToShow: parseInt(root.getAttribute("data-slider-desktop-threshold")) || 4 },
+        tablet: { minWidth: 768, maxWidth: 1199, slidesToShow: parseInt(root.getAttribute("data-slider-tablet-threshold")) || 2 },
+        mobile: { maxWidth: 767, slidesToShow: 1 },
+      };
+      var loopAttr = (root.getAttribute("data-slider-loop") || "").toLowerCase();
+      var centerAttr = (root.getAttribute("data-slider-center") || "").toLowerCase();
+      var LOOP = loopAttr === "true" || loopAttr === "1" || loopAttr === "";
+      var CENTER_MODE = centerAttr === "true" || centerAttr === "1";
+      var grid = root.querySelector("[data-slider-grid]");
+      var shell = root.querySelector("[data-slider-shell]");
+      var viewport = shell && shell.querySelector("[data-slider-viewport]");
+      var track = shell && shell.querySelector("[data-slider-track]");
+      var prevBtn = shell && shell.querySelector("[data-slider-prev]");
+      var nextBtn = shell && shell.querySelector("[data-slider-next]");
+      var controls = shell && shell.querySelector("[data-slider-controls]");
+      var dotsWrap = shell && shell.querySelector("[data-slider-dots]");
+      var mobileActive = shell && shell.querySelector("[data-slider-mobile-active]");
+      var mobileTotal = shell && shell.querySelector("[data-slider-mobile-total]");
+      if (!grid || !shell || !viewport || !track) return;
+      try {
+        viewport.style.touchAction = "pan-y";
+      } catch (e) {}
+      var cards = Array.prototype.slice.call(grid.querySelectorAll("[data-slider-card]"));
+      if (!cards.length) return;
+      var placeholders = new Map();
+      cards.forEach(function (card) {
+        var m = document.createComment("card-slot");
+        card.parentNode.insertBefore(m, card);
+        placeholders.set(card, m);
+      });
+      var currentMode = "grid";
+      var currentApi = null;
+      var currentConfig = null;
+      var activeIndex = 0;
+      var originalLength = cards.length;
+      var resizeObserver = null;
+      function updateActiveSlide(currentSlide) {
+        Array.prototype.slice.call(track.querySelectorAll("[data-slider-card]")).forEach(function (s) {
+          s.classList.remove("is-active");
+        });
+        (currentSlide || cards[activeIndex]) && (currentSlide || cards[activeIndex]).classList.add("is-active");
+      }
+      function getViewportConfig() {
+        var w = window.innerWidth;
+        if (w >= viewportConfigs.desktop.minWidth) return { key: "desktop", config: viewportConfigs.desktop };
+        if (w >= viewportConfigs.tablet.minWidth) return { key: "tablet", config: viewportConfigs.tablet };
+        return { key: "mobile", config: viewportConfigs.mobile };
+      }
+      function shouldUseSlider() {
+        var vp = getViewportConfig();
+        return cards.length > vp.config.slidesToShow;
+      }
+      function moveCardsToTrack() {
+        cards.forEach(function (c, i) {
+          c.setAttribute("data-slider-origin-index", String(i));
+          track.appendChild(c);
+        });
+        grid.style.display = "none";
+      }
+      function moveCardsBackToGrid() {
+        Array.prototype.slice.call(track.querySelectorAll('[data-slider-clone="true"]')).forEach(function (n) {
+          n.remove();
+        });
+        cards.forEach(function (c) {
+          var m = placeholders.get(c);
+          if (m && m.parentNode) m.parentNode.insertBefore(c, m);
+          c.classList.remove("is-active");
+        });
+        gsap.set(cards, { clearProps: "all" });
+        gsap.set(track, { clearProps: "all" });
+        grid.style.display = ""; // 👈 show grid again
+      }
+      function ensureDots(count) {
+        if (!dotsWrap) {
+          dotsWrap = document.createElement("div");
+          dotsWrap.setAttribute("data-slider-dots", "");
+          (controls || shell).appendChild(dotsWrap);
+        }
+        if (dotsWrap.childElementCount !== count) {
+          dotsWrap.innerHTML = "";
+          var frag = document.createDocumentFragment();
+          for (var i = 0; i < count; i++) {
+            (function (ii) {
+              var b = document.createElement("button");
+              b.type = "button";
+              b.setAttribute("data-slider-dot", "");
+              b.setAttribute("aria-label", "Go to item " + (ii + 1));
+              var span = document.createElement("span");
+              b.appendChild(span);
+              b.addEventListener("click", function () {
+                currentApi && currentApi.toIndex(ii, { duration: 0.5, ease: "power1.inOut" });
+              });
+              frag.appendChild(b);
+            })(i);
+          }
+          dotsWrap.appendChild(frag);
+        }
+        dotsWrap.style.display = LOOP ? "" : "none";
+        updateDots();
+      }
+      function updateDots() {
+        if (!dotsWrap || !LOOP) return;
+        Array.prototype.slice.call(dotsWrap.querySelectorAll("[data-slider-dot]")).forEach(function (d, i) {
+          var on = i === activeIndex;
+          d.classList.toggle("is-active", on);
+          d.setAttribute("aria-current", on ? "true" : "false");
+        });
+      }
+      function updateMobileCounter() {
+        if (mobileActive) mobileActive.textContent = String(activeIndex + 1);
+        if (mobileTotal) mobileTotal.textContent = String(originalLength);
+      }
+      function setBtnState(btn, disabled) {
+        if (!btn) return;
+        btn.disabled = !!disabled;
+        btn.classList.toggle("is-disabled", !!disabled);
+        btn.setAttribute("aria-disabled", disabled ? "true" : "false");
+      }
+      function updateButtonsState() {
+        if (!currentConfig) return;
+        if (LOOP) {
+          setBtnState(prevBtn, false);
+          setBtnState(nextBtn, false);
+          return;
+        }
+        var maxIndex = Math.max(0, originalLength - currentConfig.slidesToShow);
+        setBtnState(prevBtn, activeIndex <= 0);
+        setBtnState(nextBtn, activeIndex >= maxIndex);
+      }
+      function showControls(show) {
+        if (controls) controls.style.display = show ? "" : "none";
+      }
+      function initializeSlider() {
+        var vp = getViewportConfig();
+        currentConfig = vp.config;
+        if (currentApi) {
+          currentApi.kill && currentApi.kill();
+          currentApi = null;
+        }
+        gsap.set(track, { clearProps: "all" });
+        gsap.set(cards, { clearProps: "all" });
+        shell.style.display = "block";
+        moveCardsToTrack();
+        track.style.display = "flex";
+        track.style.flexWrap = "nowrap";
+        track.style.willChange = "transform";
+        gsap.set(track, { x: 0, xPercent: 0 });
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (LOOP) addClonesForLooping();
+            ensureDots(originalLength);
+            currentApi = LOOP ? buildLoopingSlider() : buildLinearSlider(currentConfig);
+            prevBtn && prevBtn.addEventListener("click", onPrev);
+            nextBtn && nextBtn.addEventListener("click", onNext);
+            showControls(true);
+            updateButtonsState();
+            currentMode = "slider";
+          });
+        });
+      }
+      function initializeGrid() {
+        if (currentApi) {
+          currentApi.kill && currentApi.kill();
+          currentApi = null;
+        }
+        prevBtn && prevBtn.removeEventListener("click", onPrev);
+        nextBtn && nextBtn.removeEventListener("click", onNext);
+        shell.style.display = "none";
+        moveCardsBackToGrid();
+        showControls(false);
+        currentMode = "grid";
+        currentConfig = null;
+      }
+      function evaluateAndUpdate() {
+        var needs = shouldUseSlider();
+        var vp = getViewportConfig();
+        if (needs) {
+          if (currentMode !== "slider" || !currentConfig || currentConfig !== vp.config) initializeSlider();
+        } else {
+          if (currentMode !== "grid") initializeGrid();
+        }
+      }
+      function onPrev() {
+        currentApi && currentApi.previous({ duration: 0.45, ease: "power1.inOut" });
+      }
+      function onNext() {
+        currentApi && currentApi.next({ duration: 0.45, ease: "power1.inOut" });
+      }
+      function handleResize() {
+        evaluateAndUpdate();
+      }
+      if (window.ResizeObserver) {
+        resizeObserver = new ResizeObserver(debounce(handleResize, 200));
+        resizeObserver.observe(document.documentElement);
+      }
+      window.addEventListener("resize", debounce(handleResize, 200));
+      evaluateAndUpdate();
+      function cleanup() {
+        if (resizeObserver) resizeObserver.disconnect();
+        if (currentApi) currentApi.kill && currentApi.kill();
+      }
+      root._sliderCleanup = cleanup;
+      function addClonesForLooping() {
+        Array.prototype.slice.call(track.querySelectorAll('[data-slider-clone="true"]')).forEach(function (n) {
+          n.remove();
+        });
+        var widths = cards.map(function (el) {
+          return el.getBoundingClientRect().width;
+        });
+        var avgW = widths.reduce((a, b) => a + b, 0) / Math.max(widths.length, 1);
+        var needAcross = Math.ceil((viewport.clientWidth * 1.5) / Math.max(avgW, 1));
+        var clonesEachSide = Math.max(2, needAcross);
+        for (var i = 0; i < clonesEachSide; i++) {
+          var src = cards[cards.length - 1 - (i % cards.length)];
+          var clone = src.cloneNode(true);
+          clone.setAttribute("data-slider-clone", "true");
+          clone.setAttribute("data-slider-origin-index", src.getAttribute("data-slider-origin-index"));
+          track.insertBefore(clone, track.firstChild);
+        }
+        for (var j = 0; j < clonesEachSide; j++) {
+          var src2 = cards[j % cards.length];
+          var clone2 = src2.cloneNode(true);
+          clone2.setAttribute("data-slider-clone", "true");
+          clone2.setAttribute("data-slider-origin-index", src2.getAttribute("data-slider-origin-index"));
+          track.appendChild(clone2);
+        }
+      }
+      function buildLoopingSlider() {
+        var items = Array.prototype.slice.call(track.children);
+        var tl = horizontalLoop(items, {
+          paused: true,
+          draggable: true,
+          center: CENTER_MODE ? viewport : false,
+          speed: 1,
+          snap: false,
+          onChange: function (el) {
+            var mapped = parseInt(el.getAttribute("data-slider-origin-index") || "0", 10) || 0;
+            activeIndex = mapped;
+            updateDots();
+            updateMobileCounter();
+            updateButtonsState();
+            updateActiveSlide(el);
+          },
+          _trigger: viewport,
+        });
+        tl.pause(0);
+        var api = {
+          toIndex: function (i, vars) {
+            var idxInItems = tl.findNearestIndexForOrigin(i);
+            return tl.toIndex(idxInItems, vars);
+          },
+          next: (vars) => {
+            var target = tl.findNearestIndexForOrigin((activeIndex + 1) % originalLength);
+            return tl.toIndex(target, vars);
+          },
+          previous: (vars) => {
+            var target = tl.findNearestIndexForOrigin((activeIndex - 1 + originalLength) % originalLength);
+            return tl.toIndex(target, vars);
+          },
+          current: () => activeIndex,
+          kill: () => {
+            try {
+              if (tl.draggable) tl.draggable.kill();
+            } catch (e) {}
+            try {
+              tl.kill();
+            } catch (e) {}
+          },
+        };
+        api.toIndex(0, { duration: 0 });
+        updateMobileCounter();
+        return api;
+      }
+      function buildLinearSlider(config) {
+        var items = cards.slice();
+        var cur = 0;
+        var bounds = { minX: 0, maxX: 0 };
+        var offsets = [];
