@@ -1,0 +1,36 @@
+---
+name: deep-review
+description: 對 staged changes 執行三維度平行審查（安全、效能、風格），合成優先排序的發現摘要。
+---
+
+# Deep Review — 三維度平行程式碼審查
+
+對目前的 staged changes 執行以下三個平行審查：
+
+## 1. 安全審查
+使用 security-reviewer agent，檢查：
+- 注入漏洞（SQL、XSS、command injection）
+- 認證與授權缺陷
+- 敏感資料暴露
+
+## 2. 效能審查
+檢查以下效能問題：
+- N+1 查詢
+- 記憶體洩漏風險
+- 阻塞操作（blocking I/O in async context）
+- 不必要的重複計算
+
+## 3. 風格審查
+檢查一致性：
+- 是否遵循專案既有的程式碼風格
+- 命名慣例是否統一
+- 是否有多餘的程式碼或未使用的 import
+
+## 輸出格式
+
+將三個維度的發現合併為優先排序的清單：
+1. 🔴 Critical — 必須修復才能合併
+2. 🟡 Warning — 建議修復
+3. 🔵 Info — 可選的改善建議
+
+每項包含 `file:line` 引用與修復建議。
