@@ -4,6 +4,26 @@
 
 ---
 
+## 2026-04-13 (4)
+
+### 新增（來自 blog-archive 分析）
+- `.claude/agents/security-reviewer.md` — Sonnet 安全審查 Agent（注入、認證、敏感資料）
+- `.claude/agents/architecture-explorer.md` — Haiku 架構探索 Agent（模組、路由映射）
+- `.claude/agents/test-writer.md` — Sonnet 測試撰寫 Agent（邊界條件、錯誤處理）
+- `.claude/skills/deep-review/SKILL.md` — 三維度平行程式碼審查（安全+效能+風格）
+- `.claude/skills/frontend-design/SKILL.md` — 前端設計指引，避免 AI slop
+- `.claude/skills/blog-analyzer/SKILL.md` — Blog 文章分析器，提取可操作洞察
+- `.claude/skills/agent-team/SKILL.md` — Agent Team 多 Worker 平行協作模式
+- `.claude/hooks/pre-commit-review.sh` — Pre-commit Hook，偵測 git commit 提醒使用 deep-review
+- `docs/blog-analysis-report.md` — 22 篇 Claude Blog 文章完整分析報告
+
+### 更新
+- `CLAUDE.md` — 加入 Sub Agent 委派規則（6 個 Agent 各司其職的場景對照）
+- `.claude/settings.json` — 加入 Pre-commit review Hook
+- `README.md` — 更新檔案結構，反映所有新增的 Agents、Skills、Hooks
+
+---
+
 ## 2026-04-13 (3)
 
 ### 新增

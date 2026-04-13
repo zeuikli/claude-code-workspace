@@ -30,12 +30,19 @@ claude-code-workspace/
 │   │   ├── memory-pull.sh         # PreToolUse：讀取 Memory.md 前拉取最新版
 │   │   ├── memory-sync.sh         # Memory.md 同步：commit 並推送回 GitHub
 │   │   └── memory-update-hook.sh  # PostToolUse：偵測 Memory.md 修改後觸發同步
-│   └── agents/
-│       ├── researcher.md          # Haiku — 搜尋、探索、收集資料
-│       ├── implementer.md         # Sonnet — 實作、測試、驗證
-│       └── reviewer.md            # Opus — 架構審查、安全審計、策略建議
+│   ├── agents/
+│   │   ├── researcher.md          # Haiku — 通用搜尋、收集資料
+│   │   ├── architecture-explorer.md # Haiku — 架構探索、模組映射
+│   │   ├── implementer.md         # Sonnet — 實作、驗證
+│   │   ├── test-writer.md         # Sonnet — 測試撰寫、邊界覆蓋
+│   │   ├── security-reviewer.md   # Sonnet — 安全審查、漏洞偵測
+│   │   └── reviewer.md            # Opus — 架構決策、策略建議
+│   └── skills/
+│       ├── deep-review/SKILL.md   # 三維度平行審查（安全+效能+風格）
+│       └── frontend-design/SKILL.md # 前端設計指引（避免 AI slop）
 ├── docs/
-│   └── advisor-strategy.md        # Advisor 模式完整說明（架構、API、效能基準）
+│   ├── advisor-strategy.md        # Advisor 模式完整說明
+│   └── blog-analysis-report.md    # Blog 文章分析報告
 ├── prompts.md                     # 萬用 Prompt 集（各情境開場 Prompt）
 ├── CLAUDE.md                      # Claude Code 專案指令（每次對話自動載入）
 ├── Memory.md                      # 跨對話記憶摘要（上下文保存與恢復）

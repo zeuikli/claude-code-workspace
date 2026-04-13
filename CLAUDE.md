@@ -29,6 +29,17 @@
 - Sub Agent 模型分層：`Haiku`（搜尋 / 探索）→ `Sonnet`（實作 / 測試）→ `Opus`（架構 / 審查）。
 - 詳細說明：@docs/advisor-strategy.md
 
+### Sub Agent 委派規則
+
+- **研究型任務**（>10 檔案）：使用 `researcher` 或 `architecture-explorer`（Haiku）
+- **平行獨立工作**（3+ 子任務）：同時啟動多個 Sub Agent
+- **程式碼實作**：使用 `implementer`（Sonnet）
+- **測試撰寫**：使用 `test-writer`（Sonnet）
+- **安全審查**：使用 `security-reviewer`（Sonnet），非必要不調用 Opus
+- **架構決策**：僅此情境使用 `reviewer`（Opus）
+- **Commit 前驗證**：使用 `/deep-review` Skill 執行三維度平行審查
+- **前端開發**：自動載入 `frontend-design` Skill 避免 AI slop
+
 ## Context Window 管理
 
 - 當 context window 使用量接近 **70%** 時，**立即通知使用者**開設新對話接續作業。
