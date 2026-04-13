@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-04-13 (5)
+
+### 新增
+- `.claude/skills/cost-tracker/SKILL.md` — Token 使用量與花費追蹤 Skill，含定價表、計算公式、Agent SDK 整合範例
+- `docs/workspace-performance-report.md` — 完整效能報告：成本對比（-72.4%）、平行加速（2.6-7.3×）、自動化效益、Agent SDK 整合指南
+
+---
+
 ## 2026-04-13 (4)
 
 ### 新增（來自 blog-archive 分析）
