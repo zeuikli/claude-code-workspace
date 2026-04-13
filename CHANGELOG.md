@@ -4,6 +4,18 @@
 
 ---
 
+## 2026-04-13
+
+### 新增
+- `docs/advisor-strategy.md` — Advisor 模式完整說明文件，含架構圖、API 範例、效能基準、選型建議
+  - 基於 [AgentOpt 論文](https://arxiv.org/html/2604.06296v1)、[Anthropic Advisor Strategy](https://claude.com/blog/the-advisor-strategy) 整理
+
+### 更新
+- `CLAUDE.md` — 加入「Advisor 模式（顧問策略）」區塊：Haiku/Sonnet 主迴圈 + Opus 顧問、Sub Agent 分層模型選用、諮詢時機指引
+- `README.md` — 更新專案概述、檔案結構、核心配置表
+
+---
+
 ## 2026-04-12 (4)
 
 ### 新增

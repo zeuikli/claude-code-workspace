@@ -7,7 +7,7 @@
 本專案作為 Claude Code 的工作環境，透過精心設計的 `CLAUDE.md` 指令檔，實現：
 
 - **雙語自動回覆** — 中文對話回覆台灣繁體中文，英文對話回覆英文
-- **Sub Agent 優先策略** — 自動分派子代理處理任務，保持主對話 context 精簡
+- **Advisor 模式（顧問策略）** — Haiku/Sonnet 跑主迴圈，Opus 退居幕後當顧問
 - **Context Window 智慧管理** — 接近 70% 使用量時自動提醒，搭配 Memory.md 跨對話記憶
 - **Git 自動化工作流程** — 改動完成後自動 push、merge，並按需更新文件
 
@@ -16,12 +16,14 @@
 ```
 claude-code-workspace/
 ├── .claude/
-│   ├── settings.json              # Hook 設定（SessionStart + PostToolUse）
+│   ├── settings.json              # Hook 設定（SessionStart + PreToolUse + PostToolUse）
 │   └── hooks/
 │       ├── session-init.sh        # SessionStart：拉取最新指令（本機 + 雲端）
 │       ├── memory-pull.sh         # PreToolUse：讀取 Memory.md 前拉取最新版
 │       ├── memory-sync.sh         # Memory.md 同步：commit 並推送回 GitHub
 │       └── memory-update-hook.sh  # PostToolUse：偵測 Memory.md 修改後觸發同步
+├── docs/
+│   └── advisor-strategy.md        # Advisor 模式完整說明（架構、API、效能基準）
 ├── CLAUDE.md                      # Claude Code 專案指令（每次對話自動載入）
 ├── Memory.md                      # 跨對話記憶摘要（上下文保存與恢復）
 ├── CHANGELOG.md                   # 專案變更紀錄
@@ -37,7 +39,7 @@ claude-code-workspace/
 | 區塊 | 用途 |
 |------|------|
 | 語言規則 | 依使用者語言自動切換回覆語系 |
-| Sub Agent 策略 | 分派主 Agent 協調任務，委派 Sub Agent 執行調查 |
+| Sub Agent 策略與 Advisor 模式 | Haiku/Sonnet 執行、Opus 顧問，分層委派 |
 | Context Window 管理 | 70% 預警、Memory.md 摘要、compaction 指引 |
 | Git 工作流程 | 完整的 commit → push → merge 流程與重試機制 |
 | 驗證與品質 | 測試優先、lint 檢查、UI 截圖比對 |
