@@ -2,6 +2,19 @@
 
 針對 [Claude Code](https://code.claude.com) 優化的個人開發工作區，內建專案指令、對話記憶管理與自動化工作流程配置。
 
+## 分支說明
+
+本專案維護兩個長期分支：
+
+| 分支 | 用途 | 說明 |
+|------|------|------|
+| `main` | **預設使用** | 穩定的日常工作環境，包含最新的 Hooks、Skills、Agents 與 CLAUDE.md 設定。一般使用者請以此分支為基準。 |
+| `claude/karpathy-optimization-merged` | **研究與分析** | 以 Karpathy 原則優化為基礎的實驗分支，用於探索新的 Agent 策略、Timeout 調校、效能分析等研究性工作。 |
+
+> 若無特殊需求，請使用 `main` 分支。
+
+---
+
 ## 快速開始
 
 將以下 Prompt 貼進任何 Claude Code session 即可立即套用所有設定：
