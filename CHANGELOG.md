@@ -4,6 +4,21 @@
 
 ---
 
+## 2026-04-14 (workspace-integrity-optimization)
+
+### 修復
+- `.claude/hooks/session-init.sh` — 本機環境改用 `git merge --ff-only` 取代 `git reset --hard`，防止自動同步覆蓋本地未提交的修改
+
+### 優化
+- `Memory.md` — 補全 Session 2-4 完整歷史記錄（Advisor 模式、Agents、Skills、Hooks、timeout 設定）
+- `prompts.md` — 標準開場（Prompt 1）與完整載入（Prompt 5）統一採用支援環境偵測的新版指令（同 README 快速開始）
+
+### 新增
+- `.claude/hooks/session-stop.sh` — Stop Hook，session 結束時自動觸發 Memory.md 同步備份
+- `.claude/settings.json` — 加入 `Stop` 事件 Hook，完整覆蓋 session 生命週期（啟動 → 讀取 → 寫入 → 結束）
+
+---
+
 ## 2026-04-14 (karpathy-optimization-merged)
 
 ### 修復

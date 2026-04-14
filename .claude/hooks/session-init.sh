@@ -35,9 +35,10 @@ else
   TARGET_DIR="$CONFIG_DIR"
 
   if [ -d "$TARGET_DIR/.git" ]; then
-    # 靜默拉取最新版本
+    # 靜默拉取最新版本（使用 merge --ff-only 避免覆蓋本地未提交修改）
     git -C "$TARGET_DIR" fetch --quiet origin main 2>/dev/null || true
-    git -C "$TARGET_DIR" reset --quiet --hard origin/main 2>/dev/null || true
+    git -C "$TARGET_DIR" merge --quiet --ff-only origin/main 2>/dev/null || \
+      echo "[session-init] Local: local changes detected, skipping auto-merge (run git pull manually)"
     echo "[session-init] Local: pulled latest from $CONFIG_REPO"
   else
     echo "[session-init] Local: workspace repo not found at $TARGET_DIR, skipping"
