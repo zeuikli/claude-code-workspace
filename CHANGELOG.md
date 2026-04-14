@@ -4,6 +4,17 @@
 
 ---
 
+## 2026-04-14
+
+### 修復
+- `~/.claude/settings.json` — 新增 stream timeout 環境變數設定（`CLAUDE_ENABLE_STREAM_WATCHDOG=1`、`CLAUDE_STREAM_IDLE_TIMEOUT_MS=60000`、`API_TIMEOUT_MS=900000`）
+- `.claude/settings.json` — 同步新增專案層級 timeout 設定
+
+### 新增
+- `docs/stream-timeout-investigation.md` — Stream idle timeout 完整調查報告，含根本原因分析、環境變數說明、企業網路解法、快速診斷 Checklist
+
+---
+
 ## 2026-04-13 (5)
 
 ### 新增
