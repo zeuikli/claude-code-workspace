@@ -23,14 +23,29 @@
 
 ```
 claude-code-workspace/
+├── .github/
+│   └── workflows/ci.yml           # CI：shellcheck + JSON schema + hooks dry-run
+├── scripts/
+│   └── healthcheck.sh             # 一鍵驗證 workspace 完整性（25 個檢查項）
 ├── .claude/
-│   ├── settings.json              # Hook 設定（SessionStart + PreToolUse + PostToolUse）
+│   ├── settings.json              # Hook 設定（SessionStart + PreToolUse + PostToolUse + PreCompact + PostCompact + Stop）
 │   ├── hooks/
-│   │   ├── session-init.sh        # SessionStart：拉取最新指令（本機 + 雲端）
-│   │   ├── memory-pull.sh         # PreToolUse：讀取 Memory.md 前拉取最新版
-│   │   ├── memory-sync.sh         # Memory.md 同步：commit 並推送回 GitHub
-│   │   ├── memory-update-hook.sh  # PostToolUse：偵測 Memory.md 修改後觸發同步
-│   │   └── pre-commit-review.sh   # PreToolUse：git commit 前提醒 deep-review
+│   │   ├── session-init.sh        # SessionStart：拉取最新指令（含 elapsed log）
+│   │   ├── instructions-loaded.sh # InstructionsLoaded：紀錄 CLAUDE.md 載入時機（除錯用）
+│   │   ├── memory-pull.sh         # PreToolUse：讀取前拉取 + JSON additionalContext 注入
+│   │   ├── memory-sync.sh         # Memory.md commit + push（含重試）
+│   │   ├── memory-update-hook.sh  # PostToolUse：含 30s throttle 防 race
+│   │   ├── pre-commit-review.sh   # PreToolUse(Bash)：git commit 前提醒 deep-review
+│   │   ├── pre-compact.sh         # PreCompact：壓縮前提醒更新 Memory.md
+│   │   ├── post-compact.sh        # PostCompact：壓縮後提示從 Memory.md 恢復
+│   │   └── session-stop.sh        # Stop：session 結束時觸發 memory-sync
+│   ├── rules/                     # 拆分的細則（CLAUDE.md 按需 @ 引用，節省主 context）
+│   │   ├── language.md            # 語言規則
+│   │   ├── subagent-strategy.md   # Sub Agent + Advisor 模式
+│   │   ├── context-management.md  # Context Window 管理
+│   │   ├── git-workflow.md        # Git 流程
+│   │   ├── quality.md             # 驗證與品質
+│   │   └── auto-sync.md           # Hook 同步機制
 │   ├── agents/
 │   │   ├── researcher.md          # Haiku — 通用搜尋、收集資料
 │   │   ├── architecture-explorer.md # Haiku — 架構探索、模組映射
@@ -45,15 +60,22 @@ claude-code-workspace/
 │       ├── agent-team/SKILL.md    # 多 Worker 平行協作模式
 │       └── cost-tracker/SKILL.md  # Token 使用量與花費追蹤
 ├── docs/
+│   ├── INDEX.md                   # 進階文件索引（lazy-load 入口）
 │   ├── advisor-strategy.md        # Advisor 模式完整說明
 │   ├── blog-analysis-report.md    # Blog 文章分析報告
-│   └── workspace-performance-report.md # 效能報告（成本 -72.4%）
+│   ├── workspace-performance-report.md # 效能報告（成本 -72.4%）
+│   ├── stream-timeout-investigation.md # Stream timeout 調查
+│   └── timeout-settings-impact-analysis.md # Timeout 設定影響分析
 ├── prompts.md                     # 萬用 Prompt 集（各情境開場 Prompt）
-├── CLAUDE.md                      # Claude Code 專案指令（每次對話自動載入）
+├── CLAUDE.md                      # 精簡主指令（≤ 50 行，rules 按需載入）
 ├── Memory.md                      # 跨對話記憶摘要（上下文保存與恢復）
 ├── CHANGELOG.md                   # 專案變更紀錄
 └── README.md                      # 本文件
 ```
+
+## 進階文件索引
+
+`docs/` 內的深度文件為 **lazy-load** 模式 — 不會自動載入到主 context，請參考 [`docs/INDEX.md`](docs/INDEX.md) 查找適合場景，主動 `Read` 取用。
 
 ## 核心配置說明
 

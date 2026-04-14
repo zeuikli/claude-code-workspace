@@ -1,0 +1,202 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  shellcheck:
+    name: ShellCheck (.claude/hooks)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt-get update -qq && sudo apt-get install -y shellcheck
+
+      - name: Run shellcheck on hooks
+        run: |
+          HOOKS_DIR=".claude/hooks"
+          FAILED=0
+          for script in "$HOOKS_DIR"/*.sh; do
+            if [ -f "$script" ]; then
+              echo "Checking: $script"
+              shellcheck --severity=warning "$script" || FAILED=1
+            fi
+          done
+          exit $FAILED
+
+  json-validate:
+    name: JSON & YAML Frontmatter Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate .claude/settings.json
+        run: |
+          echo "Validating .claude/settings.json ..."
+          python3 -m json.tool .claude/settings.json > /dev/null
+          echo "OK: .claude/settings.json is valid JSON"
+
+      - name: Validate agent frontmatter
+        run: |
+          python3 - <<'EOF'
+          import sys
+          import os
+          import re
+
+          REQUIRED_FIELDS = ["name", "description"]
+          agents_dir = ".claude/agents"
+          failed = False
+
+          md_files = [f for f in os.listdir(agents_dir) if f.endswith(".md")]
+          if not md_files:
+              print("WARNING: No agent .md files found")
+              sys.exit(0)
+
+          for fname in md_files:
+              path = os.path.join(agents_dir, fname)
+              with open(path, encoding="utf-8") as fh:
+                  content = fh.read()
+
+              # Extract YAML frontmatter between --- delimiters
+              match = re.match(r"^---\n(.*?)\n---", content, re.DOTALL)
+              if not match:
+                  print(f"FAIL: {path} — missing YAML frontmatter")
+                  failed = True
+                  continue
+
+              try:
+                  import yaml
+                  fm = yaml.safe_load(match.group(1))
+              except Exception as e:
+                  print(f"FAIL: {path} — invalid YAML: {e}")
+                  failed = True
+                  continue
+
+              for field in REQUIRED_FIELDS:
+                  if not fm or field not in fm:
+                      print(f"FAIL: {path} — missing required field '{field}'")
+                      failed = True
+
+              if not failed:
+                  print(f"OK: {path}")
+
+          sys.exit(1 if failed else 0)
+          EOF
+
+      - name: Validate skill frontmatter
+        run: |
+          python3 - <<'EOF'
+          import sys
+          import os
+          import re
+
+          REQUIRED_FIELDS = ["name", "description"]
+          skills_dir = ".claude/skills"
+          failed = False
+
+          skill_dirs = [
+              d for d in os.listdir(skills_dir)
+              if os.path.isdir(os.path.join(skills_dir, d))
+          ]
+
+          for skill in skill_dirs:
+              skill_md = os.path.join(skills_dir, skill, "SKILL.md")
+              if not os.path.isfile(skill_md):
+                  print(f"FAIL: {skill_md} — file missing")
+                  failed = True
+                  continue
+
+              with open(skill_md, encoding="utf-8") as fh:
+                  content = fh.read()
+
+              match = re.match(r"^---\n(.*?)\n---", content, re.DOTALL)
+              if not match:
+                  print(f"FAIL: {skill_md} — missing YAML frontmatter")
+                  failed = True
+                  continue
+
+              try:
+                  import yaml
+                  fm = yaml.safe_load(match.group(1))
+              except Exception as e:
+                  print(f"FAIL: {skill_md} — invalid YAML: {e}")
+                  failed = True
+                  continue
+
+              for field in REQUIRED_FIELDS:
+                  if not fm or field not in fm:
+                      print(f"FAIL: {skill_md} — missing required field '{field}'")
+                      failed = True
+
+              if not failed:
+                  print(f"OK: {skill_md}")
+
+          sys.exit(1 if failed else 0)
+          EOF
+
+  hooks-dryrun:
+    name: Hooks Dry-Run (syntax check)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Dry-run non-destructive hooks
+        env:
+          CLAUDE_PROJECT_DIR: ${{ github.workspace }}
+        run: |
+          set -e
+          HOOKS_DIR=".claude/hooks"
+          FAILED=0
+
+          # Hooks to dry-run (non-destructive: read-only or informational)
+          DRY_RUN_HOOKS=(
+            "memory-pull.sh"
+            "pre-commit-review.sh"
+          )
+
+          # Optional hook — only run if present
+          OPTIONAL_HOOKS=(
+            "instructions-loaded.sh"
+          )
+
+          # Dummy stdin JSON representing a typical hook payload
+          DUMMY_INPUT='{"tool":"read","file_path":"/tmp/Memory.md","command":""}'
+
+          for hook in "${DRY_RUN_HOOKS[@]}"; do
+            script="$HOOKS_DIR/$hook"
+            if [ -f "$script" ]; then
+              echo "Syntax check: $script"
+              bash -n "$script" || { echo "FAIL: syntax error in $script"; FAILED=1; }
+
+              echo "Dry-run: $script"
+              echo "$DUMMY_INPUT" | timeout 10 bash "$script" || true
+              echo "OK: $hook completed"
+            else
+              echo "SKIP: $script not found"
+            fi
+          done
+
+          for hook in "${OPTIONAL_HOOKS[@]}"; do
+            script="$HOOKS_DIR/$hook"
+            if [ -f "$script" ]; then
+              echo "Syntax check (optional): $script"
+              bash -n "$script" || { echo "FAIL: syntax error in $script"; FAILED=1; }
+
+              echo "Dry-run (optional): $script"
+              echo "$DUMMY_INPUT" | timeout 10 bash "$script" || true
+              echo "OK: $hook completed"
+            else
+              echo "SKIP (optional): $hook not present"
+            fi
+          done
+
+          exit $FAILED

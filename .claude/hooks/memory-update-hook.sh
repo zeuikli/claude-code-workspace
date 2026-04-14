@@ -3,7 +3,7 @@
 # ============================================
 # Claude Code Workspace — Memory Update Hook
 # PostToolUse: 偵測 Memory.md 被寫入後自動同步
-# 透過 stdin 接收 JSON，檢查修改的檔案路徑
+# v2: 加入 30s throttle 防止高頻寫入造成 git race condition
 # ============================================
 
 # 讀取 stdin JSON
@@ -15,6 +15,22 @@ FILE_PATH=$(echo "$INPUT" | grep -o '"filePath"\s*:\s*"[^"]*"' | head -1 | sed '
 # 檢查是否為 Memory.md
 case "$FILE_PATH" in
   *Memory.md)
+    # === Throttle 機制 ===
+    LOCKFILE="$HOME/.claude/.memory-sync-lockfile"
+    THROTTLE_SECS=30
+    NOW=$(date +%s)
+    mkdir -p "$(dirname "$LOCKFILE")"
+
+    if [ -f "$LOCKFILE" ]; then
+      LAST=$(cat "$LOCKFILE" 2>/dev/null || echo 0)
+      DIFF=$((NOW - LAST))
+      if [ "$DIFF" -lt "$THROTTLE_SECS" ]; then
+        echo "[memory-update] throttled (last sync ${DIFF}s ago, < ${THROTTLE_SECS}s), skip"
+        exit 0
+      fi
+    fi
+    echo "$NOW" > "$LOCKFILE"
+
     # 找到 workspace 目錄
     if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then
       WORKSPACE_DIR="/tmp/claude-code-workspace"

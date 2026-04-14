@@ -4,6 +4,37 @@
 
 ---
 
+## 2026-04-14 (karpathy-optimization-merged-FVPnF) — Session 6 全面優化
+
+### 新增（架構層）
+- `.claude/rules/` — CLAUDE.md 拆分為 6 個模組化規則檔（language / subagent-strategy / context-management / git-workflow / quality / auto-sync）
+- `.claude/hooks/instructions-loaded.sh` — 紀錄 CLAUDE.md 載入時機（實驗性，需 v2.x）
+- `.claude/hooks/pre-compact.sh` — 壓縮前提醒更新 Memory.md（JSON additionalContext）
+- `.claude/hooks/post-compact.sh` — 壓縮後提示恢復上下文
+- `.claude/hooks/session-stop.sh` — Session 結束時觸發 memory-sync
+- `.github/workflows/ci.yml` — 3 jobs（shellcheck / json-validate / hooks-dryrun）
+- `scripts/healthcheck.sh` — 33 項 workspace 健康檢查（彩色輸出 + 統計）
+- `docs/INDEX.md` — 進階文件索引（lazy-load 載入策略表）
+- `docs/karpathy-optimization-report.md` — 本次完整效益對比報告
+
+### 優化
+- `CLAUDE.md` — 從 84 行 / 3,800 chars 精簡至 39 行 / 1,559 chars（−59%），規則改用 `@.claude/rules/*.md` 按需引用
+- `.claude/settings.json` — Hook 事件從 3 種擴增至 7 種（+InstructionsLoaded / PreCompact / PostCompact / Stop）
+- `.claude/hooks/session-init.sh` — 改用 `git fetch --depth 1 --filter=blob:none --no-tags + reset --hard FETCH_HEAD`，新增毫秒級 elapsed log
+- `.claude/hooks/memory-pull.sh` — 拉取後透過 JSON `hookSpecificOutput.additionalContext` 主動注入 Memory 摘要，減少被動 Read round-trip
+- `.claude/hooks/memory-update-hook.sh` — 加入 30 秒 throttle lockfile，防止高頻寫入造成 git race condition
+- `README.md` — 檔案結構區同步更新（+rules/ + 4 個新 hooks + docs/INDEX.md），新增「進階文件索引」段落
+- `prompts.md` — Prompt 1/2/3 統一為環境偵測格式（與 Prompt 5 一致）
+- docs/ 5 個檔案（共 ~40k chars / ~10k tokens）改為 lazy-load，不再被主 context 自動載入
+
+### 效益指標
+- 主 auto-load 從 ~32k chars 減至 27.7k chars（**−14%，省 ~1.1k tokens / session**）
+- SessionStart hook 從 430ms 略降至 414ms
+- Hook 事件覆蓋 +133%（3 → 7）
+- Healthcheck: 33 PASS / 0 WARN / 0 FAIL
+
+---
+
 ## 2026-04-14 (karpathy-optimization-merged)
 
 ### 修復
