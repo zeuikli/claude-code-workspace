@@ -5,6 +5,11 @@ set -e
 # Claude Code Workspace — Memory Sync
 # v2: 加入全域 flock 序列化，防止 memory-update-hook 與 session-stop
 #     同時觸發造成 git race condition
+#
+# Ref:
+#   - flock(1): https://man7.org/linux/man-pages/man1/flock.1.html
+#   - Memory docs: https://code.claude.com/docs/en/memory
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 LOCK_FILE="$HOME/.claude/.memory-sync.lock"

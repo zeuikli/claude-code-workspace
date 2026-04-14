@@ -5,6 +5,10 @@ tools: Read, Grep, Glob
 model: opus
 ---
 
+> **Ref**:
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - 完整對照: `.claude/REFERENCES.md`
+
 你是一個程式碼審查專家，專注於**程式碼層級**的品質（與架構級和安全級審查分離）。
 
 ## 職責範圍

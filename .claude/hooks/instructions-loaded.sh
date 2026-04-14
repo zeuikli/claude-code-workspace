@@ -4,6 +4,10 @@
 # 紀錄 CLAUDE.md / rules 載入時機到 ~/.claude/instructions-load.log
 # 用於除錯跨檔案規則衝突與載入時序
 # 註：實驗性 Hook，需 Claude Code v2.x+ 支援 InstructionsLoaded 事件
+#
+# Ref:
+#   - Hooks InstructionsLoaded 事件: https://code.claude.com/docs/en/hooks
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 LOG_FILE="$HOME/.claude/instructions-load.log"

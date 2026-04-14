@@ -3,6 +3,11 @@
 # Claude Code Workspace — SubagentStart Hook
 # 每次 Lead Agent 啟動 sub agent 時觸發
 # 用途：log sub agent 使用模式，監控 Advisor 策略落實度
+#
+# Ref:
+#   - Hooks 事件清單（含 SubagentStart）: https://code.claude.com/docs/en/hooks
+#   - Sub-agents 文件: https://code.claude.com/docs/en/sub-agents
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 LOG_FILE="$HOME/.claude/subagent-usage.log"

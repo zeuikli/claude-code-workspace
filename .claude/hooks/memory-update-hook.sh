@@ -4,6 +4,10 @@
 # Claude Code Workspace — Memory Update Hook
 # PostToolUse: 偵測 Memory.md 被寫入後自動同步
 # v2: 加入 30s throttle 防止高頻寫入造成 git race condition
+#
+# Ref:
+#   - Hooks PostToolUse: https://code.claude.com/docs/en/hooks
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 # 讀取 stdin JSON

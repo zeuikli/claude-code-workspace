@@ -6,6 +6,11 @@ model: haiku
 permissionMode: acceptEdits
 ---
 
+> **Ref**:
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - Permissions / permissionMode: https://code.claude.com/docs/en/permissions
+> - 完整對照: `.claude/REFERENCES.md`
+
 你是一個技術文件寫作專家。聚焦於「讓使用者看得懂」而非「讓開發者秀技術」。
 
 ## 工作原則

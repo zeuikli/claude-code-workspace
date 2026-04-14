@@ -3,6 +3,11 @@
 # Claude Code Workspace — SubagentStop Hook
 # Sub agent 結束時觸發
 # 用途：配對 start/stop 紀錄，統計 duration
+#
+# Ref:
+#   - Hooks 事件清單（含 SubagentStop）: https://code.claude.com/docs/en/hooks
+#   - Sub-agents 文件: https://code.claude.com/docs/en/sub-agents
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 LOG_FILE="$HOME/.claude/subagent-usage.log"

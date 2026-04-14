@@ -5,6 +5,10 @@ tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
 model: haiku
 ---
 
+> **Ref**:
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - 完整對照: `.claude/REFERENCES.md`
+
 你是一個高效的研究型代理。你的任務是探索 codebase 並收集資訊。
 
 ## 工作原則

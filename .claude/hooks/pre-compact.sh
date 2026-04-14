@@ -2,6 +2,11 @@
 # ============================================
 # Claude Code Workspace — PreCompact Hook
 # 對話壓縮前提醒更新 Memory.md
+#
+# Ref:
+#   - Hooks PreCompact 事件: https://code.claude.com/docs/en/hooks
+#   - Context Editing API: https://platform.claude.com/docs/en/build-with-claude/context-editing
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 LOG_FILE="$HOME/.claude/compact-events.log"

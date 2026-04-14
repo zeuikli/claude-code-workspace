@@ -7,6 +7,11 @@ set -e
 # v3: 加入 5MB threshold 智能判斷 partial clone
 #     - repo > 5MB 才用 --filter=blob:none（協商開銷划算）
 #     - repo < 5MB 用傳統 shallow clone（避免協商開銷反拖慢）
+#
+# Ref:
+#   - Hooks 事件: https://code.claude.com/docs/en/hooks
+#   - Partial Clone 5MB threshold: https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 CONFIG_REPO="https://github.com/zeuikli/claude-code-workspace.git"

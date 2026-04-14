@@ -3,6 +3,11 @@
 # Claude Code Workspace — UserPromptSubmit Hook
 # 使用者每次按 Enter 時觸發
 # 用途：注入 Memory.md 最新摘要 / 提醒 sub agent 委派
+#
+# Ref:
+#   - Hooks 事件清單（含 UserPromptSubmit）: https://code.claude.com/docs/en/hooks
+#   - hookSpecificOutput 格式: https://code.claude.com/docs/en/hooks#json-output
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 LOG_FILE="$HOME/.claude/user-prompts.log"

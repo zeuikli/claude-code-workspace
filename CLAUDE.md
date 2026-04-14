@@ -30,6 +30,7 @@
 - `docs/advisor-strategy.md` — Advisor 模式完整論述
 - `docs/blog-analysis-report.md` — 22 篇 Anthropic Blog 洞察
 - `docs/workspace-performance-report.md` — 效能基準與優化紀錄
+- `.claude/REFERENCES.md` — **官方文件對照表（所有設計決策的 URL 來源）**
 
 ## 參考文件
 

@@ -11,6 +11,12 @@ context: fork
 
 # Agent Team — 多 Worker 平行協作
 
+> **Ref**:
+> - Multi-Agent Coordination Patterns: https://claude.com/blog/multi-agent-coordination-patterns
+> - Skills frontmatter: https://code.claude.com/docs/en/skills
+> - Sub-agents: https://code.claude.com/docs/en/sub-agents
+> - 完整對照: `.claude/REFERENCES.md`
+
 ## 何時觸發
 
 - 大型重構（涉及 5+ 檔案）

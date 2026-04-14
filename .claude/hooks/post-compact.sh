@@ -2,6 +2,11 @@
 # ============================================
 # Claude Code Workspace — PostCompact Hook
 # 對話壓縮後提示從 Memory.md 恢復 context
+#
+# Ref:
+#   - Hooks PostCompact 事件: https://code.claude.com/docs/en/hooks
+#   - Context Editing API: https://platform.claude.com/docs/en/build-with-claude/context-editing
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 LOG_FILE="$HOME/.claude/compact-events.log"

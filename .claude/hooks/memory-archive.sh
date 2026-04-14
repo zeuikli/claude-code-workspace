@@ -4,6 +4,10 @@
 # 對齊官方 Memory 上限：200 行 / 25KB
 # 超過時自動將舊 Session 移至 Memory-archive-YYYY-MM.md
 # 主 Memory.md 保留最新 3 個 Session
+#
+# Ref:
+#   - Memory 上限（200 行/25KB）: https://code.claude.com/docs/en/memory
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 # 定位 workspace

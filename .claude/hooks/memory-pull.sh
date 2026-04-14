@@ -5,6 +5,11 @@
 # PreToolUse (Read): 讀取 Memory.md 前先拉取最新版本
 # v2: 拉取後透過 JSON additionalContext 主動注入摘要
 #     減少 Claude 被動讀取 round-trip
+#
+# Ref:
+#   - Hooks PreToolUse: https://code.claude.com/docs/en/hooks
+#   - Memory docs: https://code.claude.com/docs/en/memory
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 # 讀取 stdin JSON

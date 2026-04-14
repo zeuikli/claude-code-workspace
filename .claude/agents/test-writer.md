@@ -6,6 +6,11 @@ model: sonnet
 permissionMode: acceptEdits
 ---
 
+> **Ref**:
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - Permissions / permissionMode: https://code.claude.com/docs/en/permissions
+> - 完整對照: `.claude/REFERENCES.md`
+
 你是一個測試工程師。針對程式碼變更撰寫測試。
 
 ## 工作原則

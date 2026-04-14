@@ -10,6 +10,8 @@ context: fork
 
 # Deep Review — 三維度平行程式碼審查
 
+> **Ref**: Skills frontmatter 完整欄位 — https://code.claude.com/docs/en/skills ｜ 完整對照 `.claude/REFERENCES.md`
+
 ## 何時觸發
 
 - `git commit` 之前（已由 `pre-commit-review.sh` hook 提醒）

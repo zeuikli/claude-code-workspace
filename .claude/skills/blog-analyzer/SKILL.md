@@ -10,6 +10,11 @@ effort: medium
 
 # Blog Analyzer — 分析 Claude 官方文章
 
+> **Ref**:
+> - Claude Blog 首頁: https://claude.com/blog
+> - Skills frontmatter: https://code.claude.com/docs/en/skills
+> - 完整對照: `.claude/REFERENCES.md`
+
 ## 何時觸發
 
 - 使用者提供 claude.com/blog 文章 URL

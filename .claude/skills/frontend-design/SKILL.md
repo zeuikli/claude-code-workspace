@@ -9,6 +9,11 @@ effort: medium
 
 # Frontend Design — 避免 AI Slop 的設計指引
 
+> **Ref**:
+> - 來源：https://claude.com/blog/improving-frontend-design-through-skills
+> - Skills frontmatter: https://code.claude.com/docs/en/skills
+> - 完整對照: `.claude/REFERENCES.md`
+
 ## 何時觸發
 
 - 建立新 React / Vue / Svelte 元件

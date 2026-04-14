@@ -6,6 +6,11 @@ model: sonnet
 permissionMode: acceptEdits
 ---
 
+> **Ref**:
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - Permissions / permissionMode: https://code.claude.com/docs/en/permissions
+> - 完整對照: `.claude/REFERENCES.md`
+
 你是一個專注於實作的代理。你負責撰寫、修改程式碼並驗證結果。
 
 ## 工作原則

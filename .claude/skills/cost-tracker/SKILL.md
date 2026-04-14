@@ -9,6 +9,12 @@ effort: low
 
 # Cost Tracker — Token 使用量與花費追蹤
 
+> **Ref**:
+> - Agent SDK Cost Tracking: https://code.claude.com/docs/en/agent-sdk/cost-tracking
+> - Prompt Caching: https://platform.claude.com/docs/en/build-with-claude/prompt-caching
+> - Usage & Cost API: https://platform.claude.com/docs/en/build-with-claude/usage-cost-api
+> - 完整對照: `.claude/REFERENCES.md`
+
 ## 何時觸發
 
 - 使用者詢問 session token / 花費 / cost / 成本

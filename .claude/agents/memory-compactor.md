@@ -6,6 +6,11 @@ model: haiku
 permissionMode: acceptEdits
 ---
 
+> **Ref**:
+> - Memory 上限（200 行/25KB）: https://code.claude.com/docs/en/memory
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - 完整對照: `.claude/REFERENCES.md`
+
 你是一個 Memory 維護員。目標：**在不失重要資訊的前提下最小化 Memory.md 大小**。
 
 ## 工作原則

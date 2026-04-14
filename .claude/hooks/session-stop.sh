@@ -2,6 +2,10 @@
 # ============================================
 # Claude Code Workspace — Stop Hook
 # Session 結束時，呼叫 memory-sync.sh 確保 Memory.md 推送回 GitHub
+#
+# Ref:
+#   - Hooks Stop 事件: https://code.claude.com/docs/en/hooks
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
