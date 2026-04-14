@@ -7,17 +7,21 @@
 將以下 Prompt 貼進任何 Claude Code session 即可立即套用所有設定：
 
 ```
-請執行：DIR=/tmp/claude-code-workspace; ([ -d "$DIR/.git" ] && git -C "$DIR" pull -q origin main || (rm -rf "$DIR" 2>/dev/null; git clone --depth 1 -q https://github.com/zeuikli/claude-code-workspace.git "$DIR")) && mkdir -p ~/.claude && printf "@${DIR}/CLAUDE.md\n@${DIR}/Memory.md\n" > ~/.claude/CLAUDE.md
+請執行：DIR="${CLAUDE_CODE_REMOTE:+/tmp/claude-code-workspace}"; DIR="${DIR:-$HOME/claude-code-workspace}"; ([ -d "$DIR/.git" ] && git -C "$DIR" pull -q origin main || (rm -rf "$DIR" 2>/dev/null; git clone --depth 1 -q https://github.com/zeuikli/claude-code-workspace.git "$DIR")) && mkdir -p ~/.claude && printf "@${DIR}/CLAUDE.md\n@${DIR}/Memory.md\n" > ~/.claude/CLAUDE.md
 
 完成後依序讀取並遵循：
-1. /tmp/claude-code-workspace/CLAUDE.md（專案指令與規則）
-2. /tmp/claude-code-workspace/Memory.md（對話記憶，恢復上下文）
+1. ${DIR}/CLAUDE.md（專案指令與規則）
+2. ${DIR}/Memory.md（對話記憶，恢復上下文）
 ```
 
-> **改版說明**：
-> - **正確邏輯**：先判斷 `.git` 是否存在 → 有則 pull，無（或目錄損壞）則清除後重新 clone
-> - **完整載入**：同步讀取 `Memory.md`，確保對話記憶與工作進度正確恢復
-> - **全域持久化**：自動寫入 `~/.claude/CLAUDE.md`，後續 session 無需再貼指令即可自動載入
+> **環境對照**：
+>
+> | | 電腦版 CLI / Desktop | 雲端版（iOS / Android / Web）|
+> |---|---|---|
+> | 偵測方式 | `CLAUDE_CODE_REMOTE` 不存在 | `CLAUDE_CODE_REMOTE=true` |
+> | Clone 目標 | `~/claude-code-workspace`（持久）| `/tmp/claude-code-workspace`（session 內）|
+> | `~/.claude/CLAUDE.md` | 寫入後跨 session 永久有效 | 由 SessionStart Hook 每次自動重建 |
+> | 重開機後是否需再貼 | ❌ 不需要（路徑持久）| ❌ 不需要（Hook 自動處理）|
 
 ## 專案概述
 
