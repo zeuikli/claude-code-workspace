@@ -1,28 +1,18 @@
 #!/bin/bash
-
 # ============================================
-# Claude Code Workspace — Session Stop Hook
-# Stop: session 結束時自動觸發 Memory.md 同步
-# 確保每次對話結束後記憶都備份到 GitHub
+# Claude Code Workspace — Stop Hook
+# Session 結束時記錄日誌
+# 記憶由官方 Auto Memory 自動管理，無需手動同步
+#
+# Ref:
+#   - Hooks Stop 事件: https://code.claude.com/docs/en/hooks
+#   - Auto Memory: https://code.claude.com/docs/en/memory
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
-# 判斷環境
-if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then
-  WORKSPACE_DIR="/tmp/claude-code-workspace"
-else
-  WORKSPACE_DIR="$HOME/claude-code-workspace"
-fi
+LOG_FILE="$HOME/.claude/session-events.log"
+mkdir -p "$(dirname "$LOG_FILE")"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Session stopped" >> "$LOG_FILE"
 
-# 確認 workspace 存在
-if [ ! -d "$WORKSPACE_DIR/.git" ]; then
-  exit 0
-fi
-
-# 觸發 Memory.md 同步（非同步執行，不阻塞 session 關閉）
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-if [ -f "$SCRIPT_DIR/memory-sync.sh" ]; then
-  bash "$SCRIPT_DIR/memory-sync.sh" &
-fi
-
-echo "[session-stop] Memory sync triggered"
+echo "[session-stop] Session ended. Auto Memory handles cross-session persistence."
 exit 0

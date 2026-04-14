@@ -1,4 +1,5 @@
 {
+  "autoMemoryEnabled": true,
   "env": {
     "CLAUDE_ENABLE_STREAM_WATCHDOG": "1",
     "CLAUDE_STREAM_IDLE_TIMEOUT_MS": "120000",
@@ -18,16 +19,51 @@
         ]
       }
     ],
-    "PreToolUse": [
+    "InstructionsLoaded": [
       {
-        "matcher": "read",
+        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/memory-pull.sh\""
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/instructions-loaded.sh\""
           }
         ]
-      },
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/user-prompt-submit.sh\""
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-start.sh\""
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-stop.sh\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
       {
         "matcher": "bash",
         "hooks": [
@@ -38,13 +74,24 @@
         ]
       }
     ],
-    "PostToolUse": [
+    "PreCompact": [
       {
-        "matcher": "write|edit",
+        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/memory-update-hook.sh\""
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre-compact.sh\""
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/post-compact.sh\""
           }
         ]
       }

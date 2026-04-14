@@ -4,6 +4,34 @@
 
 ---
 
+## 2026-04-14 (auto-memory-migration) — Session 9 官方 Auto Memory 遷移 + P0 全面優化
+
+### 重大架構變更
+- **切換至官方 Auto Memory**：移除自製 Memory.md git push 鏈，改用 Claude Code 內建 `autoMemoryEnabled: true`
+  - 記憶存於 `~/.claude/projects/<project>/memory/`，Claude 自動累積跨 session 知識
+  - 使用 `/memory` 指令查看或編輯 Auto Memory 內容
+  - 無需 PreToolUse:read / PostToolUse:write / Stop memory-sync hooks
+
+### P0 優化（Context Token 大幅削減）
+- `CLAUDE.md`：移除 `@README.md` / `@Memory.md` / `@CHANGELOG.md` 三大自動載入（省 ~6k tokens）；改用 `@.claude/rules/*.md` 模組化（僅載入 rules）；加入 Auto Memory 說明
+- `settings.json`：加入 `autoMemoryEnabled: true`；移除 PreToolUse:read（memory-pull）/ PostToolUse:write|edit（memory-update）hooks；補齊完整 9 種 Hook 事件（+InstructionsLoaded / UserPromptSubmit / SubagentStart / SubagentStop / PreCompact / PostCompact）
+- `session-init.sh`：升級至 v4，移除 Memory.md 引用；採用 5MB threshold 智能 partial clone；增加毫秒計時
+- `README.md`：全面精簡，快速開始指令移除 Memory.md 引用，加入 Auto Memory 說明
+
+### 同步更新
+- `.claude/rules/context-management.md`：更新說明至 Auto Memory 架構
+- `.claude/rules/auto-sync.md`：更新說明至新 9 hook 架構
+- `.claude/hooks/pre-compact.sh`：提醒改為 Auto Memory + TodoWrite
+- `.claude/hooks/post-compact.sh`：恢復提示改為 `/memory` 指令
+- `.claude/hooks/session-stop.sh`：移除 memory-sync，改為記錄日誌
+
+### 效益指標
+- Auto-load token：~10.6k → ~3.9k tokens（**−63%**）
+- Memory 同步延遲：移除（官方 Auto Memory 即時處理）
+- Hook 事件：4 → **9 種**（SessionStart / InstructionsLoaded / UserPromptSubmit / SubagentStart / SubagentStop / PreToolUse:bash / PreCompact / PostCompact / Stop）
+
+---
+
 ## 2026-04-14 (workspace-integrity-optimization)
 
 ### 修復
