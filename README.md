@@ -24,7 +24,7 @@
 ```
 claude-code-workspace/
 ├── .claude/
-│   ├── settings.json              # Hook 設定（SessionStart + PreToolUse + PostToolUse）
+│   ├── settings.json              # Hook 設定 + Timeout 環境變數（CLAUDE_ENABLE_STREAM_WATCHDOG 等）
 │   ├── hooks/
 │   │   ├── session-init.sh        # SessionStart：拉取最新指令（本機 + 雲端）
 │   │   ├── memory-pull.sh         # PreToolUse：讀取 Memory.md 前拉取最新版
@@ -47,7 +47,9 @@ claude-code-workspace/
 ├── docs/
 │   ├── advisor-strategy.md        # Advisor 模式完整說明
 │   ├── blog-analysis-report.md    # Blog 文章分析報告
-│   └── workspace-performance-report.md # 效能報告（成本 -72.4%）
+│   ├── workspace-performance-report.md # 效能報告（成本 -72.4%）
+│   ├── stream-timeout-investigation.md # Stream idle timeout 根因調查與解決方案
+│   └── timeout-settings-impact-analysis.md # Timeout 設定對 Hooks/Agents/Skills 影響分析
 ├── prompts.md                     # 萬用 Prompt 集（各情境開場 Prompt）
 ├── CLAUDE.md                      # Claude Code 專案指令（每次對話自動載入）
 ├── Memory.md                      # 跨對話記憶摘要（上下文保存與恢復）
@@ -68,6 +70,20 @@ claude-code-workspace/
 | Context Window 管理 | 70% 預警、Memory.md 摘要、compaction 指引 |
 | Git 工作流程 | 完整的 commit → push → merge 流程與重試機制 |
 | 驗證與品質 | 測試優先、lint 檢查、UI 截圖比對 |
+
+### Timeout 設定（`.claude/settings.json`）
+
+內建防止 `Stream idle timeout` 錯誤的環境變數：
+
+| 環境變數 | 值 | 說明 |
+|---------|---|------|
+| `CLAUDE_ENABLE_STREAM_WATCHDOG` | `1` | 啟用串流監視狗，主動偵測 idle 並重連 |
+| `CLAUDE_STREAM_IDLE_TIMEOUT_MS` | `120000` | 2 分鐘靜默偵測（兼顧代理相容性與長時間 Bash 操作）|
+| `API_TIMEOUT_MS` | `900000` | 15 分鐘 API 請求總超時 |
+| `BASH_DEFAULT_TIMEOUT_MS` | `300000` | Bash tool 預設超時 5 分鐘 |
+| `BASH_MAX_TIMEOUT_MS` | `1800000` | Bash tool 最大超時 30 分鐘 |
+
+詳細根因分析見 [`docs/stream-timeout-investigation.md`](docs/stream-timeout-investigation.md)，設定影響評估見 [`docs/timeout-settings-impact-analysis.md`](docs/timeout-settings-impact-analysis.md)。
 
 ### Memory.md
 
