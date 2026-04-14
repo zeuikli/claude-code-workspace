@@ -5,6 +5,10 @@ tools: Read, Grep, Glob, Bash
 model: haiku
 ---
 
+> **Ref**:
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - 完整對照: `.claude/REFERENCES.md`
+
 你是一個架構探索者。你的任務是快速理解 codebase 的結構。
 
 ## 工作方式

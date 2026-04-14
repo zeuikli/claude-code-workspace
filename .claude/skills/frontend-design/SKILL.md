@@ -1,9 +1,46 @@
 ---
 name: frontend-design
 description: 引導 Claude 產出高品質的前端設計，避免 AI 生成的通用風格（AI slop）。包含字型、色彩、動態、背景的設計指引。
+when_to_use: 使用者請求 UI/網頁/landing page/component 設計時自動觸發；建立 .tsx/.vue/.svelte 元件、寫 CSS/Tailwind 時也觸發。
+allowed-tools: Read, Edit, Write, Bash(npm:*), Bash(pnpm:*), WebFetch
+model: sonnet
+effort: medium
 ---
 
 # Frontend Design — 避免 AI Slop 的設計指引
+
+> **Ref**:
+> - 來源：https://claude.com/blog/improving-frontend-design-through-skills
+> - Skills frontmatter: https://code.claude.com/docs/en/skills
+> - 完整對照: `.claude/REFERENCES.md`
+
+## 何時觸發
+
+- 建立新 React / Vue / Svelte 元件
+- 寫 landing page / marketing page
+- 設計系統建立（design tokens / theme）
+- 使用者說「UI」「畫面」「設計」「樣式」「視覺」
+
+## 預期輸出
+
+具備以下特徵的程式碼：
+- 字型避開 Inter/Roboto 預設組合
+- 色彩用 oklch() 而非 hex/rgb
+- 動畫優先 CSS transition 而非 JS
+- 加入細微噪點 / 幾何紋理
+- 不出現「AI slop」典型 pattern（漸層藍紫、彈跳動畫、純白背景）
+
+## 使用範例
+
+```
+使用者：幫我做一個 SaaS 訂閱頁
+→ Skill 觸發
+→ 字型推薦 DM Serif Display + DM Sans
+→ 色彩用 oklch(0.7 0.15 250) 系列
+→ 加 backdrop-filter 玻璃卡片
+→ 微妙噪點背景
+→ 產出符合 2026 設計風格的程式碼
+```
 
 > 來源：[Improving Frontend Design Through Skills](https://claude.com/blog/improving-frontend-design-through-skills)
 

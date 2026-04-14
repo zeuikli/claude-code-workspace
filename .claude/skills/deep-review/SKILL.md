@@ -1,9 +1,40 @@
 ---
 name: deep-review
 description: 對 staged changes 執行三維度平行審查（安全、效能、風格），合成優先排序的發現摘要。
+when_to_use: 使用者執行 git commit / push / merge 前，或明確說「審查」「review」「check」時自動建議；CLAUDE.md 規定 commit 前必跑此 Skill。
+allowed-tools: Read, Grep, Glob, Bash(git diff:*), Bash(git log:*), Agent
+model: sonnet
+effort: high
+context: fork
 ---
 
 # Deep Review — 三維度平行程式碼審查
+
+> **Ref**: Skills frontmatter 完整欄位 — https://code.claude.com/docs/en/skills ｜ 完整對照 `.claude/REFERENCES.md`
+
+## 何時觸發
+
+- `git commit` 之前（已由 `pre-commit-review.sh` hook 提醒）
+- `git push` 之前
+- PR 開啟前
+- 使用者明確說「審查 staged changes」「review」
+
+## 預期輸出
+
+依優先級排序的發現清單：
+- 🔴 Critical（必修）→ 🟡 Warning（建議）→ 🔵 Info（可選）
+- 每項含 `file:line` 引用 + 具體修復建議
+- 三個 sub agent 平行跑，總用時 < 主線單人審查的 1/3
+
+## 使用範例
+
+```
+使用者：我準備 commit，請先 deep-review
+→ 平行啟動 security-reviewer + performance-reviewer + style-reviewer
+→ 各自分析 git diff --staged
+→ Coordinator 合併三個結果按優先級排序
+→ 輸出統一報告 + 修復建議
+```
 
 對目前的 staged changes 執行以下三個平行審查：
 

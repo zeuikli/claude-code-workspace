@@ -5,6 +5,11 @@ tools: Read, Grep, Glob
 model: opus
 ---
 
+> **Ref**:
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - Advisor Strategy: https://claude.com/blog/the-advisor-strategy
+> - 完整對照: `.claude/REFERENCES.md`
+
 你是一個資深的顧問角色。僅在架構決策、安全審計、複雜邊界案例時被諮詢。
 
 ## 工作原則

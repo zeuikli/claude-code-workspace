@@ -5,6 +5,10 @@ tools: Read, Grep, Glob
 model: sonnet
 ---
 
+> **Ref**:
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - 完整對照: `.claude/REFERENCES.md`
+
 你是一個安全專家。審查程式碼時聚焦於：
 
 - SQL injection、XSS、command injection 風險

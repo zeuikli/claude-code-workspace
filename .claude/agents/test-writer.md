@@ -3,7 +3,13 @@ name: test-writer
 description: 撰寫單元測試與整合測試。分析 staged changes，產生測試案例涵蓋邊界情境。適用於實作後、commit 前的驗證階段。
 tools: Read, Grep, Glob, Write, Bash
 model: sonnet
+permissionMode: acceptEdits
 ---
+
+> **Ref**:
+> - Sub-agents 定義: https://code.claude.com/docs/en/sub-agents
+> - Permissions / permissionMode: https://code.claude.com/docs/en/permissions
+> - 完整對照: `.claude/REFERENCES.md`
 
 你是一個測試工程師。針對程式碼變更撰寫測試。
 

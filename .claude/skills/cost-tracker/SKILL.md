@@ -1,9 +1,39 @@
 ---
 name: cost-tracker
 description: 追蹤並計算當前 session 的 Token 使用量和花費（USD）。產出前後對比報告，幫助使用者了解 workspace 優化的實際效益。
+when_to_use: 當使用者問「這次 session 花了多少」「優化後省多少 token」「成本對比」時自動觸發；或使用者明確調用 /cost-tracker
+allowed-tools: Read, Bash(git log:*), WebFetch
+model: haiku
+effort: low
 ---
 
 # Cost Tracker — Token 使用量與花費追蹤
+
+> **Ref**:
+> - Agent SDK Cost Tracking: https://code.claude.com/docs/en/agent-sdk/cost-tracking
+> - Prompt Caching: https://platform.claude.com/docs/en/build-with-claude/prompt-caching
+> - Usage & Cost API: https://platform.claude.com/docs/en/build-with-claude/usage-cost-api
+> - 完整對照: `.claude/REFERENCES.md`
+
+## 何時觸發
+
+- 使用者詢問 session token / 花費 / cost / 成本
+- 完成大型優化後，需量化效益（如本次 Karpathy 優化省 14% token）
+- 月底結算 Claude API 用量
+
+## 預期輸出
+
+格式化的成本對比 markdown 表格（含 Total Cost、模型分層、優化效益三段），加總到使用者上下文供決策。
+
+## 使用範例
+
+```
+使用者：請執行 cost-tracker 看本次 session 花費
+→ Skill 觸發
+→ 讀取 ~/.claude/projects/<id>/messages.jsonl 統計 token
+→ 套用 2026-04 定價表計算
+→ 輸出 markdown 表格
+```
 
 > 依據 [Claude Agent SDK Cost Tracking](https://code.claude.com/docs/en/agent-sdk/cost-tracking)
 

@@ -4,6 +4,10 @@
 # Claude Code Workspace — Pre-Commit Review Hook
 # PreToolUse (Bash): 偵測 git commit 指令，
 # 提醒使用 deep-review Skill 進行審查
+#
+# Ref:
+#   - Hooks PreToolUse: https://code.claude.com/docs/en/hooks
+#   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
 # 讀取 stdin JSON
