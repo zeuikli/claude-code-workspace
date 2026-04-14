@@ -7,7 +7,7 @@
 將以下 Prompt 貼進任何 Claude Code session 即可立即套用所有設定：
 
 ```
-請執行：DIR="${CLAUDE_CODE_REMOTE:+/tmp/claude-code-workspace}"; DIR="${DIR:-$HOME/claude-code-workspace}"; ([ -d "$DIR/.git" ] && git -C "$DIR" pull -q origin main || (rm -rf "$DIR" 2>/dev/null; git clone --depth 1 -q https://github.com/zeuikli/claude-code-workspace.git "$DIR")) && mkdir -p ~/.claude && printf "@${DIR}/CLAUDE.md\n@${DIR}/Memory.md\n" > ~/.claude/CLAUDE.md
+請執行：DIR="${CLAUDE_CODE_REMOTE:+/tmp/claude-code-workspace}"; DIR="${DIR:-$HOME/claude-code-workspace}"; command -v git >/dev/null 2>&1 && (([ -d "$DIR/.git" ] && git -C "$DIR" pull -q origin main || (rm -rf "$DIR" 2>/dev/null; git clone --depth 1 -q https://github.com/zeuikli/claude-code-workspace.git "$DIR")) && mkdir -p ~/.claude && printf "@${DIR}/CLAUDE.md\n@${DIR}/Memory.md\n" > ~/.claude/CLAUDE.md)
 
 完成後依序讀取並遵循：
 1. ${DIR}/CLAUDE.md（專案指令與規則）
@@ -20,6 +20,7 @@
 > |---|---|---|
 > | 偵測方式 | `CLAUDE_CODE_REMOTE` 不存在 | `CLAUDE_CODE_REMOTE=true` |
 > | Clone 目標 | `~/claude-code-workspace`（持久）| `/tmp/claude-code-workspace`（session 內）|
+> | git 可用性 | `command -v git` 通過才執行 | `command -v git` 通過才執行 |
 > | `~/.claude/CLAUDE.md` | 寫入後跨 session 永久有效 | 由 SessionStart Hook 每次自動重建 |
 > | 重開機後是否需再貼 | ❌ 不需要（路徑持久）| ❌ 不需要（Hook 自動處理）|
 
