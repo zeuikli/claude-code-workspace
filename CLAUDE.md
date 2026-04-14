@@ -8,8 +8,9 @@
 - **IMPORTANT**: 中文對話用**台灣繁體中文**，英文對話用英文。
 - **IMPORTANT**: 能用 Sub Agent 處理的請求**優先委派 Sub Agent**，主對話僅接收摘要。
 - **IMPORTANT**: 採 Advisor 模式 — Haiku/Sonnet 執行、Opus 顧問（僅關鍵架構決策時諮詢）。
-- **IMPORTANT**: Context 接近 70% 時更新 `Memory.md` 並提醒使用者開新對話。
+- **IMPORTANT**: Context 接近 70% 時提醒使用者開新對話。
 - **IMPORTANT**: 改動完成後 `git add → commit → push -u origin <branch>`（失敗重試 4 次）。
+- **IMPORTANT**: 跨對話記憶由 **官方 Auto Memory** 自動管理（`/memory` 指令），無需手動維護。
 
 ## 規則索引（按需載入）
 
@@ -20,7 +21,6 @@
 - @.claude/rules/context-management.md — Context 與 compaction 管理
 - @.claude/rules/git-workflow.md — Git 自動化流程
 - @.claude/rules/quality.md — 測試與驗證
-- @.claude/rules/auto-sync.md — Hook 自動化機制
 
 ## 進階文件（lazy-load，**不主動載入**）
 
@@ -28,13 +28,9 @@
 
 - `docs/INDEX.md` — 進階文件總索引
 - `docs/advisor-strategy.md` — Advisor 模式完整論述
-- `docs/blog-analysis-report.md` — 22 篇 Anthropic Blog 洞察
-- `docs/workspace-performance-report.md` — 效能基準與優化紀錄
+- `docs/timeout-guide.md` — Timeout 設定完整指南
 - `.claude/REFERENCES.md` — **官方文件對照表（所有設計決策的 URL 來源）**
 
 ## 參考文件
 
-- @README.md — 專案總覽
-- @Memory.md — 跨對話記憶
-- @CHANGELOG.md — 變更紀錄
 - @prompts.md — 萬用 Prompt

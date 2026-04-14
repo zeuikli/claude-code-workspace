@@ -4,13 +4,12 @@ set -e
 # ============================================
 # Claude Code Workspace — SessionStart Hook
 # 本機 + 雲端通用：確保每次 session 載入最新指令
-# v3: 加入 5MB threshold 智能判斷 partial clone
-#     - repo > 5MB 才用 --filter=blob:none（協商開銷划算）
-#     - repo < 5MB 用傳統 shallow clone（避免協商開銷反拖慢）
+# v4: 移除 Memory.md 引用（改由官方 Auto Memory 管理）
+#     保留 5MB threshold 智能判斷 partial clone
 #
 # Ref:
 #   - Hooks 事件: https://code.claude.com/docs/en/hooks
-#   - Partial Clone 5MB threshold: https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/
+#   - Auto Memory: https://code.claude.com/docs/en/memory
 #   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
@@ -36,7 +35,6 @@ _should_use_filter() {
     size=$(du -sb "$target_dir/.git" 2>/dev/null | awk '{print $1}')
     [ -n "$size" ] && [ "$size" -gt "$SIZE_THRESHOLD_BYTES" ]
   else
-    # 無本地 repo，檢查 remote 大小不切實際 → 預設不用 filter
     return 1
   fi
 }
@@ -49,7 +47,6 @@ if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then
 
   FETCH_START=$(_ms_now)
   if [ -d "$TARGET_DIR/.git" ]; then
-    # 智能選擇 filter 策略
     if _should_use_filter "$TARGET_DIR"; then
       git -C "$TARGET_DIR" fetch --quiet --depth 1 --no-tags --filter=blob:none origin main 2>/dev/null || \
         git -C "$TARGET_DIR" fetch --quiet --depth 1 --no-tags origin main 2>/dev/null || true
@@ -60,17 +57,16 @@ if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then
     fi
     git -C "$TARGET_DIR" reset --quiet --hard FETCH_HEAD 2>/dev/null || true
   else
-    # Cold clone：小 repo 不用 filter（協商開銷不划算）
     git clone --quiet --depth 1 --no-tags "$CONFIG_REPO" "$TARGET_DIR" 2>/dev/null || true
     FETCH_MODE="clone+shallow"
   fi
   FETCH_END=$(_ms_now)
   FETCH_ELAPSED=$(( FETCH_END - FETCH_START ))
 
+  # 建立全域 CLAUDE.md（僅引用 CLAUDE.md，Memory 由官方 Auto Memory 管理）
   mkdir -p ~/.claude
   cat > ~/.claude/CLAUDE.md << EOF
 @${TARGET_DIR}/CLAUDE.md
-@${TARGET_DIR}/Memory.md
 EOF
 
   INIT_END=$(_ms_now)
@@ -109,11 +105,11 @@ else
     exit 0
   fi
 
+  # 確保全域 CLAUDE.md 存在（僅引用 CLAUDE.md，Memory 由官方 Auto Memory 管理）
   mkdir -p ~/.claude
   if [ ! -f ~/.claude/CLAUDE.md ] || ! grep -q "claude-code-workspace/CLAUDE.md" ~/.claude/CLAUDE.md 2>/dev/null; then
     cat > ~/.claude/CLAUDE.md << EOF
 @~/claude-code-workspace/CLAUDE.md
-@~/claude-code-workspace/Memory.md
 EOF
     echo "[session-init] Local: created ~/.claude/CLAUDE.md"
   fi

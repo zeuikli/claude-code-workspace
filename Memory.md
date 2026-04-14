@@ -4,6 +4,28 @@
 
 ---
 
+## Session 9 — 2026-04-14（官方 Auto Memory 遷移 + P0 全面優化）
+
+### 完成事項
+- **官方 Auto Memory 遷移**（`autoMemoryEnabled: true`）：移除 memory-pull / memory-update / memory-sync hooks，改用 `~/.claude/projects/<project>/memory/` 官方管理
+- **CLAUDE.md P0 優化**：移除 @README / @Memory / @CHANGELOG 大型自動載入（省 ~6.7k tokens）；改用 @rules/*.md 模組化架構
+- **settings.json 升級**：9 種 Hook 事件（+5 新增），autoMemoryEnabled:true，移除舊 memory hooks
+- **session-init.sh v4**：移除 Memory.md 引用，保留 5MB threshold 智能 clone
+- **hooks 全面更新**：pre-compact / post-compact / session-stop / rules/*.md 同步反映 Auto Memory
+- **README.md 精簡**：快速開始指令更新（移除 Memory.md），新增 Auto Memory 說明
+
+### 關鍵決策
+- 官方 Auto Memory 取代自製 git push 鏈：官方方案由 Claude 智能決定何時記憶，更符合設計原則
+- 快速開始指令僅引用 CLAUDE.md（不再需要 Memory.md 引用）
+- Memory.md 保留作歷史存檔，不再在主流程中扮演角色
+
+### 效益
+- Auto-load token：~10.6k → ~3.9k tokens（−63%）
+- Hook 事件：4 → 9 種
+- 移除 3 個 memory hooks（memory-pull / memory-update / memory-sync on stop）
+
+---
+
 ## Session 6 — 2026-04-14（Karpathy 風格全面優化）
 
 ### 完成事項（P0-P2 全數實作 / 10 項）
