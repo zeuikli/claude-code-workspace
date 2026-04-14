@@ -200,3 +200,56 @@ jobs:
           done
 
           exit $FAILED
+
+  markdown-lint:
+    name: Markdown Lint & Internal Link Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2
+
+      - name: Run markdownlint (non-blocking, warnings only)
+        run: |
+          markdownlint-cli2 \
+            "**/*.md" \
+            "#node_modules" \
+            "#docs/blog-archive" \
+            --config .markdownlint.json 2>&1 || echo "WARN: markdown lint found issues (non-blocking)"
+        continue-on-error: true
+
+      - name: Check internal @ links
+        run: |
+          python3 - <<'EOF'
+          import os, re, sys
+
+          broken = []
+          # Scan CLAUDE.md and .claude/rules/*.md
+          targets = ["CLAUDE.md"]
+          rules_dir = ".claude/rules"
+          if os.path.isdir(rules_dir):
+              targets += [os.path.join(rules_dir, f) for f in os.listdir(rules_dir) if f.endswith(".md")]
+
+          for md in targets:
+              if not os.path.isfile(md):
+                  continue
+              with open(md, encoding="utf-8") as f:
+                  content = f.read()
+              # Match @path/to/file.md (exclude @~/ and @/absolute/)
+              refs = re.findall(r'@([a-zA-Z0-9_./-]+\.md)', content)
+              for ref in refs:
+                  if ref.startswith("/") or ref.startswith("~"):
+                      continue
+                  if not os.path.isfile(ref):
+                      broken.append(f"{md}: broken @ link -> {ref}")
+
+          if broken:
+              print("\n".join(broken))
+              sys.exit(1)
+          print("All @ links valid")
+          EOF
+
+      - name: Run healthcheck script
+        run: bash scripts/healthcheck.sh

@@ -40,30 +40,12 @@
 
 ---
 
-## 4. 新專案初始化
+## 4. 新專案初始化（簡化版）
 
-適用於：第一次在某個專案中設定自動載入。
+> 📝 **注意**：實務上直接複製 `.claude/settings.json` 的 `SessionStart` hook 即可，範例見 [README.md](README.md)。本 Prompt 僅作參考。
 
 ```
-請幫我在這個專案建立 .claude/settings.json，加入 SessionStart Hook 來自動載入我的 workspace 設定：
-
-{
-  "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash -c 'REPO=https://github.com/zeuikli/claude-code-workspace.git; DIR=/tmp/claude-code-workspace; if [ -d $DIR/.git ]; then git -C $DIR pull -q origin main; else git clone -q --depth 1 $REPO $DIR; fi; mkdir -p ~/.claude; echo \"@${DIR}/CLAUDE.md\" > ~/.claude/CLAUDE.md; echo \"@${DIR}/Memory.md\" >> ~/.claude/CLAUDE.md'"
-          }
-        ]
-      }
-    ]
-  }
-}
-
-設定完成後 commit 並 push。之後每次開 session 都會自動載入。
+請幫這個專案建立 .claude/settings.json，複製 zeuikli/claude-code-workspace 的 SessionStart hook 設定並 push。
 ```
 
 ---
@@ -83,15 +65,10 @@
 
 ---
 
-## 6. 結束 Session 時
+## 6. 結束 Session 時（已自動化，保留作手動觸發）
 
-適用於：session 結束前，確保記憶保存。
+> 📝 **注意**：`Stop` hook + `memory-update-hook.sh` 已自動處理 Memory.md commit/push。本 Prompt 僅用於手動補記。
 
 ```
-請更新 /tmp/claude-code-workspace/Memory.md，記錄本次 session 的：
-- 完成事項
-- 已修改的檔案清單
-- 關鍵決策與技術選型
-- 下一步待辦事項
-然後 commit 並 push 回 GitHub。
+請更新 Memory.md 紀錄本次 session：完成事項、修改檔案、關鍵決策、待辦事項。Hook 會自動 push。
 ```

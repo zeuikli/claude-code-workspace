@@ -4,6 +4,45 @@
 
 ---
 
+## 2026-04-14 (claude/karpathy-optimization-merged-FVPnF) — Session 7 二次深度優化
+
+### 新增（11 檔）
+- `.claude/agents/code-reviewer.md` — Opus 程式碼層級審查（與 security/architecture 分離）
+- `.claude/agents/doc-writer.md` — Haiku 自動文件生成
+- `.claude/agents/memory-compactor.md` — Haiku 預壓縮 Memory.md（超 200 行時觸發）
+- `.claude/hooks/memory-archive.sh` — 200 行/25KB 自動歸檔至 `Memory-archive-YYYY-MM.md`
+- `.claude/hooks/subagent-start.sh` / `subagent-stop.sh` — 監控 Advisor 策略落實度
+- `.claude/hooks/user-prompt-submit.sh` — 每次 prompt 注入 Sub Agent 提醒
+- `.markdownlint.json` — CI markdown lint 設定
+- `docs/auto-memory-hybrid.md` — 官方 Auto Memory vs 自製 Memory.md Hybrid 採用指南
+- `docs/hook-lifecycle.md` — 10 hooks + 7 事件 Mermaid sequenceDiagram + 競態防護圖
+- `docs/timeout-guide.md` — 合併兩份 timeout docs（省 ~370 行重複）
+- `docs/session7-followup-report.md` — 本次二次優化完整效益報告
+
+### 優化
+- `.claude/agents/implementer.md` + `test-writer.md` — 加 `permissionMode: acceptEdits`，**解決 sub agent sandbox 失敗根因**
+- `.claude/hooks/session-init.sh` — 5MB threshold 智能判斷 partial clone
+- `.claude/hooks/memory-sync.sh` — 加 `flock` 全域序列化，**消除 race condition**
+- `.claude/hooks/memory-pull.sh` — SC2164 修正
+- `.claude/settings.json` — Hook 事件 7→10 種（+UserPromptSubmit / SubagentStart / SubagentStop）
+- `.claude/skills/*/SKILL.md` — 5 個 Skill 全面升級 frontmatter + 補「何時觸發/預期輸出/範例」
+- `.github/workflows/ci.yml` — 新增 `markdown-lint` job + 內部 @ 連結檢查 + healthcheck 整合
+- `scripts/healthcheck.sh` — 33 → **62 項檢查**（+88%），加 Memory 大小、env vars、Hook 覆蓋率
+- `prompts.md` — #4 / #6 瘦身（功能已被 Hook 取代）
+
+### 刪除
+- `docs/stream-timeout-investigation.md` + `docs/timeout-settings-impact-analysis.md`（合併至 `timeout-guide.md`）
+
+### 效益指標
+- 健康檢查：33 → **62 PASS / 0 WARN / 0 FAIL**
+- Hook 事件：7 → **10 種**
+- Agent：6 → **9 個**
+- shellcheck：全綠
+- SessionStart elapsed：381-412ms（5MB threshold 避免退化）
+- **官方文件對齊**：100%（24 次 WebSearch 查證）
+
+---
+
 ## 2026-04-14 (karpathy-optimization-merged-FVPnF) — Session 6 全面優化
 
 ### 新增（架構層）

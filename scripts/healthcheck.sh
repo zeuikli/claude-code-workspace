@@ -283,6 +283,90 @@ else
 fi
 
 # ============================================================
+# 8. Memory.md 大小監控（對齊官方 200 行 / 25KB 上限）
+# ============================================================
+echo ""
+echo "--- Memory.md Size Monitor ---"
+MEMORY_MD="$WORKSPACE_DIR/Memory.md"
+if [ ! -f "$MEMORY_MD" ]; then
+  warn "Memory.md 不存在（首次 session 前正常）"
+else
+  MEM_LINES=$(wc -l < "$MEMORY_MD")
+  MEM_BYTES=$(wc -c < "$MEMORY_MD")
+  if [ "$MEM_LINES" -gt 200 ] || [ "$MEM_BYTES" -gt 25600 ]; then
+    warn "Memory.md 過大：$MEM_LINES 行 / $MEM_BYTES bytes（上限 200 行 / 25KB，應執行 memory-archive）"
+  else
+    pass "Memory.md 大小正常：$MEM_LINES 行 / $MEM_BYTES bytes"
+  fi
+fi
+
+# ============================================================
+# 9. Timeout 環境變數完整性
+# ============================================================
+echo ""
+echo "--- Timeout Env Variables ---"
+REQUIRED_ENVS=(
+  "CLAUDE_ENABLE_STREAM_WATCHDOG"
+  "CLAUDE_STREAM_IDLE_TIMEOUT_MS"
+  "API_TIMEOUT_MS"
+  "BASH_DEFAULT_TIMEOUT_MS"
+  "BASH_MAX_TIMEOUT_MS"
+)
+if [ -f "$SETTINGS_FILE" ]; then
+  for env_name in "${REQUIRED_ENVS[@]}"; do
+    if grep -q "\"$env_name\"" "$SETTINGS_FILE"; then
+      pass "env.$env_name 已在 settings.json 設定"
+    else
+      warn "env.$env_name 未設定（參考 docs/timeout-guide.md）"
+    fi
+  done
+fi
+
+# ============================================================
+# 10. Hook 事件覆蓋率（檢查 settings.json 引用的 hook 腳本都存在）
+# ============================================================
+echo ""
+echo "--- Hook Event Coverage ---"
+if [ -f "$SETTINGS_FILE" ]; then
+  REFERENCED_HOOKS=$(grep -oE '\.claude/hooks/[a-z-]+\.sh' "$SETTINGS_FILE" | sort -u)
+  for hook_ref in $REFERENCED_HOOKS; do
+    hook_name=$(basename "$hook_ref")
+    if [ -f "$HOOKS_DIR/$hook_name" ]; then
+      pass "settings.json 引用的 $hook_name 存在"
+    else
+      fail "settings.json 引用的 $hook_name 不存在"
+    fi
+  done
+fi
+
+# ============================================================
+# 11. docs/ 內部 @ 連結檢查
+# ============================================================
+echo ""
+echo "--- Internal @ Links ---"
+BROKEN_LINKS=0
+for md in "$WORKSPACE_DIR"/CLAUDE.md "$WORKSPACE_DIR"/.claude/rules/*.md; do
+  [ -f "$md" ] || continue
+  while IFS= read -r line; do
+    ref=$(echo "$line" | grep -oE '@[a-zA-Z0-9_./-]+\.md' | head -1)
+    [ -z "$ref" ] && continue
+    # 去掉 @ 前綴
+    ref_path="${ref#@}"
+    # 忽略 ~/ 開頭（全域檔案）
+    case "$ref_path" in
+      ~/*) continue ;;
+      /*) actual="$ref_path" ;;
+      *) actual="$WORKSPACE_DIR/$ref_path" ;;
+    esac
+    if [ ! -f "$actual" ]; then
+      fail "$(basename "$md") 引用不存在的檔案：$ref"
+      BROKEN_LINKS=$((BROKEN_LINKS + 1))
+    fi
+  done < "$md"
+done
+[ "$BROKEN_LINKS" -eq 0 ] && pass "所有 @ 連結都指向存在的檔案"
+
+# ============================================================
 # 統計結果
 # ============================================================
 echo ""

@@ -1,10 +1,39 @@
 ---
 name: blog-analyzer
 description: 分析 claude.com/blog 的新文章，提取可操作洞察並更新 workspace 設定。手動調用。
+when_to_use: 使用者提供 URL 或文章路徑要求分析、整合洞察到 workspace 時。也適用於每月定期巡檢新發布的 Anthropic 內容。
 disable-model-invocation: true
+allowed-tools: Read, Write, WebFetch, WebSearch
+model: sonnet
+effort: medium
 ---
 
 # Blog Analyzer — 分析 Claude 官方文章
+
+## 何時觸發
+
+- 使用者提供 claude.com/blog 文章 URL
+- 使用者要求「分析這篇文章、看能不能用」
+- 月底 / 季初定期巡檢新內容
+- 注意：本 Skill 為手動觸發（`disable-model-invocation: true`）
+
+## 預期輸出
+
+- 文章分類 + 實用度評分（⭐⭐⭐⭐⭐）
+- 1 句核心洞察摘要
+- 可實作的具體行動清單（不直接修改檔案）
+- 自動 append 到 `docs/blog-analysis-report.md`
+
+## 使用範例
+
+```
+使用者：請用 blog-analyzer 分析 https://claude.com/blog/multi-agent-coordination-patterns
+→ Skill 觸發 WebFetch
+→ 分類為 agent-architecture
+→ 提取 3 個可操作洞察
+→ 產出建議行動：「新增 agent-team Skill」「更新 CLAUDE.md 加入平行規則」
+→ 結果 append 到 docs/blog-analysis-report.md
+```
 
 分析 $ARGUMENTS 指定的文章（URL 或 blog-archive 中的檔案路徑）。
 

@@ -3,6 +3,7 @@ name: implementer
 description: 實作程式碼變更、撰寫測試、執行 lint 與測試。適用於明確的編碼任務，會自行驗證結果。
 tools: Read, Grep, Glob, Edit, Write, Bash
 model: sonnet
+permissionMode: acceptEdits
 ---
 
 你是一個專注於實作的代理。你負責撰寫、修改程式碼並驗證結果。

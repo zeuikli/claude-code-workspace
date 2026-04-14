@@ -3,10 +3,20 @@ set -e
 
 # ============================================
 # Claude Code Workspace — Memory Sync
-# 將 Memory.md 的變更推送回 GitHub
+# v2: 加入全域 flock 序列化，防止 memory-update-hook 與 session-stop
+#     同時觸發造成 git race condition
 # ============================================
 
-CONFIG_REPO="https://github.com/zeuikli/claude-code-workspace.git"
+LOCK_FILE="$HOME/.claude/.memory-sync.lock"
+mkdir -p "$(dirname "$LOCK_FILE")"
+
+# --- 序列化：用 flock 確保同時只有一個 sync 在跑 ---
+exec 200>"$LOCK_FILE"
+if ! flock -n 200; then
+  echo "[memory-sync] Another sync in progress, skipping (flock locked)"
+  exit 0
+fi
+# 退出時自動釋放 lock（exec 200>file + 程式結束）
 
 # --- 定位 workspace 目錄 ---
 if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then
@@ -15,7 +25,6 @@ else
   WORKSPACE_DIR="$HOME/claude-code-workspace"
 fi
 
-# 確認目錄存在
 if [ ! -d "$WORKSPACE_DIR/.git" ]; then
   echo "[memory-sync] Workspace not found at $WORKSPACE_DIR, skipping"
   exit 0
@@ -24,8 +33,8 @@ fi
 cd "$WORKSPACE_DIR"
 
 # --- 檢查 Memory.md 是否有變更 ---
-if git diff --quiet HEAD -- Memory.md 2>/dev/null && git diff --quiet --staged -- Memory.md 2>/dev/null; then
-  # 沒有變更，不需要同步
+if git diff --quiet HEAD -- Memory.md 2>/dev/null && \
+   git diff --quiet --staged -- Memory.md 2>/dev/null; then
   exit 0
 fi
 
@@ -48,7 +57,7 @@ for i in $(seq 1 $MAX_RETRIES); do
     exit 0
   fi
   echo "[memory-sync] Push failed, retrying in ${RETRY_DELAY}s... ($i/$MAX_RETRIES)"
-  sleep $RETRY_DELAY
+  sleep "$RETRY_DELAY"
   RETRY_DELAY=$((RETRY_DELAY * 2))
 done
 
