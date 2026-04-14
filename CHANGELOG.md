@@ -4,14 +4,15 @@
 
 ---
 
-## 2026-04-14
+## 2026-04-14 (karpathy-optimization-merged)
 
 ### 修復
-- `~/.claude/settings.json` — 新增 stream timeout 環境變數設定（`CLAUDE_ENABLE_STREAM_WATCHDOG=1`、`CLAUDE_STREAM_IDLE_TIMEOUT_MS=60000`、`API_TIMEOUT_MS=900000`）
-- `.claude/settings.json` — 同步新增專案層級 timeout 設定
+- `~/.claude/settings.json` — 新增 stream timeout 環境變數設定，並調整 `CLAUDE_STREAM_IDLE_TIMEOUT_MS` 從 60s 至 120s（平衡企業代理相容性與長時間 Bash 操作穩定性）
+- `.claude/settings.json` — 同步專案層級 timeout 設定（`CLAUDE_ENABLE_STREAM_WATCHDOG=1`、`CLAUDE_STREAM_IDLE_TIMEOUT_MS=120000`、`API_TIMEOUT_MS=900000`、`BASH_DEFAULT_TIMEOUT_MS=300000`、`BASH_MAX_TIMEOUT_MS=1800000`）
 
 ### 新增
 - `docs/stream-timeout-investigation.md` — Stream idle timeout 完整調查報告，含根本原因分析、環境變數說明、企業網路解法、快速診斷 Checklist
+- `docs/timeout-settings-impact-analysis.md` — Timeout 設定影響分析報告，含各 hooks/agents/skills 相容性矩陣、設定優先級衝突分析、`BASH_MAX` vs `STREAM_IDLE` 隱性張力說明
 
 ---
 
