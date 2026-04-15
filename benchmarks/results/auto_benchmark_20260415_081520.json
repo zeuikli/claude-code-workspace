@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "date": "2026-04-15T08:27:01.947532+00:00",
+    "models": [
+      "sonnet"
+    ],
+    "conditions": [
+      "baseline",
+      "full",
+      "lite",
+      "ultra",
+      "auto"
+    ],
+    "trials": 1
+  },
+  "results": {
+    "sonnet": {
+      "stats": {
+        "baseline": {
+          "avg_out": 1567,
+          "avg_in": 55,
+          "avg_sav": 0,
+          "label": "Baseline (no system prompt)"
+        },
+        "full": {
+          "avg_out": 683,
+          "avg_in": 948,
+          "avg_sav": 55,
+          "label": "Caveman Full (session default)"
+        },
+        "lite": {
+          "avg_out": 676,
+          "avg_in": 537,
+          "avg_sav": 56,
+          "label": "Forced Lite (always lite)"
+        },
+        "ultra": {
+          "avg_out": 576,
+          "avg_in": 543,
+          "avg_sav": 60,
+          "label": "Forced Ultra (always ultra)"
+        },
+        "auto": {
+          "avg_out": 661,
+          "avg_in": 702,
+          "avg_sav": 57,
+          "label": "Auto Mode (classifier selects)",
+          "classifier_dist": {
+            "lite": 4,
+            "full": 4,
+            "ultra": 2
+          }
+        }
+      }
+    }
+  }
+}

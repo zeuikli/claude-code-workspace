@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "date": "2026-04-15T08:14:58.401863+00:00",
+    "models": [
+      "haiku"
+    ],
+    "conditions": [
+      "baseline",
+      "full",
+      "lite",
+      "ultra",
+      "auto"
+    ],
+    "trials": 1
+  },
+  "results": {
+    "haiku": {
+      "stats": {
+        "baseline": {
+          "avg_out": 1163,
+          "avg_in": 54,
+          "avg_sav": 0,
+          "label": "Baseline (no system prompt)"
+        },
+        "full": {
+          "avg_out": 469,
+          "avg_in": 947,
+          "avg_sav": 52,
+          "label": "Caveman Full (session default)"
+        },
+        "lite": {
+          "avg_out": 481,
+          "avg_in": 536,
+          "avg_sav": 49,
+          "label": "Forced Lite (always lite)"
+        },
+        "ultra": {
+          "avg_out": 433,
+          "avg_in": 542,
+          "avg_sav": 52,
+          "label": "Forced Ultra (always ultra)"
+        },
+        "auto": {
+          "avg_out": 476,
+          "avg_in": 702,
+          "avg_sav": 50,
+          "label": "Auto Mode (classifier selects)",
+          "classifier_dist": {
+            "lite": 4,
+            "full": 4,
+            "ultra": 2
+          }
+        }
+      }
+    }
+  }
+}
