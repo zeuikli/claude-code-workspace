@@ -5,6 +5,7 @@
     "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/caveman-statusline.sh\""
   },
   "env": {
+    "CAVEMAN_AUTO_MODE": "true",
     "CLAUDE_ENABLE_STREAM_WATCHDOG": "1",
     "CLAUDE_STREAM_IDLE_TIMEOUT_MS": "120000",
     "API_TIMEOUT_MS": "900000",
@@ -74,6 +75,17 @@
             "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/caveman-mode-tracker.js\"",
             "timeout": 5,
             "statusMessage": "Tracking caveman mode..."
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/caveman-auto-classifier.js\"",
+            "timeout": 5,
+            "statusMessage": "Auto-classifying compression level..."
           }
         ]
       }
