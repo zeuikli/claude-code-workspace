@@ -17,6 +17,17 @@
             "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/session-init.sh\""
           }
         ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/caveman-workspace-activate.js\"",
+            "timeout": 5,
+            "statusMessage": "Injecting workspace rules..."
+          }
+        ]
       }
     ],
     "InstructionsLoaded": [

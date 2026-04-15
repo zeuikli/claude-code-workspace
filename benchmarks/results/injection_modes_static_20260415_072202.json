@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "script": "benchmark-injection-modes.py",
+    "type": "static_analysis",
+    "note": "No ANTHROPIC_API_KEY — input token measurement only (tiktoken cl100k_base)",
+    "date": "2026-04-15T07:22:02.653706+00:00",
+    "modes": {
+      "A_claude_md": "CLAUDE.md 全量 (current)",
+      "B_skill_full": "SKILL.md 壓縮 (caveman hook)",
+      "C_selective": "Rules.md 精選 (minimal)"
+    }
+  },
+  "system_prompt_tokens": {
+    "A_claude_md": 2546,
+    "B_skill_full": 306,
+    "C_selective": 109
+  },
+  "savings_vs_mode_a": {
+    "B_skill_full": {
+      "tokens_saved": 2240,
+      "pct": 88
+    },
+    "C_selective": {
+      "tokens_saved": 2437,
+      "pct": 96
+    }
+  },
+  "rules_breakdown": {
+    "auto-sync.md": 317,
+    "context-management.md": 227,
+    "git-workflow.md": 252,
+    "language.md": 80,
+    "quality.md": 183,
+    "subagent-strategy.md": 903,
+    "CLAUDE.md": 574
+  },
+  "projected_100_sessions": {
+    "A_claude_md": 254600,
+    "B_skill_full": 30600,
+    "C_selective": 10900
+  }
+}

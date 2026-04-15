@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "description": "Workspace-specific prompts testing rule adherence (language, subagent, git)",
+  "prompts": [
+    {
+      "id": "ws-language-zh",
+      "category": "workspace-rule",
+      "prompt": "解釋什麼是 React Server Components，它和 Client Components 的主要差異是什麼？"
+    },
+    {
+      "id": "ws-subagent-delegation",
+      "category": "workspace-rule",
+      "prompt": "I need to refactor the authentication module across 15 files, add tests, and update the docs. How should I approach this?"
+    },
+    {
+      "id": "ws-git-workflow",
+      "category": "workspace-rule",
+      "prompt": "I just finished implementing a new feature. What steps should I take before and after committing the code?"
+    },
+    {
+      "id": "ws-context-warning",
+      "category": "workspace-rule",
+      "prompt": "We've been working for a while. Can you summarize what we've done and what's left to do on the authentication refactor?"
+    }
+  ]
+}
