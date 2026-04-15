@@ -1,5 +1,9 @@
 {
   "autoMemoryEnabled": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/caveman-statusline.sh\""
+  },
   "env": {
     "CLAUDE_ENABLE_STREAM_WATCHDOG": "1",
     "CLAUDE_STREAM_IDLE_TIMEOUT_MS": "120000",
@@ -28,6 +32,17 @@
             "statusMessage": "Injecting workspace rules..."
           }
         ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/caveman-activate.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading caveman mode..."
+          }
+        ]
       }
     ],
     "InstructionsLoaded": [
@@ -48,6 +63,17 @@
           {
             "type": "command",
             "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/user-prompt-submit.sh\""
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/caveman-mode-tracker.js\"",
+            "timeout": 5,
+            "statusMessage": "Tracking caveman mode..."
           }
         ]
       }
