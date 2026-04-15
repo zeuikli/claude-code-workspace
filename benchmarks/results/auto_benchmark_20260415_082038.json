@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "date": "2026-04-15T08:34:05.007294+00:00",
+    "models": [
+      "opus"
+    ],
+    "conditions": [
+      "baseline",
+      "full",
+      "lite",
+      "ultra",
+      "auto"
+    ],
+    "trials": 1
+  },
+  "results": {
+    "opus": {
+      "stats": {
+        "baseline": {
+          "avg_out": 1600,
+          "avg_in": 55,
+          "avg_sav": 0,
+          "label": "Baseline (no system prompt)"
+        },
+        "full": {
+          "avg_out": 609,
+          "avg_in": 948,
+          "avg_sav": 59,
+          "label": "Caveman Full (session default)"
+        },
+        "lite": {
+          "avg_out": 605,
+          "avg_in": 537,
+          "avg_sav": 59,
+          "label": "Forced Lite (always lite)"
+        },
+        "ultra": {
+          "avg_out": 587,
+          "avg_in": 543,
+          "avg_sav": 61,
+          "label": "Forced Ultra (always ultra)"
+        },
+        "auto": {
+          "avg_out": 595,
+          "avg_in": 702,
+          "avg_sav": 60,
+          "label": "Auto Mode (classifier selects)",
+          "classifier_dist": {
+            "lite": 4,
+            "full": 4,
+            "ultra": 2
+          }
+        }
+      }
+    }
+  }
+}
