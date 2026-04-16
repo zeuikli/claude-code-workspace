@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-04-15 03:58 UTC
-> 共 21 篇文章，本次新增 2 篇
+> 最後更新：2026-04-16 04:13 UTC
+> 共 21 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -22,8 +22,8 @@
 | Introducing routines in Claude Code | [文章](articles/introducing-routines-in-claude-code.md) / [原文](https://claude.com/blog/introducing-routines-in-claude-code) |
 | Multi-agent coordination patterns: Five approaches and when to use them | [文章](articles/multi-agent-coordination-patterns.md) / [原文](https://claude.com/blog/multi-agent-coordination-patterns) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
-| Product management on the AI exponential  | [文章](articles/product-management-on-the-ai-exponential.md) / [原文](https://claude.com/blog/product-management-on-the-ai-exponential) |
 | Seeing like an agent: how we design tools in Claude Code | [文章](articles/seeing-like-an-agent.md) / [原文](https://claude.com/blog/seeing-like-an-agent) |
 | How and when to use subagents in Claude Code | [文章](articles/subagents-in-claude-code.md) / [原文](https://claude.com/blog/subagents-in-claude-code) |
 | The advisor strategy: Give Sonnet an intelligence boost with Opus | [文章](articles/the-advisor-strategy.md) / [原文](https://claude.com/blog/the-advisor-strategy) |
+| Using Claude Code: session management and 1M context | [文章](articles/using-claude-code-session-management-and-1m-context.md) / [原文](https://claude.com/blog/using-claude-code-session-management-and-1m-context) |
 
