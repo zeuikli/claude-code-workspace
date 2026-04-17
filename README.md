@@ -19,7 +19,7 @@
 - ✨ 新增 `session-management` 規則 — 涵蓋 `/rewind` / `/compact` / `/clear` / subagent 決策表
 - ✨ 新增 `routines` 規則 — 支援 Claude Code 排程 / API / GitHub webhook 自動化
 - ✨ 新增 `docs/opus47-migration.md` — 從 4.6 升級的完整 diff 與操作清單
-- 🔧 `settings.json` 加入 `model` / `effortLevel` / `alwaysThinkingEnabled` / `advisorModel`
+- 🔧 `settings.json` 加入 `model` / `alwaysThinkingEnabled` / `advisorModel`（`effortLevel: xhigh` 僅在切回 Opus 主模型時加上）
 
 ## 分支說明
 
@@ -108,18 +108,21 @@ claude-code-workspace/
 └── CHANGELOG.md                  # 專案變更紀錄
 ```
 
-## 核心配置
+## 核心配置（Advisor 模式）
+
+> 執行者 Sonnet 4.6 + 顧問 Opus 4.7。依據 [The Advisor Strategy](https://claude.com/blog/the-advisor-strategy)（[📦 離線歸檔](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/the-advisor-strategy.md)）。
 
 | 項目 | 說明 |
 |------|------|
-| `model: claude-opus-4-7` | 預設模型 |
-| `effortLevel: xhigh` | Opus 4.7 推薦預設 |
-| `alwaysThinkingEnabled: false` | Opus 4.7 已內建自適應思考，無需強制開啟（省 1.5-2k tokens/輪） |
-| `advisorModel: claude-opus-4-7` | Server-side advisor 也用 4.7 |
+| `model: claude-sonnet-4-6` | **執行者預設**（Advisor Strategy：Sonnet/Haiku 執行任務、Opus 僅顧問） |
+| `advisorModel: claude-opus-4-7` | Server-side advisor — 架構/審查時升級 |
+| `alwaysThinkingEnabled: false` | Opus 4.7 內建自適應思考，無需強制（省 1.5-2k tokens/輪） |
 | `autoMemoryEnabled: true` | 官方 Auto Memory 跨 session 累積 |
 | 9 種 Hook 事件 | SessionStart / InstructionsLoaded / UserPromptSubmit / SubagentStart / SubagentStop / PreToolUse / PreCompact / PostCompact / Stop |
 | Timeout | Stream watchdog + 2min idle + 15min API + 30min Bash max |
 | Sub Agent 三層 | Haiku 4.5（搜尋）→ Sonnet 4.6（實作）→ Opus 4.7（審查） |
+
+> **若需 Opus 為主模型**（例：純架構設計 session），改 `.claude/settings.json` 的 `model` 為 `claude-opus-4-7` 並加回 `effortLevel: xhigh`。見 [`docs/opus47-migration.md`](docs/opus47-migration.md)。
 
 詳細文件見 [`docs/INDEX.md`](docs/INDEX.md)。
 

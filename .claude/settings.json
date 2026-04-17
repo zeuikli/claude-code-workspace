@@ -1,7 +1,6 @@
 {
   "autoMemoryEnabled": true,
-  "model": "claude-opus-4-7",
-  "effortLevel": "xhigh",
+  "model": "claude-sonnet-4-6",
   "alwaysThinkingEnabled": false,
   "advisorModel": "claude-opus-4-7",
   "env": {

@@ -3,6 +3,8 @@
 > 來源：<https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code>（2026-04-16）
 > 📦 離線歸檔：[`archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md)
 > 適用範圍：本 workspace 從 4.6 升級到 4.7 的具體 diff 與操作清單。
+>
+> **注意**：workspace 當前預設採 **Advisor 模式**（`model: claude-sonnet-4-6` + `advisorModel: claude-opus-4-7`）。本文下方 diff 保留供需要 **Opus 當主模型** 的使用者參考；若無此需求，僅需關注 `alwaysThinkingEnabled: false` 與 `advisorModel` 兩項即可。
 
 ## TL;DR
 
