@@ -2,7 +2,7 @@
 title: "Claude Managed Agents: get to production 10x faster"
 url: https://claude.com/blog/claude-managed-agents
 slug: claude-managed-agents
-fetched: 2026-04-13 01:11 UTC
+fetched: 2026-04-17 15:43 UTC
 ---
 
 # Claude Managed Agents: get to production 10x faster
@@ -11,503 +11,186 @@ fetched: 2026-04-13 01:11 UTC
 
 
 
-Try ClaudeTry ClaudeTry Claude
-- BlogBlog/
-- Claude Managed Agents: get to production 10x fasterExplore here
-- 
-Ask questions about this page
-- 
-Copy as markdown
+
 # Claude Managed Agents: get to production 10x faster
-.button_main_icon {
-  transition: color 300ms ease;
-}
-.button_main_wrap:hover .button_main_icon {
-  color: var(--_button-style---icon-hover); 
-}
-.button_main_wrap:focus-within .button_main_icon {
-  color: var(--_button-style---text-hover) !important;
-}
-.button_main_wrap:focus-within {
-  color: var(--_button-style---text-hover) !important;
-}
-.button_main_icon {
-  transition: color 300ms ease;
-}
-.button_main_wrap:hover .button_main_icon {
-  color: var(--_button-style---icon-hover); 
-}
-.button_main_wrap:focus-within .button_main_icon {
-  color: var(--_button-style---text-hover) !important;
-}
-.button_main_wrap:focus-within {
-  color: var(--_button-style---text-hover) !important;
-}
-- 
-CategoryProduct announcements
-- 
-ProductClaude Platform
-- 
-DateApril 8, 2026
-- 
-Reading time5min
-- 
-ShareCopy linkhttps://claude.com/blog/claude-managed-agents
-Today, we&#x27;re launching Claude Managed Agents, a suite of composable APIs for building and deploying cloud-hosted agents at scale.
+
+- Category
+
+Product announcements
+
+- Product
+
+Claude Platform
+
+- Date
+
+April 8, 2026
+
+- Reading time
+
+5
+
+min
+
+- Share
+Copy link
+https://claude.com/blog/claude-managed-agents
+
+Today, we're launching Claude Managed Agents, a suite of composable APIs for building and deploying cloud-hosted agents at scale.
+
 Until now, building agents meant spending development cycles on secure infrastructure, state management, permissioning, and reworking your agent loops for every model upgrade. Managed Agents pairs an agent harness tuned for performance with production infrastructure to go from prototype to launch in days rather than months.
-Whether you&#x27;re building single-task runners or complex multi-agent pipelines, you can focus on the user experience, not the operational overhead.
+
+Whether you're building single-task runners or complex multi-agent pipelines, you can focus on the user experience, not the operational overhead.
+
 Managed Agents is available today in public beta on the Claude Platform.
+
 ## Build and deploy agents 10x faster
-Shipping a production agent requires sandboxed code execution, checkpointing, credential management, scoped permissions, and end-to-end tracing. That&#x27;s months of infrastructure work before you ship anything users see.
-Managed Agents handles the complexity. You define your agent&#x27;s tasks, tools, and guardrails and we run it on our infrastructure. A built-in orchestration harness decides when to call tools, how to manage context, and how to recover from errors.
+
+Shipping a production agent requires sandboxed code execution, checkpointing, credential management, scoped permissions, and end-to-end tracing. That's months of infrastructure work before you ship anything users see.
+
+Managed Agents handles the complexity. You define your agent's tasks, tools, and guardrails and we run it on our infrastructure. A built-in orchestration harness decides when to call tools, how to manage context, and how to recover from errors.
+
 Managed Agents includes:
+
 - Production-grade agents with secure sandboxing, authentication, and tool execution handled for you.
 - Long-running sessions that operate autonomously for hours, with progress and outputs that persist even through disconnections.
 - Multi-agent coordination so agents can spin up and direct other agents to parallelize complex work (available in research preview, request access here).‍
-- Trusted governance, giving agents access to real systems with scoped permissions, identity management, and execution tracing built in.Claude Managed Agents architecture
+- Trusted governance, giving agents access to real systems with scoped permissions, identity management, and execution tracing built in.
+
+Claude Managed Agents architecture
+
 ## Designed to make the most of Claude
+
 Claude models are built for agentic work. Managed Agents is purpose-built for Claude, enabling you to get better agent outcomes with less effort. 
+
 With Managed Agents, you define outcomes and success criteria, and Claude self-evaluates and iterates until it gets there (available in research preview, request access here). It also supports traditional prompt-and-response workflows when you want tighter control. 
+
 In internal testing around structured file generation, Managed Agents improved outcome task success by up to 10 points over a standard prompting loop, with the largest gains on the hardest problems.
+
 Session tracing, integration analytics, and troubleshooting guidance are built directly into the Claude Console, so you can inspect every tool call, decision, and failure mode.
+
 ## What teams are building
+
 Teams are already shipping 10x faster with Managed Agents across a range of production use cases. Coding agents that read a codebase, plan a fix, and open a PR. Productivity agents that join a project, pick up tasks, and deliver work alongside the rest of the team. Finance and legal agents that process documents and extract what matters. In each case, shipping in days meant providing value to users faster.
+
 - Notion lets teams delegate work to Claude directly inside their workspace (available now in private alpha inside Notion Custom Agents). Engineers use it to ship code, while knowledge workers use it to produce websites and presentations. Dozens of tasks can run in parallel while the whole team collaborates on the output.
 - Rakuten shipped enterprise agents across product, sales, marketing and finance that plug into Slack and Teams, letting employees assign tasks and get back deliverables like spreadsheets, slides, and apps. Each specialist agent was deployed within a week.
 - Asana built AI Teammates, collaborative AI agents that work alongside humans inside Asana projects, taking on tasks and drafting deliverables. The team used Managed Agents to add advanced features dramatically faster than they would have been able to otherwise.
 - Vibecode helps their customers go from prompt to deployed app using Managed Agents as the default integration, powering a new generation of AI-native apps. Users can now spin up that same infrastructure at least 10x quicker than before.‍
 - Sentry paired Seer, their debugging agent, with a Claude-powered agent that writes the patch and opens the PR, so developers go from a flagged bug to a reviewable fix in one flow. The integration shipped in weeks instead of months on Managed Agents.
-[data-slider-shell]{ display: none; }
-[data-slider-track] > [data-slider-card]{
-  flex: 0 0 auto;
-  width: auto; 
-  min-width: 0;
-  box-sizing: border-box;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-[data-slider-prev],
-[data-slider-next] {
-  transition: opacity 0.3s ease;
-}
-[data-slider-prev].is-disabled,
-[data-slider-next].is-disabled {
-  opacity: 0.3;
-  pointer-events: none;
-  cursor: default;
-}
-[data-slider-dot] {
-    width: 1.75rem;
-    justify-content: center;
-    display: flex;
-    height: 1.75rem;
-    align-items: center;
-}
-[data-slider-dot] span {
-	display: block;
-  width: 0.3125rem;
-  height: 0.3125rem;
-  border-radius: 999px;
-  background: var(--_theme---border-secondary);
-  transition: background 0.3s ease;
-}
-[data-slider-dot].is-active span {
-  background: var(--_theme---foreground-primary);
-}
-  document.addEventListener("DOMContentLoaded", function () {
-    try {
-      gsap.registerPlugin(Draggable);
-    } catch (e) {
-      return;
-    }
-    if (typeof Draggable === "undefined") return;
-    function debounce(fn, wait) {
-      let t;
-      return (...a) => {
-        clearTimeout(t);
-        t = setTimeout(() => fn(...a), wait);
-      };
-    }
-    document.querySelectorAll("[data-slider]").forEach(function (root) {
-      if (root.dataset.scriptInitialized) return;
-      root.dataset.scriptInitialized = "true";
-      var viewportConfigs = {
-        desktop: { minWidth: 1200, slidesToShow: parseInt(root.getAttribute("data-slider-desktop-threshold")) || 4 },
-        tablet: { minWidth: 768, maxWidth: 1199, slidesToShow: parseInt(root.getAttribute("data-slider-tablet-threshold")) || 2 },
-        mobile: { maxWidth: 767, slidesToShow: 1 },
-      };
-      var loopAttr = (root.getAttribute("data-slider-loop") || "").toLowerCase();
-      var centerAttr = (root.getAttribute("data-slider-center") || "").toLowerCase();
-      var LOOP = loopAttr === "true" || loopAttr === "1" || loopAttr === "";
-      var CENTER_MODE = centerAttr === "true" || centerAttr === "1";
-      var grid = root.querySelector("[data-slider-grid]");
-      var shell = root.querySelector("[data-slider-shell]");
-      var viewport = shell && shell.querySelector("[data-slider-viewport]");
-      var track = shell && shell.querySelector("[data-slider-track]");
-      var prevBtn = shell && shell.querySelector("[data-slider-prev]");
-      var nextBtn = shell && shell.querySelector("[data-slider-next]");
-      var controls = shell && shell.querySelector("[data-slider-controls]");
-      var dotsWrap = shell && shell.querySelector("[data-slider-dots]");
-      var mobileActive = shell && shell.querySelector("[data-slider-mobile-active]");
-      var mobileTotal = shell && shell.querySelector("[data-slider-mobile-total]");
-      if (!grid || !shell || !viewport || !track) return;
-      try {
-        viewport.style.touchAction = "pan-y";
-      } catch (e) {}
-      var cards = Array.prototype.slice.call(grid.querySelectorAll("[data-slider-card]"));
-      if (!cards.length) return;
-      var placeholders = new Map();
-      cards.forEach(function (card) {
-        var m = document.createComment("card-slot");
-        card.parentNode.insertBefore(m, card);
-        placeholders.set(card, m);
-      });
-      var currentMode = "grid";
-      var currentApi = null;
-      var currentConfig = null;
-      var activeIndex = 0;
-      var originalLength = cards.length;
-      var resizeObserver = null;
-      function updateActiveSlide(currentSlide) {
-        Array.prototype.slice.call(track.querySelectorAll("[data-slider-card]")).forEach(function (s) {
-          s.classList.remove("is-active");
-        });
-        (currentSlide || cards[activeIndex]) && (currentSlide || cards[activeIndex]).classList.add("is-active");
-      }
-      function getViewportConfig() {
-        var w = window.innerWidth;
-        if (w >= viewportConfigs.desktop.minWidth) return { key: "desktop", config: viewportConfigs.desktop };
-        if (w >= viewportConfigs.tablet.minWidth) return { key: "tablet", config: viewportConfigs.tablet };
-        return { key: "mobile", config: viewportConfigs.mobile };
-      }
-      function shouldUseSlider() {
-        var vp = getViewportConfig();
-        return cards.length > vp.config.slidesToShow;
-      }
-      function moveCardsToTrack() {
-        cards.forEach(function (c, i) {
-          c.setAttribute("data-slider-origin-index", String(i));
-          track.appendChild(c);
-        });
-        grid.style.display = "none";
-      }
-      function moveCardsBackToGrid() {
-        Array.prototype.slice.call(track.querySelectorAll('[data-slider-clone="true"]')).forEach(function (n) {
-          n.remove();
-        });
-        cards.forEach(function (c) {
-          var m = placeholders.get(c);
-          if (m && m.parentNode) m.parentNode.insertBefore(c, m);
-          c.classList.remove("is-active");
-        });
-        gsap.set(cards, { clearProps: "all" });
-        gsap.set(track, { clearProps: "all" });
-        grid.style.display = ""; // 👈 show grid again
-      }
-      function ensureDots(count) {
-        if (!dotsWrap) {
-          dotsWrap = document.createElement("div");
-          dotsWrap.setAttribute("data-slider-dots", "");
-          (controls || shell).appendChild(dotsWrap);
-        }
-        if (dotsWrap.childElementCount !== count) {
-          dotsWrap.innerHTML = "";
-          var frag = document.createDocumentFragment();
-          for (var i = 0; i < count; i++) {
-            (function (ii) {
-              var b = document.createElement("button");
-              b.type = "button";
-              b.setAttribute("data-slider-dot", "");
-              b.setAttribute("aria-label", "Go to item " + (ii + 1));
-              var span = document.createElement("span");
-              b.appendChild(span);
-              b.addEventListener("click", function () {
-                currentApi && currentApi.toIndex(ii, { duration: 0.5, ease: "power1.inOut" });
-              });
-              frag.appendChild(b);
-            })(i);
-          }
-          dotsWrap.appendChild(frag);
-        }
-        dotsWrap.style.display = LOOP ? "" : "none";
-        updateDots();
-      }
-      function updateDots() {
-        if (!dotsWrap || !LOOP) return;
-        Array.prototype.slice.call(dotsWrap.querySelectorAll("[data-slider-dot]")).forEach(function (d, i) {
-          var on = i === activeIndex;
-          d.classList.toggle("is-active", on);
-          d.setAttribute("aria-current", on ? "true" : "false");
-        });
-      }
-      function updateMobileCounter() {
-        if (mobileActive) mobileActive.textContent = String(activeIndex + 1);
-        if (mobileTotal) mobileTotal.textContent = String(originalLength);
-      }
-      function setBtnState(btn, disabled) {
-        if (!btn) return;
-        btn.disabled = !!disabled;
-        btn.classList.toggle("is-disabled", !!disabled);
-        btn.setAttribute("aria-disabled", disabled ? "true" : "false");
-      }
-      function updateButtonsState() {
-        if (!currentConfig) return;
-        if (LOOP) {
-          setBtnState(prevBtn, false);
-          setBtnState(nextBtn, false);
-          return;
-        }
-        var maxIndex = Math.max(0, originalLength - currentConfig.slidesToShow);
-        setBtnState(prevBtn, activeIndex <= 0);
-        setBtnState(nextBtn, activeIndex >= maxIndex);
-      }
-      function showControls(show) {
-        if (controls) controls.style.display = show ? "" : "none";
-      }
-      function initializeSlider() {
-        var vp = getViewportConfig();
-        currentConfig = vp.config;
-        if (currentApi) {
-          currentApi.kill && currentApi.kill();
-          currentApi = null;
-        }
-        gsap.set(track, { clearProps: "all" });
-        gsap.set(cards, { clearProps: "all" });
-        shell.style.display = "block";
-        moveCardsToTrack();
-        track.style.display = "flex";
-        track.style.flexWrap = "nowrap";
-        track.style.willChange = "transform";
-        gsap.set(track, { x: 0, xPercent: 0 });
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            if (LOOP) addClonesForLooping();
-            ensureDots(originalLength);
-            currentApi = LOOP ? buildLoopingSlider() : buildLinearSlider(currentConfig);
-            prevBtn && prevBtn.addEventListener("click", onPrev);
-            nextBtn && nextBtn.addEventListener("click", onNext);
-            showControls(true);
-            updateButtonsState();
-            currentMode = "slider";
-          });
-        });
-      }
-      function initializeGrid() {
-        if (currentApi) {
-          currentApi.kill && currentApi.kill();
-          currentApi = null;
-        }
-        prevBtn && prevBtn.removeEventListener("click", onPrev);
-        nextBtn && nextBtn.removeEventListener("click", onNext);
-        shell.style.display = "none";
-        moveCardsBackToGrid();
-        showControls(false);
-        currentMode = "grid";
-        currentConfig = null;
-      }
-      function evaluateAndUpdate() {
-        var needs = shouldUseSlider();
-        var vp = getViewportConfig();
-        if (needs) {
-          if (currentMode !== "slider" || !currentConfig || currentConfig !== vp.config) initializeSlider();
-        } else {
-          if (currentMode !== "grid") initializeGrid();
-        }
-      }
-      function onPrev() {
-        currentApi && currentApi.previous({ duration: 0.45, ease: "power1.inOut" });
-      }
-      function onNext() {
-        currentApi && currentApi.next({ duration: 0.45, ease: "power1.inOut" });
-      }
-      function handleResize() {
-        evaluateAndUpdate();
-      }
-      if (window.ResizeObserver) {
-        resizeObserver = new ResizeObserver(debounce(handleResize, 200));
-        resizeObserver.observe(document.documentElement);
-      }
-      window.addEventListener("resize", debounce(handleResize, 200));
-      evaluateAndUpdate();
-      function cleanup() {
-        if (resizeObserver) resizeObserver.disconnect();
-        if (currentApi) currentApi.kill && currentApi.kill();
-      }
-      root._sliderCleanup = cleanup;
-      function addClonesForLooping() {
-        Array.prototype.slice.call(track.querySelectorAll('[data-slider-clone="true"]')).forEach(function (n) {
-          n.remove();
-        });
-        var widths = cards.map(function (el) {
-          return el.getBoundingClientRect().width;
-        });
-        var avgW = widths.reduce((a, b) => a + b, 0) / Math.max(widths.length, 1);
-        var needAcross = Math.ceil((viewport.clientWidth * 1.5) / Math.max(avgW, 1));
-        var clonesEachSide = Math.max(2, needAcross);
-        for (var i = 0; i < clonesEachSide; i++) {
-          var src = cards[cards.length - 1 - (i % cards.length)];
-          var clone = src.cloneNode(true);
-          clone.setAttribute("data-slider-clone", "true");
-          clone.setAttribute("data-slider-origin-index", src.getAttribute("data-slider-origin-index"));
-          track.insertBefore(clone, track.firstChild);
-        }
-        for (var j = 0; j < clonesEachSide; j++) {
-          var src2 = cards[j % cards.length];
-          var clone2 = src2.cloneNode(true);
-          clone2.setAttribute("data-slider-clone", "true");
-          clone2.setAttribute("data-slider-origin-index", src2.getAttribute("data-slider-origin-index"));
-          track.appendChild(clone2);
-        }
-      }
-      function buildLoopingSlider() {
-        var items = Array.prototype.slice.call(track.children);
-        var tl = horizontalLoop(items, {
-          paused: true,
-          draggable: true,
-          center: CENTER_MODE ? viewport : false,
-          speed: 1,
-          snap: false,
-          onChange: function (el) {
-            var mapped = parseInt(el.getAttribute("data-slider-origin-index") || "0", 10) || 0;
-            activeIndex = mapped;
-            updateDots();
-            updateMobileCounter();
-            updateButtonsState();
-            updateActiveSlide(el);
-          },
-          _trigger: viewport,
-        });
-        tl.pause(0);
-        var api = {
-          toIndex: function (i, vars) {
-            var idxInItems = tl.findNearestIndexForOrigin(i);
-            return tl.toIndex(idxInItems, vars);
-          },
-          next: (vars) => {
-            var target = tl.findNearestIndexForOrigin((activeIndex + 1) % originalLength);
-            return tl.toIndex(target, vars);
-          },
-          previous: (vars) => {
-            var target = tl.findNearestIndexForOrigin((activeIndex - 1 + originalLength) % originalLength);
-            return tl.toIndex(target, vars);
-          },
-          current: () => activeIndex,
-          kill: () => {
-            try {
-              if (tl.draggable) tl.draggable.kill();
-            } catch (e) {}
-            try {
-              tl.kill();
-            } catch (e) {}
-          },
-        };
-        api.toIndex(0, { duration: 0 });
-        updateMobileCounter();
-        return api;
-      }
-      function buildLinearSlider(config) {
-        var items = cards.slice();
-        var cur = 0;
-        var bounds = { minX: 0, maxX: 0 };
-        var offsets = [];
-        var draggable;
-        function innerViewportWidth() {
-          var cs = getComputedStyle(viewport);
-          var padL = parseFloat(cs.paddingLeft) || 0;
-          var padR = parseFloat(cs.paddingRight) || 0;
-          return Math.max(0, viewport.clientWidth - padL - padR);
-        }
-        function measure() {
-          return new Promise(function (resolve) {
-            requestAnimationFrame(function () {
-              requestAnimationFrame(function () {
-                var trackW = track.scrollWidth;
-                if (!trackW || trackW < 1) {
-                  var last = items[items.length - 1];
-                  trackW = last ? last.offsetLeft + last.offsetWidth : 0;
-                }
-                var innerW = innerViewportWidth();
-                var maxOffset = Math.max(0, trackW - innerW);
-                offsets = items.map(function (el) {
-                  var left = el.offsetLeft;
-                  var w = el.offsetWidth;
-                  var target = CENTER_MODE ? left + w / 2 - innerW / 2 : left;
-                  if (target < 0) target = 0;
-                  if (target > maxOffset) target = maxOffset;
-                  return target;
-                });
-                bounds.maxX = 0;
-                bounds.minX = -maxOffset;
-                resolve();
-              });
-            });
-          });
-        }
-        function applyIndex(i, vars) {
-          var maxIndex = Math.max(0, items.length - config.slidesToShow);
-          i = Math.max(0, Math.min(maxIndex, i));
-          cur = i;
-          activeIndex = cur;
-          updateMobileCounter();
-          updateButtonsState();
-          updateActiveSlide(cards[cur]);
-          var x = -offsets[i];
-          return gsap.to(track, Object.assign({ x: x, duration: 0.45, ease: "power1.inOut" }, vars));
-        }
-        function next(vars) {
-          return applyIndex(cur + 1, vars);
-        }
-        function previous(vars) {
-          return applyIndex(cur - 1, vars);
-        }
-        draggable = Draggable.create(track, {
-          type: "x",
-          bounds: bounds,
-          inertia: false,
-          trigger: viewport,
-          dragClickables: true,
-          minimumMovement: 4,
-          onPressInit: async function () {
-            gsap.killTweensOf(track);
-            await measure();
-            this.applyBounds(bounds);
-            gsap.set(track, { x: -offsets[cur] });
-          },
-          onRelease: function () {
-            var xNow = this.x;
-            var best = 0,
-              bestDist = Infinity;
-            var maxIndex = Math.max(0, items.length - config.slidesToShow);
-            for (var k = 0; k <= maxIndex; k++) {
-              var targetX = -offsets[k];
-              var d = Math.abs(xNow - targetX);
-              if (d < bestDist) {
-                bestDist = d;
-                best = k;
-              }
-            }
-            applyIndex(best, { duration: 0.25, ease: "power2.out" });
-          },
-        })[0];
-        (async function init() {
-          await measure();
-          draggable && draggable.applyBounds(bounds);
-          gsap.set(track, { x: -offsets[0] });
-          activeIndex = 0;
-          updateMobileCounter();
-          updateButtonsState();
-          updateActiveSlide(cards[0]);
-        })();
-        return {
-          toIndex: (i, vars) => applyIndex(i, vars),
-          next: next,
-          previous: previous,
-          current: () => cur,
-          kill: function () {
-            try {
-              draggable && draggable.kill();
-            } catch (e) {}
-          },
-        };
-      }
-      function horizontalLoop(items, config) {
+
+“We want Notion to be the best place for teams to work with agents and get things done. We integrated Claude Managed Agents, which can handle long-running sessions, manage memory, and deliver high-quality outputs over time, to make that possible. Our users can now delegate open-ended, complex tasks, everything from coding to generating slides and spreadsheets, without ever leaving Notion.”
+
+Eric Liu, Product Manager
+
+“With Claude Managed Agents, our power users become like Galileo, contributing across domains far beyond a single specialty or discipline. We deploy each specialist agent within a week, managing long-running tasks across engineering, product, sales, marketing, and finance, generating apps, proposal decks, and spreadsheets in sandboxed environments. As agents become more capable, Managed Agents lets us scale safely without building agentic infrastructure ourselves, so we can focus entirely on democratizing innovation across the company.”
+
+Yusuke Kaji, General Manager of AI for Business
+
+“Claude Managed Agents dramatically accelerated our development of Asana AI Teammates — helping us ship advanced capabilities faster — and freeing us to focus on creating an enterprise-grade multiplayer user experience.”
+
+Amritansh Raghav, CTO
+
+“Before Claude Managed Agents, users would have to manually run LLMs in sandboxes, manage their lifecycle, equip them with appropriate tools, and oversee their execution, a process that could take weeks or months to set up. Now, with a few lines of code, users can spin up that same infrastructure at least 10x quicker than before. This opens up what's possible to be built by developers and vibe coders alike. We're going to see a surge of AI-native applications on web and mobile.”
+
+Ansh Nanda, Co-founder
+
+“Turns out telling developers what's wrong with their code isn't enough: they want you to fix it too. Customers can now go from Seer's root cause analysis straight to a Claude-powered agent that writes the fix and opens a PR. We chose Claude Managed Agents because it gives us a secure, fully managed agent runtime, allowing us to focus our efforts on building a seamless developer experience around the handoff. Managed Agents not only allowed us to build the initial integration in weeks instead of months, but has also eliminated the ongoing operational overhead of maintaining bespoke agent infrastructure.”
+
+Indragie Karunaratne, Senior Director of Engineering, AI/ML
+
+“Atlassian helps enterprises orchestrate work across humans and agents. With Claude Managed Agents, we can build agents for developers directly into the workflows teams already rely on in weeks instead of months, so customers can assign tasks right from Jira. Managed Agents handles the hard parts like sandboxing, sessions, and scoped permissions, which means our engineers can spend less time on infrastructure and more time building great features for our end users.”
+
+Sanchan Saxena, SVP, Head of Product, Teamwork Collection
+
+“Using Claude Managed Agents, we've built a system that can pull information from our users' documents and correspondence to answer any query they ask, even when we haven't built a specific tool to retrieve the data. Before Managed Agents, we would've had to anticipate every question our users might want to ask and build tools or prompt workflows for each one. Now, with Managed Agents it can code up any tool it needs on the fly, allowing it to handle virtually any user query. This cut development time by 10x, letting us focus on UX and integrating more data sources instead.”
+
+Javed Qadrud-Din, CTO
+
+“Claude Managed Agents made it 3x faster to build a production-ready meeting prep agent. We went from idea to shipping in a matter of days. Our agent researches every participant ahead of a meeting to surface what matters for moving the conversation forward. Custom tools let us feed in our own calendar and contacts data, MCP made it simple to connect external systems like meeting notetakers, CRMs, etc., and the managed harness handled the heavy lifting, including sandboxed execution and built-in web search. Letting us focus on building the product, not the infrastructure.”
+
+John Han, Co-founder
+
+PrevPrev
+
+0/5
+
+NextNext
+
+eBook
+
+##
+
+## Getting started
+
+Managed Agents is priced on consumption. Standard Claude Platform token rates apply, plus $0.08 per session-hour for active runtime. See the docs for full pricing details.
+
+Managed Agents is available now on the Claude Platform. Read our docs to learn more, head to the Claude Console, or use our new CLI to deploy your first agent.
+
+Developers can also use the latest version of Claude Code and built-in claude-api Skill to build with Managed Agents. Just ask “start onboarding for managed agents in Claude API” to get started.
+
+FAQ
+
+No items found.
+
+## Related posts
+
+Explore more product news and best practices for teams building with Claude.
+
+Apr 14, 2026
+
+### Redesigning Claude Code on desktop for parallel agents
+
+Claude Code
+
+Redesigning Claude Code on desktop for parallel agentsRedesigning Claude Code on desktop for parallel agents
+
+Redesigning Claude Code on desktop for parallel agentsRedesigning Claude Code on desktop for parallel agents
+
+Apr 14, 2026
+
+### Introducing routines in Claude Code
+
+Product announcements
+
+Introducing routines in Claude CodeIntroducing routines in Claude Code
+
+Introducing routines in Claude CodeIntroducing routines in Claude Code
+
+Apr 9, 2026
+
+### The advisor strategy: Give agents an intelligence boost
+
+Product announcements
+
+The advisor strategy: Give agents an intelligence boostThe advisor strategy: Give agents an intelligence boost
+
+The advisor strategy: Give agents an intelligence boostThe advisor strategy: Give agents an intelligence boost
+
+Jun 25, 2025
+
+### Turn ideas into interactive AI-powered apps
+
+Product announcements
+
+Turn ideas into interactive AI-powered appsTurn ideas into interactive AI-powered apps
+
+Turn ideas into interactive AI-powered appsTurn ideas into interactive AI-powered apps
+
+## Transform how your organization operates with Claude
+
+See pricing
+
+See pricingSee pricing
+
+Contact sales
+
+Contact salesContact sales
+
+Get the developer newsletter
+
+Product updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.
+
+Thank you! You’re subscribed.
+
+Sorry, there was a problem with your submission, please try again later.
