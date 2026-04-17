@@ -114,7 +114,7 @@ claude-code-workspace/
 |------|------|
 | `model: claude-opus-4-7` | 預設模型 |
 | `effortLevel: xhigh` | Opus 4.7 推薦預設 |
-| `alwaysThinkingEnabled: true` | 自適應思考 |
+| `alwaysThinkingEnabled: false` | Opus 4.7 已內建自適應思考，無需強制開啟（省 1.5-2k tokens/輪） |
 | `advisorModel: claude-opus-4-7` | Server-side advisor 也用 4.7 |
 | `autoMemoryEnabled: true` | 官方 Auto Memory 跨 session 累積 |
 | 9 種 Hook 事件 | SessionStart / InstructionsLoaded / UserPromptSubmit / SubagentStart / SubagentStop / PreToolUse / PreCompact / PostCompact / Stop |

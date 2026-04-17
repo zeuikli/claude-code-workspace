@@ -21,7 +21,7 @@
    "autoMemoryEnabled": true,
 +  "model": "claude-opus-4-7",
 +  "effortLevel": "xhigh",
-+  "alwaysThinkingEnabled": true,
++  "alwaysThinkingEnabled": false,
 +  "advisorModel": "claude-opus-4-7",
    "env": { ... }
  }
@@ -31,7 +31,7 @@
 
 - `model: "claude-opus-4-7"` — 指定預設模型。
 - `effortLevel: "xhigh"` — Opus 4.7 推薦預設，若自動升級會自動套用。
-- `alwaysThinkingEnabled: true` — 啟用自適應思考（模型自行決定每步是否思考）。
+- `alwaysThinkingEnabled: false` — Opus 4.7 已內建自適應思考。此旗標設 `true` 不會「強化」思考，反而每輪多付 ~1.5-2k thinking tokens。用 prompt 語意觸發即可（見 opus47-best-practices.md §2）。
 - `advisorModel: "claude-opus-4-7"` — server-side advisor 也使用 Opus 4.7，配合 Advisor 模式。
 
 ## 二、Prompt 習慣調整

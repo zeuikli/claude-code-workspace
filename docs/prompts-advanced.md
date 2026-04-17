@@ -21,7 +21,7 @@
   "autoMemoryEnabled": true,
   "model": "claude-opus-4-7",
   "effortLevel": "xhigh",
-  "alwaysThinkingEnabled": true,
+  "alwaysThinkingEnabled": false,
   "hooks": {
     "SessionStart": [
       {
