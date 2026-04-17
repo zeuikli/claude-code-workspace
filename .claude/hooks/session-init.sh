@@ -47,21 +47,43 @@ if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then
 
   FETCH_START=$(_ms_now)
   if [ -d "$TARGET_DIR/.git" ]; then
-    if _should_use_filter "$TARGET_DIR"; then
-      git -C "$TARGET_DIR" fetch --quiet --depth 1 --no-tags --filter=blob:none origin main 2>/dev/null || \
-        git -C "$TARGET_DIR" fetch --quiet --depth 1 --no-tags origin main 2>/dev/null || true
+    # [C-1] 驗證 remote URL，防止 /tmp 固定路徑被挾持為惡意 repo
+    actual_remote=$(git -C "$TARGET_DIR" remote get-url origin 2>/dev/null || echo "")
+    if [ "$actual_remote" != "$CONFIG_REPO" ]; then
+      echo "[session-init] WARNING: remote mismatch ('$actual_remote'), re-cloning" >&2
+      rm -rf "$TARGET_DIR"
+      git clone --quiet --depth 1 --no-tags "$CONFIG_REPO" "$TARGET_DIR" 2>/dev/null \
+        || { echo "[session-init] ERROR: clone failed" >&2; exit 1; }
+      FETCH_MODE="clone+shallow"
+    elif _should_use_filter "$TARGET_DIR"; then
+      git -C "$TARGET_DIR" fetch --quiet --depth 1 --no-tags --filter=blob:none origin main 2>/dev/null \
+        || git -C "$TARGET_DIR" fetch --quiet --depth 1 --no-tags origin main 2>/dev/null \
+        || echo "[session-init] WARNING: fetch failed, using cached config" >&2
       FETCH_MODE="fetch+filter"
     else
-      git -C "$TARGET_DIR" fetch --quiet --depth 1 --no-tags origin main 2>/dev/null || true
+      git -C "$TARGET_DIR" fetch --quiet --depth 1 --no-tags origin main 2>/dev/null \
+        || echo "[session-init] WARNING: fetch failed, using cached config" >&2
       FETCH_MODE="fetch+shallow"
     fi
-    git -C "$TARGET_DIR" reset --quiet --hard FETCH_HEAD 2>/dev/null || true
+    # [W-4] 雲端環境也保護本地未提交修改（與本地分支行為一致）
+    if git -C "$TARGET_DIR" diff --quiet 2>/dev/null && \
+       git -C "$TARGET_DIR" diff --staged --quiet 2>/dev/null; then
+      git -C "$TARGET_DIR" reset --quiet --hard FETCH_HEAD 2>/dev/null \
+        || echo "[session-init] WARNING: reset --hard failed" >&2
+    else
+      git -C "$TARGET_DIR" merge --quiet --ff-only FETCH_HEAD 2>/dev/null \
+        || echo "[session-init] WARNING: merge failed" >&2
+    fi
   else
-    git clone --quiet --depth 1 --no-tags "$CONFIG_REPO" "$TARGET_DIR" 2>/dev/null || true
+    git clone --quiet --depth 1 --no-tags "$CONFIG_REPO" "$TARGET_DIR" 2>/dev/null \
+      || { echo "[session-init] ERROR: initial clone failed" >&2; exit 1; }
     FETCH_MODE="clone+shallow"
   fi
   FETCH_END=$(_ms_now)
   FETCH_ELAPSED=$(( FETCH_END - FETCH_START ))
+
+  # [W-3] 記錄實際載入的 commit SHA 供稽核
+  FETCHED_SHA=$(git -C "$TARGET_DIR" rev-parse --short HEAD 2>/dev/null || echo "unknown")
 
   # 建立全域 CLAUDE.md（僅引用 CLAUDE.md，Memory 由官方 Auto Memory 管理）
   mkdir -p ~/.claude
@@ -71,7 +93,7 @@ EOF
 
   INIT_END=$(_ms_now)
   TOTAL_ELAPSED=$(( INIT_END - INIT_START ))
-  echo "[session-init] Cloud: loaded config from $CONFIG_REPO (mode=$FETCH_MODE)"
+  echo "[session-init] Cloud: loaded config from $CONFIG_REPO (mode=$FETCH_MODE, sha=$FETCHED_SHA)"
   echo "[session-init] elapsed: fetch=${FETCH_ELAPSED}ms total=${TOTAL_ELAPSED}ms"
 
 else

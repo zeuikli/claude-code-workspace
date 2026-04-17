@@ -10,8 +10,6 @@
 - **IMPORTANT**: Context 達 70% 立即提醒開新對話；達 60% 時**按需載入** `session-management.md`（見下表）。
 - **IMPORTANT**: 改動完成 → `git add → commit → push -u origin <branch>`（失敗重試 4 次）。
 - **IMPORTANT**: 跨對話記憶由**官方 Auto Memory** 管理（`/memory`），不手動維護。
-- Commit 前必跑 `/deep-review`；前端變更自動套用 `frontend-design` skill。
-
 ## 常駐規則（@ 自動載入，約 3.5 KB）
 
 - @.claude/rules/core.md — 語言 / Git / 品質三合一
