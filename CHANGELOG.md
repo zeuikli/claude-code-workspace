@@ -4,6 +4,46 @@
 
 ---
 
+## 2026-04-17 (opus-4.7-rewrite) — 全 workspace 升級至 Opus 4.7 + Sonnet 4.6
+
+### 改寫依據
+
+基於 `blog-archive` 分支三篇核心文章：
+
+1. [`best-practices-for-using-claude-opus-4-7-with-claude-code`](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code)（2026-04-16）
+2. [`using-claude-code-session-management-and-1m-context`](https://claude.com/blog/using-claude-code-session-management-and-1m-context)（2026-04-15）
+3. [`introducing-routines-in-claude-code`](https://claude.com/blog/introducing-routines-in-claude-code)（2026-04-14）
+
+### 新增
+
+- `.claude/rules/opus47-best-practices.md` — **Opus 4.7 調校指南**：effort 等級（含新 `xhigh`）、自適應思考、subagent 保守行為、tokenizer 變化、task-upfront 範本
+- `.claude/rules/session-management.md` — **Session 管理完整決策表**：continue / rewind / compact / clear / subagent 五選一；bad autocompact 的成因與預防
+- `.claude/rules/routines.md` — **Claude Code Routines**（research preview）：scheduled / API / GitHub webhook 三種觸發模式與 workspace 整合建議
+- `docs/opus47-migration.md` — 4.6 → 4.7 完整遷移指引，含 settings diff、prompt 習慣調整、驗證清單、FAQ
+
+### 修改
+
+- `CLAUDE.md` — 核心原則新增四條 Opus 4.7 相關規則（xhigh 預設、task-upfront、subagent 保守行為、`/rewind` 優先）；規則索引加入 opus47-best-practices / session-management / routines
+- `.claude/settings.json` — 新增 `model: claude-opus-4-7`、`effortLevel: xhigh`、`alwaysThinkingEnabled: true`、`advisorModel: claude-opus-4-7`
+- `.claude/rules/subagent-strategy.md` — 標註 Opus 4.7 subagent 行為差異（預設保守，需明確指示平行化）；Advisor 模式更新為 Sonnet 4.6 / Haiku 4.5 執行 + Opus 4.7 顧問；加入漸進式委派策略
+- `.claude/rules/context-management.md` — 加入 `/usage` 指令、context rot 認知、主動 compact 策略；參照 session-management.md
+- `README.md` — 全面重寫，凸顯 Opus 4.7 亮點；更新分支說明、檔案結構、核心配置
+
+### 設計決策
+
+- **為何預設 `xhigh`**：官方建議多數 agentic 編碼任務的最佳權衡；避免 `max` 長 session 爆 token。
+- **為何保留 Advisor 模式**：Opus 4.7 雖強但成本仍高，Sonnet 4.6 / Haiku 4.5 適合主迴圈，Opus 4.7 留給架構決策與長 session recovery。
+- **為何獨立 session-management.md**：1M context + `/rewind` + `/usage` 是本次升級最大工作流變化，值得獨立文件。
+- **為何加 routines.md**：雖是 research preview，但對自動化 backlog / deploy / CI 有明確 ROI，且文件輕量（<100 行）。
+
+### 效益預估
+
+- **同任務 token 節省**：一次給完整規格 → 減少 user turn → Opus 4.7 在後期 turn 的推理 overhead 降低（預估 -15~25%）
+- **錯誤方向恢復成本**：`/rewind` vs 口頭修正（預估 -40% context 污染）
+- **平行化效率**：明確指示 subagent fan-out → 3+ 獨立子任務可真正平行執行
+
+---
+
 ## 2026-04-14 (auto-memory-migration) — Session 9 官方 Auto Memory 遷移 + P0 全面優化
 
 ### 重大架構變更

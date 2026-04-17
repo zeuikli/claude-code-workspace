@@ -1,5 +1,9 @@
 {
   "autoMemoryEnabled": true,
+  "model": "claude-opus-4-7",
+  "effortLevel": "xhigh",
+  "alwaysThinkingEnabled": true,
+  "advisorModel": "claude-opus-4-7",
   "env": {
     "CLAUDE_ENABLE_STREAM_WATCHDOG": "1",
     "CLAUDE_STREAM_IDLE_TIMEOUT_MS": "120000",
