@@ -16,6 +16,7 @@ description: Sub Agent 策略 + Advisor 模式 + 委派規則（Opus 4.7 調校�
 ## Opus 4.7 的 subagent 行為差異
 
 > 來源：[Best practices for using Claude Opus 4.7 with Claude Code](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code)
+> 📦 離線歸檔：[`archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md)
 
 - **IMPORTANT**: Opus 4.7 預設**較少自動開 subagent**，需要平行化時**必須明確指示**，否則會傾向直接在主對話解決。
 - 判斷原則（Anthropic 官方心智模型）：
@@ -28,6 +29,7 @@ description: Sub Agent 策略 + Advisor 模式 + 委派規則（Opus 4.7 調校�
 ## Advisor 模式（顧問策略）
 
 > 依據 [Anthropic Advisor Strategy](https://claude.com/blog/the-advisor-strategy)
+> 📦 離線歸檔：[`archive/articles/the-advisor-strategy.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/the-advisor-strategy.md)
 
 - **IMPORTANT**: 主迴圈由 **Sonnet 4.6 / Haiku 4.5 擔任執行者**，**Opus 4.7 退居幕後擔任顧問**。
 - 執行者負責：驅動任務、讀寫檔案、呼叫工具、逐步推進。
@@ -59,6 +61,7 @@ description: Sub Agent 策略 + Advisor 模式 + 委派規則（Opus 4.7 調校�
 ## 漸進式委派策略（progressive delegation）
 
 > 來源：[subagents-in-claude-code](https://claude.com/blog/subagents-in-claude-code)
+> 📦 離線歸檔：[`archive/articles/subagents-in-claude-code.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/subagents-in-claude-code.md)
 
 - 先讓主對話處理，若發現：
   1. 將產生大量中間輸出（tool noise）

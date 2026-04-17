@@ -21,6 +21,7 @@ description: Context Window 監控 + 1M context GA + Prompt Caching（進階 ses
 ## 1M Context GA
 
 > 來源：[1M context is now generally available](https://claude.com/blog/1m-context-ga)（2026-03-13）
+> 📦 離線歸檔：[`archive/articles/1m-context-ga.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/1m-context-ga.md)
 
 - Opus 4.6 / Sonnet 4.6 的 1M context 已 GA，**不收長 context 額外費用**。
 - Claude Code Max/Team/Enterprise：Opus session 自動使用完整 1M。
@@ -29,6 +30,7 @@ description: Context Window 監控 + 1M context GA + Prompt Caching（進階 ses
 ## Prompt Caching 最大化
 
 > 來源：[Harnessing Claude's Intelligence](https://claude.com/blog/harnessing-claudes-intelligence)
+> 📦 離線歸檔：[`archive/articles/harnessing-claudes-intelligence.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/harnessing-claudes-intelligence.md)
 
 Claude API stateless — 每輪打包完整 context。Cached tokens 僅 base input 10% 成本：
 

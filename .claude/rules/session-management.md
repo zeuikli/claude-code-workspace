@@ -1,6 +1,6 @@
 ---
 description: Session 管理 — 1M context / rewind / compact / clear 決策表
-source: https://claude.com/blog/using-claude-code-session-management-and-1m-context
+source: https://claude.com/blog/using-claude-code-session-management-and-1m-context (archive: archive/articles/using-claude-code-session-management-and-1m-context.md)
 ---
 
 # Session 管理與 1M Context
@@ -75,6 +75,7 @@ source: https://claude.com/blog/using-claude-code-session-management-and-1m-cont
 ## Side Chat（Desktop 專屬的中途提問）
 
 > 來源：[Redesigning Claude Code on desktop for parallel agents](https://claude.com/blog/claude-code-desktop-redesign)
+> 📦 離線歸檔：[`archive/articles/claude-code-desktop-redesign.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/claude-code-desktop-redesign.md)
 
 - **快捷鍵**：`⌘+;`（macOS）/ `Ctrl+;`（Windows/Linux）
 - **用途**：主 agent 跑到一半想問「這個 import 是什麼？」、「這段 pattern 是做什麼？」，又不想污染主對話。

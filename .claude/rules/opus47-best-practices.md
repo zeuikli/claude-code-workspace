@@ -1,6 +1,6 @@
 ---
 description: Opus 4.7 調校指南 — effort、自適應思考、subagent 行為、tokenizer 變化
-source: https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code
+source: https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code (archive: archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md)
 ---
 
 # Opus 4.7 最佳實踐
