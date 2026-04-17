@@ -1,7 +1,7 @@
 # 官方文件對照表（References）
 
 > 本 workspace 所有設計決策的官方來源。每個 hook / agent / skill / config 的註解都會指向這裡。
-> 最後更新：2026-04-14 Session 7
+> 最後更新：2026-04-17 Opus 4.7 優化
 
 ---
 
@@ -39,6 +39,9 @@
 | **Improving Frontend Design** | https://claude.com/blog/improving-frontend-design-through-skills | `frontend-design` Skill |
 | **Harnessing Claude's Intelligence** | https://claude.com/blog/harnessing-claudes-intelligence | 三層 Agent 分工 |
 | **AgentOpt 論文** | https://arxiv.org/html/2604.06296v1 | Advisor Strategy 學理依據 |
+| **Opus 4.7 Best Practices** | https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code | `CLAUDE.md`、`rules/quality.md`、`rules/subagent-strategy.md`、`docs/advisor-strategy.md` |
+| **Subagents in Claude Code** | https://claude.com/blog/subagents-in-claude-code | `rules/subagent-strategy.md`、`.claude/agents/*.md` |
+| **1M Context GA** | https://claude.com/blog/1m-context-ga | `rules/context-management.md` |
 
 ## 工具與 Lint
 
