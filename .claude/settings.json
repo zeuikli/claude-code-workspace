@@ -25,7 +25,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/instructions-loaded.sh\""
+            "command": "if [ -n \"$CLAUDE_DEBUG\" ]; then bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/instructions-loaded.sh\"; fi"
           }
         ]
       }
@@ -47,7 +47,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-start.sh\""
+            "command": "if [ -n \"$CLAUDE_DEBUG\" ]; then bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-start.sh\"; fi"
           }
         ]
       }
@@ -58,7 +58,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-stop.sh\""
+            "command": "if [ -n \"$CLAUDE_DEBUG\" ]; then bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-stop.sh\"; fi"
           }
         ]
       }

@@ -1,0 +1,89 @@
+---
+description: Session 管理 — 1M context / rewind / compact / clear 決策表
+source: https://claude.com/blog/using-claude-code-session-management-and-1m-context
+---
+
+# Session 管理與 1M Context
+
+## 每個 turn 都是分支點（branching point）
+
+完成一輪後，你有 6 個選擇：
+
+1. **Continue** — 同 session 繼續（預設）
+2. **`/rewind`**（`Esc Esc`）— 跳回之前某個訊息重新 prompt（丟棄之後的訊息）
+3. **`/clear`** — 開新 session，用精煉過的摘要重新開始
+4. **`/compact`** — 保留摘要、繼續在同一 session 工作
+5. **Subagent** — 把下一塊工作委派給 child context，只拿結論回來
+6. **Side chat**（Desktop：`⌘+;` / `Ctrl+;`）— 從當前對話分岔出一條副線問問題；side chat 會讀入主線 context，但**不會回寫到主線**，避免影響當前任務方向
+
+## 決策表（Anthropic 官方建議）
+
+| 情境 | 使用 | 原因 |
+|------|------|------|
+| 同一任務、context 仍相關 | Continue | 所有內容仍 load-bearing，不要白花錢重建 |
+| Claude 走錯路徑 | **Rewind**（double-Esc） | 保留有用的檔案讀取、丟掉失敗嘗試、重新 prompt |
+| 任務未完但 session 塞滿 stale debug/探索 | `/compact <hint>` | 低成本、Claude 決定保留什麼；用 hint 引導 |
+| 開始**全新任務** | `/clear` | 零 rot，你控制攜帶什麼進入新 context |
+| 下一步會產生大量中間輸出、只需結論 | Subagent | 中間 tool noise 留在 child context |
+
+## 關鍵原則
+
+### 1. 新任務 = 新 session
+
+- 即使有 1M context，**新任務就開新 session** 是通則。
+- 例外：寫剛實作功能的文件 — 檔案內容還在 context，重新讀較慢且較貴。
+
+### 2. Rewind > 口頭修正
+
+**情境**：Claude 讀了 5 個檔案、嘗試某方法失敗。
+
+- ❌ 較差：「那個沒用，試 X」（失敗嘗試仍留在 context 污染後續）
+- ✅ 較佳：**Rewind** 到讀完檔案後，用新學到的重新 prompt：「別用 A 方法，foo module 不提供；直接走 B」
+- 延伸：用 `/rewind` 請 Claude **總結發現做 handoff message**，像是給「過去那個嘗試失敗的自己」的提醒。
+
+### 3. Compact vs Clear
+
+| | `/compact` | `/clear` |
+|---|-----------|---------|
+| 誰寫摘要 | Claude 自動 | 你自己寫下什麼重要 |
+| 損失 | lossy（可能漏關鍵）| 零 rot |
+| 成本 | 低（自動）| 高（人工寫摘要）|
+| 可引導 | `/compact focus on X, drop Y` | 完全自控 |
+
+### 4. 壞 autocompact 的成因
+
+- autocompact 在 context rot 最嚴重時觸發 — 模型此時**最不聰明**。
+- 若目前方向與你**下一步想做的事**不一致，摘要常漏掉關鍵檔案。
+- **解法**：1M context 給你更多時間，**主動 `/compact` 並附上下一步描述**。
+
+### 5. Subagent 的判斷心智模型
+
+> **Will I need this tool output again, or just the conclusion?**
+
+明確指示 subagent 的情境：
+
+- 「Spin up a subagent to verify the result of this work based on the following spec file」
+- 「Spin off a subagent to read through this other codebase and summarize how it implemented the auth flow」
+- 「Spin off a subagent to write the docs on this feature based on my git changes」
+
+## Context 監控
+
+- Claude Code 新增 `/usage` 指令 — 查看本 session 的 token/cost 用量。
+- 使用量接近 **70%** 時提醒使用者考慮 `/compact` 或開新 session。
+- 1M context 消除了 compaction 的時間壓力，但 **context rot 仍會發生** — 注意力被稀釋、舊的無關內容會干擾當前任務。
+
+## Side Chat（Desktop 專屬的中途提問）
+
+> 來源：[Redesigning Claude Code on desktop for parallel agents](https://claude.com/blog/claude-code-desktop-redesign)
+
+- **快捷鍵**：`⌘+;`（macOS）/ `Ctrl+;`（Windows/Linux）
+- **用途**：主 agent 跑到一半想問「這個 import 是什麼？」、「這段 pattern 是做什麼？」，又不想污染主對話。
+- **單向流**：side chat 會**讀入**主對話 context，但**不會寫回**主對話 — 主線任務方向不被干擾。
+- **與 subagent 的區別**：subagent 是主動委派、結論會回流；side chat 是使用者發起的探索、完全不回流。
+- **視圖模式**（Desktop）：`Verbose` / `Normal` / `Summary` 三種，`⌘+/` 或 `Ctrl+/` 看完整快捷鍵表。
+
+## 與 Auto Memory 的互動
+
+- 官方 Auto Memory 在跨 session 持久化知識（`~/.claude/projects/<project>/memory/`）。
+- `/clear` 或 `/compact` 不影響 Auto Memory — 可安心使用。
+- 關鍵決策請確保進入 Auto Memory（Claude 通常會自動判斷，可用 `/memory` 編輯）。
