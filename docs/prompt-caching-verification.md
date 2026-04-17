@@ -56,3 +56,16 @@ grep cache_read ~/.claude/logs/*.jsonl | tail -5
 
 - Anthropic 官方文件：<https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching>
 - 本 repo `.claude/REFERENCES.md` 收錄的 caching 決策來源
+
+## 本 workspace cache 友善度現況（2026-04-17）
+
+| 檢查項 | 狀態 | 說明 |
+|---|:---:|---|
+| @import 鏈無時間戳 | ✓ | CLAUDE.md + 3 規則檔均為語意穩定內容 |
+| Memory.md 不進 @import | ✓ | 已重置空白，跨輪異動不破壞 cache |
+| 工具定義穩定 | ✓ | 未動態改寫 `.claude/settings.json` 的 tool 區段 |
+| `<system-reminder>` 附加於訊息層 | ✓ | hooks 透過 prompt submit 注入，未改上層 prompt |
+| 模型固定 | ✓ | `claude-opus-4-7` 鎖定；中途切換會整段失效 |
+| 啟動 @import 總量 | 9.2 KB (~2,300 tokens) | 符合「cache 一次、多輪受益」設計 |
+
+**未啟用項**：Claude Code 平台層的 `cache_control: ephemeral` 標記由 harness 自動管理，workspace 無直接控制權。**只要維持上述 6 項 ✓，平台會自動套用 5 分鐘 TTL cache**（本篇其餘章節的 API 層驗證步驟適用於直接呼叫 Anthropic API 的情境）。

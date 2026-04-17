@@ -25,6 +25,7 @@
 | 做 Opus 4.7 調校 / 深度架構決策 | `.claude/rules/opus47-best-practices.md` |
 | Context > 60%、執行 `/compact` / `/rewind` | `.claude/rules/session-management.md` |
 | 設定排程、webhook、長跑 routine | `.claude/rules/routines.md` |
+| 新增 Skill / Agent / Tool 前設計參考 | `docs/tool-design-principles.md` |
 | 撰寫提示、啟動新 session | `prompts.md`（核心 3 條） |
 | 進階提示模板 | `docs/prompts-advanced.md` |
 | 自動同步 / SessionStart hook 細節 | `.claude/rules/auto-sync.md` |

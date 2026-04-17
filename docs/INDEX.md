@@ -11,6 +11,7 @@
 | `advisor-strategy.md` | Advisor 模式完整論述（Haiku 4.5 / Sonnet 4.6 / Opus 4.7 三層分工 + `advisor_20260301` API） | 設計新 Sub Agent 工作流、評估是否升級顧問呼叫時 |
 | `opus47-migration.md` | Opus 4.6 → 4.7 完整遷移指引（settings diff / prompt 習慣 / 驗證清單 / FAQ） | 從 4.6 升級、調整 effort 等級前 |
 | `multi-agent-coordination.md` | **5 種多 agent 協調模式決策表**（Generator-Verifier / Orchestrator-Subagent / Agent Teams / Message Bus / Shared State） | 評估平行 subagent 架構、選擇協調模式前 |
+| `tool-design-principles.md` | **工具設計心智模型**（Seeing like an agent — 高門檻加工具 / Progressive Disclosure / 動作分類 / Subagent = 動作空間擴充） | 新增 `.claude/agents/` 或 `.claude/skills/` 前，設計工具前 |
 | `auto-memory-hybrid.md` | 官方 Auto Memory vs 自製 Memory.md 對比與 Hybrid 採用指南 | 評估啟用 Auto Memory、跨機器同步策略 |
 
 ## 效能與效益報告
@@ -42,6 +43,7 @@
 | 效能優化 | 主動讀取 `workspace-performance-report.md` |
 | Hook / Timeout 除錯 | 主動讀取 `timeout-guide.md`（整合版本） |
 | Opus 4.7 升級 | 主動讀取 `opus47-migration.md` |
+| 新增 Skill / Agent / Tool | 主動讀取 `tool-design-principles.md` |
 
 ## 文件貢獻
 
