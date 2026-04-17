@@ -2,7 +2,18 @@
 
 針對 [Claude Code](https://code.claude.com) 優化的個人開發工作區 — **Opus 4.7 + Sonnet 4.6 雙模型強化版**，內建專案指令、對話記憶管理與自動化工作流程配置。
 
-## 版本更新（2026-04-17）
+## 版本更新
+
+**2026-04-17 (v2 — blog-archive 深化)**
+
+- ✨ 新增 `docs/multi-agent-coordination.md` — 5 種多 agent 協調模式決策表
+- ✨ `rules/context-management.md` 加入 **Prompt Caching** 5 原則（Static first, dynamic last）
+- ✨ `rules/subagent-strategy.md` 加入 **seeing-like-an-agent** 工具設計心智模型 + Progressive Disclosure
+- ✨ `rules/session-management.md` branching point 由 5 擴展為 **6**（新增 Desktop Side Chat）
+- ✨ `rules/opus47-best-practices.md` §3 加入 **Auto Mode 完成通知 hook** 完整範例（afplay/paplay/bell fallback）
+- 🔧 修復 `prompts.md` `##7-##10` 重複章節 bug；新增 `##11 Auto Mode` 與 `##12 Prompt Caching`
+
+**2026-04-17 (v1 — Opus 4.7 全面升級)**
 
 - ✨ 全面導入 **Opus 4.7** 最佳實踐（`xhigh` effort、自適應思考、task-upfront pattern）
 - ✨ 新增 `session-management` 規則 — 涵蓋 `/rewind` / `/compact` / `/clear` / subagent 決策表
@@ -78,20 +89,23 @@ claude-code-workspace/
 │   │   ├── git-workflow.md        # Git 自動化
 │   │   ├── quality.md             # 測試與驗證
 │   │   └── auto-sync.md           # 同步機制
-│   ├── agents/
-│   │   ├── researcher.md / architecture-explorer.md (Haiku 4.5)
-│   │   ├── implementer.md / test-writer.md / security-reviewer.md / doc-writer.md (Sonnet 4.6)
-│   │   └── code-reviewer.md / reviewer.md (Opus 4.7)
-│   └── skills/
+│   ├── agents/                   # 9 個 Sub Agent（三層模型分工）
+│   │   ├── researcher.md / architecture-explorer.md / doc-writer.md / memory-compactor.md   # Haiku 4.5
+│   │   ├── implementer.md / test-writer.md / security-reviewer.md                           # Sonnet 4.6
+│   │   └── code-reviewer.md / reviewer.md                                                   # Opus 4.7
+│   └── skills/                   # 5 個 Skill（按需載入）
 │       ├── deep-review / frontend-design / blog-analyzer
 │       └── agent-team / cost-tracker
-├── docs/
-│   ├── INDEX.md
+├── docs/                         # 13 個進階文件（lazy-load，見 docs/INDEX.md）
+│   ├── INDEX.md                      # 進階文件索引
 │   ├── advisor-strategy.md
-│   └── opus47-migration.md        # ★ 4.6 → 4.7 遷移指引
-├── prompts.md                     # 萬用 Prompt 集
-├── CLAUDE.md                      # 精簡主指令（rules 按需載入）
-└── CHANGELOG.md                   # 專案變更紀錄
+│   ├── opus47-migration.md           # ★ 4.6 → 4.7 遷移指引
+│   ├── multi-agent-coordination.md   # ★ 5 種協調模式決策表
+│   ├── auto-memory-hybrid.md / hook-lifecycle.md / timeout-guide.md
+│   └── （效能報告、追溯性舊檔…）
+├── prompts.md                    # 萬用 Prompt 集（12 則）
+├── CLAUDE.md                     # 精簡主指令（rules 按需載入）
+└── CHANGELOG.md                  # 專案變更紀錄
 ```
 
 ## 核心配置
