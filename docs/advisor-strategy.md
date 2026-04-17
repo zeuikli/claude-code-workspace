@@ -187,6 +187,7 @@ response = client.messages.create(
 ## Opus 4.7 在 Advisor 模式中的特性
 
 > 來源：[Best practices for using Claude Opus 4.7 with Claude Code](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code)
+> 📦 離線歸檔：[`archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md)
 
 ### 建議以 `xhigh` 努力級別運作
 
@@ -221,6 +222,6 @@ Think carefully and step-by-step before responding; this is an architecture-crit
 
 - [AgentOpt: Expensive Models in the Wrong Position](https://arxiv.org/html/2604.06296v1) — 論文原文
 - [AgentOpt 繁體中文解讀](https://ai-coding.wiselychen.com/agentopt-expensive-model-wrong-position-pipeline-optimization/)
-- [The Advisor Strategy — Anthropic 官方](https://claude.com/blog/the-advisor-strategy)
-- [Best practices for using Claude Opus 4.7 with Claude Code](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code)
-- [1M context is now generally available](https://claude.com/blog/1m-context-ga)
+- [The Advisor Strategy — Anthropic 官方](https://claude.com/blog/the-advisor-strategy) — 📦 [`archive/articles/the-advisor-strategy.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/the-advisor-strategy.md)
+- [Best practices for using Claude Opus 4.7 with Claude Code](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code) — 📦 [`archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md)
+- [1M context is now generally available](https://claude.com/blog/1m-context-ga) — 📦 [`archive/articles/1m-context-ga.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/1m-context-ga.md)

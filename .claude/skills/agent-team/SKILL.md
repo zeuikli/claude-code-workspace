@@ -7,6 +7,7 @@ disable-model-invocation: true
 # Agent Team — 多 Worker 平行協作
 
 > 依據 [Multi-Agent Coordination Patterns](https://claude.com/blog/multi-agent-coordination-patterns) 的 Agent Teams 模式
+> 📦 離線歸檔：[`archive/articles/multi-agent-coordination-patterns.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/multi-agent-coordination-patterns.md)
 
 啟動針對 $ARGUMENTS 的 Agent Team 協作。
 

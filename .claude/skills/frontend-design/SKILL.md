@@ -6,6 +6,7 @@ description: 引導 Claude 產出高品質的前端設計，避免 AI 生成的�
 # Frontend Design — 避免 AI Slop 的設計指引
 
 > 來源：[Improving Frontend Design Through Skills](https://claude.com/blog/improving-frontend-design-through-skills)
+> 📦 離線歸檔：[`archive/articles/improving-frontend-design-through-skills.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/improving-frontend-design-through-skills.md)
 
 ## 字型選擇
 

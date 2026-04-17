@@ -1,6 +1,7 @@
 # Multi-Agent Coordination Patterns（5 種協調模式決策表）
 
 > 來源：[Multi-agent coordination patterns: Five approaches and when to use them](https://claude.com/blog/multi-agent-coordination-patterns)（2026-04-10）
+> 📦 離線歸檔：[`archive/articles/multi-agent-coordination-patterns.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/multi-agent-coordination-patterns.md)
 > 適用範圍：本 workspace 選擇「平行 subagent 架構」前的決策參考。Lazy-load，不進 CLAUDE.md 主文。
 
 ## TL;DR 決策表

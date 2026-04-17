@@ -1,6 +1,7 @@
 # Opus 4.6 → 4.7 遷移指引
 
 > 來源：<https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code>（2026-04-16）
+> 📦 離線歸檔：[`archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md)
 > 適用範圍：本 workspace 從 4.6 升級到 4.7 的具體 diff 與操作清單。
 
 ## TL;DR
