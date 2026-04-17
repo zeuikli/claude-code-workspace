@@ -6,7 +6,7 @@ set -e
 # 將 Memory.md 的變更推送回 GitHub
 # ============================================
 
-CONFIG_REPO="https://github.com/zeuikli/claude-code-workspace.git"
+# CONFIG_REPO kept for reference; remote URL is read from git config at runtime
 
 # --- 定位 workspace 目錄 ---
 if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then

@@ -21,11 +21,11 @@
 
 - @.claude/rules/language.md — 語言回覆規則
 - @.claude/rules/opus47-best-practices.md — **Opus 4.7 調校指南（effort、thinking、subagent 行為）**
-- @.claude/rules/subagent-strategy.md — Sub Agent 委派與 Advisor 模式
+- @.claude/rules/subagent-strategy.md — Sub Agent 委派與 Advisor 模式（含 Opus 4.7 顯式委派規則）
 - @.claude/rules/session-management.md — **Session / context / 1M 視窗 / rewind 決策表**
-- @.claude/rules/context-management.md — Context 監控與 compaction
+- @.claude/rules/context-management.md — Context 監控與 compaction（含 1M context 策略）
 - @.claude/rules/git-workflow.md — Git 自動化流程
-- @.claude/rules/quality.md — 測試與驗證
+- @.claude/rules/quality.md — 測試與驗證（含 xhigh 努力級別與自適應思考指引）
 - @.claude/rules/routines.md — **Claude Code Routines（排程/API/webhook 自動化）**
 
 ## 進階文件（lazy-load，**不主動載入**）
@@ -33,11 +33,11 @@
 需要時再讀取：
 
 - `docs/INDEX.md` — 進階文件總索引
-- `docs/advisor-strategy.md` — Advisor 模式完整論述
+- `docs/advisor-strategy.md` — Advisor 模式完整論述（含 Opus 4.7 + `advisor_20260301` API）
 - `docs/opus47-migration.md` — **Opus 4.6 → 4.7 遷移指引**
 - `docs/timeout-guide.md` — Timeout 設定完整指南
 - `.claude/REFERENCES.md` — **官方文件對照表（所有設計決策的 URL 來源）**
 
 ## 參考文件
 
-- @prompts.md — 萬用 Prompt
+- @prompts.md — 萬用 Prompt（含 Opus 4.7 首輪前置規格、xhigh 努力級別、Auto Mode 模式）

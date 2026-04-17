@@ -33,7 +33,7 @@ if [ -z "$WORKSPACE_DIR" ] || [ ! -d "$WORKSPACE_DIR/.git" ]; then
   exit 0
 fi
 
-cd "$WORKSPACE_DIR"
+cd "$WORKSPACE_DIR" || exit 1
 
 # 如果本地有未提交的 Memory.md 變更，保留本地版本（較新）
 if ! git diff --quiet Memory.md 2>/dev/null; then
