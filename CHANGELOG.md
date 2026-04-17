@@ -4,7 +4,48 @@
 
 ---
 
-## 2026-04-17 (opus-4.7-rewrite) — 全 workspace 升級至 Opus 4.7 + Sonnet 4.6
+## 2026-04-17 (opus-4.7-rewrite v2) — 導入 blog-archive 最新洞察深化 Opus 4.7 優化
+
+### 改寫依據（本輪新增）
+
+基於 `blog-archive` 分支已彙整的 21 篇文章，針對 v1 升級尚未覆蓋的洞察做深化：
+
+1. [`harnessing-claudes-intelligence`](https://claude.com/blog/harnessing-claudes-intelligence) — Prompt Caching「靜態優先」5 原則
+2. [`multi-agent-coordination-patterns`](https://claude.com/blog/multi-agent-coordination-patterns) — 5 種協調模式決策表
+3. [`seeing-like-an-agent`](https://claude.com/blog/seeing-like-an-agent) — 工具設計心智模型 + Progressive Disclosure
+4. [`claude-code-desktop-redesign`](https://claude.com/blog/claude-code-desktop-redesign) — Side Chat 第 6 種分支選項
+5. [`best-practices-for-using-claude-opus-4-7-with-claude-code`](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code) — Auto Mode 完成通知 hook 完整範例
+
+### 新增
+
+- `docs/multi-agent-coordination.md` — 5 種多 agent 協調模式完整決策表（lazy-load 參考文件）
+
+### 修改
+
+- `.claude/rules/context-management.md` — 新增 **Prompt Caching 最大化** 段落（5 原則：Static first / Messages for updates / Don't change models / Carefully manage tools / Update breakpoints）
+- `.claude/rules/subagent-strategy.md` — 新增 **工具設計心智模型** 段落（seeing like an agent + Progressive Disclosure + Subagent 作為動作空間擴充）
+- `.claude/rules/session-management.md` — Branching point 由 5 選項擴展為 **6 選項**，新增 Side Chat（⌘+;/Ctrl+;）完整段落
+- `.claude/rules/opus47-best-practices.md` — §3 task-upfront 段補上 **Auto Mode 完成通知 hook** 完整 JSON 範例（afplay/paplay/bell fallback）
+- `prompts.md` — 修正既有 bug：`##7-##10` 重複章節整併；新增 `##11 Auto Mode` 與 `##12 Prompt Caching 最大化` 兩個萬用 prompt
+- `CLAUDE.md` — 進階文件索引新增 `docs/multi-agent-coordination.md`
+- `.claude/REFERENCES.md` — 設計策略表新增 Seeing Like an Agent / Desktop Redesign；Multi-Agent Coordination 對應補上 `docs/multi-agent-coordination.md`
+
+### 設計決策
+
+- **為何 4 項改成 append 現有檔**（顧問建議）：新增多個 rule 檔會擴大 index 與 CLAUDE.md lookup 成本；prompt-caching 是 context 概念、tool-design 是 subagent 議題，就近擴寫比另起檔更符合 Progressive Disclosure。
+- **為何 multi-agent-coordination 改放 `docs/`**：5 模式是參考 / 決策表，非行為規則；應 lazy-load 而非常駐載入。
+- **為何先修 prompts.md 的既有重複章節**：該 bug 已在 v1 合入分支，繼續新增內容會堆在破損結構上。
+
+### 驗證
+
+- `scripts/healthcheck.sh` 通過
+- `markdownlint .` 無新增 lint 錯誤
+- `grep -n "^@" CLAUDE.md`：所有 `@path` 引用檔案皆存在
+- 每條新增段落皆逐字比對 blog-archive 原文（見 git 歷史的 commit message）
+
+---
+
+## 2026-04-17 (opus-4.7-rewrite v1) — 全 workspace 升級至 Opus 4.7 + Sonnet 4.6
 
 ### 改寫依據
 

@@ -31,7 +31,20 @@ source: https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-cl
 - **批次提問**：每個 user turn 都會增加推理 overhead，避免多輪補充。
 - **減少必要互動**：長 session、後期對話 Opus 4.7 會投入更多思考 token — 一次給足 context 才划算。
 - **使用 auto mode**（Claude Code Max 透過 `Shift+Tab` 開啟）處理可信任自動執行的長任務。
-- **設定完成通知**：請 Claude 建立 hook，任務完成時播放音效。
+- **設定完成通知**：請 Claude 建立 hook，任務完成時播放音效。範例（貼到 `.claude/settings.json`）：
+
+  ```json
+  "hooks": {
+    "Stop": [
+      { "matcher": "", "hooks": [{
+          "type": "command",
+          "command": "afplay /System/Library/Sounds/Glass.aiff 2>/dev/null || paplay /usr/share/sounds/freedesktop/stereo/complete.oga 2>/dev/null || printf '\\a'"
+      }] }
+    ]
+  }
+  ```
+
+  macOS 用 `afplay`、Linux 用 `paplay`、其餘 fallback 到終端 bell。Auto Mode 長跑任務時尤其有用。
 
 ## 4. 行為變化（vs Opus 4.6）
 

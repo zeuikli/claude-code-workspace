@@ -35,6 +35,7 @@
 - `docs/INDEX.md` — 進階文件總索引
 - `docs/advisor-strategy.md` — Advisor 模式完整論述（含 Opus 4.7 + `advisor_20260301` API）
 - `docs/opus47-migration.md` — **Opus 4.6 → 4.7 遷移指引**
+- `docs/multi-agent-coordination.md` — **5 種多 agent 協調模式決策表**（Generator-Verifier / Orchestrator-Subagent / Agent Teams / Message Bus / Shared State）
 - `docs/timeout-guide.md` — Timeout 設定完整指南
 - `.claude/REFERENCES.md` — **官方文件對照表（所有設計決策的 URL 來源）**
 

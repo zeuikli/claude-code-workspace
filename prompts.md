@@ -179,77 +179,39 @@ session 結束前：
 
 ---
 
-## 7. Opus 4.7 首輪前置規格（推薦用於複雜任務）
-
-適用於：任何需要 Opus 4.7 處理的多步驟任務。Opus 4.7 在第一輪拿到完整規格時效果最好。
-
-```
-任務：[描述你要做什麼]
-
-意圖：[為什麼要做，解決什麼問題]
-
-限制：
-- [技術限制 1，例如：不能修改 public API]
-- [環境限制 2，例如：只能用 Node.js 18+]
-
-驗收標準：
-- [ ] [可驗證的條件 1]
-- [ ] [可驗證的條件 2]
-
-相關檔案：
-- src/xxx.ts — [簡述用途]
-- docs/yyy.md — [簡述用途]
-
-請一次性規劃並執行，中間不需要我確認。
-```
-
----
-
-## 8. Opus 4.7 平行 Sub Agent 展開（顯式指示）
-
-適用於：需要同時探索多個獨立面向時。Opus 4.7 預設較少自動展開，需明確要求。
-
-```
-請同時啟動多個 Sub Agent 平行處理以下獨立任務（不要等一個完成再開始下一個）：
-
-1. [任務 A] — 回傳：[期望的摘要格式]
-2. [任務 B] — 回傳：[期望的摘要格式]
-3. [任務 C] — 回傳：[期望的摘要格式]
-
-各 Sub Agent 只需回傳摘要，不要貼完整檔案內容。
-```
-
----
-
-## 9. Opus 4.7 Auto Mode（長跑任務）
+## 11. Auto Mode（長跑任務，Claude Code Max 限定）
 
 適用於：已提供充足上下文、希望 Opus 4.7 自主執行不打斷的長任務。
 
 ```
 以下是完整任務規格：[貼上完整說明]
 
-請使用 Auto Mode（如果尚未開啟，按 Shift+Tab 切換）自主執行。
-完成後用 hook 通知我（例如播放提示音）。
+請使用 Auto Mode（若尚未開啟，按 Shift+Tab 切換）自主執行。
+完成後請建立 hook 發出音效提示（例如：`afplay /System/Library/Sounds/Glass.aiff`）。
 中間若遇到真正的歧義再暫停，其他情況直接判斷執行。
 ```
 
+> **Auto Mode 通知 hook 設定範例**（請 Claude 寫入 `.claude/settings.json`）：
+>
+> ```json
+> "Stop": [
+>   { "matcher": "", "hooks": [{ "type": "command",
+>     "command": "afplay /System/Library/Sounds/Glass.aiff 2>/dev/null || printf '\\a'" }] }
+> ]
+> ```
+
 ---
 
-## 10. 調整 Opus 4.7 推理深度
+## 12. Prompt Caching 最大化（API / 長 session）
 
-適用於：需要精細控制 token 用量與回應速度時。
+適用於：撰寫 Claude API 呼叫或需要高 cache hit rate 的長 session。
 
-**要更深思熟慮時：**
 ```
-Think carefully and step-by-step before responding; this problem is harder than it looks.
-```
+請依「靜態優先、動態最後」原則重排 prompt：
+1. 系統提示 / 工具定義（最穩定）放最前
+2. 長期背景文件（專案規格、API schema）放第二層
+3. 對話歷史 / user message 放最後
+4. 需要局部更新時，用 <system-reminder> 附加到 messages，不要改動上層穩定區塊
 
-**要更快速直接時：**
+目標：cache breakpoint 設在第 3 層前，前兩層完全重用。
 ```
-Prioritize responding quickly rather than thinking deeply. When in doubt, respond directly.
-```
-
-**指定努力級別（需在 Claude Code 設定）：**
-- `xhigh`（預設）— 適合大多數 coding 任務
-- `high` — 平衡成本與智能，適合並行多 session
-- `max` — 極限智能，用於 eval 或極複雜研究問題

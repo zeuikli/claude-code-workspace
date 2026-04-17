@@ -35,9 +35,11 @@
 | 主題 | 官方 URL | 對應檔案 |
 |---|---|---|
 | **Advisor Strategy** | https://claude.com/blog/the-advisor-strategy | `docs/advisor-strategy.md`、`.claude/rules/subagent-strategy.md` |
-| **Multi-Agent Coordination** | https://claude.com/blog/multi-agent-coordination-patterns | `agent-team` Skill |
+| **Multi-Agent Coordination** | https://claude.com/blog/multi-agent-coordination-patterns | `docs/multi-agent-coordination.md`、`agent-team` Skill |
 | **Improving Frontend Design** | https://claude.com/blog/improving-frontend-design-through-skills | `frontend-design` Skill |
-| **Harnessing Claude's Intelligence** | https://claude.com/blog/harnessing-claudes-intelligence | 三層 Agent 分工 |
+| **Harnessing Claude's Intelligence** | https://claude.com/blog/harnessing-claudes-intelligence | 三層 Agent 分工、`rules/context-management.md`（Prompt Caching 靜態優先） |
+| **Seeing Like an Agent** | https://claude.com/blog/seeing-like-an-agent | `rules/subagent-strategy.md`（工具設計心智模型 + Progressive Disclosure） |
+| **Claude Code Desktop Redesign** | https://claude.com/blog/claude-code-desktop-redesign | `rules/session-management.md`（Side Chat 第 6 種分支選項） |
 | **AgentOpt 論文** | https://arxiv.org/html/2604.06296v1 | Advisor Strategy 學理依據 |
 | **Opus 4.7 Best Practices** | https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code | `CLAUDE.md`、`rules/quality.md`、`rules/subagent-strategy.md`、`docs/advisor-strategy.md` |
 | **Subagents in Claude Code** | https://claude.com/blog/subagents-in-claude-code | `rules/subagent-strategy.md`、`.claude/agents/*.md` |

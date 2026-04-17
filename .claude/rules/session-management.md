@@ -7,13 +7,14 @@ source: https://claude.com/blog/using-claude-code-session-management-and-1m-cont
 
 ## 每個 turn 都是分支點（branching point）
 
-完成一輪後，你有 5 個選擇：
+完成一輪後，你有 6 個選擇：
 
 1. **Continue** — 同 session 繼續（預設）
 2. **`/rewind`**（`Esc Esc`）— 跳回之前某個訊息重新 prompt（丟棄之後的訊息）
 3. **`/clear`** — 開新 session，用精煉過的摘要重新開始
 4. **`/compact`** — 保留摘要、繼續在同一 session 工作
 5. **Subagent** — 把下一塊工作委派給 child context，只拿結論回來
+6. **Side chat**（Desktop：`⌘+;` / `Ctrl+;`）— 從當前對話分岔出一條副線問問題；side chat 會讀入主線 context，但**不會回寫到主線**，避免影響當前任務方向
 
 ## 決策表（Anthropic 官方建議）
 
@@ -70,6 +71,16 @@ source: https://claude.com/blog/using-claude-code-session-management-and-1m-cont
 - Claude Code 新增 `/usage` 指令 — 查看本 session 的 token/cost 用量。
 - 使用量接近 **70%** 時提醒使用者考慮 `/compact` 或開新 session。
 - 1M context 消除了 compaction 的時間壓力，但 **context rot 仍會發生** — 注意力被稀釋、舊的無關內容會干擾當前任務。
+
+## Side Chat（Desktop 專屬的中途提問）
+
+> 來源：[Redesigning Claude Code on desktop for parallel agents](https://claude.com/blog/claude-code-desktop-redesign)
+
+- **快捷鍵**：`⌘+;`（macOS）/ `Ctrl+;`（Windows/Linux）
+- **用途**：主 agent 跑到一半想問「這個 import 是什麼？」、「這段 pattern 是做什麼？」，又不想污染主對話。
+- **單向流**：side chat 會**讀入**主對話 context，但**不會寫回**主對話 — 主線任務方向不被干擾。
+- **與 subagent 的區別**：subagent 是主動委派、結論會回流；side chat 是使用者發起的探索、完全不回流。
+- **視圖模式**（Desktop）：`Verbose` / `Normal` / `Summary` 三種，`⌘+/` 或 `Ctrl+/` 看完整快捷鍵表。
 
 ## 與 Auto Memory 的互動
 
