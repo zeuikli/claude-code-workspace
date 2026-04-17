@@ -1,6 +1,6 @@
 ---
 name: security-reviewer
-description: 程式碼安全審查。偵測注入漏洞、認證缺陷、敏感資料暴露。適用於 commit 前審查 auth/payment/user-data 相關變更。
+description: 變更涉及 auth、payment、user-data 或 commit 前安全掃描時委派；觸發詞：「做安全審查」、「有沒有注入漏洞」、「檢查認證缺陷」。
 tools: Read, Grep, Glob
 model: sonnet
 ---

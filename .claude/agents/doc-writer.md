@@ -1,6 +1,6 @@
 ---
 name: doc-writer
-description: 生成或更新文件（README、CHANGELOG、API 文件、註解）。分析 git diff 與程式碼變更，自動產出對應文件片段。適用於實作完成後的文件補齊階段。
+description: 實作完成後補文件時委派；觸發詞：「更新 README」、「補 CHANGELOG」、「寫 API 文件」、「加註解」。分析 git diff 後自動產出對應片段。
 tools: Read, Grep, Glob, Edit, Write, Bash
 model: haiku
 permissionMode: acceptEdits

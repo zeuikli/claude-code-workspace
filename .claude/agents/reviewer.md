@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: 架構級的程式碼審查、安全性審計、技術決策建議。適用於需要深度思考的複雜判斷，僅在關鍵時刻使用。
+description: 跨模組架構決策、安全性審計、或技術選型無法確定時才委派（Opus，成本高）；觸發詞：「架構怎麼設計比較好」、「這個技術選型對嗎」、「幫我做深度 review」。
 tools: Read, Grep, Glob
 model: opus
 ---

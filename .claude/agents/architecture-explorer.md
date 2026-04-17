@@ -1,6 +1,6 @@
 ---
 name: architecture-explorer
-description: Codebase 架構探索。映射 API 路由、資料庫 schema、認證流程、模組依賴。適用於實作前的研究階段。
+description: 實作前需要了解整體架構時委派；觸發詞：「這個專案怎麼架構的」、「幫我搞清楚 API 路由 / schema / 認證流程 / 模組依賴」。
 tools: Read, Grep, Glob, Bash
 model: haiku
 ---

@@ -1,6 +1,6 @@
 ---
 name: test-writer
-description: 撰寫單元測試與整合測試。分析 staged changes，產生測試案例涵蓋邊界情境。適用於實作後、commit 前的驗證階段。
+description: 實作後、commit 前需要補測試時委派；觸發詞：「幫我寫測試」、「補單元測試」、「加邊界情境測試」。分析 staged changes 自動產生涵蓋案例。
 tools: Read, Grep, Glob, Write, Bash
 model: sonnet
 ---

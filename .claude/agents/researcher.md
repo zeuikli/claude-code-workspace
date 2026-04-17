@@ -1,6 +1,6 @@
 ---
 name: researcher
-description: 探索 codebase、搜尋檔案、閱讀文件、收集資料。適用於需要讀取大量檔案的調查任務，回傳精簡摘要而非原始內容。
+description: 需要調查 10+ 個檔案、搜尋 codebase 結構、或收集背景資訊時委派。回傳精簡摘要，不將原始內容塞入主對話。
 tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
 model: haiku
 ---

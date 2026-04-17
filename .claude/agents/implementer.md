@@ -1,6 +1,6 @@
 ---
 name: implementer
-description: 實作程式碼變更、撰寫測試、執行 lint 與測試。適用於明確的編碼任務，會自行驗證結果。
+description: 有明確規格的編碼任務時委派；觸發詞：「幫我實作」、「改這個函式」、「加這個功能」。自行執行 lint 與測試後回傳驗證結果。
 tools: Read, Grep, Glob, Edit, Write, Bash
 model: sonnet
 ---
