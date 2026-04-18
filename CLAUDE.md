@@ -16,27 +16,54 @@
 - @.claude/rules/subagent-strategy.md — Advisor 模式 + Sub Agent 委派（含 Opus 4.7 顯式規則）
 - @.claude/rules/context-management.md — Context 監控（含 1M 視窗策略）
 
-## 按需載入規則（lazy-load，**不要預先 Read**）
+## 按需載入（lazy-load · 說出觸發詞即載入 · 不說不佔 context）
 
-| 觸發條件 | 載入檔 |
+> 💡 `/load-plan` 隨時顯示完整可用清單與觸發詞
+
+### 🔧 Workspace 管理
+| 觸發條件 | 載入 |
 |---|---|
-| 做 Opus 4.7 調校 / 深度架構決策 | `.claude/rules/opus47-best-practices.md` |
-| Context > 60%、執行 `/compact` / `/rewind` | `.claude/rules/session-management.md` |
-| 設定排程、webhook、長跑 routine | `.claude/rules/routines.md` |
-| 新增 Skill / Agent / Tool 前設計參考 | `docs/tool-design-principles.md` |
-| 撰寫提示、啟動新 session | `prompts.md`（核心 3 條） |
-| 進階提示模板 | `docs/prompts-advanced.md` |
-| 自動同步 / SessionStart hook 細節 | `.claude/rules/auto-sync.md` |
-| Context > 70% 或需優化 token 用量 | `.claude/rules/token-efficiency.md` |
-| 需要高效 CLI 工具（ast-grep / yq / delta 等）| `.claude/rules/cli-enhancers.md` |
-| 季度審計 / 研究新 best practice 來源 | `.claude/skills/research-best-practices/SKILL.md` |
+| 查看 workspace 載入計畫、可用 skill 地圖 | `.claude/skills/load-plan/SKILL.md` |
 | 新 session 冷啟、接手陌生 codebase | `.claude/skills/prime/SKILL.md` |
 | Session 結束回顧 / `/compact` 前記錄決策 | `.claude/skills/retro/SKILL.md` |
 | 評估 session 模型效率 / 成本分析 | `.claude/skills/context-report/SKILL.md` |
+| Context > 60%、執行 `/compact` / `/rewind` | `.claude/rules/session-management.md` |
+| Context > 70% 或需優化 token 用量 | `.claude/rules/token-efficiency.md` |
+| Opus 4.7 調校 / 深度架構決策 | `.claude/rules/opus47-best-practices.md` |
+| 撰寫提示、啟動新 session | `prompts.md` |
+
+### 🖥 程式開發
+| 觸發條件 | 載入 |
+|---|---|
 | 除錯、測試失敗、生產 error 調查 | `.claude/skills/debug/SKILL.md` |
 | 應用程式效能分析與最佳化 | `.claude/skills/perf/SKILL.md` |
 | 大型重構前產出 codebase 符號地圖 | `.claude/skills/map/SKILL.md` |
-| 建立新 Skill（格式驗證與命名規則）| `.claude/skills/add-skill/SKILL.md` |
+| 前端開發、UI 設計 | `.claude/skills/frontend-design/SKILL.md` |
+| Commit 前深度審查 | `.claude/skills/deep-review/SKILL.md` |
+| 設定排程、webhook、長跑 routine | `.claude/rules/routines.md` |
+| 高效 CLI 工具（ast-grep / yq / delta 等） | `.claude/rules/cli-enhancers.md` |
+| 新增 Skill / Agent / Tool 前設計參考 | `docs/tool-design-principles.md` |
+| 建立新 Skill（格式驗證與命名規則） | `.claude/skills/add-skill/SKILL.md` |
+| 自動同步 / SessionStart hook 細節 | `.claude/rules/auto-sync.md` |
+
+### 📣 行銷 / 文案
+| 觸發條件 | 載入 |
+|---|---|
+| 行銷策略、GTM、活動規劃、A/B 測試 | `.claude/skills/marketing/SKILL.md` |
+| 文案撰寫、SEO、Email 行銷、Landing Page | `.claude/skills/writing/SKILL.md` |
+| 進階提示模板 | `docs/prompts-advanced.md` |
+
+### 🔍 研究 / 分析
+| 觸發條件 | 載入 |
+|---|---|
+| 市場調查、競品分析、文獻整理 | `.claude/skills/research/SKILL.md` |
+| Claude Code best practice 季度審計 | `.claude/skills/research-best-practices/SKILL.md` |
+
+### 📋 專案管理
+| 觸發條件 | 載入 |
+|---|---|
+| Sprint 規劃、排程、優先排序、狀態報告 | `.claude/skills/pm/SKILL.md` |
+| 大型任務多 Agent 平行執行 | `.claude/skills/agent-team/SKILL.md` |
 
 ## 進階文件（按需 Read）
 

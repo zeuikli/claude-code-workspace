@@ -229,3 +229,33 @@ with client.messages.stream(
 - **企業代理環境**：stream idle timeout 減少 > 80%
 - **複雜 tool use**：偵測到斷線後快速重連，而非整個請求失敗
 - **長時間任務**：15 分鐘 API timeout 給予充裕執行時間
+
+---
+
+## 附錄：調查記錄
+
+### A. 任務層面的 timeout 緩解方案（操作建議）
+
+除了設定環境變數，也可從任務設計層面降低 timeout 風險：
+
+- **讀取大檔案**：用 `grep`/`search` 取代完整讀取，或使用 `offset` + `limit` 分段讀取
+- **複雜實作**：拆分成多個小步驟，每步驟獨立完成後繼續
+- **大型重構**：每次只修改單一模組，避免跨多檔案一次性變更
+
+### B. BASH_MAX_TIMEOUT_MS 優化建議
+
+`BASH_MAX_TIMEOUT_MS`（30 分鐘）與 `CLAUDE_STREAM_IDLE_TIMEOUT_MS`（2 分鐘）之間存在功能落差：Bash tool 理論可跑 30 分鐘，但若連續 2 分鐘無 stdout，watchdog 就會介入。
+
+可考慮將 `BASH_MAX_TIMEOUT_MS` 從 30 分鐘降至 `600000`（10 分鐘）以反映實際限制，但這屬於優化建議，非必要修改。
+
+### C. 風險摘要（各層級）
+
+| 維度 | 風險等級 | 說明 |
+|------|---------|------|
+| **Hooks 層整體** | 低 | 所有 hooks 執行時間遠低於任何 timeout 閾值 |
+| **設定優先級衝突** | 無 | 兩份設定檔值一致，合併規則明確 |
+| **Agents（researcher/reviewer/security-reviewer）** | 無 | 不使用 Bash tool |
+| **Agents（implementer/test-writer）** | 中（可管理）| 長時間靜默 build/test 可能觸發 watchdog |
+| **Skills（agent-team 的平行 worker）** | 中（可管理）| 同上，worker 需注意靜默輸出 |
+| **BASH_MAX vs STREAM_IDLE 隱性矛盾** | 中（已知）| 30 分鐘上限與 2 分鐘靜默上限的功能落差 |
+| **整體綜合評估** | 低至中（偏低）| 無破壞性變更，現有功能不受影響 |

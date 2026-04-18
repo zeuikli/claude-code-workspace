@@ -2,7 +2,7 @@
 
 > 此目錄存放深度分析與設計文件，**不會自動載入**到 Claude context。
 > 需要時透過 `Read /tmp/claude-code-workspace/docs/<file>.md` 主動讀取，避免占用 token 預算。
-> 最後更新：2026-04-17（v2 — 同步 Opus 4.7 深化改動）
+> 最後更新：2026-04-18（v3 — 新增五大領域 skills、load-plan 指令、歸檔過期報告）
 
 ## 設計論述與官方對齊
 
@@ -14,33 +14,34 @@
 | `tool-design-principles.md` | **工具設計心智模型**（Seeing like an agent — 高門檻加工具 / Progressive Disclosure / 動作分類 / Subagent = 動作空間擴充） | 新增 `.claude/agents/` 或 `.claude/skills/` 前，設計工具前 |
 | `auto-memory-hybrid.md` | 官方 Auto Memory vs 自製 Memory.md 對比與 Hybrid 採用指南 | 評估啟用 Auto Memory、跨機器同步策略 |
 
-## 效能與效益報告
+## 研究報告
 
 | 檔案 | 主題 | 何時讀 |
 |---|---|---|
-| `workspace-performance-report.md` | Workspace 效能基準（成本 -72.4%、平行加速 2.6-7.3×） | 評估優化效益、設定基準時 |
-| `karpathy-optimization-report.md` | Karpathy 風格 workspace 優化效益報告 | 評估 workspace 改進效益、設定基準 |
-| `session7-followup-report.md` | Session 7 二次深度優化 follow-up 報告（16 項 todos） | 回顧 P0/P1 優化決策、追溯設計脈絡 |
+| `karpathy-claude-code-insights-2026-04-18.md` | Karpathy × Claude Code 洞察：4 大原則、AutoResearch、官方驗證 | 評估 workspace 對齊 Karpathy 建議時 |
+| `best-practices-research-2026-04-18.md` | htlin222 dotfiles + shanraisshan 最佳實踐研究 + gap analysis | 評估 workspace 改進方向 |
 | `blog-analysis-report.md` | 22 篇 Anthropic Blog 文章可操作洞察萃取 | 尋找 prompt engineering / agent 設計靈感 |
 
 ## 工程與除錯
 
 | 檔案 | 主題 | 何時讀 |
 |---|---|---|
-| `timeout-guide.md` | **Stream timeout 完整指南**（整合自 stream-timeout-investigation + timeout-settings-impact-analysis） | 遇到串流中斷、長 Bash 卡住、調整 timeout 設定前 |
-| `stream-timeout-investigation.md` | 原始調查報告（已整合進 timeout-guide.md，保留供歷史追溯） | 僅歷史追溯用；日常除錯請讀 timeout-guide.md |
-| `timeout-settings-impact-analysis.md` | 原始影響分析報告（已整合進 timeout-guide.md，保留供歷史追溯） | 僅歷史追溯用；日常除錯請讀 timeout-guide.md |
+| `timeout-guide.md` | **Stream timeout 完整指南**（整合自三份 timeout 文件） | 遇到串流中斷、長 Bash 卡住、調整 timeout 設定前 |
 | `hook-lifecycle.md` | 10 個 Hook 腳本 + 7 種事件的 sequenceDiagram + 競態防護 + 除錯指南 | Hook 除錯、新人理解 hook 生命週期 |
+
+## 歸檔（`docs/archive/`）
+
+已被取代或純歷史記錄的文件，詳見 `docs/archive/README.md`。
 
 ## 載入策略
 
 | 場景 | 策略 |
 |---|---|
 | 一般任務 | 主 CLAUDE.md + `.claude/rules/` 即足夠 |
+| **查看所有可用工具** | `/load-plan` 指令（動態顯示） |
 | 架構決策 | 主動讀取 `advisor-strategy.md` |
 | 多 agent 協調設計 | 主動讀取 `multi-agent-coordination.md` |
 | Prompt 設計研究 | 主動讀取 `blog-analysis-report.md` |
-| 效能優化 | 主動讀取 `workspace-performance-report.md` |
 | Hook / Timeout 除錯 | 主動讀取 `timeout-guide.md`（整合版本） |
 | Opus 4.7 升級 | 主動讀取 `opus47-migration.md` |
 | 新增 Skill / Agent / Tool | 主動讀取 `tool-design-principles.md` |
