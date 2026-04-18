@@ -52,6 +52,24 @@ jobs:
           NEW_COUNT=$(tail -1 /tmp/fetch.log | grep -oP 'New:\s*\K[0-9]+' || echo "0")
           echo "new_count=${NEW_COUNT}" >> "$GITHUB_OUTPUT"
 
+      - name: Fetch tips (shanraisshan/claude-code-best-practice)
+        id: fetch_tips
+        run: |
+          for attempt in 1 2 3; do
+            if bash scripts/fetch-tips.sh 2>&1 | tee /tmp/fetch-tips.log; then
+              echo "Tips fetch succeeded on attempt $attempt"
+              break
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              sleep $((attempt * 10 * 2))
+              echo "Retry attempt $((attempt + 1))..."
+            else
+              echo "::warning::All 3 tips fetch attempts failed"
+            fi
+          done
+          TIPS_NEW=$(tail -5 /tmp/fetch-tips.log | grep -oP 'New:\s*\K[0-9]+' || echo "0")
+          echo "tips_new=${TIPS_NEW}" >> "$GITHUB_OUTPUT"
+
       - name: Check for changes
         id: changes
         run: |
@@ -66,10 +84,11 @@ jobs:
         if: steps.changes.outputs.has_changes == 'true'
         env:
           NEW_COUNT: ${{ steps.fetch.outputs.new_count }}
+          TIPS_NEW: ${{ steps.fetch_tips.outputs.tips_new }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "archive: sync Claude blog (+${NEW_COUNT} articles) — $(date '+%Y-%m-%d')" \
+          git commit -m "archive: sync Claude blog (+${NEW_COUNT} articles) & tips (+${TIPS_NEW}) — $(date '+%Y-%m-%d')" \
                      -m "Run: ${RUN_URL}"
           git push origin blog-archive
