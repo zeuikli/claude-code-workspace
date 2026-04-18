@@ -25,10 +25,12 @@ jobs:
           ref: blog-archive
           fetch-depth: 1
 
-      - name: Lint shell script
+      - name: Lint shell scripts
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq shellcheck
-          shellcheck scripts/fetch-blog.sh || echo "::warning::shellcheck found issues"
+          shellcheck scripts/fetch-blog.sh || echo "::warning::shellcheck found issues in fetch-blog.sh"
+          shellcheck scripts/fetch-tips.sh || echo "::warning::shellcheck found issues in fetch-tips.sh"
+          shellcheck scripts/fetch-community-sources.sh || echo "::warning::shellcheck found issues in fetch-community-sources.sh"
 
       - name: Fetch blog articles (with retry)
         id: fetch
@@ -48,11 +50,11 @@ jobs:
             fi
           done
 
-          # 取得本次新增篇數（從 fetch-blog.sh 最後一行輸出解析）
+          # 取得本次新增皇數（從 fetch-blog.sh 最後一行輸出解析）
           NEW_COUNT=$(tail -1 /tmp/fetch.log | grep -oP 'New:\s*\K[0-9]+' || echo "0")
           echo "new_count=${NEW_COUNT}" >> "$GITHUB_OUTPUT"
 
-      - name: Fetch tips (shanraisshan/claude-code-best-practice)
+      - name: Fetch tips (shanraisshan/claude-code-best-practice + X/Twitter via repo)
         id: fetch_tips
         run: |
           for attempt in 1 2 3; do
@@ -70,6 +72,24 @@ jobs:
           TIPS_NEW=$(tail -5 /tmp/fetch-tips.log | grep -oP 'New:\s*\K[0-9]+' || echo "0")
           echo "tips_new=${TIPS_NEW}" >> "$GITHUB_OUTPUT"
 
+      - name: Fetch community sources (howborisusesclaudecode, thariq.io, docs, GitHub)
+        id: fetch_community
+        run: |
+          for attempt in 1 2 3; do
+            if bash scripts/fetch-community-sources.sh 2>&1 | tee /tmp/fetch-community.log; then
+              echo "Community fetch succeeded on attempt $attempt"
+              break
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              sleep $((attempt * 10 * 2))
+              echo "Retry attempt $((attempt + 1))..."
+            else
+              echo "::warning::All 3 community fetch attempts failed"
+            fi
+          done
+          COMMUNITY_NEW=$(tail -5 /tmp/fetch-community.log | grep -oP 'New:\s*\K[0-9]+' || echo "0")
+          echo "community_new=${COMMUNITY_NEW}" >> "$GITHUB_OUTPUT"
+
       - name: Check for changes
         id: changes
         run: |
@@ -85,10 +105,11 @@ jobs:
         env:
           NEW_COUNT: ${{ steps.fetch.outputs.new_count }}
           TIPS_NEW: ${{ steps.fetch_tips.outputs.tips_new }}
+          COMMUNITY_NEW: ${{ steps.fetch_community.outputs.community_new }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "archive: sync Claude blog (+${NEW_COUNT} articles) & tips (+${TIPS_NEW}) — $(date '+%Y-%m-%d')" \
+          git commit -m "archive: sync blog (+${NEW_COUNT}) tips (+${TIPS_NEW}) community (+${COMMUNITY_NEW}) — $(date '+%Y-%m-%d')" \
                      -m "Run: ${RUN_URL}"
           git push origin blog-archive
