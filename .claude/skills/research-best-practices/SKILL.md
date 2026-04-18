@@ -104,3 +104,9 @@ git push -u origin <branch>
 3. **既有功能的同類實作要跳過**：若 workspace 已有類似效果的 rule/skill/agent，不要重複建立。避免重複發明（reinventing the wheel）。
 4. **advisor 確認後才動手實作**：Step 4 是強制關卡，不可跳過。高確定性的項目也應讓 advisor 快速過目，確保不遺漏邊界案例。
 5. **數量不是目標，精簡優於大量**：workspace 設定的可維護性比覆蓋面更重要。10 個高品質的項目勝過 30 個低價值的項目。
+6. **⚠️ Researcher subagent 會幻覺（Hallucination Risk）**：研究型 subagent 常捏造 URL、百分比、功能名稱、repo 名稱。Step 4 (Advisor) 的核心職責之一就是攔截這些幻覺。  
+   驗證清單：
+   - Hook 事件名稱 → 必須對照 `code.claude.com/docs/en/hooks`（官方一次列出所有事件）
+   - 社群 repo → 用 `site:github.com <repo-name>` 搜尋確認存在
+   - 功能名稱（如 "AutoDream", "Task Memory"）→ 找官方 blog 或 changelog 一手來源
+   - 效能數字（"20%→50% activation"）→ 無一手來源即視為捏造，不引用
