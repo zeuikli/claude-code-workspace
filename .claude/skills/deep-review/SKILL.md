@@ -37,6 +37,28 @@ context: fork
 
 每項包含 `file:line` 引用與修復建議。
 
+## `/ultrareview` — 雲端多 Agent Fleet 審查（Research Preview）
+
+> v2.1.86+，適用 Pro / Max / Team / Enterprise
+
+當 staged changes 規模大、或想要獨立於本地環境的深度審查時，使用 `/ultrareview`：
+
+```bash
+/ultrareview           # 審查當前 branch vs main
+/ultrareview <PR-num>  # 審查指定 PR
+```
+
+**與本地 Deep Review 的差異**：
+
+| | 本地 Deep Review | `/ultrareview` |
+|---|---|---|
+| 執行位置 | 本地 context | 雲端 agent fleet |
+| 耗時 | 即時 | 5–10 分鐘 |
+| 費用 | 計入訂閱額度 | 3 次免費（Pro/Max），之後 $5–20/run |
+| 適用場景 | 快速 pre-commit 把關 | 複雜 PR / 安全敏感變更 |
+
+**使用建議**：日常用本地三維度 Deep Review；高風險或大型 PR 才升級到 `/ultrareview`。
+
 ## Gotcha
 
 - **只審查 staged 變更**：未 `git add` 的修改不在範圍內；請先確認 staging area 正確。

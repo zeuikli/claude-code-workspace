@@ -12,8 +12,9 @@ context: fork
 以下情境適合啟動本 Skill：
 
 - **季度審計**：每季定期審查 workspace 設定是否跟上社群最新做法
-- **官方 major update**：Anthropic 發布 Claude Code 重大版本或新功能時
+- **官方 major update**：Anthropic 發布 Claude Code 重大版本或新功能時（如 `/ultraplan`、`/ultrareview`、Voice mode）
 - **發現新 community repo**：使用者找到新的高星 best practice repo 想評估是否採納
+- **新指令公告**：Thariq 或 Boris 發表新 tip 時，對照 workspace 評估採納優先級
 
 ---
 

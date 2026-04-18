@@ -60,6 +60,8 @@
 | 大型重構前 · Pre-refactor codebase map | `.claude/skills/map/SKILL.md` |
 | 前端開發、UI 設計 · Frontend/UI | `.claude/skills/frontend-design/SKILL.md` |
 | Commit 前審查 · Pre-commit review | `.claude/skills/deep-review/SKILL.md` |
+| 大型功能雲端規劃 · Cloud planning with web review | 內建指令：直接執行 `/ultraplan <prompt>` |
+| Pre-merge 深度驗證 · Multi-agent fleet review | 內建指令：直接執行 `/ultrareview` 或 `/ultrareview <PR>` |
 | 大型功能規劃、需求訪談 · Feature spec & interview | `.claude/skills/spec-interview/SKILL.md` |
 | 排程、webhook、routine、Slack 整合 | `.claude/rules/routines.md` |
 | CLI 工具（ast-grep / yq / delta / MonitorTool）| `.claude/rules/cli-enhancers.md` |

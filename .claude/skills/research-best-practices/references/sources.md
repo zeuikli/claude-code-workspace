@@ -80,6 +80,26 @@
 | [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | 75+ 社群 repo 策展清單 | 未直接驗證 |
 | [ykdojo/claude-code-tips](https://github.com/ykdojo/claude-code-tips) | Minimal CLAUDE.md 原則 | 未直接驗證 |
 
+## 新功能（Research Preview，2026-04）
+
+| 功能 | 版本 | 說明 | Workspace 狀態 |
+|------|------|------|----------------|
+| `/ultraplan` | v2.1.91+ | 雲端規劃：Claude 在雲端分析需求 → web review UI（inline comments / emoji / threads）→ 可 teleport 回 terminal 執行 | ✅ 已加入 CLAUDE.md |
+| `/ultrareview` | v2.1.86+ | 多 agent fleet 深度 code review；`/ultrareview` 或 `/ultrareview <PR>`；5–10 分鐘；Pro/Max 3 次免費，之後 $5–20/run | ✅ 已加入 deep-review/SKILL.md |
+| Voice mode | Research Preview | `/voice` 或 `claude --voice`；支援即時語音對話控制 agent；Mobile app 優先 | 📝 參考，未加入 workspace |
+
+> 來源：Thariq Twitter/X (2026-04-10, 2026-04-14)；Vibe Code Camp verification；Anthropic blog
+
+## Thariq 工程哲學（2026 年公開洞察）
+
+| 主題 | 核心論點 | Workspace 位置 |
+|------|----------|----------------|
+| **Unhobbling the Model** | 持續移除不必要的限制，讓 Claude 有更多自主性 | spec-interview/SKILL.md（核心理念）|
+| **Delete-and-Rebuild Cycle** | 模型能力提升後積極刪除舊 scaffolding；10x 能力 = 10x 刪除 | spec-interview/SKILL.md（核心理念）|
+| **Competitive Advantage as Vector** | 方向 + 累積洞察是護城河，而非單一功能 | 未採納（商業哲學）|
+| **Seeing like an Agent** | 從模型視角設計工具；AskUserQuestion 3 次失敗→成功設計過程 | spec-interview/SKILL.md（架構哲學）|
+| **Context rot ~300-400k tokens** | 注意力稀釋閾值；依任務類型有差異 | context-management.md、session-management.md |
+
 ## 未驗證 / 疑似幻覺（研究 Agent 產出，勿直接引用）
 
 - "AutoDream" — 未找到官方文件
@@ -95,4 +115,6 @@ site:x.com bcherny claude 2026
 site:x.com trq212 claude 2026
 howborisusesclaudecode.com
 site:github.com bcherny claude
+claude.com/blog ultraplan ultrareview
+thariq.io
 ```
