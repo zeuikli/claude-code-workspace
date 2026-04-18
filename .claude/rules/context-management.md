@@ -7,7 +7,8 @@ description: Context Window 監控 + 1M context GA + Prompt Caching（進階 ses
 ## 監控
 
 - `/usage` 查看本 session 的 token/cost 即時用量。
-- 使用量接近 **70%** 時**立即通知使用者**，建議：
+- 使用量達 **60%** 時，**按需載入** `.claude/rules/session-management.md`，評估是否需要 `/compact` 或切換 session。
+- 使用量達 **70%** 時**立即通知使用者**，建議：
   - `/compact <hint>`（低成本、繼續手上任務）
   - `/clear`（任務即將切換）
   - 開新 terminal session（並行工作流）

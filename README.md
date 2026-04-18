@@ -86,8 +86,8 @@ claude-code-workspace/
 ├── .github/workflows/ci.yml       # CI：shellcheck + JSON schema + markdown-lint
 ├── scripts/healthcheck.sh         # workspace 健康檢查
 ├── .claude/
-│   ├── settings.json              # Opus 4.7 xhigh + 9 種 Hook + Auto Memory + Timeout
-│   ├── hooks/                     # 9 種 hook 事件
+│   ├── settings.json              # Opus 4.7 xhigh + 9 種 Hook 事件 + Auto Memory + Timeout
+│   ├── hooks/                     # 9 種 Hook 事件（對應多個腳本，見 .claude/hooks/）
 │   ├── rules/
 │   │   ├── core.md                   # 語言 / Git / 品質三合一
 │   │   ├── opus47-best-practices.md  # ★ Opus 4.7 調校指南
@@ -126,7 +126,7 @@ claude-code-workspace/
 | `advisorModel: claude-opus-4-7` | Server-side advisor — 架構/審查時升級 |
 | `alwaysThinkingEnabled: false` | Opus 4.7 內建自適應思考，無需強制（省 1.5-2k tokens/輪） |
 | `autoMemoryEnabled: true` | 官方 Auto Memory 跨 session 累積 |
-| 9 種 Hook 事件 | SessionStart / InstructionsLoaded / UserPromptSubmit / SubagentStart / SubagentStop / PreToolUse / PreCompact / PostCompact / Stop |
+| 9 種 Hook 事件（對應多個腳本） | SessionStart / InstructionsLoaded / UserPromptSubmit / SubagentStart / SubagentStop / PreToolUse / PreCompact / PostCompact / Stop |
 | Timeout | Stream watchdog + 2min idle + 15min API + 30min Bash max |
 | Sub Agent 三層 | Haiku 4.5（搜尋）→ Sonnet 4.6（實作）→ Opus 4.7（審查） |
 

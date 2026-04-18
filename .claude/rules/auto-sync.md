@@ -1,5 +1,5 @@
 ---
-description: Hook 自動化同步機制 — SessionStart / 9 種事件
+description: Hook 自動化同步機制 — SessionStart / 9 種 Hook 事件（對應多個腳本）
 ---
 
 # 自動化同步機制
