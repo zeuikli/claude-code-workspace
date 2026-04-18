@@ -6,6 +6,8 @@ description: >
   Coverage: language, subagent strategy, git workflow, context management, quality.
 ---
 
+> **Full mode**（完整規則注入）。極簡版見 [SKILL-rules-only.md](SKILL-rules-only.md)。
+
 # Workspace Rules
 
 ## Language

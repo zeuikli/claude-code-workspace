@@ -6,6 +6,8 @@ description: >
   keeps only actionable directives.
 ---
 
+> **Minimal mode**（選擇性注入，省 token）。完整版見 [SKILL.md](SKILL.md)。
+
 # Critical Rules
 
 Lang: 中文→繁體中文 | English→English
