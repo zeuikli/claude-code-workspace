@@ -15,4 +15,5 @@ mkdir -p "$(dirname "$LOG_FILE")"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Session stopped" >> "$LOG_FILE"
 
 echo "[session-stop] Session ended. Auto Memory handles cross-session persistence."
+printf '\a' 2>/dev/null || true
 exit 0
