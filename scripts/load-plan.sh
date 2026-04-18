@@ -147,12 +147,14 @@ show_skill "retro"            "Session 回顧、compact 前記錄"      "session
 show_skill "context-report"   "Session 效率與成本分析"            "session efficiency scoring"
 show_skill "add-skill"        "建立新 skill（格式驗證）"           "create new skill with format check"
 show_skill "cost-tracker"     "Token / 成本追蹤"                  "token usage and cost tracking"
+show_skill "blog-analyzer"    "Anthropic blog 新文章追蹤"         "Anthropic blog drift tracking"
 show_skill "load-plan"        "重新顯示本畫面"                    "show this load plan again"
 
 # 按需規則
 echo ""
 echo -e "  ${BOLD}${MAGENTA}📖  按需規則 | On-demand Rules${RESET}"
 for rule_file in "$RULES_DIR"/*.md; do
+  [ -f "$rule_file" ] || continue
   rule_name=$(basename "$rule_file" .md)
   tier_val=$(grep -m1 "^tier:" "$rule_file" 2>/dev/null | awk '{print $2}' || echo "")
   if [ "$tier_val" = "ondemand" ]; then

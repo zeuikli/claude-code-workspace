@@ -43,7 +43,9 @@
 | 查看載入計畫、可用 skill 地圖 | `/load-plan` skill |
 | 新 session 冷啟、接手陌生 codebase · Cold-start | `.claude/skills/prime/SKILL.md` |
 | Session 回顧 / `/compact` 前記錄決策 | `.claude/skills/retro/SKILL.md` |
-| 模型效率 / 成本分析 | `.claude/skills/context-report/SKILL.md` |
+| 模型效率 / 成本分析 · Context efficiency report | `.claude/skills/context-report/SKILL.md` |
+| Token / 成本追蹤 · Token & cost tracking | `.claude/skills/cost-tracker/SKILL.md` |
+| Anthropic blog 新文章追蹤 · Blog drift tracking | `.claude/skills/blog-analyzer/SKILL.md` |
 | Context > 60% · `/compact` / `/rewind` | `.claude/rules/session-management.md` |
 | Context > 70% · token 優化 | `.claude/rules/token-efficiency.md` |
 | Opus 4.7 調校 / 架構決策 | `.claude/rules/opus47-best-practices.md` |
