@@ -80,15 +80,17 @@
 | [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | 75+ 社群 repo 策展清單 | 未直接驗證 |
 | [ykdojo/claude-code-tips](https://github.com/ykdojo/claude-code-tips) | Minimal CLAUDE.md 原則 | 未直接驗證 |
 
-## 新功能（Research Preview，2026-04）
+## 新功能（Research Preview + 正式功能，2026-Q1/Q2）
 
 | 功能 | 版本 | 說明 | Workspace 狀態 |
 |------|------|------|----------------|
-| `/ultraplan` | v2.1.91+ | 雲端規劃：Claude 在雲端分析需求 → web review UI（inline comments / emoji / threads）→ 可 teleport 回 terminal 執行 | ✅ 已加入 CLAUDE.md |
-| `/ultrareview` | v2.1.86+ | 多 agent fleet 深度 code review；`/ultrareview` 或 `/ultrareview <PR>`；5–10 分鐘；Pro/Max 3 次免費，之後 $5–20/run | ✅ 已加入 deep-review/SKILL.md |
+| `/ultraplan` | v2.1.91+ | 雲端規劃：Claude 在雲端分析需求 → web review UI（inline comments / emoji / threads）→ teleport 回 terminal 執行 | ✅ 已加入 CLAUDE.md |
+| `/ultrareview` | v2.1.86+ | 多 agent fleet 深度 code review；5–10 分鐘；Pro/Max 3 次免費，之後 $5–20/run | ✅ 已加入 deep-review/SKILL.md |
+| **Remote Control** | v2.1.51+ | `claude remote-control` / `claude --remote-control` / `/remote-control` / `/rc`：從手機/瀏覽器控制本地 session；需 claude.ai 帳號 | ✅ 已加入 routines.md |
+| **Channels** | — | `/en/channels`：Telegram / Discord / iMessage → Claude Code session；支援自訂 channel plugin | 📝 已加入 routines.md |
 | Voice mode | Research Preview | `/voice` 或 `claude --voice`；支援即時語音對話控制 agent；Mobile app 優先 | 📝 參考，未加入 workspace |
 
-> 來源：Thariq Twitter/X (2026-04-10, 2026-04-14)；Vibe Code Camp verification；Anthropic blog
+> 來源：code.claude.com/docs/en/remote-control（直接 fetch 驗證）；Thariq Twitter/X；Anthropic blog
 
 ## Thariq 工程哲學（2026 年公開洞察）
 
@@ -100,21 +102,34 @@
 | **Seeing like an Agent** | 從模型視角設計工具；AskUserQuestion 3 次失敗→成功設計過程 | spec-interview/SKILL.md（架構哲學）|
 | **Context rot ~300-400k tokens** | 注意力稀釋閾值；依任務類型有差異 | context-management.md、session-management.md |
 
-## 未驗證 / 疑似幻覺（研究 Agent 產出，勿直接引用）
+## 驗證狀態更新（2026-04-18 深度審計）
 
-- "AutoDream" — 未找到官方文件
-- 具體效能數字（"20%→50% skill activation"）— 無一手來源
-- "Prompt Caching Is Everything" by Thariq — 標題存在但完整內容未驗證
-- Mobile `/teleport`、`/remote-control` — 未找到官方文件
+| 項目 | 原狀態 | 驗證結果 | 備註 |
+|------|--------|----------|------|
+| "AutoDream" | 未驗證 | ❌ **確認幻覺** | 無任何官方文件 |
+| "20%→50% skill activation" | 未驗證 | ⚠️ **社群來源** | community blog 有提及，非官方數字，勿引用 |
+| "Prompt Caching Is Everything" by Thariq | 標題存在，內容未驗證 | ✅ **已驗證** | Thariq Shihpar，2026-02-24，3 個核心觀點（static-first、prefix matching、per-model caching）。內容已涵蓋於 context-management.md |
+| Mobile `/teleport` | 未驗證 | ❌ **確認幻覺** | 官方文件無此指令；連接手機的正確方式是 `/remote-control` + QR code |
+| `/remote-control` | 未驗證 | ✅ **已驗證** | 完整官方文件 code.claude.com/docs/en/remote-control；v2.1.51+；已加入 routines.md |
+
+## 未驗證 / 疑似幻覺（仍不確定）
+
+- "AutoDream" — ❌ 確認幻覺，無任何官方來源
+- 具體效能數字（"20%→50% skill activation"）— ⚠️ 社群文章推測，非官方，不引用
+- Mobile `/teleport` — ❌ 確認幻覺；正確為 `/remote-control` + QR code
 
 ## 下次審計建議查詢詞
 
 ```
 site:github.com/shanraisshan/claude-code-best-practice tips
-site:x.com bcherny claude 2026
-site:x.com trq212 claude 2026
+site:x.com bcherny claude
+site:x.com trq212 claude
+site:x.com bcherny claude code
+site:x.com trq212 claude code
 howborisusesclaudecode.com
 site:github.com bcherny claude
-claude.com/blog ultraplan ultrareview
+site:github.com trq212 claude
+claude.com/blog
+code.claude.com/docs/en/
 thariq.io
 ```

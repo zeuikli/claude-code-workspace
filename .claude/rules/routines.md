@@ -144,3 +144,63 @@ claude --bare "your prompt here"
 
 - 禁用互動 UI，啟動速度最高 **10x**。
 - 適合 CI pipeline、webhook handler、腳本呼叫 — 任何不需要使用者介入的場景。
+
+## Remote Control — 從任何設備繼續本地 Session（官方驗證）
+
+> 來源：[code.claude.com/docs/en/remote-control](https://code.claude.com/docs/en/remote-control)（2026-04-18 fetch 驗證）
+> 需要 Claude Code v2.1.51+；所有方案可用（Team/Enterprise 需管理員開啟）
+
+Claude Code 繼續跑在**本地機器**，手機 / 瀏覽器只是遠端視窗。
+
+### 三種啟動方式
+
+```bash
+# 1. Server mode（多 session 並發，最大 32 個）
+claude remote-control
+
+# 2. Interactive session（本機也能打字，同時可遠端）
+claude --remote-control
+claude --remote-control "My Project"
+
+# 3. 在已有 session 中啟動
+/remote-control
+/rc
+```
+
+### 從另一台設備連線
+
+- 直接用 session URL 開啟 claude.ai/code
+- 掃 QR code（按空白鍵顯示）→ Claude mobile app
+- `/mobile` 指令顯示 iOS / Android 下載 QR code
+
+### Mobile 推播通知（v2.1.110+）
+
+- `/config` 啟用 **Push when Claude decides**
+- 適合長時間任務：任務完成或需要決策時推播
+
+### 與 Claude Code on the web 的差異
+
+| | Remote Control | Claude Code on the web |
+|---|---|---|
+| 執行位置 | 本地機器 | Anthropic 雲端 |
+| 本地 MCP / 工具 | ✅ 可用 | ❌ 不可用 |
+| 適用情境 | 在外繼續手上的工作 | 無本地環境時啟動新任務 |
+
+## Channels — Telegram / Discord / iMessage 整合
+
+> 來源：[code.claude.com/docs/en/channels](https://code.claude.com/docs/en/channels)
+
+在聊天 app 中觸發 Claude Code session，Claude 跑在本地機器。
+
+```
+# 安裝官方 channel plugin（Telegram / Discord）
+/plugin install telegram
+/plugin install discord
+
+# 或自訂 channel（HTTP endpoint）
+```
+
+**常見模式**：
+- CI 失敗推送到 Telegram → @Claude 診斷 + 開 draft fix
+- Discord 頻道回報 bug → Claude 調查並回報進度
+- 比 Slack 整合輕量：不需要 claude.ai/code 帳號的雲端路由

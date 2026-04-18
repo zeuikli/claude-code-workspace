@@ -63,7 +63,7 @@
 | 大型功能雲端規劃 · Cloud planning with web review | 內建指令：直接執行 `/ultraplan <prompt>` |
 | Pre-merge 深度驗證 · Multi-agent fleet review | 內建指令：直接執行 `/ultrareview` 或 `/ultrareview <PR>` |
 | 大型功能規劃、需求訪談 · Feature spec & interview | `.claude/skills/spec-interview/SKILL.md` |
-| 排程、webhook、routine、Slack 整合 | `.claude/rules/routines.md` |
+| 排程、webhook、routine、Slack 整合、Remote Control、Channels | `.claude/rules/routines.md` |
 | CLI 工具（ast-grep / yq / delta / MonitorTool）| `.claude/rules/cli-enhancers.md` |
 | 新增 Skill / Agent / Tool | `.claude/skills/add-skill/SKILL.md` |
 | SessionStart hook 細節 | `.claude/rules/auto-sync.md` |
