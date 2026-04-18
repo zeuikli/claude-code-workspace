@@ -31,8 +31,6 @@
 | [blog-analysis-report.md](blog-analysis-report.md) | 22 篇 Anthropic Blog 文章可操作洞察萃取 | 尋找 prompt engineering / agent 設計靈感 |
 | [auto-mode-analysis.md](auto-mode-analysis.md) | Auto mode 行為分析 | 評估 auto mode 適用場景 |
 | [mode-evaluation.md](mode-evaluation.md) | 各操作模式評估比較 | 選擇操作模式前 |
-| [caveman-hooks-analysis.md](caveman-hooks-analysis.md) | Caveman hooks 原始分析 | 理解 hook 設計歷史脈絡 |
-| [codex-migration-guide.md](codex-migration-guide.md) | Codex 遷移指南 | 從 OpenAI Codex 遷移至 Claude Code |
 
 ---
 
@@ -42,6 +40,8 @@
 |------|------|----------|
 | [archive/session7-followup-report.md](archive/session7-followup-report.md) | Session 7 二次深度優化 follow-up 報告（16 項 todos） | 優化已完成，設計脈絡已沉澱至各現役文件 |
 | [archive/perf-report-044b5cd-vs-a9ffc1d.md](archive/perf-report-044b5cd-vs-a9ffc1d.md) | commit 044b5cd vs a9ffc1d 效能比較報告 | 特定 commit 比較已過時，數據已整合至效能報告 |
+| [codex-migration-guide.md](codex-migration-guide.md) | Codex 遷移指南 | 遷移指南為一次性參考，非日常按需 |
+| [caveman-hooks-analysis.md](caveman-hooks-analysis.md) | Caveman hooks 原始分析 | 實驗性分析報告，已整合至 caveman skill |
 
 > `stream-timeout-investigation.md` 與 `timeout-settings-impact-analysis.md` 已於 Session 7 合併至 `timeout-guide.md` 並刪除（非移入 archive）。
 
