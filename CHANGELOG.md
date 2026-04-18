@@ -4,6 +4,26 @@
 
 ---
 
+## 2026-04-18 (v3 — Karpathy 優化整合 + 文件重整)
+
+### 文件整理
+- 建立 `docs/archive/`，移入 `perf-report-044b5cd-vs-a9ffc1d.md`、`session7-followup-report.md`
+- `docs/INDEX.md` 重寫為 Tier 1（必讀）/ Tier 2（按需）/ Tier 3（歷史）三層分類
+- `benchmarks/results/archive/` 歸檔 3 個舊 JSON 結果
+
+### CLAUDE.md 優化
+- 合併重複的「核心原則」與「常駐規則」區塊
+- 進階文件列表替換為單行指向 `docs/INDEX.md`
+
+### Skills
+- `workspace-rules/SKILL.md` + `SKILL-rules-only.md` 加互相 cross-reference（full vs minimal mode）
+
+### Branch 整合
+- `main` merge 入 `claude/karpathy-optimization-merged`，解決 10 個衝突
+- Memory.md 保留完整 Session 1–9 歷史
+
+---
+
 ## 2026-04-17 (opus-4.7-rewrite v2) — 導入 blog-archive 最新洞察深化 Opus 4.7 優化
 
 ### 改寫依據（本輪新增）
