@@ -46,6 +46,7 @@
 | 模型效率 / 成本分析 · Context efficiency report | `.claude/skills/context-report/SKILL.md` |
 | Token / 成本追蹤 · Token & cost tracking | `.claude/skills/cost-tracker/SKILL.md` |
 | Anthropic blog 新文章追蹤 · Blog drift tracking | `.claude/skills/blog-analyzer/SKILL.md` |
+| 過去一個月使用模式分析 · `/insights` usage analysis | 內建指令：直接執行 `/insights` |
 | Context > 60% · `/compact` / `/rewind` | `.claude/rules/session-management.md` |
 | Context > 70% · token 優化 | `.claude/rules/token-efficiency.md` |
 | Opus 4.7 調校 / 架構決策 | `.claude/rules/opus47-best-practices.md` |
@@ -59,10 +60,12 @@
 | 大型重構前 · Pre-refactor codebase map | `.claude/skills/map/SKILL.md` |
 | 前端開發、UI 設計 · Frontend/UI | `.claude/skills/frontend-design/SKILL.md` |
 | Commit 前審查 · Pre-commit review | `.claude/skills/deep-review/SKILL.md` |
-| 排程、webhook、routine 設定 | `.claude/rules/routines.md` |
-| CLI 工具（ast-grep / yq / delta）| `.claude/rules/cli-enhancers.md` |
+| 大型功能規劃、需求訪談 · Feature spec & interview | `.claude/skills/spec-interview/SKILL.md` |
+| 排程、webhook、routine、Slack 整合 | `.claude/rules/routines.md` |
+| CLI 工具（ast-grep / yq / delta / MonitorTool）| `.claude/rules/cli-enhancers.md` |
 | 新增 Skill / Agent / Tool | `.claude/skills/add-skill/SKILL.md` |
 | SessionStart hook 細節 | `.claude/rules/auto-sync.md` |
+| Prompt caching 優化 / mid-session 架構決策 | `.claude/rules/context-management.md` |
 
 ### 📣 行銷 / 文案 | Marketing & Writing
 | 觸發條件 · Trigger | 載入 · Loads |

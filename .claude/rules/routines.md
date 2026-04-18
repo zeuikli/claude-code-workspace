@@ -76,6 +76,40 @@ Please flag PRs that touch the /auth-provider module. Any changes to this module
 - 建立 / 管理：<https://claude.ai/code> 或 CLI `/schedule`
 - 每個 routine 視為一個 Claude Code session，依同樣方式計費與套用 CLAUDE.md。
 
+## Slack 整合 — @Claude 直接路由到 Claude Code（Thariq @trq212 驗證）
+
+> 來源：[Claude Code in Slack 官方文件](https://code.claude.com/docs/en/slack)
+> Thariq：「Anthropic 內部和外界最大的差異之一，就是大量在 Slack 裡使用 Claude Code」
+
+### 運作方式
+
+在 Slack channel @Claude → 自動偵測是否為程式任務 → 建立 Claude Code on the web session → 回報進度到 Slack thread
+
+```
+Slack thread 提供的 context（bug 討論、error log）→ Claude Code session（調查 + 修復）→ PR 連結回 Slack
+```
+
+### 兩種路由模式
+
+| 模式 | 說明 | 適用情境 |
+|------|------|---------|
+| **Code only** | 所有 @mention 路由到 Claude Code | 技術團隊 |
+| **Code + Chat** | Claude 判斷是程式任務或一般問答 | 混合型團隊 |
+
+> 若路由到 Chat 但你想要 Code session：點「Retry as Code」；反之亦然。
+
+### Anthropic 內部使用情境
+
+- Bug 回報進 Slack → @Claude 調查修復 → 開 PR（非同步，不需離開 Slack）
+- 「這個功能是什麼時候加的？」→ Claude 透過 git history 回答
+- 「這段程式碼是誰負責的？」→ Claude 分析 blame / log
+
+### 設定前提
+
+- Pro / Max / Team / Enterprise + Claude Code on the web 已啟用
+- GitHub 帳號已連接，且至少一個 repo 已認證
+- Slack workspace 管理員需先安裝 Claude app
+
 ## Boris Cherny 驗證的 CLI 自動化技巧
 
 > 來源：[shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice)（2026-03-30 驗證）

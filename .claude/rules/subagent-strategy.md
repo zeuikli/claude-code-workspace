@@ -66,6 +66,30 @@ tier: auto
 > 設計新 Skill / Agent / Tool 前，按需 Read `docs/tool-design-principles.md`。
 > 觸發條件：要新增 `.claude/agents/` 或 `.claude/skills/` 時。
 
+## Tasks — 跨 Session 協作的任務原語（Thariq @trq212 驗證）
+
+> Todos → Tasks 升級（2026-03-25）。Tasks 是 Claude Code 追蹤複雜專案的新 primitive。
+
+**與 Todos 的差異**：
+
+| | Todos（舊）| Tasks（新）|
+|---|-----------|-----------|
+| 儲存位置 | Session 記憶體 | `~/.claude/tasks`（磁碟持久化）|
+| 跨 session | ❌ | ✅ |
+| Subagent 協作 | ❌ | ✅ 多個 subagent 同時更新同一 task |
+| 依賴關係 | ❌ | ✅ Task 可以有 dependencies |
+| 跨 session 廣播 | ❌ | ✅ 一個 session 更新，其他 session 即時感知 |
+
+**使用時機**：
+- 跨越多個 session 的長任務
+- 多個 subagent 需要協調的複雜工作（Task 作為共享狀態）
+- 需要 Coordinator 追蹤多個 Worker 進度時
+
+**立即使用**：直接請 Claude 建立 Tasks — 特別適合啟動 subagent 時：
+```
+請建立 Tasks 追蹤以下子任務，並 fan-out 給各個 subagent...
+```
+
 ## 工具使用引導（Opus 4.7 每輪適用）
 
 Opus 4.7 **預設工具呼叫次數較少**。agentic 作業時明確要求積極驗證：

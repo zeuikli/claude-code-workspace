@@ -36,6 +36,16 @@ which ast-grep shellcheck sd scc yq hyperfine delta difft watchexec
 - `sd` → `Edit` tool
 - `delta` / `difft` → `git diff`（預設）
 
+## Claude Code 內建特殊工具（需顯式呼叫）
+
+| 工具 | 用法 | 說明 |
+|------|------|------|
+| **MonitorTool** | `start my dev server and use the MonitorTool to observe for errors` | 監控 stdout/stderr 輸出流；需在 prompt 中明確要求使用 |
+| **AskUserQuestionTool** | `/spec-interview` 或 prompt 中明確要求 | 產生 modal UI 阻塞 agent loop，等待結構化使用者輸入 |
+| **ToolSearch** | 自動（`defer_loading: true` 時觸發）| 動態載入 deferred 工具的完整 schema |
+
+> Thariq 提醒：MonitorTool 雖然強大，但**不會自動啟用**，必須在 prompt 中明確指示。
+
 ## 優先順序
 
 直接工具（Grep / Read / Glob）> CLI enhancers > Task agents
