@@ -1,3 +1,8 @@
+---
+description: CLI 增強工具目錄 — ast-grep / sd / yq / delta / hyperfine 等
+tier: ondemand
+---
+
 # CLI 增強工具目錄
 
 > 按需載入：需要高效 code 搜尋、結構比對、效能分析時。

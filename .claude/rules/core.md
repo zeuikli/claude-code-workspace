@@ -1,5 +1,6 @@
 ---
 description: 核心規則 — 語言 / Git / 品質三合一（常駐載入）
+tier: auto
 ---
 
 # 核心規則

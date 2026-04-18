@@ -1,6 +1,7 @@
 ---
 description: Claude Code Routines — 排程 / API / GitHub webhook 自動化
-source: https://claude.com/blog/introducing-routines-in-claude-code (archive: archive/articles/introducing-routines-in-claude-code.md)
+tier: ondemand
+source: "https://claude.com/blog/introducing-routines-in-claude-code (archive: archive/articles/introducing-routines-in-claude-code.md)"
 ---
 
 # Routines（Claude Code 排程自動化）

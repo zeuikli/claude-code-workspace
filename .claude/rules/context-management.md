@@ -1,5 +1,6 @@
 ---
 description: Context Window 監控 + 1M context GA + Prompt Caching（進階 session 管理見 session-management.md）
+tier: auto
 ---
 
 # Context Window 管理

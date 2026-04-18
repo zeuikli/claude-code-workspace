@@ -1,3 +1,8 @@
+---
+description: Token 效率與 Context 壓縮 — 壓縮層級決策表、委派閾值
+tier: ondemand
+---
+
 # Token 效率與 Context 壓縮
 
 ## 壓縮層級

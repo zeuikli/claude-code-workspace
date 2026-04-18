@@ -1,5 +1,6 @@
 ---
 description: Sub Agent 策略 + Advisor 模式 + 委派規則（Opus 4.7 調校）
+tier: auto
 ---
 
 # Sub Agent 策略與 Advisor 模式

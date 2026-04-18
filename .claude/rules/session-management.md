@@ -1,6 +1,7 @@
 ---
 description: Session 管理 — 1M context / rewind / compact / clear 決策表
-source: https://claude.com/blog/using-claude-code-session-management-and-1m-context (archive: archive/articles/using-claude-code-session-management-and-1m-context.md)
+tier: ondemand
+source: "https://claude.com/blog/using-claude-code-session-management-and-1m-context (archive: archive/articles/using-claude-code-session-management-and-1m-context.md)"
 ---
 
 # Session 管理與 1M Context

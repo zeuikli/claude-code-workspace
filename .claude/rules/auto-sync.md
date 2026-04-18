@@ -1,5 +1,6 @@
 ---
 description: Hook 自動化同步機制 — SessionStart / 9 種事件
+tier: ondemand
 ---
 
 # 自動化同步機制

@@ -1,6 +1,6 @@
 ---
 description: 工具設計的心智模型（Seeing like an agent）— 按需載入
-source: https://claude.com/blog/seeing-like-an-agent (archive: archive/articles/seeing-like-an-agent.md)
+source: "https://claude.com/blog/seeing-like-an-agent (archive: archive/articles/seeing-like-an-agent.md)"
 ---
 
 # 工具設計心智模型：Seeing Like an Agent

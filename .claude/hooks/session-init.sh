@@ -85,11 +85,19 @@ if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then
   # [W-3] 記錄實際載入的 commit SHA 供稽核
   FETCHED_SHA=$(git -C "$TARGET_DIR" rev-parse --short HEAD 2>/dev/null || echo "unknown")
 
-  # 建立全域 CLAUDE.md（僅引用 CLAUDE.md，Memory 由官方 Auto Memory 管理）
+  # [DEDUP] 若目前的 project 本身就是此 workspace，
+  # project CLAUDE.md 已被自動載入，全域只寫 stub 避免雙重載入
   mkdir -p ~/.claude
-  cat > ~/.claude/CLAUDE.md << EOF
+  if [ -n "${CLAUDE_PROJECT_DIR:-}" ] && \
+     [ -f "${CLAUDE_PROJECT_DIR}/CLAUDE.md" ] && \
+     grep -qF "zeuikli/claude-code-workspace" "${CLAUDE_PROJECT_DIR}/CLAUDE.md" 2>/dev/null; then
+    printf "# Global stub — workspace rules auto-loaded from project CLAUDE.md\n# See: %s/CLAUDE.md\n" "$CLAUDE_PROJECT_DIR" > ~/.claude/CLAUDE.md
+    echo "[session-init] Workspace project detected — using global stub (prevents double-load)"
+  else
+    cat > ~/.claude/CLAUDE.md << EOF
 @${TARGET_DIR}/CLAUDE.md
 EOF
+  fi
 
   INIT_END=$(_ms_now)
   TOTAL_ELAPSED=$(( INIT_END - INIT_START ))
@@ -129,7 +137,13 @@ else
 
   # 確保全域 CLAUDE.md 存在（僅引用 CLAUDE.md，Memory 由官方 Auto Memory 管理）
   mkdir -p ~/.claude
-  if [ ! -f ~/.claude/CLAUDE.md ] || ! grep -q "claude-code-workspace/CLAUDE.md" ~/.claude/CLAUDE.md 2>/dev/null; then
+  # [DEDUP] 若在 workspace 本體執行，project CLAUDE.md 已自動載入，只寫 stub
+  if [ -n "${CLAUDE_PROJECT_DIR:-}" ] && \
+     [ -f "${CLAUDE_PROJECT_DIR}/CLAUDE.md" ] && \
+     grep -qF "zeuikli/claude-code-workspace" "${CLAUDE_PROJECT_DIR}/CLAUDE.md" 2>/dev/null; then
+    printf "# Global stub — workspace rules auto-loaded from project CLAUDE.md\n# See: %s/CLAUDE.md\n" "$CLAUDE_PROJECT_DIR" > ~/.claude/CLAUDE.md
+    echo "[session-init] Local: workspace project detected — using global stub (prevents double-load)"
+  elif [ ! -f ~/.claude/CLAUDE.md ] || ! grep -q "claude-code-workspace/CLAUDE.md" ~/.claude/CLAUDE.md 2>/dev/null; then
     cat > ~/.claude/CLAUDE.md << EOF
 @~/claude-code-workspace/CLAUDE.md
 EOF
