@@ -4,7 +4,6 @@
 
 # 從 stdin 取得 hook payload（JSON）
 PAYLOAD=$(cat)
-TOOL=$(echo "$PAYLOAD" | grep -o '"tool_name":"[^"]*"' | head -1 | cut -d'"' -f4)
 FILE=$(echo "$PAYLOAD" | grep -o '"path":"[^"]*"' | head -1 | cut -d'"' -f4)
 
 # 只在有明確檔案路徑時執行
