@@ -13,9 +13,9 @@ source: "https://code.claude.com/docs/en/hooks"
 - **PreToolUse（matcher: bash）** — commit 前強制執行 `/deep-review`
 - **PostToolUse（matcher: Edit|Write）** — 自動驗證 .sh/.json/.py 語法
 - **PreCompact / PostCompact** — 壓縮前後提醒確認 Auto Memory
-- **SubagentStart / SubagentStop** — 監控 Advisor 策略落實度
-- **Stop** — 任務完成通知（音效 / bell）
-- **InstructionsLoaded** — 紀錄 CLAUDE.md 與 rules 載入時機
+- **SubagentStart / SubagentStop** — 監控 Advisor 策略落實度（⚠️ debug-only：僅在 `CLAUDE_DEBUG=1` 時觸發）
+- **Stop** — 任務完成通知（terminal bell）
+- **InstructionsLoaded** — 紀錄 CLAUDE.md 與 rules 載入時機（⚠️ debug-only：僅在 `CLAUDE_DEBUG=1` 時觸發）
 
 **跨對話記憶**: 由官方 Auto Memory 管理（`autoMemoryEnabled: true`），自動累積於 `~/.claude/projects/<project>/memory/`。
 
