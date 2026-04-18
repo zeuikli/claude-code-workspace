@@ -27,6 +27,9 @@
 | 撰寫提示、啟動新 session | `prompts.md`（核心 3 條） |
 | 進階提示模板 | `docs/prompts-advanced.md` |
 | 自動同步 / SessionStart hook 細節 | `.claude/rules/auto-sync.md` |
+| Context > 70% 或需優化 token 用量 | `.claude/rules/token-efficiency.md` |
+| 需要高效 CLI 工具（ast-grep / yq / delta 等）| `.claude/rules/cli-enhancers.md` |
+| 季度審計 / 研究新 best practice 來源 | `.claude/skills/research-best-practices/SKILL.md` |
 
 ## 進階文件（按需 Read）
 
