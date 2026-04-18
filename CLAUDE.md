@@ -17,11 +17,11 @@
 
 ---
 
-## 核心規則
+## 核心工作流
 
-- 改動完成：`git add → commit → push -u origin <branch>`（失敗重試 4 次）
-- 實作前：先說出理解與假設，不確定時說出來而非盲目推進
-- 任務分工：研究 / 實作 / 測試優先委派 Sub Agent，主對話僅收摘要
+- **IMPORTANT**: 改動完成 → `git add → commit → push -u origin <branch>`（失敗重試 4 次）。
+- **IMPORTANT**: 實作前**先說出理解與假設**，不確定時說出來而非盲目推進。
+- **IMPORTANT**: 研究 / 實作 / 測試任務**優先委派 Sub Agent**，主對話僅收摘要。
 
 ## 常駐規則（🟡 自動載入，約 1,700 tok）
 
