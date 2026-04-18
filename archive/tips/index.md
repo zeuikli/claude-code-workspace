@@ -1,7 +1,7 @@
 # Claude Code Tips Archive
 
 > 來源：[shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice/tree/main/tips)
-> 最後更新：2026-04-18 03:01 UTC
+> 最後更新：2026-04-18 15:28 UTC
 > 共 9 篇 tips，本次新增/更新 0 篇
 
 | 檔案 | 說明 |
