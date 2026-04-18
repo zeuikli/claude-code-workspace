@@ -1,13 +1,33 @@
 # Claude Code Workspace
 
-針對 [Claude Code](https://code.claude.com) 優化的個人開發工作區，內建專案指令、對話記憶管理與自動化工作流程配置。
+針對 [Claude Code](https://code.claude.com) 優化的個人開發工作區 — **Opus 4.7 + Sonnet 4.6 雙模型強化版**，內建專案指令、對話記憶管理與自動化工作流程配置。
+
+## 版本更新
+
+**2026-04-17 (v2 — blog-archive 深化)**
+
+- ✨ 新增 `docs/multi-agent-coordination.md` — 5 種多 agent 協調模式決策表
+- ✨ `rules/context-management.md` 加入 **Prompt Caching** 5 原則（Static first, dynamic last）
+- ✨ `rules/subagent-strategy.md` 加入 **seeing-like-an-agent** 工具設計心智模型 + Progressive Disclosure
+- ✨ `rules/session-management.md` branching point 由 5 擴展為 **6**（新增 Desktop Side Chat）
+- ✨ `rules/opus47-best-practices.md` §3 加入 **Auto Mode 完成通知 hook** 完整範例（afplay/paplay/bell fallback）
+- 🔧 修復 `prompts.md` `##7-##10` 重複章節 bug；新增 `##11 Auto Mode` 與 `##12 Prompt Caching`
+
+**2026-04-17 (v1 — Opus 4.7 全面升級)**
+
+- ✨ 全面導入 **Opus 4.7** 最佳實踐（`xhigh` effort、自適應思考、task-upfront pattern）
+- ✨ 新增 `session-management` 規則 — 涵蓋 `/rewind` / `/compact` / `/clear` / subagent 決策表
+- ✨ 新增 `routines` 規則 — 支援 Claude Code 排程 / API / GitHub webhook 自動化
+- ✨ 新增 `docs/opus47-migration.md` — 從 4.6 升級的完整 diff 與操作清單
+- 🔧 `settings.json` 加入 `model` / `alwaysThinkingEnabled` / `advisorModel`（`effortLevel: xhigh` 僅在切回 Opus 主模型時加上）
 
 ## 分支說明
 
 | 分支 | 用途 | 說明 |
 |------|------|------|
-| `main` | **預設使用** | 穩定的日常工作環境，包含最新的 Hooks、Skills、Agents 與 CLAUDE.md 設定。 |
-| `claude/karpathy-optimization-merged` | **研究分析** | 實驗分支，用於探索新策略、效能分析等研究性工作。 |
+| `main` | **預設使用** | 穩定的日常工作環境 |
+| `blog-archive` | 知識來源 | Anthropic 官方部落格歸檔（供改寫與對照）|
+| `claude/rewrite-with-opus-sonnet-*` | 升級實驗 | Opus 4.7 / Sonnet 4.6 改寫分支 |
 
 > 若無特殊需求，請使用 `main` 分支。
 
@@ -31,12 +51,24 @@
 > | Clone 目標 | `~/claude-code-workspace`（持久）| `/tmp/claude-code-workspace`（session 內）|
 > | 跨對話記憶 | 官方 Auto Memory（`~/.claude/projects/.../memory/`）| 同左 |
 
+## Opus 4.7 亮點
+
+- **`xhigh` 預設 effort** — 介於 `high` 和 `max` 之間的新等級，適合大多數 agentic 編碼任務。
+- **自適應思考** — 取代固定 thinking budget；模型自行決定每步是否推理。
+- **任務委派思維** — 把 Claude 當資深工程師：第一輪就給完整規格（意圖、限制、驗收條件、檔案路徑）。
+- **更節制的 subagent** — 需要平行委派時要**明確指示**，不會自動 fan-out。
+- **`/usage` 指令** — 查看 session token/cost 即時用量。
+- **`/rewind` 習慣** — Claude 走錯方向時，比口頭修正更有效。
+
+完整遷移步驟見 [`docs/opus47-migration.md`](docs/opus47-migration.md)。
+
 ## 專案概述
 
 - **雙語自動回覆** — 中文 → 台灣繁體中文，英文 → 英文
-- **Advisor 模式** — Haiku/Sonnet 主迴圈，Opus 退居幕後當顧問
+- **Advisor 模式** — Sonnet 4.6 / Haiku 4.5 主迴圈，Opus 4.7 退居幕後當顧問
 - **官方 Auto Memory** — Claude 自動記憶跨 session 知識（`autoMemoryEnabled: true`）
-- **Git 自動化** — 改動完成後自動 commit/push
+- **Routines 整合** — Scheduled / API / GitHub webhook 自動化工作流
+- **Git 自動化** — 改動完成後自動 commit/push（4 次指數退避重試）
 
 ## 檔案結構
 
@@ -45,41 +77,52 @@ claude-code-workspace/
 ├── .github/workflows/ci.yml       # CI：shellcheck + JSON schema + markdown-lint
 ├── scripts/healthcheck.sh         # workspace 健康檢查
 ├── .claude/
-│   ├── settings.json              # Hook（9 種事件）+ autoMemoryEnabled + Timeout 設定
-│   ├── hooks/
-│   │   ├── session-init.sh        # SessionStart：拉取最新指令（5MB threshold）
-│   │   ├── instructions-loaded.sh # InstructionsLoaded：記錄載入時機
-│   │   ├── user-prompt-submit.sh  # UserPromptSubmit：Sub Agent 提醒
-│   │   ├── subagent-start.sh      # SubagentStart：監控 Advisor 策略
-│   │   ├── subagent-stop.sh       # SubagentStop：記錄完成狀態
-│   │   ├── pre-commit-review.sh   # PreToolUse(Bash)：提醒 deep-review
-│   │   ├── pre-compact.sh         # PreCompact：壓縮前提醒
-│   │   ├── post-compact.sh        # PostCompact：壓縮後恢復
-│   │   └── session-stop.sh        # Stop：session 結束
+│   ├── settings.json              # Opus 4.7 xhigh + 9 種 Hook + Auto Memory + Timeout
+│   ├── hooks/                     # 9 種 hook 事件
 │   ├── rules/
-│   │   ├── language.md / subagent-strategy.md / context-management.md
-│   │   ├── git-workflow.md / quality.md / auto-sync.md
-│   ├── agents/
-│   │   ├── researcher.md (Haiku) / architecture-explorer.md (Haiku) / doc-writer.md (Haiku)
-│   │   ├── implementer.md (Sonnet) / test-writer.md (Sonnet) / security-reviewer.md (Sonnet)
-│   │   └── code-reviewer.md (Opus) / reviewer.md (Opus)
-│   └── skills/
-│       └── deep-review / frontend-design / blog-analyzer / agent-team / cost-tracker
-├── docs/                          # lazy-load 進階文件（不自動載入主 context）
-├── prompts.md                     # 萬用 Prompt 集
-├── CLAUDE.md                      # 精簡主指令（< 40 行，rules 按需載入）
-├── Memory.md                      # 歷史記錄存檔（新記憶由 Auto Memory 管理）
-└── CHANGELOG.md                   # 專案變更紀錄
+│   │   ├── language.md            # 語言回覆
+│   │   ├── opus47-best-practices.md  # ★ Opus 4.7 調校指南
+│   │   ├── subagent-strategy.md   # Sub Agent + Advisor 模式
+│   │   ├── session-management.md  # ★ /rewind / /compact / /clear 決策表
+│   │   ├── context-management.md  # Context 監控
+│   │   ├── routines.md            # ★ Claude Code Routines
+│   │   ├── git-workflow.md        # Git 自動化
+│   │   ├── quality.md             # 測試與驗證
+│   │   └── auto-sync.md           # 同步機制
+│   ├── agents/                   # 9 個 Sub Agent（三層模型分工）
+│   │   ├── researcher.md / architecture-explorer.md / doc-writer.md / memory-compactor.md   # Haiku 4.5
+│   │   ├── implementer.md / test-writer.md / security-reviewer.md                           # Sonnet 4.6
+│   │   └── code-reviewer.md / reviewer.md                                                   # Opus 4.7
+│   └── skills/                   # 5 個 Skill（按需載入）
+│       ├── deep-review / frontend-design / blog-analyzer
+│       └── agent-team / cost-tracker
+├── docs/                         # 13 個進階文件（lazy-load，見 docs/INDEX.md）
+│   ├── INDEX.md                      # 進階文件索引
+│   ├── advisor-strategy.md
+│   ├── opus47-migration.md           # ★ 4.6 → 4.7 遷移指引
+│   ├── multi-agent-coordination.md   # ★ 5 種協調模式決策表
+│   ├── auto-memory-hybrid.md / hook-lifecycle.md / timeout-guide.md
+│   └── （效能報告、追溯性舊檔…）
+├── prompts.md                    # 萬用 Prompt 集（12 則）
+├── CLAUDE.md                     # 精簡主指令（rules 按需載入）
+└── CHANGELOG.md                  # 專案變更紀錄
 ```
 
-## 核心配置
+## 核心配置（Advisor 模式）
+
+> 執行者 Sonnet 4.6 + 顧問 Opus 4.7。依據 [The Advisor Strategy](https://claude.com/blog/the-advisor-strategy)（[📦 離線歸檔](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/the-advisor-strategy.md)）。
 
 | 項目 | 說明 |
 |------|------|
-| `autoMemoryEnabled: true` | 官方 Auto Memory，跨 session 自動累積記憶 |
+| `model: claude-sonnet-4-6` | **執行者預設**（Advisor Strategy：Sonnet/Haiku 執行任務、Opus 僅顧問） |
+| `advisorModel: claude-opus-4-7` | Server-side advisor — 架構/審查時升級 |
+| `alwaysThinkingEnabled: false` | Opus 4.7 內建自適應思考，無需強制（省 1.5-2k tokens/輪） |
+| `autoMemoryEnabled: true` | 官方 Auto Memory 跨 session 累積 |
 | 9 種 Hook 事件 | SessionStart / InstructionsLoaded / UserPromptSubmit / SubagentStart / SubagentStop / PreToolUse / PreCompact / PostCompact / Stop |
-| Timeout 設定 | Stream watchdog + 2min idle + 15min API + 30min Bash max |
-| Sub Agent 三層 | Haiku（搜尋）→ Sonnet（實作）→ Opus（審查） |
+| Timeout | Stream watchdog + 2min idle + 15min API + 30min Bash max |
+| Sub Agent 三層 | Haiku 4.5（搜尋）→ Sonnet 4.6（實作）→ Opus 4.7（審查） |
+
+> **若需 Opus 為主模型**（例：純架構設計 session），改 `.claude/settings.json` 的 `model` 為 `claude-opus-4-7` 並加回 `effortLevel: xhigh`。見 [`docs/opus47-migration.md`](docs/opus47-migration.md)。
 
 詳細文件見 [`docs/INDEX.md`](docs/INDEX.md)。
 

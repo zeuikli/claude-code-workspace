@@ -1,8 +1,8 @@
 ---
 name: code-reviewer
-description: 程式碼層級的深度審查（邏輯正確性、可讀性、重構建議）。與 security-reviewer（安全）和 reviewer（架構）職責分離，專注於單個函式/類別/檔案的程式碼品質。
+description: 需要審查單一函式、類別或檔案的程式碼品質時委派；觸發詞：「幫我 review 這段程式碼」、「有沒有邏輯錯誤」、「怎麼重構這個」。不含安全或架構層級。
 tools: Read, Grep, Glob
-model: opus
+model: sonnet
 ---
 
 > **Ref**:

@@ -12,16 +12,7 @@ set -e
 #   - 詳細對照: .claude/REFERENCES.md
 # ============================================
 
-LOCK_FILE="$HOME/.claude/.memory-sync.lock"
-mkdir -p "$(dirname "$LOCK_FILE")"
-
-# --- 序列化：用 flock 確保同時只有一個 sync 在跑 ---
-exec 200>"$LOCK_FILE"
-if ! flock -n 200; then
-  echo "[memory-sync] Another sync in progress, skipping (flock locked)"
-  exit 0
-fi
-# 退出時自動釋放 lock（exec 200>file + 程式結束）
+# CONFIG_REPO kept for reference; remote URL is read from git config at runtime
 
 # --- 定位 workspace 目錄 ---
 if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then

@@ -43,6 +43,7 @@ effort: medium
 ```
 
 > 來源：[Improving Frontend Design Through Skills](https://claude.com/blog/improving-frontend-design-through-skills)
+> 📦 離線歸檔：[`archive/articles/improving-frontend-design-through-skills.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/improving-frontend-design-through-skills.md)
 
 ## 字型選擇
 
@@ -81,3 +82,10 @@ effort: medium
 - 限制最大寬度（max-width: 1200px）
 - 使用 CSS Grid 搭配不等欄寬
 - 留白是設計工具，不是浪費空間
+
+## Gotcha
+
+- **不要覆蓋已建立的設計系統**：若專案使用 Tailwind / shadcn / MUI，先遵循其約定，不要用本 skill 的偏好蓋掉。
+- **品牌字型優先**：若專案有 brand identity（logo 字型、既有色盤），本 skill 的字型建議僅供參考，不要強行替換。
+- **深色背景需確認可及性**：深色配淺字 contrast ratio 需 ≥ 4.5:1（WCAG AA），不要只顧美觀。
+- **動態效果不是必須**：若使用者未要求動畫，不要主動加入 transition / animation，避免拖慢渲染。

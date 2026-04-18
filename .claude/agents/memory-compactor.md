@@ -1,6 +1,6 @@
 ---
 name: memory-compactor
-description: 預壓縮 Memory.md — 當接近 200 行 / 25KB 官方上限時，將舊 Session 摘要精簡（保留決策與待辦，移除過程描述）或觸發 memory-archive.sh 歸檔。
+description: Memory.md 接近 200 行或 25KB 上限時委派；觸發詞：「壓縮記憶」、「Memory 太長了」、「清理舊 session 記錄」。保留決策與待辦，移除冗餘過程描述。
 tools: Read, Edit, Write, Bash
 model: haiku
 permissionMode: acceptEdits

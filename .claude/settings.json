@@ -1,9 +1,8 @@
 {
   "autoMemoryEnabled": true,
-  "statusLine": {
-    "type": "command",
-    "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/caveman-statusline.sh\""
-  },
+  "model": "claude-sonnet-4-6",
+  "alwaysThinkingEnabled": false,
+  "advisorModel": "claude-opus-4-7",
   "env": {
     "CAVEMAN_AUTO_MODE": "true",
     "CLAUDE_ENABLE_STREAM_WATCHDOG": "1",
@@ -52,7 +51,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/instructions-loaded.sh\""
+            "command": "if [ -n \"$CLAUDE_DEBUG\" ]; then bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/instructions-loaded.sh\"; fi"
           }
         ]
       }
@@ -96,7 +95,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-start.sh\""
+            "command": "if [ -n \"$CLAUDE_DEBUG\" ]; then bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-start.sh\"; fi"
           }
         ]
       }
@@ -107,7 +106,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-stop.sh\""
+            "command": "if [ -n \"$CLAUDE_DEBUG\" ]; then bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/subagent-stop.sh\"; fi"
           }
         ]
       }
@@ -119,6 +118,18 @@
           {
             "type": "command",
             "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre-commit-review.sh\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 30,
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/post-edit.sh\""
           }
         ]
       }

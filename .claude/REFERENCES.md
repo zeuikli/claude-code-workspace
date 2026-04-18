@@ -1,7 +1,7 @@
 # 官方文件對照表（References）
 
 > 本 workspace 所有設計決策的官方來源。每個 hook / agent / skill / config 的註解都會指向這裡。
-> 最後更新：2026-04-14 Session 7
+> 最後更新：2026-04-17 Opus 4.7 優化
 
 ---
 
@@ -32,13 +32,23 @@
 
 ## 設計策略來源
 
-| 主題 | 官方 URL | 對應檔案 |
-|---|---|---|
-| **Advisor Strategy** | https://claude.com/blog/the-advisor-strategy | `docs/advisor-strategy.md`、`.claude/rules/subagent-strategy.md` |
-| **Multi-Agent Coordination** | https://claude.com/blog/multi-agent-coordination-patterns | `agent-team` Skill |
-| **Improving Frontend Design** | https://claude.com/blog/improving-frontend-design-through-skills | `frontend-design` Skill |
-| **Harnessing Claude's Intelligence** | https://claude.com/blog/harnessing-claudes-intelligence | 三層 Agent 分工 |
-| **AgentOpt 論文** | https://arxiv.org/html/2604.06296v1 | Advisor Strategy 學理依據 |
+> 📦 離線歸檔統一存放於 `blog-archive` 分支的 `archive/articles/` 目錄
+> Browse: <https://github.com/zeuikli/claude-code-workspace/tree/blog-archive/archive/articles>
+
+| 主題 | 官方 URL | 📦 離線歸檔 | 對應檔案 |
+|---|---|---|---|
+| **Advisor Strategy** | https://claude.com/blog/the-advisor-strategy | `archive/articles/the-advisor-strategy.md` | `docs/advisor-strategy.md`、`.claude/rules/subagent-strategy.md` |
+| **Multi-Agent Coordination** | https://claude.com/blog/multi-agent-coordination-patterns | `archive/articles/multi-agent-coordination-patterns.md` | `docs/multi-agent-coordination.md`、`agent-team` Skill |
+| **Improving Frontend Design** | https://claude.com/blog/improving-frontend-design-through-skills | `archive/articles/improving-frontend-design-through-skills.md` | `frontend-design` Skill |
+| **Harnessing Claude's Intelligence** | https://claude.com/blog/harnessing-claudes-intelligence | `archive/articles/harnessing-claudes-intelligence.md` | 三層 Agent 分工、`rules/context-management.md`（Prompt Caching 靜態優先） |
+| **Seeing Like an Agent** | https://claude.com/blog/seeing-like-an-agent | `archive/articles/seeing-like-an-agent.md` | `rules/subagent-strategy.md`（工具設計心智模型 + Progressive Disclosure） |
+| **Claude Code Desktop Redesign** | https://claude.com/blog/claude-code-desktop-redesign | `archive/articles/claude-code-desktop-redesign.md` | `rules/session-management.md`（Side Chat 第 6 種分支選項） |
+| **AgentOpt 論文** | https://arxiv.org/html/2604.06296v1 | — (arXiv) | Advisor Strategy 學理依據 |
+| **Opus 4.7 Best Practices** | https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code | `archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md` | `CLAUDE.md`、`rules/quality.md`、`rules/subagent-strategy.md`、`docs/advisor-strategy.md` |
+| **Subagents in Claude Code** | https://claude.com/blog/subagents-in-claude-code | `archive/articles/subagents-in-claude-code.md` | `rules/subagent-strategy.md`、`.claude/agents/*.md` |
+| **1M Context GA** | https://claude.com/blog/1m-context-ga | `archive/articles/1m-context-ga.md` | `rules/context-management.md` |
+| **Session Management & 1M Context** | https://claude.com/blog/using-claude-code-session-management-and-1m-context | `archive/articles/using-claude-code-session-management-and-1m-context.md` | `rules/session-management.md` |
+| **Introducing Routines** | https://claude.com/blog/introducing-routines-in-claude-code | `archive/articles/introducing-routines-in-claude-code.md` | `rules/routines.md` |
 
 ## 工具與 Lint
 

@@ -1,6 +1,7 @@
-# Memory.md - 對話記憶
+# Memory.md
 
 > 此文件用於記錄每次對話的重點摘要，以便在新對話中快速恢復上下文。
+> 跨對話記憶同時由官方 Auto Memory 管理（`autoMemoryEnabled: true`，見 `/memory` 指令）。
 
 ---
 

@@ -1,11 +1,23 @@
 ---
-description: Context Window 管理 + Compaction 指引
+description: Context Window 監控 + 1M context GA + Prompt Caching（進階 session 管理見 session-management.md）
 ---
 
 # Context Window 管理
 
-- 當 context window 使用量接近 **70%** 時，**立即通知使用者**開設新對話接續作業。
-- 跨對話記憶由**官方 Auto Memory** 自動管理（無需手動維護 Memory.md）。
-  - Claude 自動在 `~/.claude/projects/<project>/memory/` 累積記憶
-  - 使用 `/memory` 指令查看或編輯 Auto Memory 內容
-- **Compaction 指引**: 當對話被壓縮時，務必保留：已修改的檔案完整清單、測試指令、未完成的 Todo、以及所有關鍵決策紀錄。
+## 監控
+
+- `/usage` 查看本 session 的 token/cost 即時用量。
+- 使用量接近 **70%** 時**立即通知使用者**，建議：
+  - `/compact <hint>`（低成本、繼續手上任務）
+  - `/clear`（任務即將切換）
+  - 開新 terminal session（並行工作流）
+
+## Auto Memory（跨 session 記憶）
+
+- `.claude/settings.json` 設 `"autoMemoryEnabled": true`
+- Claude 自動累積於 `~/.claude/projects/<project>/memory/`
+- `/memory` 查看或編輯；`/clear` 與 `/compact` 不影響 Auto Memory
+
+> 1M context 已 GA 不額外收費；compaction 壓力低。Cache 最佳化：保持 system prompt 靜態、model 不在 session 中途切換。詳見 `docs/prompt-caching-verification.md`。
+
+> **進階 compact / rewind 策略**：按需載入 `.claude/rules/session-management.md`。
