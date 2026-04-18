@@ -30,6 +30,13 @@
 | Context > 70% 或需優化 token 用量 | `.claude/rules/token-efficiency.md` |
 | 需要高效 CLI 工具（ast-grep / yq / delta 等）| `.claude/rules/cli-enhancers.md` |
 | 季度審計 / 研究新 best practice 來源 | `.claude/skills/research-best-practices/SKILL.md` |
+| 新 session 冷啟、接手陌生 codebase | `.claude/skills/prime/SKILL.md` |
+| Session 結束回顧 / `/compact` 前記錄決策 | `.claude/skills/retro/SKILL.md` |
+| 評估 session 模型效率 / 成本分析 | `.claude/skills/context-report/SKILL.md` |
+| 除錯、測試失敗、生產 error 調查 | `.claude/skills/debug/SKILL.md` |
+| 應用程式效能分析與最佳化 | `.claude/skills/perf/SKILL.md` |
+| 大型重構前產出 codebase 符號地圖 | `.claude/skills/map/SKILL.md` |
+| 建立新 Skill（格式驗證與命名規則）| `.claude/skills/add-skill/SKILL.md` |
 
 ## 進階文件（按需 Read）
 
