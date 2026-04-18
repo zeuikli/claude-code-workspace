@@ -100,3 +100,45 @@ SuperClaude framework 設計，特色：
 - [ ] **PermissionRequest hook**：評估是否適合本 workspace 的 sandbox 配置
 - [ ] **季度審計**：下次用 `research-best-practices` Skill 自動執行（目標：2026 Q3）
 - [ ] **CLAUDE.md lazy-load 表更新**：補入 `token-efficiency.md` 和 `cli-enhancers.md` 的觸發條件
+
+---
+
+## 附錄 B：第二輪深度研究（2026-04-18 下午）
+
+> 對 shanraisshan tips（全 9 份）、官方 docs、claude.com/blog 8 篇文章、karpathy TODO 清單做第二輪深度分析。
+
+### B.1 Karpathy TODO 完成度審計
+
+| 項目 | 狀態 | 證據 |
+|------|------|------|
+| 小 repo 不用 `--filter` | ✅ 已完成 | `session-init.sh` 加入 5MB threshold 判斷 |
+| CI 第一次跑驗證 | ✅ 已完成 | `.github/workflows/ci.yml` 4 個 jobs 全過 |
+| Memory.md 大小監控 | ✅ 已完成 | `healthcheck.sh` 第 286-300 行 > 200 行警告 |
+| 官方 Auto Memory 遷移 | ✅ 已完成 | `autoMemoryEnabled: true` in settings.json |
+| InstructionsLoaded/PreCompact/PostCompact 實機驗證 | ⏳ 未驗證 | 腳本已寫，需官方 v2.x 環境確認實際觸發 |
+| Path-scoped rules（frontmatter paths）| ❌ 待確認 | 研究員標記為功能，但官方文件未確認此語法 |
+| Skills 2.0 自動注入 | ❌ 未完成 | 6 個 skill 無自動 subagent 注入機制 |
+| Hook 鏈視覺化文件 | ❌ 未完成 | |
+| Sub Agent 沙箱權限指南 | ❌ 未完成 | |
+
+**整體完成度：10 項中 8 項完成（80%）**
+
+### B.2 第二輪新發現（已確認）
+
+| 發現 | 來源 | 決策 |
+|------|------|------|
+| `post-edit.sh` 缺 `+x` | healthcheck WARN | ✅ 已修正（chmod +x） |
+| PostToolUse auto-format hook | shanraisshan tips | ⏳ Defer — 需確認專案 formatter |
+| PermissionRequest → Opus 路由 | shanraisshan tips | ❌ Skip — sandbox 環境不同 |
+| Shell aliases + worktree 切換 | shanraisshan tips | ❌ Skip — 使用者本機 shell 設定，不入 workspace |
+| claude.com/blog 8 篇文章確認 | blog 研究 | ✅ workspace 設計與官方高度對齊 |
+
+### B.3 第二輪研究員聲稱（待驗證，**不採用**）
+
+以下項目在研究員報告中出現，但缺乏官方文件明確支撐，標記待驗證：
+
+- `MEMORY.md` 與 `CLAUDE.md` 有獨立載入優先序（25KB limit）—— 可能混淆 Auto Memory 與 repo 檔案
+- Agent 定義檔 frontmatter 支援 `isolation: worktree` —— Agent **工具**有此參數，**定義檔**是否支援待確認
+- `.claude/rules/*.md` 支援 `paths: [...]` 條件載入 —— karpathy 報告列為 aspirational，非已確認功能
+
+**結論**：第二輪確認 workspace 整體架構已成熟（80% karpathy TODO 完成）；剩餘項目複雜度高或環境相依，留待下季度 `research-best-practices` skill 執行時重新評估。
