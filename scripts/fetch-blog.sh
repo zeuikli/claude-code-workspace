@@ -61,7 +61,7 @@ html_to_markdown() {
     s{&gt;}{>}g;
     s{&quot;}{"}g;
     s{&nbsp;}{ }g;
-    s{&apos;}{'\''}g;
+    s{&apos;}{\'\'}g;
 
     # 7) 清理空白：多個換行壓成 2、行尾空白刪掉
     s{[ \t]+$}{}gm;
@@ -95,7 +95,7 @@ NEW_COUNT=0
 
 for LINK in $LINKS; do
   COUNT=$((COUNT + 1))
-  SLUG=$(echo "$LINK" | sed 's|/blog/||')
+  SLUG="${LINK#/blog/}"
   ARTICLE_FILE="$ARCHIVE_DIR/articles/${SLUG}.md"
 
   if [ -f "$ARTICLE_FILE" ]; then
@@ -168,7 +168,7 @@ cat > "$INDEX_FILE" << EOINDEX
 EOINDEX
 
 for LINK in $LINKS; do
-  SLUG=$(echo "$LINK" | sed 's|/blog/||')
+  SLUG="${LINK#/blog/}"
   ARTICLE_FILE="$ARCHIVE_DIR/articles/${SLUG}.md"
   if [ -f "$ARTICLE_FILE" ]; then
     TITLE=$(head -5 "$ARTICLE_FILE" | grep '^title:' | sed 's/title: "//;s/"$//')
