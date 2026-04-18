@@ -35,3 +35,10 @@ disable-model-invocation: true
   - [ ] 具體行動 1
   - [ ] 具體行動 2
 ```
+
+## Gotcha
+
+- **只分析 6 個月內的文章**：超過半年的文章可能已過時，若要分析請明確說明。
+- **不要直接更新 settings.json**：分析結果以建議清單呈現，由使用者決定是否採用，避免自動覆蓋。
+- **與現有規則衝突時要標注**：若文章建議與 workspace 現有規則矛盾，明確標注衝突而非靜默採用新規則。
+- **archive 路徑確認**：blog-archive branch 的路徑格式為 `archive/articles/<slug>.md`，存取前確認存在。

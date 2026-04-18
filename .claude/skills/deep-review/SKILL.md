@@ -1,6 +1,8 @@
 ---
 name: deep-review
 description: 對 staged changes 執行三維度平行審查（安全、效能、風格），合成優先排序的發現摘要。
+disable-model-invocation: true
+context: fork
 ---
 
 # Deep Review — 三維度平行程式碼審查
@@ -34,3 +36,11 @@ description: 對 staged changes 執行三維度平行審查（安全、效能、
 3. 🔵 Info — 可選的改善建議
 
 每項包含 `file:line` 引用與修復建議。
+
+## Gotcha
+
+- **只審查 staged 變更**：未 `git add` 的修改不在範圍內；請先確認 staging area 正確。
+- **三個 agent 必須全部完成**才能合成報告；若其中一個逾時，其餘結果仍輸出但需標注「部分審查」。
+- **安全 reviewer 需讀完整檔案**，不只看 diff；若 diff 範圍外有相關漏洞也應標注。
+- **`.claude/` 目錄的變更**需特別標注 — 這些是系統指令，任何修改都有安全隱含。
+- **不要提出風格修改以外的 rewrite 建議** — 這是審查而非重構，Critical 項必須是真正的阻擋問題。

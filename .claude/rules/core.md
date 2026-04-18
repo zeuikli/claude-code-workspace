@@ -21,8 +21,10 @@ description: 核心規則 — 語言 / Git / 品質三合一（常駐載入）
 
 - 程式碼變更後優先執行相關測試或 lint。
 - 有測試套件時，先跑**單一相關測試**（避免全套拖慢 loop）。
+- **IMPORTANT**: 測試失敗時，**完整貼出錯誤輸出**讓 Claude 自行迭代修正（不要只說「失敗了」）。
 - UI 變更嘗試 dev server 或截圖驗證。
 - Workspace 完整性檢查：`bash scripts/healthcheck.sh`。
 - **IMPORTANT**: Commit 前必跑 `/deep-review`；前端變更套用 `frontend-design` skill。
+- 大規模重構或方案不確定時，先按 **`Shift+Tab`** 進入 Plan Mode 規劃，確認後再執行。
 
 > Opus 4.7 努力級別（`low`/`medium`/`high`/`xhigh`/`max`）與自適應思考指引：按需載入 `.claude/rules/opus47-best-practices.md`。

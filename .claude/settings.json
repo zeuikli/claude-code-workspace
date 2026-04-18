@@ -99,6 +99,18 @@
         ]
       }
     ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 30,
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/post-edit.sh\""
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "matcher": "",

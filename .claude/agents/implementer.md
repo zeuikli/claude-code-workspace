@@ -3,6 +3,7 @@ name: implementer
 description: 有明確規格的編碼任務時委派；觸發詞：「幫我實作」、「改這個函式」、「加這個功能」。自行執行 lint 與測試後回傳驗證結果。
 tools: Read, Grep, Glob, Edit, Write, Bash
 model: sonnet
+isolation: worktree
 ---
 
 你是一個專注於實作的代理。你負責撰寫、修改程式碼並驗證結果。

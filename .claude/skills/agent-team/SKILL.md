@@ -44,3 +44,10 @@ Coordinator（主對話）
 - 所有 Worker 回報完成
 - 或達到時間上限（由使用者指定）
 - 或 Coordinator 判斷已收斂（無新發現）
+
+## Gotcha
+
+- **Workers 無法直接溝通**：所有發現必須回傳給 Coordinator，不能 Worker A 把結果傳給 Worker B。
+- **各 Worker context 完全隔離**：Worker A 讀到的檔案，Worker B 看不到；如需共享，由 Coordinator 明確傳入。
+- **Worker 失敗不會自動重試**：Coordinator 必須處理單一 Worker 失敗的情況，並決定是否重啟或降級。
+- **任務分割要互相獨立**：若子任務有依賴關係（A 需要 B 的結果），不適合平行，改用序列委派。

@@ -50,6 +50,18 @@ source: https://claude.com/blog/using-claude-code-session-management-and-1m-cont
 | 成本 | 低（自動）| 高（人工寫摘要）|
 | 可引導 | `/compact focus on X, drop Y` | 完全自控 |
 
+**Compact hint 範本**（複製貼上後修改）：
+
+```
+/compact 保留：當前實作進度、已確認的設計決策、待辦清單。
+         丟棄：探索過但放棄的方法、冗長的工具輸出、重複的錯誤訊息。
+         下一步：繼續實作 <feature>，從 <file:line> 開始。
+```
+
+```
+/compact focus on the auth refactor decisions and pending TODOs, drop all the grep/read output
+```
+
 ### 4. 壞 autocompact 的成因
 
 - autocompact 在 context rot 最嚴重時觸發 — 模型此時**最不聰明**。

@@ -4,6 +4,7 @@ description: 實作完成後補文件時委派；觸發詞：「更新 README」
 tools: Read, Grep, Glob, Edit, Write, Bash
 model: haiku
 permissionMode: acceptEdits
+isolation: worktree
 ---
 
 > **Ref**:

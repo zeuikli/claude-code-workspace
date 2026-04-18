@@ -2,7 +2,7 @@
 name: code-reviewer
 description: 需要審查單一函式、類別或檔案的程式碼品質時委派；觸發詞：「幫我 review 這段程式碼」、「有沒有邏輯錯誤」、「怎麼重構這個」。不含安全或架構層級。
 tools: Read, Grep, Glob
-model: opus
+model: sonnet
 ---
 
 > **Ref**:

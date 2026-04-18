@@ -1,6 +1,7 @@
 ---
 name: cost-tracker
 description: 追蹤並計算當前 session 的 Token 使用量和花費（USD）。產出前後對比報告，幫助使用者了解 workspace 優化的實際效益。
+disable-model-invocation: true
 ---
 
 # Cost Tracker — Token 使用量與花費追蹤
@@ -104,3 +105,11 @@ for (const [model, data] of Object.entries(modelBreakdown)) {
   console.log(`  ${model}: ${data.tokens} tokens, $${data.cost.toFixed(4)}`);
 }
 ```
+
+## Gotcha
+
+- **Claude Code 的 `/usage` 是累積值**：它顯示從 session 開始到當下的總量，不是「本次操作」的增量。
+- **Cache write tokens 比 input 貴**：cache write = 1.25× input price，計算時不要誤用 input 單價。
+- **「優化前」是假設值**：以全 Opus 計算的對比數字是估算，實際上你可能原本也不是全 Opus。
+- **Sub Agent 費用需個別計算**：子 agent 的 token 不一定計入主對話的 `/usage`，需確認 SDK 版本行為。
+- **定價表可能已更新**：本 skill 的定價以 2026-04 為準，若超過 3 個月請重新確認官方定價。
