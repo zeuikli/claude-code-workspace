@@ -8,7 +8,7 @@
 
 ```
 🔴 Real-time  — session-init.sh hook + CLAUDE.md 本體
-🟡 Auto       — 3 rules @-imported (core/subagent/context) ~1,700 tok
+🟡 Auto       — 3 rules @-imported (core/subagent/context) ~1,184 tok
 🟢 On-demand  — 16 skills + 6 rules：說觸發詞才載入
 ⚪ Skip       — docs/archive, reference docs：手動 Read 即可
 ```
@@ -23,7 +23,7 @@
 - **IMPORTANT**: 實作前**先說出理解與假設**，不確定時說出來而非盲目推進。
 - **IMPORTANT**: 研究 / 實作 / 測試任務**優先委派 Sub Agent**，主對話僅收摘要。
 
-## 常駐規則（🟡 自動載入，約 1,700 tok）
+## 常駐規則（🟡 自動載入，約 1,184 tok）
 
 - @.claude/rules/core.md
 - @.claude/rules/subagent-strategy.md
@@ -34,6 +34,7 @@
 > 💡 完整清單與 token 估算：執行 `/load-plan`
 
 - **Workspace**：`/load-plan`、冷啟接手 codebase、session 回顧、context 效率
+- **Opus 調校 / Tasks / 多 Agent**：Tasks 跨 session、Opus 4.7 subagent 平行化、工具使用引導
 - **開發**：除錯測試失敗、效能分析、大型重構、commit 前審查、需求訪談
 - **排程 / CLI**：排程 webhook routine、CLI 工具 ast-grep yq、新增 skill/agent
 - **行銷 / 研究 / PM**：行銷策略文案 SEO、市場調查競品、Sprint PM 多 agent

@@ -11,7 +11,7 @@
 將以下指令貼進任何 Claude Code session 即可套用所有設定：
 
 ```bash
-請執行：DIR="${CLAUDE_CODE_REMOTE:+/tmp/claude-code-workspace}"; DIR="${DIR:-$HOME/claude-code-workspace}"; command -v git >/dev/null 2>&1 && (([ -d "$DIR/.git" ] && git -C "$DIR" pull -q origin main || (rm -rf "$DIR" 2>/dev/null; git clone --depth 1 -q https://github.com/zeuikli/claude-code-workspace.git "$DIR")) && mkdir -p ~/.claude && printf "@${DIR}/CLAUDE.md\n" > ~/.claude/CLAUDE.md)
+請執行：DIR="${CLAUDE_CODE_REMOTE:+/tmp/claude-code-workspace}"; DIR="${DIR:-$HOME/claude-code-workspace}"; command -v git >/dev/null 2>&1 && (([ -d "$DIR/.git" ] && git -C "$DIR" pull -q origin main 2>/dev/null || ([ -n "$DIR" ] && rm -rf "$DIR"; git clone --depth 1 --filter=blob:none -q https://github.com/zeuikli/claude-code-workspace.git "$DIR" || { echo "⚠️ Clone failed" >&2; exit 1; })) && mkdir -p ~/.claude && printf "@${DIR}/CLAUDE.md\n" > ~/.claude/CLAUDE.md)
 
 完成後讀取並遵循 ${DIR}/CLAUDE.md
 ```
@@ -27,11 +27,11 @@
 | 層級 | 觸發 | 內容 | 預估成本 |
 |------|------|------|---------|
 | 🔴 **真實載入** | SessionStart Hook | `session-init.sh` + `CLAUDE.md` 本體 | ~708 tok |
-| 🟡 **自動載入** | 每次 session | `core.md` + `subagent-strategy.md` + `context-management.md` | ~1,700 tok |
+| 🟡 **自動載入** | 每次 session | `core.md` + `subagent-strategy.md` + `context-management.md` | ~1,184 tok |
 | 🟢 **按需載入** | 說出觸發詞 | 16 skills + 6 rules（按需，說了才載入）| 0 ～ 2,000 tok |
 | ⚪ **不必載入** | 手動 Read | docs/archive、reference docs | — |
 
-**設計原則**：每次 session 固定消耗 ~2,400 tokens，其餘零成本直到真正需要。
+**設計原則**：每次 session 固定消耗 ~1,892 tokens（CLAUDE.md ~423 + 3 rules ~1,184 + 85% cache 折扣後實付 ~284），其餘零成本直到真正需要。
 
 ---
 
@@ -106,7 +106,7 @@ echo "@~/claude-code-workspace/CLAUDE.md" > ~/.claude/CLAUDE.md
       "matcher": "",
       "hooks": [{
         "type": "command",
-        "command": "bash -c 'DIR=/tmp/claude-code-workspace; [ -d $DIR/.git ] && git -C $DIR pull -q origin main || git clone -q --depth 1 https://github.com/zeuikli/claude-code-workspace.git $DIR; mkdir -p ~/.claude; echo \"@${DIR}/CLAUDE.md\" > ~/.claude/CLAUDE.md'"
+        "command": "bash -c 'DIR=/tmp/claude-code-workspace; [ -d \"$DIR/.git\" ] && git -C \"$DIR\" pull -q origin main 2>/dev/null || { [ -n \"$DIR\" ] && rm -rf \"$DIR\"; git clone --depth 1 --filter=blob:none -q https://github.com/zeuikli/claude-code-workspace.git \"$DIR\" || { echo \"⚠️ Clone failed\" >&2; exit 1; }; }; mkdir -p ~/.claude; printf \"@${DIR}/CLAUDE.md\n\" > ~/.claude/CLAUDE.md'"
       }]
     }]
   }
@@ -137,7 +137,7 @@ A personal [Claude Code](https://code.claude.com) workspace with a **4-tier load
 Paste into any Claude Code session:
 
 ```bash
-DIR="${CLAUDE_CODE_REMOTE:+/tmp/claude-code-workspace}"; DIR="${DIR:-$HOME/claude-code-workspace}"; command -v git >/dev/null 2>&1 && (([ -d "$DIR/.git" ] && git -C "$DIR" pull -q origin main || (rm -rf "$DIR" 2>/dev/null; git clone --depth 1 -q https://github.com/zeuikli/claude-code-workspace.git "$DIR")) && mkdir -p ~/.claude && printf "@${DIR}/CLAUDE.md\n" > ~/.claude/CLAUDE.md)
+DIR="${CLAUDE_CODE_REMOTE:+/tmp/claude-code-workspace}"; DIR="${DIR:-$HOME/claude-code-workspace}"; command -v git >/dev/null 2>&1 && (([ -d "$DIR/.git" ] && git -C "$DIR" pull -q origin main 2>/dev/null || ([ -n "$DIR" ] && rm -rf "$DIR"; git clone --depth 1 --filter=blob:none -q https://github.com/zeuikli/claude-code-workspace.git "$DIR" || { echo "⚠️ Clone failed" >&2; exit 1; })) && mkdir -p ~/.claude && printf "@${DIR}/CLAUDE.md\n" > ~/.claude/CLAUDE.md)
 ```
 
 Then run `/load-plan` to see all available tools with token cost estimates.
@@ -156,11 +156,11 @@ Then run `/load-plan` to see all available tools with token cost estimates.
 | Tier | Trigger | Content | Est. Cost |
 |------|---------|---------|-----------|
 | 🔴 **Real-time** | SessionStart Hook | `session-init.sh` + `CLAUDE.md` | ~708 tok |
-| 🟡 **Auto** | Every session | 3 core rules (language/git/subagent/context) | ~1,700 tok |
+| 🟡 **Auto** | Every session | 3 core rules (language/git/subagent/context) | ~1,184 tok |
 | 🟢 **On-demand** | Say trigger keyword | 16 skills + 6 rules | 0–2,000 tok |
 | ⚪ **Skip** | Manual Read only | docs/archive, reference docs | — |
 
-**Design principle**: Fixed overhead of ~2,400 tokens per session. Everything else costs zero until needed.
+**Design principle**: Fixed overhead of ~1,892 tokens per session (~284 effective with 85% prompt caching). Everything else costs zero until needed.
 
 ### Domain Coverage
 
@@ -192,7 +192,7 @@ Add SessionStart Hook to any project's `.claude/settings.json`:
       "matcher": "",
       "hooks": [{
         "type": "command",
-        "command": "bash -c 'DIR=/tmp/claude-code-workspace; [ -d $DIR/.git ] && git -C $DIR pull -q origin main || git clone -q --depth 1 https://github.com/zeuikli/claude-code-workspace.git $DIR; mkdir -p ~/.claude; echo \"@${DIR}/CLAUDE.md\" > ~/.claude/CLAUDE.md'"
+        "command": "bash -c 'DIR=/tmp/claude-code-workspace; [ -d \"$DIR/.git\" ] && git -C \"$DIR\" pull -q origin main 2>/dev/null || { [ -n \"$DIR\" ] && rm -rf \"$DIR\"; git clone --depth 1 --filter=blob:none -q https://github.com/zeuikli/claude-code-workspace.git \"$DIR\" || { echo \"⚠️ Clone failed\" >&2; exit 1; }; }; mkdir -p ~/.claude; printf \"@${DIR}/CLAUDE.md\n\" > ~/.claude/CLAUDE.md'"
       }]
     }]
   }
