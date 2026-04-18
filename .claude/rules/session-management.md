@@ -77,6 +77,7 @@ source: "https://claude.com/blog/using-claude-code-session-management-and-1m-con
 
 監控規則見常駐載入的 `context-management.md`（`/usage`、70% 提醒）。
 - 1M context 消除了 compaction 的時間壓力，但 **context rot 仍會發生** — 注意力被稀釋、舊的無關內容會干擾當前任務。
+- **Context rot 閾值**（Thariq @trq212, 2026-04-16 驗證）：約 **300–400k tokens** 開始影響輸出品質，高度依賴任務，非硬性規則。
 
 ## Side Chat（Desktop 專屬的中途提問）
 
@@ -118,3 +119,40 @@ claude --resume <session-id> --fork-session
 ```
 
 **與 Side Chat 的差異**：Side Chat（`⌘+;`）是你發起的探索，不回流主線；`/btw` 是插入 agent 的工作隊列，agent 自己決定何時回答。
+
+### `/focus` — 專注模式（隱藏中間輸出）
+
+隱藏所有中間工具呼叫與輸出，只顯示最終結果。適合 Claude 已取得信任、不需要逐步監看的長時間任務。
+
+```
+/focus     ← toggle on/off
+```
+
+> 來源：Boris Cherny (@bcherny), 2026-04-16
+
+### Recaps — 回到長時間 Session 的快速定位
+
+長時間 session 回來時，Claude 自動顯示簡短摘要：已完成什麼、下一步是什麼。
+
+```
+* Cogitated for 6m 27s
+* recap: Fixing the post-submit transcript shift bug. Styling-flash shipped as PR #29869.
+         Next: need screen recording of remaining horizontal rewrap to target separate cause.
+         (disable recaps in /config)
+```
+
+在 `/config` 中可關閉。
+
+> 來源：Boris Cherny (@bcherny), 2026-04-16
+
+### 「從這裡總結」— Rewind 前的 Handoff 技巧
+
+Rewind 前，先請 Claude **總結已學到的發現**，產出 handoff message：
+
+```
+請用一段話總結你嘗試過的方法和為什麼失敗，讓重新開始的你不會走相同的錯誤路徑。
+```
+
+然後 rewind 到讀完檔案後，將這段摘要貼進新 prompt。這是「給過去自己的提醒」技法。
+
+> 來源：Thariq (@trq212), 2026-04-16

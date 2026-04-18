@@ -21,4 +21,6 @@ tier: auto
 
 > 1M context 已 GA 不額外收費；compaction 壓力低。Cache 最佳化：保持 system prompt 靜態、model 不在 session 中途切換。詳見 `docs/prompt-caching-verification.md`。
 
+> **Context rot 閾值**（Thariq @trq212, 2026-04-16 驗證）：約 **300–400k tokens** 開始影響輸出品質，高度依賴任務類型，非硬性規則。70% 提醒仍是操作基準。
+
 > **進階 compact / rewind 策略**：按需載入 `.claude/rules/session-management.md`。
