@@ -50,6 +50,18 @@ source: https://claude.com/blog/using-claude-code-session-management-and-1m-cont
 | 成本 | 低（自動）| 高（人工寫摘要）|
 | 可引導 | `/compact focus on X, drop Y` | 完全自控 |
 
+**Compact hint 範本**（複製貼上後修改）：
+
+```
+/compact 保留：當前實作進度、已確認的設計決策、待辦清單。
+         丟棄：探索過但放棄的方法、冗長的工具輸出、重複的錯誤訊息。
+         下一步：繼續實作 <feature>，從 <file:line> 開始。
+```
+
+```
+/compact focus on the auth refactor decisions and pending TODOs, drop all the grep/read output
+```
+
 ### 4. 壞 autocompact 的成因
 
 - autocompact 在 context rot 最嚴重時觸發 — 模型此時**最不聰明**。
@@ -58,18 +70,11 @@ source: https://claude.com/blog/using-claude-code-session-management-and-1m-cont
 
 ### 5. Subagent 的判斷心智模型
 
-> **Will I need this tool output again, or just the conclusion?**
-
-明確指示 subagent 的情境：
-
-- 「Spin up a subagent to verify the result of this work based on the following spec file」
-- 「Spin off a subagent to read through this other codebase and summarize how it implemented the auth flow」
-- 「Spin off a subagent to write the docs on this feature based on my git changes」
+見常駐載入的 `subagent-strategy.md`（委派規則與「Will I need this output again?」心智模型）。
 
 ## Context 監控
 
-- Claude Code 新增 `/usage` 指令 — 查看本 session 的 token/cost 用量。
-- 使用量接近 **70%** 時提醒使用者考慮 `/compact` 或開新 session。
+監控規則見常駐載入的 `context-management.md`（`/usage`、70% 提醒）。
 - 1M context 消除了 compaction 的時間壓力，但 **context rot 仍會發生** — 注意力被稀釋、舊的無關內容會干擾當前任務。
 
 ## Side Chat（Desktop 專屬的中途提問）
