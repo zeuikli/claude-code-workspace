@@ -1,1 +1,29 @@
 CLAUDE.local.md
+
+# Secrets & credentials
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Logs
+*.log
+logs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
+
+# Runtime artifacts
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+.cache/
