@@ -75,3 +75,38 @@ Please flag PRs that touch the /auth-provider module. Any changes to this module
 
 - 建立 / 管理：<https://claude.ai/code> 或 CLI `/schedule`
 - 每個 routine 視為一個 Claude Code session，依同樣方式計費與套用 CLAUDE.md。
+
+## Boris Cherny 驗證的 CLI 自動化技巧
+
+> 來源：[shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice)（2026-03-30 驗證）
+
+### `/loop` — 本地定期重複執行
+
+在本機 terminal session 中定期呼叫某個 slash command：
+
+```bash
+/loop 5m /babysit
+```
+
+**適用情境**：長時間 CI 監控、定期輪詢 API 狀態 — 不需要雲端 Routines，terminal 開著即可。
+
+**與 Routines 的差異**：`/loop` 依賴本機 terminal；Routines 在雲端跑，terminal 可以關掉。
+
+### `/batch` — 平行遷移 fan-out
+
+對一組相似目標（多個 repo / 多個模組）同時啟動平行 migration：
+
+```bash
+/batch migrate all Python 2 modules to Python 3
+```
+
+Claude 自動 fan-out 多個 worktree agent，各自處理一個目標，完成後合併結果。
+
+### `--bare` 旗標 — 非互動 SDK 用途
+
+```bash
+claude --bare "your prompt here"
+```
+
+- 禁用互動 UI，啟動速度最高 **10x**。
+- 適合 CI pipeline、webhook handler、腳本呼叫 — 任何不需要使用者介入的場景。

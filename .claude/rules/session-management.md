@@ -94,3 +94,27 @@ source: "https://claude.com/blog/using-claude-code-session-management-and-1m-con
 - 官方 Auto Memory 在跨 session 持久化知識（`~/.claude/projects/<project>/memory/`）。
 - `/clear` 或 `/compact` 不影響 Auto Memory — 可安心使用。
 - 關鍵決策請確保進入 Auto Memory（Claude 通常會自動判斷，可用 `/memory` 編輯）。
+
+## Boris Cherny 驗證技巧（2026-03-30）
+
+> 來源：[shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice)
+
+### `/branch` — Session Forking（分叉探索）
+
+從現有 session 分岔出一條新線，探索不同方案而不污染原線：
+
+```bash
+claude --resume <session-id> --fork-session
+```
+
+**適用情境**：想試 approach B，但不確定是否比 approach A 更好 — fork 後平行跑，選勝者。
+
+### `/btw` — 非阻塞側邊提問
+
+在 agent 執行任務中途發問，**不中斷當前任務進度**。Agent 完成目前工作後才回應你的問題。
+
+```
+/btw 這個函式為什麼要用 async？
+```
+
+**與 Side Chat 的差異**：Side Chat（`⌘+;`）是你發起的探索，不回流主線；`/btw` 是插入 agent 的工作隊列，agent 自己決定何時回答。

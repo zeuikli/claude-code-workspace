@@ -45,6 +45,22 @@ Coordinator（主對話）
 - 或達到時間上限（由使用者指定）
 - 或 Coordinator 判斷已收斂（無新發現）
 
+## Data Contract Pattern（平行前先對齊 I/O 格式）
+
+> 來源：[shanraisshan/claude-code-best-practice — orchestration-workflow](https://github.com/shanraisshan/claude-code-best-practice/tree/main/orchestration-workflow)
+
+在 fan-out Workers **之前**，Coordinator 必須明確定義每個 Worker 的輸入格式與輸出格式，讓所有 Worker 的結果可以直接合併，無需二次轉換。
+
+**範例**：三個 Worker 各自查詢不同時區的現在時間，輸出格式事先統一：
+
+```json
+{ "time": "14:30", "tz": "UTC+8", "formatted": "2026-04-18 14:30 (UTC+8)" }
+```
+
+Coordinator 在 prompt 中明確寫出此 schema，Worker A/B/C 直接輸出符合格式的 JSON，Coordinator 只需 `JSON.parse` 後合併陣列，無需猜測欄位名稱或手動對齊格式。
+
+**沒有 Data Contract 的後果**：Worker A 回傳 `time: "2:30pm"`、Worker B 回傳 `timestamp: 1713420600`，Coordinator 需要額外解析邏輯，增加錯誤風險。
+
 ## Gotcha
 
 - **Workers 無法直接溝通**：所有發現必須回傳給 Coordinator，不能 Worker A 把結果傳給 Worker B。
