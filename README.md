@@ -4,6 +4,14 @@
 
 ## 版本更新
 
+**2026-04-18 (v3 — Karpathy 優化整合)**
+
+- 📁 `docs/archive/` 新增：移入 2 個歷史文件（perf-report、session7-followup）
+- 📋 `docs/INDEX.md` 重寫為 Tier 1/2/3 三層分類結構
+- 🔧 `CLAUDE.md` 瘦身：合併重複原則、進階文件指向 INDEX
+- 🔧 `workspace-rules` skill 雙檔加互相 cross-reference
+- 🗂️ `benchmarks/results/archive/` 歸檔 3 個舊 JSON 結果
+
 **2026-04-17 (v2 — blog-archive 深化)**
 
 - ✨ 新增 `docs/multi-agent-coordination.md` — 5 種多 agent 協調模式決策表
@@ -28,6 +36,7 @@
 | `main` | **預設使用** | 穩定的日常工作環境 |
 | `blog-archive` | 知識來源 | Anthropic 官方部落格歸檔（供改寫與對照）|
 | `claude/rewrite-with-opus-sonnet-*` | 升級實驗 | Opus 4.7 / Sonnet 4.6 改寫分支 |
+| `claude/karpathy-optimization-merged` | 整合分支 | Karpathy 優化 + main 合併後的整理版本 |
 
 > 若無特殊需求，請使用 `main` 分支。
 
@@ -80,29 +89,28 @@ claude-code-workspace/
 │   ├── settings.json              # Opus 4.7 xhigh + 9 種 Hook + Auto Memory + Timeout
 │   ├── hooks/                     # 9 種 hook 事件
 │   ├── rules/
-│   │   ├── language.md            # 語言回覆
+│   │   ├── core.md                   # 語言 / Git / 品質三合一
 │   │   ├── opus47-best-practices.md  # ★ Opus 4.7 調校指南
-│   │   ├── subagent-strategy.md   # Sub Agent + Advisor 模式
-│   │   ├── session-management.md  # ★ /rewind / /compact / /clear 決策表
-│   │   ├── context-management.md  # Context 監控
-│   │   ├── routines.md            # ★ Claude Code Routines
-│   │   ├── git-workflow.md        # Git 自動化
-│   │   ├── quality.md             # 測試與驗證
-│   │   └── auto-sync.md           # 同步機制
+│   │   ├── subagent-strategy.md      # Sub Agent + Advisor 模式
+│   │   ├── session-management.md     # ★ /rewind / /compact / /clear 決策表
+│   │   ├── context-management.md     # Context 監控 + Prompt Caching
+│   │   ├── routines.md               # ★ Claude Code Routines
+│   │   └── auto-sync.md              # 同步機制
 │   ├── agents/                   # 9 個 Sub Agent（三層模型分工）
 │   │   ├── researcher.md / architecture-explorer.md / doc-writer.md / memory-compactor.md   # Haiku 4.5
 │   │   ├── implementer.md / test-writer.md / security-reviewer.md                           # Sonnet 4.6
 │   │   └── code-reviewer.md / reviewer.md                                                   # Opus 4.7
-│   └── skills/                   # 5 個 Skill（按需載入）
+│   └── skills/                   # 7 個 Skill（按需載入）
 │       ├── deep-review / frontend-design / blog-analyzer
-│       └── agent-team / cost-tracker
-├── docs/                         # 13 個進階文件（lazy-load，見 docs/INDEX.md）
-│   ├── INDEX.md                      # 進階文件索引
+│       ├── agent-team / cost-tracker
+│       └── workspace-rules / caveman
+├── docs/                         # 進階文件（lazy-load，Tier 1/2/3 分層，見 docs/INDEX.md）
+│   ├── INDEX.md                      # Tier 1/2/3 三層分類索引
 │   ├── advisor-strategy.md
 │   ├── opus47-migration.md           # ★ 4.6 → 4.7 遷移指引
 │   ├── multi-agent-coordination.md   # ★ 5 種協調模式決策表
 │   ├── auto-memory-hybrid.md / hook-lifecycle.md / timeout-guide.md
-│   └── （效能報告、追溯性舊檔…）
+│   └── archive/                      # 歷史文件（perf-report、session7-followup 等）
 ├── prompts.md                    # 萬用 Prompt 集（12 則）
 ├── CLAUDE.md                     # 精簡主指令（rules 按需載入）
 └── CHANGELOG.md                  # 專案變更紀錄
