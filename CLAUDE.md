@@ -1,97 +1,75 @@
 # CLAUDE.md
 
-> **繁體中文優先 · English supported** · Repo: <https://github.com/zeuikli/claude-code-workspace>
->
-> 依使用者語言自動切換回覆語系。Replies match the user's language automatically.
+> 繁體中文優先 · English supported · Repo: <https://github.com/zeuikli/claude-code-workspace>
 
-## 四層載入框架 | 4-Tier Load Framework
+## 四層載入框架
 
 ```
-🔴 真實載入  Real-time   — session-init.sh hook + CLAUDE.md 本體
-🟡 自動載入  Auto        — 3 rules @-imported (core / subagent / context) ~1,700 tok
-🟢 按需載入  On-demand   — 16 skills + 6 rules：說觸發詞才載入
-⚪ 不必載入  Skip        — docs/archive / reference docs：手動 Read 即可
+🔴 Real-time  — session-init.sh hook + CLAUDE.md 本體
+🟡 Auto       — 3 rules @-imported (core/subagent/context) ~1,700 tok
+🟢 On-demand  — 16 skills + 6 rules：說觸發詞才載入
+⚪ Skip       — docs/archive, reference docs：手動 Read 即可
 ```
 
-> 💡 執行 `/load-plan` 查看完整清單含 token 估算
+> 💡 `/load-plan` 查看完整清單含 token 估算
 
 ---
 
-## 核心原則 | Core Principles
+## 核心原則
 
-- **IMPORTANT**: 中文用台灣繁體，英文用英文。/ Reply in Traditional Chinese for Chinese, English for English.
+- **IMPORTANT**: 中文用台灣繁體，英文用英文。
 - **IMPORTANT**: 研究 / 實作 / 測試**優先委派 Sub Agent**，主對話僅接收摘要。
 - **IMPORTANT**: 採 **Advisor 模式** — Haiku/Sonnet 執行、Opus 僅在架構決策時諮詢。
-- **IMPORTANT**: Context 達 70% 立即提醒開新對話；達 60% 時**按需載入** `session-management.md`。
+- **IMPORTANT**: Context 達 70% 立即提醒開新對話；達 60% 時按需載入 `session-management.md`。
 - **IMPORTANT**: 改動完成 → `git add → commit → push -u origin <branch>`（失敗重試 4 次）。
 - **IMPORTANT**: 跨對話記憶由**官方 Auto Memory** 管理（`/memory`），不手動維護。
 - **IMPORTANT**: 實作前先說出理解與假設，再開始寫程式。
 
 ## 常駐規則（🟡 自動載入，約 1,700 tok）
 
-- @.claude/rules/core.md — 語言 / Git / 品質三合一 / Language, Git, Quality
-- @.claude/rules/subagent-strategy.md — Advisor 模式 + Sub Agent 委派
-- @.claude/rules/context-management.md — Context 監控 / Context monitoring
+- @.claude/rules/core.md
+- @.claude/rules/subagent-strategy.md
+- @.claude/rules/context-management.md
 
-## 按需載入 | On-demand（🟢 說觸發詞即載入，不說不佔 context）
+## 按需載入（🟢 說觸發詞才載入）
 
-> 💡 `/load-plan` 隨時顯示完整清單與觸發詞 · `/load-plan` shows the full list with token costs
+> 詳細觸發詞與 token 估算：執行 `/load-plan`
 
-### 🔧 Workspace 管理 | Workspace
-| 觸發條件 · Trigger | 載入 · Loads |
+### Workspace
+| 觸發詞 | 載入 |
 |---|---|
-| 查看載入計畫、可用 skill 地圖 | `/load-plan` skill |
-| 新 session 冷啟、接手陌生 codebase · Cold-start | `.claude/skills/prime/SKILL.md` |
-| Session 回顧 / `/compact` 前記錄決策 | `.claude/skills/retro/SKILL.md` |
-| 模型效率 / 成本分析 · Context efficiency report | `.claude/skills/context-report/SKILL.md` |
-| Token / 成本追蹤 · Token & cost tracking | `.claude/skills/cost-tracker/SKILL.md` |
-| Anthropic blog 新文章追蹤 · Blog drift tracking | `.claude/skills/blog-analyzer/SKILL.md` |
-| 過去一個月使用模式分析 · `/insights` usage analysis | 內建指令：直接執行 `/insights` |
-| Context > 60% · `/compact` / `/rewind` | `.claude/rules/session-management.md` |
-| Context > 70% · token 優化 | `.claude/rules/token-efficiency.md` |
-| Opus 4.7 調校 / 架構決策 | `.claude/rules/opus47-best-practices.md` |
-| 撰寫提示 · Prompt engineering | `prompts.md` |
+| `/load-plan`、skill 地圖 | `skills/load-plan` |
+| 冷啟、接手 codebase | `skills/prime` |
+| Session 回顧、`/compact` 前 | `skills/retro` |
+| Context 效率報告 | `skills/context-report` |
+| Context > 60%、`/compact` | `rules/session-management` |
+| Context > 70%、token 優化 | `rules/token-efficiency` |
+| Opus 4.7 調校、架構決策 | `rules/opus47-best-practices` |
+| 撰寫提示 | `prompts.md` |
 
-### 🖥 程式開發 | Development
-| 觸發條件 · Trigger | 載入 · Loads |
+### 開發
+| 觸發詞 | 載入 |
 |---|---|
-| 除錯、測試失敗、生產 error · Bug/test failure | `.claude/skills/debug/SKILL.md` |
-| 效能分析 · Performance analysis | `.claude/skills/perf/SKILL.md` |
-| 大型重構前 · Pre-refactor codebase map | `.claude/skills/map/SKILL.md` |
-| 前端開發、UI 設計 · Frontend/UI | `.claude/skills/frontend-design/SKILL.md` |
-| Commit 前審查 · Pre-commit review | `.claude/skills/deep-review/SKILL.md` |
-| 大型功能雲端規劃 · Cloud planning with web review | 內建指令：直接執行 `/ultraplan <prompt>` |
-| Pre-merge 深度驗證 · Multi-agent fleet review | 內建指令：直接執行 `/ultrareview` 或 `/ultrareview <PR>` |
-| 大型功能規劃、需求訪談 · Feature spec & interview | `.claude/skills/spec-interview/SKILL.md` |
-| 排程、webhook、routine、Slack 整合、Remote Control、Channels | `.claude/rules/routines.md` |
-| CLI 工具（ast-grep / yq / delta / MonitorTool）| `.claude/rules/cli-enhancers.md` |
-| 新增 Skill / Agent / Tool | `.claude/skills/add-skill/SKILL.md` |
-| SessionStart hook 細節 | `.claude/rules/auto-sync.md` |
-| Prompt caching 優化 / mid-session 架構決策 | `.claude/rules/context-management.md` |
+| 除錯、測試失敗 | `skills/debug` |
+| 效能分析 | `skills/perf` |
+| 大型重構前 | `skills/map` |
+| 前端、UI | `skills/frontend-design` |
+| Commit 前審查 | `skills/deep-review` |
+| 功能規劃、需求訪談 | `skills/spec-interview` |
+| 排程、webhook、routine | `rules/routines` |
+| CLI 工具（ast-grep / yq） | `rules/cli-enhancers` |
+| 新增 Skill / Agent / Tool | `skills/add-skill` |
+| SessionStart hook 細節 | `rules/auto-sync` |
 
-### 📣 行銷 / 文案 | Marketing & Writing
-| 觸發條件 · Trigger | 載入 · Loads |
+### 其他
+| 觸發詞 | 載入 |
 |---|---|
-| 行銷策略、GTM、A/B 測試 · Campaigns, GTM | `.claude/skills/marketing/SKILL.md` |
-| 文案、SEO、Email、Landing Page | `.claude/skills/writing/SKILL.md` |
-| 進階提示模板 · Advanced prompt templates | `docs/prompts-advanced.md` |
+| 行銷策略、文案、SEO | `skills/marketing` + `skills/writing` |
+| 市場調查、競品分析 | `skills/research` |
+| Sprint、PM、多 Agent 平行 | `skills/pm` + `skills/agent-team` |
 
-### 🔍 研究 / 分析 | Research & Analysis
-| 觸發條件 · Trigger | 載入 · Loads |
-|---|---|
-| 市場調查、競品、文獻 · Market/competitive research | `.claude/skills/research/SKILL.md` |
-| Claude Code best practice 審計 | `.claude/skills/research-best-practices/SKILL.md` |
+## 進階文件（⚪ Skip / 手動 Read）
 
-### 📋 專案管理 | Project Management
-| 觸發條件 · Trigger | 載入 · Loads |
-|---|---|
-| Sprint、排程、狀態報告 · Sprint planning | `.claude/skills/pm/SKILL.md` |
-| 多 Agent 平行執行 · Multi-agent parallel | `.claude/skills/agent-team/SKILL.md` |
-
-## 進階文件（⚪ 不必載入 · Skip / Reference only）
-
-- `docs/INDEX.md` — 文件總索引 / Full doc index
+- `docs/INDEX.md` — 文件總索引
 - `docs/advisor-strategy.md` — Advisor 模式完整論述
-- `docs/prompt-caching-verification.md` — 驗證 cache hit 的方法
-- `docs/timeout-guide.md` — Timeout 指南
 - `.claude/REFERENCES.md` — 官方文件對照表
