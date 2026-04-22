@@ -61,7 +61,7 @@ html_to_markdown() {
     s{&gt;}{>}g;
     s{&quot;}{"}g;
     s{&nbsp;}{ }g;
-    s{&apos;}{\'\'}g;
+    s{&apos;}{chr(39)}ge;
 
     # 7) 清理空白：多個換行壓成 2、行尾空白刪掉
     s{[ \t]+$}{}gm;
