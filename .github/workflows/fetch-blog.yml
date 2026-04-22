@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # NOTE: scripts/fetch-blog.sh lives only on the blog-archive branch.
+      # This workflow must stay on main so GitHub registers the cron schedule
+      # and workflow_dispatch button (both read from the default branch).
       - name: Checkout blog-archive branch
         uses: actions/checkout@v4
         with:
