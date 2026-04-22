@@ -14,7 +14,7 @@ Search...
 
 Navigation
 
-Configuration
+Settings and permissions
 
 Configure permissions
 
@@ -36,7 +36,7 @@ What's New
 
 Resources
 
-Configuration
+Settings and permissions
 
 -
 
@@ -50,13 +50,7 @@ Permissions
 
 Sandboxing
 
--
-
-Terminal configuration
-
--
-
-Fullscreen rendering
+Model and responses
 
 -
 
@@ -68,11 +62,21 @@ Speed up responses with fast mode
 
 -
 
-Voice dictation
+Output styles
+
+Interface
 
 -
 
-Output styles
+Terminal configuration
+
+-
+
+Fullscreen rendering
+
+-
+
+Voice dictation
 
 -
 
@@ -115,7 +119,7 @@ On this page
 - Example configurations
 - See also
 
-Configuration
+Settings and permissions
 
 # Configure permissions
 
@@ -271,7 +275,7 @@ Bash permission rules support wildcard matching with `*`. Wildcards can appear a
 
 - `Bash(git * main)` matches commands like `git checkout main` and `git log --oneline main`
 
-A single `*` matches any sequence of characters including spaces, so one wildcard can span multiple arguments. `Bash(git:*)` matches `git log --oneline --all`, and `Bash(git * main)` matches `git push origin main` as well as `git merge main`.
+A single `*` matches any sequence of characters including spaces, so one wildcard can span multiple arguments. `Bash(git *)` matches `git log --oneline --all`, and `Bash(git * main)` matches `git push origin main` as well as `git merge main`.
 When `*` appears at the end with a space before it (like `Bash(ls *)`), it enforces a word boundary, requiring the prefix to be followed by a space or end-of-string. For example, `Bash(ls *)` matches `ls -la` but not `lsof`. In contrast, `Bash(ls*)` without a space matches both `ls -la` and `lsof` because there’s no word boundary constraint.
 
 ####
@@ -291,6 +295,7 @@ Process wrappers
 Before matching Bash rules, Claude Code strips a fixed set of process wrappers so a rule like `Bash(npm test *)` also matches `timeout 30 npm test`. The recognized wrappers are `timeout`, `time`, `nice`, `nohup`, and `stdbuf`.
 Bare `xargs` is also stripped, so `Bash(grep *)` matches `xargs grep pattern`. Stripping applies only when `xargs` has no flags: an invocation like `xargs -n1 grep pattern` is matched as an `xargs` command, so rules written for the inner command do not cover it.
 This wrapper list is built in and is not configurable. Development environment runners such as `direnv exec`, `devbox run`, `mise exec`, `npx`, and `docker exec` are not in the list. Because these tools execute their arguments as a command, a rule like `Bash(devbox run *)` matches whatever comes after `run`, including `devbox run rm -rf .`. To approve work inside an environment runner, write a specific rule that includes both the runner and the inner command, such as `Bash(devbox run npm test)`. Add one rule per inner command you want to allow.
+Exec wrappers such as `watch`, `setsid`, `ionice`, and `flock` always prompt and cannot be auto-approved by a prefix rule like `Bash(watch *)`. The same applies to `find` with `-exec` or `-delete`: a `Bash(find *)` rule does not cover these forms. To approve a specific invocation, write an exact-match rule for the full command string.
 
 ####
 ​
@@ -476,9 +481,9 @@ Use both for defense-in-depth:
 
 - Filesystem restrictions in the sandbox use Read and Edit deny rules, not separate sandbox configuration
 
-- Network restrictions combine WebFetch permission rules with the sandbox’s `allowedDomains` list
+- Network restrictions combine WebFetch permission rules with the sandbox’s `allowedDomains` and `deniedDomains` lists
 
-When sandboxing is enabled with `autoAllowBashIfSandboxed: true`, which is the default, sandboxed Bash commands run without prompting even if your permissions include `ask: Bash(*)`. The sandbox boundary substitutes for the per-command prompt. See sandbox modes to change this behavior.
+When sandboxing is enabled with `autoAllowBashIfSandboxed: true`, which is the default, sandboxed Bash commands run without prompting even if your permissions include `ask: Bash(*)`. The sandbox boundary substitutes for the per-command prompt. Explicit deny rules still apply, and `rm` or `rmdir` commands that target `/`, your home directory, or other critical system paths still trigger a prompt. See sandbox modes to change this behavior.
 
 ##
 ​
@@ -535,8 +540,9 @@ To react to denials programmatically, use the `PermissionDenied` hook.
 
 Configure the auto mode classifier
 
-Auto mode uses a classifier model to decide whether each action is safe to run without prompting. Out of the box it trusts only the working directory and, if present, the current repo’s remotes. Actions like pushing to your company’s source control org or writing to a team cloud bucket will be blocked as potential data exfiltration. The `autoMode` settings block lets you tell the classifier which infrastructure your organization trusts.
-The classifier reads `autoMode` from user settings, `.claude/settings.local.json`, and managed settings. It does not read from shared project settings in `.claude/settings.json`, because a checked-in repo could otherwise inject its own allow rules.
+Auto mode uses a classifier model to decide whether each action is safe to run without prompting. Out of the box it trusts only the working directory and, if present, the current repo’s remotes. Actions like pushing to your company’s source control org or writing to a team cloud bucket will be blocked as potential data exfiltration.
+To adjust what the classifier allows or blocks, add instructions to your CLAUDE.md file. The classifier reads CLAUDE.md from trusted directories alongside the conversation, so an instruction like “never force push” steers both Claude and the classifier at the same time. Start here for project conventions and behavioral rules.
+For rules that apply across projects, such as trusted infrastructure or organization-wide deny rules, use the `autoMode` settings block. The classifier reads `autoMode` from user settings, `.claude/settings.local.json`, and managed settings. It does not read from shared project settings in `.claude/settings.json`, because a checked-in repo could otherwise inject its own allow rules.
 
 ScopeFileUse for
 

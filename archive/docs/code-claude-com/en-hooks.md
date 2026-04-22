@@ -109,6 +109,9 @@ On this page
 - UserPromptSubmit
 - UserPromptSubmit input
 - UserPromptSubmit decision control
+- UserPromptExpansion
+- UserPromptExpansion input
+- UserPromptExpansion decision control
 - PreToolUse
 - PreToolUse input
 - PreToolUse decision control
@@ -220,6 +223,8 @@ EventWhen it fires
 
 `UserPromptSubmit`When you submit a prompt, before Claude processes it
 
+`UserPromptExpansion`When a user-typed command expands into a prompt, before it reaches Claude. Can block the expansion
+
 `PreToolUse`Before a tool call executes. Can block it
 
 `PermissionRequest`When a permission dialog appears
@@ -273,7 +278,7 @@ EventWhen it fires
 
 How a hook resolves
 
-To see how these pieces fit together, consider this `PreToolUse` hook that blocks destructive shell commands. The `matcher` narrows to Bash tool calls and the `if` condition narrows further to commands starting with `rm`, so `block-rm.sh` only spawns when both filters match:
+To see how these pieces fit together, consider this `PreToolUse` hook that blocks destructive shell commands. The `matcher` narrows to Bash tool calls and the `if` condition narrows further to Bash subcommands matching `rm *`, so `block-rm.sh` only spawns when both filters match:
 
 ```
 `{
@@ -339,7 +344,7 @@ The matcher `"Bash"` matches the tool name, so this hook group activates. If you
 
 If condition checks
 
-The `if` condition `"Bash(rm *)"` matches because the command starts with `rm`, so this handler spawns. If the command had been `npm test`, the `if` check would fail and `block-rm.sh` would never run, avoiding the process spawn overhead. The `if` field is optional; without it, every handler in the matched group runs.
+The `if` condition `"Bash(rm *)"` matches because `rm -rf /tmp/build` is a subcommand matching `rm *`, so this handler spawns. If the command had been `npm test`, the `if` check would fail and `block-rm.sh` would never run, avoiding the process spawn overhead. The `if` field is optional; without it, every handler in the matched group runs.
 
 4
 
@@ -452,6 +457,8 @@ EventWhat the matcher filtersExample matcher values
 
 `InstructionsLoaded`load reason`session_start`, `nested_traversal`, `path_glob_match`, `include`, `compact`
 
+`UserPromptExpansion`command nameyour skill or command names
+
 `Elicitation`MCP server nameyour configured MCP server names
 
 `ElicitationResult`MCP server namesame values as `Elicitation`
@@ -481,7 +488,7 @@ This example runs a linting script only when Claude writes or edits a file:
 ```
 
 `UserPromptSubmit`, `Stop`, `TeammateIdle`, `TaskCreated`, `TaskCompleted`, `WorktreeCreate`, `WorktreeRemove`, and `CwdChanged` don’t support matchers and always fire on every occurrence. If you add a `matcher` field to these events, it is silently ignored.
-For tool events, you can filter more narrowly by setting the `if` field on individual hook handlers. `if` uses permission rule syntax to match against the tool name and arguments together, so `"Bash(git *)"` runs only for `git` commands and `"Edit(*.ts)"` runs only for TypeScript files.
+For tool events, you can filter more narrowly by setting the `if` field on individual hook handlers. `if` uses permission rule syntax to match against the tool name and arguments together, so `"Bash(git *)"` runs when any subcommand of the Bash input matches `git *` and `"Edit(*.ts)"` runs only for TypeScript files.
 
 ####
 ​
@@ -546,7 +553,7 @@ Each object in the inner `hooks` array is a hook handler: the shell command, HTT
 
 - Prompt hooks (`type: "prompt"`): send a prompt to a Claude model for single-turn evaluation. The model returns a yes/no decision as JSON. See Prompt-based hooks.
 
-- Agent hooks (`type: "agent"`): spawn a subagent that can use tools like Read, Grep, and Glob to verify conditions before returning a decision. See Agent-based hooks.
+- Agent hooks (`type: "agent"`): spawn a subagent that can use tools like Read, Grep, and Glob to verify conditions before returning a decision. Agent hooks are experimental and may change. See Agent-based hooks.
 
 ####
 ​
@@ -559,13 +566,15 @@ FieldRequiredDescription
 
 `type`yes`"command"`, `"http"`, `"prompt"`, or `"agent"`
 
-`if`noPermission rule syntax to filter when this hook runs, such as `"Bash(git *)"` or `"Edit(*.ts)"`. The hook only spawns if the tool call matches the pattern. Only evaluated on tool events: `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PermissionRequest`, and `PermissionDenied`. On other events, a hook with `if` set never runs. Uses the same syntax as permission rules
+`if`noPermission rule syntax to filter when this hook runs, such as `"Bash(git *)"` or `"Edit(*.ts)"`. The hook only spawns if the tool call matches the pattern, or if a Bash command is too complex to parse. Only evaluated on tool events: `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, and `PermissionRequest`. On other events, a hook with `if` set never runs. Uses the same syntax as permission rules
 
 `timeout`noSeconds before canceling. Defaults: 600 for command, 30 for prompt, 60 for agent
 
 `statusMessage`noCustom spinner message displayed while the hook runs
 
 `once`noIf `true`, runs once per session then is removed. Only honored for hooks declared in skill frontmatter; ignored in settings files and agent frontmatter
+
+The `if` field holds exactly one permission rule. There is no `&&`, `||`, or list syntax for combining rules; to apply multiple conditions, define a separate hook handler for each. For Bash, the rule is matched against each subcommand of the tool input after leading `VAR=value` assignments are stripped, so `if: "Bash(git push *)"` matches both `FOO=bar git push` and `npm test && git push`. The hook runs if any subcommand matches, and always runs when the command is too complex to parse.
 
 ####
 ​
@@ -822,7 +831,7 @@ The `tool_name` and `tool_input` fields are event-specific. Each hook event sect
 Exit code output
 
 The exit code from your hook command tells Claude Code whether the action should proceed, be blocked, or be ignored.
-Exit 0 means success. Claude Code parses stdout for JSON output fields. JSON output is only processed on exit 0. For most events, stdout is written to the debug log but not shown in the transcript. The exceptions are `UserPromptSubmit` and `SessionStart`, where stdout is added as context that Claude can see and act on.
+Exit 0 means success. Claude Code parses stdout for JSON output fields. JSON output is only processed on exit 0. For most events, stdout is written to the debug log but not shown in the transcript. The exceptions are `UserPromptSubmit`, `UserPromptExpansion`, and `SessionStart`, where stdout is added as context that Claude can see and act on.
 Exit 2 means a blocking error. Claude Code ignores stdout and any JSON in it. Instead, stderr text is fed back to Claude as an error message. The effect depends on the event: `PreToolUse` blocks the tool call, `UserPromptSubmit` rejects the prompt, and so on. See exit code 2 behavior for the full list.
 Any other exit code is a non-blocking error for most hook events. The transcript shows a `<hook name> hook error` notice followed by the first line of stderr, so you can identify the cause without `--debug`. Execution continues and the full stderr is written to the debug log.
 For example, a hook command script that blocks dangerous Bash commands:
@@ -857,6 +866,8 @@ Hook eventCan block?What happens on exit 2
 `PermissionRequest`YesDenies the permission
 
 `UserPromptSubmit`YesBlocks prompt processing and erases the prompt
+
+`UserPromptExpansion`YesBlocks the expansion
 
 `Stop`YesPrevents Claude from stopping, continues the conversation
 
@@ -968,7 +979,7 @@ Not every event supports blocking or controlling behavior through JSON. The even
 
 EventsDecision patternKey fields
 
-UserPromptSubmit, PostToolUse, PostToolUseFailure, Stop, SubagentStop, ConfigChange, PreCompactTop-level `decision``decision: "block"`, `reason`
+UserPromptSubmit, UserPromptExpansion, PostToolUse, PostToolUseFailure, Stop, SubagentStop, ConfigChange, PreCompactTop-level `decision``decision: "block"`, `reason`
 
 TeammateIdle, TaskCreated, TaskCompletedExit code or `continue: false`Exit code 2 blocks the action with stderr feedback. JSON `{"continue": false, "stopReason": "..."}` also stops the teammate entirely, matching `Stop` hook behavior
 
@@ -994,7 +1005,7 @@ Here are examples of each pattern in action:
 
 - PermissionRequest
 
-Used by `UserPromptSubmit`, `PostToolUse`, `PostToolUseFailure`, `Stop`, `SubagentStop`, `ConfigChange`, and `PreCompact`. The only value is `"block"`. To allow the action to proceed, omit `decision` from your JSON, or exit 0 without any JSON at all:
+Used by `UserPromptSubmit`, `UserPromptExpansion`, `PostToolUse`, `PostToolUseFailure`, `Stop`, `SubagentStop`, `ConfigChange`, and `PreCompact`. The only value is `"block"`. To allow the action to proceed, omit `decision` from your JSON, or exit 0 without any JSON at all:
 
 ```
 `{
@@ -1264,6 +1275,65 @@ FieldDescription
 
 The JSON format isn’t required for simple use cases. To add context, you can print plain text to stdout with exit code 0. Use JSON when you need to
 block prompts or want more structured control.
+
+###
+​
+
+UserPromptExpansion
+
+Runs when a user-typed slash command expands into a prompt before reaching Claude. Use this to block specific commands from direct invocation, inject context for a particular skill, or log which commands users invoke. For example, a hook matching `deploy` can block `/deploy` unless an approval file is present, or a hook matching a review skill can append the team’s review checklist as `additionalContext`.
+This event covers the path `PreToolUse` does not: a `PreToolUse` hook matching the `Skill` tool fires only when Claude calls the tool, but typing `/skillname` directly bypasses `PreToolUse`. `UserPromptExpansion` fires on that direct path.
+Matches on `command_name`. Leave the matcher empty to fire on every prompt-type slash command.
+
+####
+​
+
+UserPromptExpansion input
+
+In addition to the common input fields, UserPromptExpansion hooks receive `expansion_type`, `command_name`, `command_args`, `command_source`, and the original `prompt` string. The `expansion_type` field is `slash_command` for skill and custom commands, or `mcp_prompt` for MCP server prompts.
+
+```
+`{
+  "session_id": "abc123",
+  "transcript_path": "/Users/.../00893aaf.jsonl",
+  "cwd": "/Users/...",
+  "permission_mode": "default",
+  "hook_event_name": "UserPromptExpansion",
+  "expansion_type": "slash_command",
+  "command_name": "example-skill",
+  "command_args": "arg1 arg2",
+  "command_source": "plugin",
+  "prompt": "/example-skill arg1 arg2"
+}
+`
+```
+
+####
+​
+
+UserPromptExpansion decision control
+
+`UserPromptExpansion` hooks can block the expansion or add context. All JSON output fields are available.
+
+FieldDescription
+
+`decision``"block"` prevents the slash command from expanding. Omit to allow it to proceed
+
+`reason`Shown to the user when `decision` is `"block"`
+
+`additionalContext`String added to Claude’s context alongside the expanded prompt
+
+```
+`{
+  "decision": "block",
+  "reason": "This slash command is not available",
+  "hookSpecificOutput": {
+    "hookEventName": "UserPromptExpansion",
+    "additionalContext": "Additional context for this expansion"
+  }
+}
+`
+```
 
 ###
 ​
@@ -2281,7 +2351,7 @@ FieldDescription
 CwdChanged
 
 Runs when the working directory changes during a session, for example when Claude executes a `cd` command. Use this to react to directory changes: reload environment variables, activate project-specific toolchains, or run setup scripts automatically. Pairs with FileChanged for tools like direnv that manage per-directory environment.
-CwdChanged hooks have access to `CLAUDE_ENV_FILE`. Variables written to that file persist into subsequent Bash commands for the session, just as in SessionStart hooks. Only `type: "command"` hooks are supported.
+CwdChanged hooks have access to `CLAUDE_ENV_FILE`. Variables written to that file persist into subsequent Bash commands for the session, just as in SessionStart hooks.
 CwdChanged does not support matchers and fires on every directory change.
 
 ####
@@ -2328,7 +2398,7 @@ The `matcher` for this event serves two roles:
 
 - Filter which hooks run: when a watched file changes, the same value filters which hook groups run using the standard matcher rules against the changed file’s basename.
 
-FileChanged hooks have access to `CLAUDE_ENV_FILE`. Variables written to that file persist into subsequent Bash commands for the session, just as in SessionStart hooks. Only `type: "command"` hooks are supported.
+FileChanged hooks have access to `CLAUDE_ENV_FILE`. Variables written to that file persist into subsequent Bash commands for the session, just as in SessionStart hooks.
 
 ####
 ​
@@ -2757,6 +2827,8 @@ Events that support all four hook types (`command`, `http`, `prompt`, and `agent
 
 - `TaskCreated`
 
+- `UserPromptExpansion`
+
 - `UserPromptSubmit`
 
 Events that support `command` and `http` hooks but not `prompt` or `agent`:
@@ -2895,6 +2967,8 @@ This `Stop` hook uses a detailed prompt to check three conditions before allowin
 ​
 
 Agent-based hooks
+
+Agent hooks are experimental. Behavior and configuration may change in future releases. For production workflows, prefer command hooks.
 
 Agent-based hooks (`type: "agent"`) are like prompt-based hooks but with multi-turn tool access. Instead of a single LLM call, an agent hook spawns a subagent that can read files, search code, and inspect the codebase to verify conditions. Agent hooks support the same events as prompt-based hooks.
 
@@ -3145,7 +3219,7 @@ Hook execution details, including which hooks matched, their exit codes, and ful
 ```
 
 For more granular hook matching details, set `CLAUDE_CODE_DEBUG_LOG_LEVEL=verbose` to see additional log lines such as hook matcher counts and query matching.
-For troubleshooting common issues like hooks not firing, infinite Stop hook loops, or configuration errors, see Limitations and troubleshooting in the guide.
+For troubleshooting common issues like hooks not firing, infinite Stop hook loops, or configuration errors, see Limitations and troubleshooting in the guide. For a broader diagnostic walkthrough covering `/context`, `/doctor`, and settings precedence, see Debug your config.
 
 Was this page helpful?
 

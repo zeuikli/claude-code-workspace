@@ -14,7 +14,7 @@ Search...
 
 Navigation
 
-Configuration
+Settings and permissions
 
 Claude Code settings
 
@@ -36,7 +36,7 @@ What's New
 
 Resources
 
-Configuration
+Settings and permissions
 
 -
 
@@ -50,13 +50,7 @@ Permissions
 
 Sandboxing
 
--
-
-Terminal configuration
-
--
-
-Fullscreen rendering
+Model and responses
 
 -
 
@@ -68,11 +62,21 @@ Speed up responses with fast mode
 
 -
 
-Voice dictation
+Output styles
+
+Interface
 
 -
 
-Output styles
+Terminal configuration
+
+-
+
+Fullscreen rendering
+
+-
+
+Voice dictation
 
 -
 
@@ -116,7 +120,7 @@ On this page
 - Tools available to Claude
 - See also
 
-Configuration
+Settings and permissions
 
 # Claude Code settings
 
@@ -248,7 +252,7 @@ projects.
 
 - MDM/OS-level policies: delivered through native device management on macOS and Windows:
 
-- macOS: `com.anthropic.claudecode` managed preferences domain (deployed via configuration profiles in Jamf, Iru (Kandji), or other MDM tools)
+- macOS: `com.anthropic.claudecode` managed preferences domain. The plist’s top-level keys mirror `managed-settings.json`, with nested settings as dictionaries and arrays as plist arrays. Deploy via configuration profiles in Jamf, Iru (Kandji), or similar MDM tools.
 
 - Windows: `HKLM\SOFTWARE\Policies\ClaudeCode` registry key with a `Settings` value (REG_SZ or REG_EXPAND_SZ) containing JSON (deployed via Group Policy or Intune)
 
@@ -431,11 +435,15 @@ KeyDescriptionExample
 
 `showThinkingSummaries`Show extended thinking summaries in interactive sessions. When unset or `false` (default in interactive mode), thinking blocks are redacted by the API and shown as a collapsed stub. Redaction only changes what you see, not what the model generates: to reduce thinking spend, lower the budget or disable thinking instead. Non-interactive mode (`-p`) and SDK callers always receive summaries regardless of this setting`true`
 
+`skipWebFetchPreflight`Skip the WebFetch domain safety check that sends each requested hostname to `api.anthropic.com` before fetching. Set to `true` in environments that block traffic to Anthropic, such as Bedrock, Vertex AI, or Foundry deployments with restrictive egress. When skipped, WebFetch attempts any URL without consulting the blocklist`true`
+
 `spinnerTipsEnabled`Show tips in the spinner while Claude is working. Set to `false` to disable tips (default: `true`)`false`
 
 `spinnerTipsOverride`Override spinner tips with custom strings. `tips`: array of tip strings. `excludeDefault`: if `true`, only show custom tips; if `false` or absent, custom tips are merged with built-in tips`{ "excludeDefault": true, "tips": ["Use our internal tool X"] }`
 
 `spinnerVerbs`Customize the action verbs shown in the spinner and turn duration messages. Set `mode` to `"replace"` to use only your verbs, or `"append"` to add them to the defaults`{"mode": "append", "verbs": ["Pondering", "Crafting"]}`
+
+`sshConfigs`SSH connections to show in the Desktop environment dropdown. Each entry requires `id`, `name`, and `sshHost`; `sshPort`, `sshIdentityFile`, and `startDirectory` are optional. When set in managed settings, connections are read-only for users. Read from managed and user settings only`[{"id": "dev-vm", "name": "Dev VM", "sshHost": "user@dev.example.com"}]`
 
 `statusLine`Configure a custom status line to display context. See `statusLine` documentation`{"type": "command", "command": "~/.claude/statusline.sh"}`
 
@@ -541,7 +549,7 @@ KeysDescriptionExample
 
 `enabled`Enable bash sandboxing (macOS, Linux, and WSL2). Default: false`true`
 
-`failIfUnavailable`Exit with an error at startup if `sandbox.enabled` is true but the sandbox cannot start (missing dependencies, unsupported platform, or platform restrictions). When false (default), a warning is shown and commands run unsandboxed. Intended for managed settings deployments that require sandboxing as a hard gate`true`
+`failIfUnavailable`Exit with an error at startup if `sandbox.enabled` is true but the sandbox cannot start (missing dependencies or unsupported platform). When false (default), a warning is shown and commands run unsandboxed. Intended for managed settings deployments that require sandboxing as a hard gate`true`
 
 `autoAllowBashIfSandboxed`Auto-approve bash commands when sandboxed. Default: true`true`
 
@@ -568,6 +576,8 @@ KeysDescriptionExample
 `network.allowMachLookup`Additional XPC/Mach service names the sandbox may look up (macOS only). Supports a single trailing `*` for prefix matching. Needed for tools that communicate via XPC such as the iOS Simulator or Playwright.`["com.apple.coresimulator.*"]`
 
 `network.allowedDomains`Array of domains to allow for outbound network traffic. Supports wildcards (e.g., `*.example.com`).`["github.com", "*.npmjs.org"]`
+
+`network.deniedDomains`Array of domains to block for outbound network traffic. Supports the same wildcard syntax as `allowedDomains`. Takes precedence over `allowedDomains` when both match. Merged from all settings sources regardless of `allowManagedDomainsOnly`.`["sensitive.cloud.example.com"]`
 
 `network.allowManagedDomainsOnly`(Managed settings only) Only `allowedDomains` and `WebFetch(domain:...)` allow rules from managed settings are respected. Domains from user, project, and local settings are ignored. Non-allowed domains are blocked automatically without prompting the user. Denied domains are still respected from all sources. Default: false`true`
 
@@ -609,6 +619,7 @@ Configuration example:
     },
     "network": {
       "allowedDomains": ["github.com", "*.npmjs.org", "registry.yarnpkg.com"],
+      "deniedDomains": ["uploads.github.com"],
       "allowUnixSockets": [
         "/var/run/docker.sock"
       ],
@@ -789,7 +800,7 @@ Array settings merge across scopes. When the same array-valued setting (such as 
 
 Verify active settings
 
-Run `/status` inside Claude Code to see which settings sources are active and where they come from. The output shows each configuration layer (managed, user, project) along with its origin, such as `Enterprise managed settings (remote)`, `Enterprise managed settings (plist)`, `Enterprise managed settings (HKLM)`, or `Enterprise managed settings (file)`. If a settings file contains errors, `/status` reports the issue so you can fix it.
+Run `/status` inside Claude Code to see which settings sources are active and where they come from. The output shows each configuration layer (managed, user, project) along with its origin, such as `Enterprise managed settings (remote)`, `Enterprise managed settings (plist)`, `Enterprise managed settings (HKLM)`, `Enterprise managed settings (HKCU)`, or `Enterprise managed settings (file)`. If a settings file contains errors, `/status` reports the issue so you can fix it.
 
 ###
 ​
@@ -1296,7 +1307,9 @@ See also
 
 - Authentication: set up user access to Claude Code
 
-- Troubleshooting: solutions for common configuration issues
+- Debug your configuration: diagnose why a setting, hook, or MCP server isn’t taking effect
+
+- Troubleshooting: installation, authentication, and platform issues
 
 Was this page helpful?
 

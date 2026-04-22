@@ -53,6 +53,7 @@
 - [Explore the context window](https://code.claude.com/docs/en/context-window.md): An interactive simulation of how Claude Code's context window fills during a session. See what loads automatically, what each file read costs, and when rules and hooks fire.
 - [Manage costs effectively](https://code.claude.com/docs/en/costs.md): Track token usage, set team spend limits, and reduce Claude Code costs with context management, model selection, extended thinking settings, and preprocessing hooks.
 - [Data usage](https://code.claude.com/docs/en/data-usage.md): Learn about Anthropic's data usage policies for Claude
+- [Debug your configuration](https://code.claude.com/docs/en/debug-your-config.md): Diagnose why CLAUDE.md, settings, hooks, MCP servers, or skills aren't taking effect. Use /context, /doctor, /hooks, and /mcp to see what actually loaded.
 - [Use Claude Code Desktop](https://code.claude.com/docs/en/desktop.md): Get more out of Claude Code Desktop: parallel sessions with Git isolation, drag-and-drop pane layout, integrated terminal and file editor, side chats, computer use, Dispatch sessions from your phone, visual diff review, app previews, PR monitoring, connectors, and enterprise configuration.
 - [Get started with the desktop app](https://code.claude.com/docs/en/desktop-quickstart.md): Install Claude Code on desktop and start your first coding session
 - [Schedule recurring tasks in Claude Code Desktop](https://code.claude.com/docs/en/desktop-scheduled-tasks.md): Set up scheduled tasks in Claude Code Desktop to run Claude automatically on a recurring basis for daily code reviews, dependency audits, or morning briefings.
@@ -104,7 +105,7 @@
 - [Claude Code in Slack](https://code.claude.com/docs/en/slack.md): Delegate coding tasks directly from your Slack workspace
 - [Customize your status line](https://code.claude.com/docs/en/statusline.md): Configure a custom status bar to monitor context window usage, costs, and git status in Claude Code
 - [Create custom subagents](https://code.claude.com/docs/en/sub-agents.md): Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
-- [Optimize your terminal setup](https://code.claude.com/docs/en/terminal-config.md): Claude Code works best when your terminal is properly configured. Follow these guidelines to optimize your experience.
+- [Configure your terminal for Claude Code](https://code.claude.com/docs/en/terminal-config.md): Fix Shift+Enter for newlines, get a terminal bell when Claude finishes, configure tmux, match the color theme, and enable Vim mode in the Claude Code CLI.
 - [Enterprise deployment overview](https://code.claude.com/docs/en/third-party-integrations.md): Learn how Claude Code can integrate with various third-party services and infrastructure to meet enterprise deployment requirements.
 - [Tools reference](https://code.claude.com/docs/en/tools-reference.md): Complete reference for the tools Claude Code can use, including permission requirements.
 - [Troubleshooting](https://code.claude.com/docs/en/troubleshooting.md): Discover solutions to common issues with Claude Code installation and usage.

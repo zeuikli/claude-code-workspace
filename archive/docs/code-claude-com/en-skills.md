@@ -90,6 +90,10 @@ Troubleshooting
 
 -
 
+Debug configuration
+
+-
+
 Error reference
 
 On this page
@@ -351,13 +355,15 @@ FieldRequiredDescription
 
 `argument-hint`NoHint shown during autocomplete to indicate expected arguments. Example: `[issue-number]` or `[filename] [format]`.
 
-`disable-model-invocation`NoSet to `true` to prevent Claude from automatically loading this skill. Use for workflows you want to trigger manually with `/name`. Default: `false`.
+`arguments`NoNamed positional arguments for `$name` substitution in the skill content. Accepts a space-separated string or a YAML list. Names map to argument positions in order.
+
+`disable-model-invocation`NoSet to `true` to prevent Claude from automatically loading this skill. Use for workflows you want to trigger manually with `/name`. Also prevents the skill from being preloaded into subagents. Default: `false`.
 
 `user-invocable`NoSet to `false` to hide from the `/` menu. Use for background knowledge users shouldn’t invoke directly. Default: `true`.
 
 `allowed-tools`NoTools Claude can use without asking permission when this skill is active. Accepts a space-separated string or a YAML list.
 
-`model`NoModel to use when this skill is active.
+`model`NoModel to use when this skill is active. The override applies for the rest of the current turn and is not saved to settings; the session model resumes on your next prompt. Accepts the same values as `/model`, or `inherit` to keep the active model.
 
 `effort`NoEffort level when this skill is active. Overrides the session effort level. Default: inherits from session. Options: `low`, `medium`, `high`, `xhigh`, `max`; available levels depend on the model.
 
@@ -385,6 +391,8 @@ VariableDescription
 `$ARGUMENTS[N]`Access a specific argument by 0-based index, such as `$ARGUMENTS[0]` for the first argument.
 
 `$N`Shorthand for `$ARGUMENTS[N]`, such as `$0` for the first argument or `$1` for the second.
+
+`$name`Named argument declared in the `arguments` frontmatter list. Names map to positions in order, so with `arguments: [issue, branch]` the placeholder `$issue` expands to the first argument and `$branch` to the second.
 
 `${CLAUDE_SESSION_ID}`The current session ID. Useful for logging, creating session-specific files, or correlating skill output with sessions.
 
@@ -952,6 +960,8 @@ To raise the limit, set the `SLASH_COMMAND_TOOL_CHAR_BUDGET` environment variabl
 ​
 
 Related resources
+
+- Debug your configuration: diagnose why a skill isn’t appearing or triggering
 
 - Subagents: delegate tasks to specialized agents
 

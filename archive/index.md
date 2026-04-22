@@ -1,11 +1,10 @@
 # Claude Blog Archive
 
-> 最後更新：2026-04-18 15:28 UTC
-> 共 21 篇文章，本次新增 0 篇
+> 最後更新：2026-04-22 04:10 UTC
+> 共 21 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
-| Auto mode for Claude Code | [文章](articles/auto-mode.md) / [原文](https://claude.com/blog/auto-mode) |
 | Best practices for using Claude Opus 4.7 with Claude Code | [文章](articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md) / [原文](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code) |
 | Building AI agents for financial services | [文章](articles/building-ai-agents-in-financial-services.md) / [原文](https://claude.com/blog/building-ai-agents-in-financial-services) |
 | How Carta Healthcare built clinical AI with Claude | [文章](articles/carta-healthcare-clinical-abstractor.md) / [原文](https://claude.com/blog/carta-healthcare-clinical-abstractor) |
@@ -20,6 +19,7 @@
 | How enterprises are building AI agents in 2026 | [文章](articles/how-enterprises-are-building-ai-agents-in-2026.md) / [原文](https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026) |
 | Improving frontend design through Skills | [文章](articles/improving-frontend-design-through-skills.md) / [原文](https://claude.com/blog/improving-frontend-design-through-skills) |
 | Introducing routines in Claude Code | [文章](articles/introducing-routines-in-claude-code.md) / [原文](https://claude.com/blog/introducing-routines-in-claude-code) |
+| Meet the winners of our Built with Opus 4.6 Claude Code hackathon  | [文章](articles/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon.md) / [原文](https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon) |
 | Multi-agent coordination patterns: Five approaches and when to use them | [文章](articles/multi-agent-coordination-patterns.md) / [原文](https://claude.com/blog/multi-agent-coordination-patterns) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Seeing like an agent: how we design tools in Claude Code | [文章](articles/seeing-like-an-agent.md) / [原文](https://claude.com/blog/seeing-like-an-agent) |
