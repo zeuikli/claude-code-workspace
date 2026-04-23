@@ -92,7 +92,7 @@
 git clone https://github.com/zeuikli/claude-code-workspace.git
 cd claude-code-workspace
 mkdir -p ~/.claude
-echo "@~/claude-code-workspace/CLAUDE.md" > ~/.claude/CLAUDE.md
+echo "@$HOME/claude-code-workspace/CLAUDE.md" > ~/.claude/CLAUDE.md
 ```
 
 ## 跨專案共用
@@ -206,7 +206,7 @@ After setup, fast restarts within 5 minutes hit the fetch timestamp cache for ju
 ```bash
 git clone https://github.com/zeuikli/claude-code-workspace.git
 mkdir -p ~/.claude
-echo "@~/claude-code-workspace/CLAUDE.md" > ~/.claude/CLAUDE.md
+echo "@$HOME/claude-code-workspace/CLAUDE.md" > ~/.claude/CLAUDE.md
 ```
 
 ---
