@@ -25,8 +25,10 @@ SPARSE_PATHS=".claude CLAUDE.md prompts.md"
 
 # --- 自製毫秒計時器 ---
 _ms_now() {
-  if date +%N >/dev/null 2>&1 && [ "$(date +%N)" != "%N" ]; then
-    echo $(( $(date +%s%N) / 1000000 ))
+  local ns
+  ns=$(date +%N 2>/dev/null)
+  if [ -n "$ns" ] && [ "$ns" != "%N" ] && [ "$ns" -eq "$ns" ] 2>/dev/null; then
+    echo $(( $(date +%s) * 1000 + ns / 1000000 ))
   else
     echo $(( $(date +%s) * 1000 ))
   fi
