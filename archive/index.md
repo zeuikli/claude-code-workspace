@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-01 04:47 UTC
-> 共 22 篇文章，本次新增 4 篇
+> 最後更新：2026-05-02 04:17 UTC
+> 共 23 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -17,6 +17,7 @@
 | Claude Security is now in public beta | [文章](articles/claude-security-public-beta.md) / [原文](https://claude.com/blog/claude-security-public-beta) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
+| How a non-technical project manager built and shipped a stress management app with Claude Code in six weeks | [文章](articles/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks.md) / [原文](https://claude.com/blog/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks) |
 | How enterprises are building AI agents in 2026 | [文章](articles/how-enterprises-are-building-ai-agents-in-2026.md) / [原文](https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026) |
 | How Kepler built verifiable AI for financial services with Claude | [文章](articles/how-kepler-built-verifiable-ai-for-financial-services-with-claude.md) / [原文](https://claude.com/blog/how-kepler-built-verifiable-ai-for-financial-services-with-claude) |
 | Improving frontend design through Skills | [文章](articles/improving-frontend-design-through-skills.md) / [原文](https://claude.com/blog/improving-frontend-design-through-skills) |
