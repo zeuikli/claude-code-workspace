@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-05 04:14 UTC
-> 共 23 篇文章，本次新增 0 篇
+> 最後更新：2026-05-06 04:32 UTC
+> 共 23 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -16,6 +16,7 @@
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
 | Claude Security is now in public beta | [文章](articles/claude-security-public-beta.md) / [原文](https://claude.com/blog/claude-security-public-beta) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
+| Deploying Claude across financial services | [文章](articles/deploying-claude-across-financial-services.md) / [原文](https://claude.com/blog/deploying-claude-across-financial-services) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | How a non-technical project manager built and shipped a stress management app with Claude Code in six weeks | [文章](articles/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks.md) / [原文](https://claude.com/blog/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks) |
 | How enterprises are building AI agents in 2026 | [文章](articles/how-enterprises-are-building-ai-agents-in-2026.md) / [原文](https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026) |
@@ -27,5 +28,4 @@
 | Onboarding Claude Code like a new developer: Lessons from 17 years of development | [文章](articles/onboarding-claude-code-like-a-new-developer-lessons-from-17-years-of-development.md) / [原文](https://claude.com/blog/onboarding-claude-code-like-a-new-developer-lessons-from-17-years-of-development) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Product development in the agentic era | [文章](articles/product-development-in-the-agentic-era.md) / [原文](https://claude.com/blog/product-development-in-the-agentic-era) |
-| Using Claude Code: session management and 1M context | [文章](articles/using-claude-code-session-management-and-1m-context.md) / [原文](https://claude.com/blog/using-claude-code-session-management-and-1m-context) |
 
