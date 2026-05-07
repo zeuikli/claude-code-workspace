@@ -1,14 +1,12 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-06 04:32 UTC
-> 共 23 篇文章，本次新增 1 篇
+> 最後更新：2026-05-07 04:33 UTC
+> 共 22 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
-| Best practices for using Claude Opus 4.7 with Claude Code | [文章](articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md) / [原文](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code) |
 | Building agents that reach production systems with MCP | [文章](articles/building-agents-that-reach-production-systems-with-mcp.md) / [原文](https://claude.com/blog/building-agents-that-reach-production-systems-with-mcp) |
 | Building AI agents for the enterprise | [文章](articles/building-ai-agents-for-the-enterprise.md) / [原文](https://claude.com/blog/building-ai-agents-for-the-enterprise) |
-| Building AI agents for financial services | [文章](articles/building-ai-agents-in-financial-services.md) / [原文](https://claude.com/blog/building-ai-agents-in-financial-services) |
 | Claude API skill now in CodeRabbit, JetBrains, Resolve AI, and Warp | [文章](articles/claude-api-skill.md) / [原文](https://claude.com/blog/claude-api-skill) |
 | Claude builds interactive visuals right in your conversation | [文章](articles/claude-builds-visuals.md) / [原文](https://claude.com/blog/claude-builds-visuals) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
@@ -25,6 +23,7 @@
 | Lessons from building Claude Code: Prompt caching is everything | [文章](articles/lessons-from-building-claude-code-prompt-caching-is-everything.md) / [原文](https://claude.com/blog/lessons-from-building-claude-code-prompt-caching-is-everything) |
 | Meet the winners of our Built with Opus 4.6 Claude Code hackathon  | [文章](articles/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon.md) / [原文](https://claude.com/blog/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon) |
 | Deploying Claude across the enterprise with Claude Cowork | [文章](articles/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork.md) / [原文](https://claude.com/blog/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork) |
+| New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Onboarding Claude Code like a new developer: Lessons from 17 years of development | [文章](articles/onboarding-claude-code-like-a-new-developer-lessons-from-17-years-of-development.md) / [原文](https://claude.com/blog/onboarding-claude-code-like-a-new-developer-lessons-from-17-years-of-development) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Product development in the agentic era | [文章](articles/product-development-in-the-agentic-era.md) / [原文](https://claude.com/blog/product-development-in-the-agentic-era) |
