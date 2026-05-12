@@ -1,17 +1,18 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-11 04:56 UTC
-> 共 22 篇文章，本次新增 0 篇
+> 最後更新：2026-05-12 04:34 UTC
+> 共 23 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
-| Building agents that reach production systems with MCP | [文章](articles/building-agents-that-reach-production-systems-with-mcp.md) / [原文](https://claude.com/blog/building-agents-that-reach-production-systems-with-mcp) |
+| Agent view in Claude Code | [文章](articles/agent-view-in-claude-code.md) / [原文](https://claude.com/blog/agent-view-in-claude-code) |
 | Building AI agents for the enterprise | [文章](articles/building-ai-agents-for-the-enterprise.md) / [原文](https://claude.com/blog/building-ai-agents-for-the-enterprise) |
 | Claude API skill now in CodeRabbit, JetBrains, Resolve AI, and Warp | [文章](articles/claude-api-skill.md) / [原文](https://claude.com/blog/claude-api-skill) |
 | Claude builds interactive visuals right in your conversation | [文章](articles/claude-builds-visuals.md) / [原文](https://claude.com/blog/claude-builds-visuals) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
 | Claude Managed Agents: get to production 10x faster | [文章](articles/claude-managed-agents.md) / [原文](https://claude.com/blog/claude-managed-agents) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
+| Introducing the Claude Platform on AWS | [文章](articles/claude-platform-on-aws.md) / [原文](https://claude.com/blog/claude-platform-on-aws) |
 | Claude Security is now in public beta | [文章](articles/claude-security-public-beta.md) / [原文](https://claude.com/blog/claude-security-public-beta) |
 | Collaborate with Claude across Excel, PowerPoint, Word and Outlook  | [文章](articles/collaborate-with-claude-across-excel-powerpoint-word-and-outlook.md) / [原文](https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
