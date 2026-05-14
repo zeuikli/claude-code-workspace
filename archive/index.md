@@ -1,13 +1,13 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-13 04:41 UTC
-> 共 24 篇文章，本次新增 3 篇
+> 最後更新：2026-05-14 04:41 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
 | Agent view in Claude Code | [文章](articles/agent-view-in-claude-code.md) / [原文](https://claude.com/blog/agent-view-in-claude-code) |
+| Best practices for computer and browser use with Claude | [文章](articles/best-practices-for-computer-and-browser-use-with-claude.md) / [原文](https://claude.com/blog/best-practices-for-computer-and-browser-use-with-claude) |
 | Building AI agents for the enterprise | [文章](articles/building-ai-agents-for-the-enterprise.md) / [原文](https://claude.com/blog/building-ai-agents-for-the-enterprise) |
-| Claude API skill now in CodeRabbit, JetBrains, Resolve AI, and Warp | [文章](articles/claude-api-skill.md) / [原文](https://claude.com/blog/claude-api-skill) |
 | Claude builds interactive visuals right in your conversation | [文章](articles/claude-builds-visuals.md) / [原文](https://claude.com/blog/claude-builds-visuals) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
 | Claude for the legal industry | [文章](articles/claude-for-the-legal-industry.md) / [原文](https://claude.com/blog/claude-for-the-legal-industry) |
