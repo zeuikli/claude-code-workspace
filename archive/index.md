@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-14 04:41 UTC
-> 共 24 篇文章，本次新增 1 篇
+> 最後更新：2026-05-15 04:47 UTC
+> 共 24 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -22,11 +22,11 @@
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | How a non-technical project manager built and shipped a stress management app with Claude Code in six weeks | [文章](articles/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks.md) / [原文](https://claude.com/blog/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks) |
 | How Anthropic&#x27;s cybersecurity team built a threat detection platform with Claude Code | [文章](articles/how-anthropic-uses-claude-cybersecurity.md) / [原文](https://claude.com/blog/how-anthropic-uses-claude-cybersecurity) |
+| How Claude Code works in large codebases: Best practices and where to start | [文章](articles/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start.md) / [原文](https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start) |
 | How enterprises are building AI agents in 2026 | [文章](articles/how-enterprises-are-building-ai-agents-in-2026.md) / [原文](https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026) |
-| How Kepler built verifiable AI for financial services with Claude | [文章](articles/how-kepler-built-verifiable-ai-for-financial-services-with-claude.md) / [原文](https://claude.com/blog/how-kepler-built-verifiable-ai-for-financial-services-with-claude) |
 | Improving frontend design through Skills | [文章](articles/improving-frontend-design-through-skills.md) / [原文](https://claude.com/blog/improving-frontend-design-through-skills) |
 | Lessons from building Claude Code: Prompt caching is everything | [文章](articles/lessons-from-building-claude-code-prompt-caching-is-everything.md) / [原文](https://claude.com/blog/lessons-from-building-claude-code-prompt-caching-is-everything) |
-| Deploying Claude across the enterprise with Claude Cowork | [文章](articles/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork.md) / [原文](https://claude.com/blog/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
+| The founder&#x27;s playbook: Building an AI-native startup | [文章](articles/the-founders-playbook.md) / [原文](https://claude.com/blog/the-founders-playbook) |
 
