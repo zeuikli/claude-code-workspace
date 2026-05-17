@@ -30,8 +30,3 @@ __pycache__/
 *.pyo
 node_modules/
 .cache/
-twitter-transcripts/*.mp4
-twitter-transcripts/*.mp3
-twitter-transcripts/*.m4a
-twitter-transcripts/*.webm
-twitter-transcripts/*.opus
