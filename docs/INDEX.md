@@ -2,7 +2,7 @@
 
 > 此目錄存放深度分析與設計文件，**不會自動載入**到 Claude context。
 > 需要時透過 `Read /tmp/claude-code-workspace/docs/<file>.md` 主動讀取，避免占用 token 預算。
-> 最後更新：2026-04-18（v3 — 新增五大領域 skills、load-plan 指令、歸檔過期報告）
+> 最後更新：2026-05-17（v4 — 新增 Claude Code 各面向最佳實踐完整研究報告）
 
 ## 設計論述與官方對齊
 
@@ -18,6 +18,7 @@
 
 | 檔案 | 主題 | 何時讀 |
 |---|---|---|
+| `2026-05-16-claude-code-best-practices.md` | **Claude Code 各面向最佳實踐完整報告**（CLAUDE.md 設計、Hooks 架構、Prompt Caching、Subagent 委派、Skill 封裝、MCP 整合、安全部署、Routines、成本工程九大章節；來源：29 篇最佳實踐 + 52 篇官方 blog） | 全面了解 Claude Code 最佳實踐、建立新 workspace、進行系統改進評估時 |
 | `karpathy-claude-code-insights-2026-04-18.md` | Karpathy × Claude Code 洞察：4 大原則、AutoResearch、官方驗證 | 評估 workspace 對齊 Karpathy 建議時 |
 | `best-practices-research-2026-04-18.md` | htlin222 dotfiles + shanraisshan 最佳實踐研究 + gap analysis | 評估 workspace 改進方向 |
 | `blog-analysis-report.md` | 22 篇 Anthropic Blog 文章可操作洞察萃取 | 尋找 prompt engineering / agent 設計靈感 |
@@ -45,6 +46,7 @@
 | Hook / Timeout 除錯 | 主動讀取 `timeout-guide.md`（整合版本） |
 | Opus 4.7 升級 | 主動讀取 `opus47-migration.md` |
 | 新增 Skill / Agent / Tool | 主動讀取 `tool-design-principles.md` |
+| **全面了解 Claude Code 最佳實踐** | 主動讀取 `2026-05-16-claude-code-best-practices.md` |
 
 ## 文件貢獻
 
