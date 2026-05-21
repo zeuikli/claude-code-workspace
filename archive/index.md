@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-20 05:01 UTC
-> 共 23 篇文章，本次新增 2 篇
+> 最後更新：2026-05-21 05:07 UTC
+> 共 23 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -20,7 +20,7 @@
 | Deploying Claude across financial services | [文章](articles/deploying-claude-across-financial-services.md) / [原文](https://claude.com/blog/deploying-claude-across-financial-services) |
 | Deploying Claude across the legal industry | [文章](articles/deploying-claude-across-the-legal-industry.md) / [原文](https://claude.com/blog/deploying-claude-across-the-legal-industry) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
-| How a non-technical project manager built and shipped a stress management app with Claude Code in six weeks | [文章](articles/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks.md) / [原文](https://claude.com/blog/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks) |
+| How an Anthropic sales leader uses Claude Cowork to run a 4,000-account book | [文章](articles/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book.md) / [原文](https://claude.com/blog/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book) |
 | How Anthropic&#x27;s cybersecurity team built a threat detection platform with Claude Code | [文章](articles/how-anthropic-uses-claude-cybersecurity.md) / [原文](https://claude.com/blog/how-anthropic-uses-claude-cybersecurity) |
 | How Claude Code works in large codebases: Best practices and where to start | [文章](articles/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start.md) / [原文](https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start) |
 | How enterprises are building AI agents in 2026 | [文章](articles/how-enterprises-are-building-ai-agents-in-2026.md) / [原文](https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026) |
