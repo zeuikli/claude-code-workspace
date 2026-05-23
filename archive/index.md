@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-22 04:58 UTC
-> 共 24 篇文章，本次新增 2 篇
+> 最後更新：2026-05-23 04:37 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -15,13 +15,13 @@
 | New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels | [文章](articles/claude-managed-agents-updates.md) / [原文](https://claude.com/blog/claude-managed-agents-updates) |
 | Introducing the Claude Platform on AWS | [文章](articles/claude-platform-on-aws.md) / [原文](https://claude.com/blog/claude-platform-on-aws) |
 | Code w/ Claude SF 2026: Building on the AI exponential  | [文章](articles/code-w-claude-sf-2026-sf.md) / [原文](https://claude.com/blog/code-w-claude-sf-2026-sf) |
-| Collaborate with Claude across Excel, PowerPoint, Word and Outlook  | [文章](articles/collaborate-with-claude-across-excel-powerpoint-word-and-outlook.md) / [原文](https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook) |
 | Claude now works with more security and compliance tools | [文章](articles/compliance-api-security-partners.md) / [原文](https://claude.com/blog/compliance-api-security-partners) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Deploying Claude across the legal industry | [文章](articles/deploying-claude-across-the-legal-industry.md) / [原文](https://claude.com/blog/deploying-claude-across-the-legal-industry) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | How an Anthropic sales leader uses Claude Cowork to run a 4,000-account book | [文章](articles/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book.md) / [原文](https://claude.com/blog/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book) |
 | How Anthropic&#x27;s cybersecurity team built a threat detection platform with Claude Code | [文章](articles/how-anthropic-uses-claude-cybersecurity.md) / [原文](https://claude.com/blog/how-anthropic-uses-claude-cybersecurity) |
+| How Anthropic&#x27;s finance team uses Claude to shape the narrative behind the numbers | [文章](articles/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers.md) / [原文](https://claude.com/blog/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers) |
 | How Claude Code works in large codebases: Best practices and where to start | [文章](articles/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start.md) / [原文](https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start) |
 | How enterprises are building AI agents in 2026 | [文章](articles/how-enterprises-are-building-ai-agents-in-2026.md) / [原文](https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026) |
 | How our partners are putting Opus to work for cybersecurity | [文章](articles/how-our-partners-are-putting-opus-to-work-for-cybersecurity.md) / [原文](https://claude.com/blog/how-our-partners-are-putting-opus-to-work-for-cybersecurity) |
