@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-26 05:01 UTC
-> 共 24 篇文章，本次新增 0 篇
+> 最後更新：2026-05-27 05:12 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -13,7 +13,7 @@
 | Claude Managed Agents: get to production 10x faster | [文章](articles/claude-managed-agents.md) / [原文](https://claude.com/blog/claude-managed-agents) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
 | New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels | [文章](articles/claude-managed-agents-updates.md) / [原文](https://claude.com/blog/claude-managed-agents-updates) |
-| Introducing the Claude Platform on AWS | [文章](articles/claude-platform-on-aws.md) / [原文](https://claude.com/blog/claude-platform-on-aws) |
+| Code w/ Claude London 2026: Rethinking how we build | [文章](articles/code-w-claude-london-2026-rethinking-how-we-build.md) / [原文](https://claude.com/blog/code-w-claude-london-2026-rethinking-how-we-build) |
 | Code w/ Claude SF 2026: Building on the AI exponential  | [文章](articles/code-w-claude-sf-2026-sf.md) / [原文](https://claude.com/blog/code-w-claude-sf-2026-sf) |
 | Claude now works with more security and compliance tools | [文章](articles/compliance-api-security-partners.md) / [原文](https://claude.com/blog/compliance-api-security-partners) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
