@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-05-28 05:06 UTC
-> 共 24 篇文章，本次新增 3 篇
+> 最後更新：2026-05-29 05:11 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -12,7 +12,6 @@
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
 | New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels | [文章](articles/claude-managed-agents-updates.md) / [原文](https://claude.com/blog/claude-managed-agents-updates) |
 | Code w/ Claude London 2026: Rethinking how we build | [文章](articles/code-w-claude-london-2026-rethinking-how-we-build.md) / [原文](https://claude.com/blog/code-w-claude-london-2026-rethinking-how-we-build) |
-| Code w/ Claude SF 2026: Building on the AI exponential  | [文章](articles/code-w-claude-sf-2026-sf.md) / [原文](https://claude.com/blog/code-w-claude-sf-2026-sf) |
 | Claude now works with more security and compliance tools | [文章](articles/compliance-api-security-partners.md) / [原文](https://claude.com/blog/compliance-api-security-partners) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Deploying Claude across the legal industry | [文章](articles/deploying-claude-across-the-legal-industry.md) / [原文](https://claude.com/blog/deploying-claude-across-the-legal-industry) |
@@ -23,6 +22,7 @@
 | How CodeRabbit used Claude to build an agent orchestration system | [文章](articles/how-coderabbit-used-claude-to-build-an-agent-orchestration-system.md) / [原文](https://claude.com/blog/how-coderabbit-used-claude-to-build-an-agent-orchestration-system) |
 | How enterprises are building AI agents in 2026 | [文章](articles/how-enterprises-are-building-ai-agents-in-2026.md) / [原文](https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026) |
 | How our partners are putting Opus to work for cybersecurity | [文章](articles/how-our-partners-are-putting-opus-to-work-for-cybersecurity.md) / [原文](https://claude.com/blog/how-our-partners-are-putting-opus-to-work-for-cybersecurity) |
+| Introducing dynamic workflows | [文章](articles/introducing-dynamic-workflows-in-claude-code.md) / [原文](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | The founder&#x27;s playbook: Building an AI-native startup | [文章](articles/the-founders-playbook.md) / [原文](https://claude.com/blog/the-founders-playbook) |
