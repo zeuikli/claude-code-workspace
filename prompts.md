@@ -36,4 +36,4 @@ session 結束前：
 
 ---
 
-> 進階：接續工作、新專案初始化、Opus 4.7 task-upfront、平行 subagent、Auto Mode、Prompt Caching 最大化等見 `docs/prompts-advanced.md`。
+> 進階：接續工作、新專案初始化、Opus 4.8 task-upfront、平行 subagent、Auto Mode、Prompt Caching 最大化等見 `docs/prompts-advanced.md`。

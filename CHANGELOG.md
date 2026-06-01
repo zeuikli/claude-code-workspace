@@ -4,6 +4,44 @@
 
 ---
 
+## 2026-06-01 — Opus 4.8 對齊：依官方資料更新 workspace
+
+> 官方來源：[發布公告](https://www.anthropic.com/news/claude-opus-4-8)、[What's new in 4.8](https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8)、[4.7→4.8 遷移](https://platform.claude.com/docs/en/about-claude/models/migration-guide#migrating-from-claude-opus-47)、[Effort](https://platform.claude.com/docs/en/build-with-claude/effort)
+
+### 重要更正
+
+- **Effort 預設值更正**：先前文件誤標 Opus「預設 `xhigh`」，官方為 **預設 `high`**；編碼/agentic 工作需**顯式設 `xhigh`**。已修正 `opus-best-practices.md`、`advisor-strategy.md`、`core.md`、`prompts-advanced.md`、`reviewer.md`。
+- **cost-tracker 定價更正**：Opus 由 `$15/$75`（舊 4.1 價）更正為官方 Opus 4.8 **`$5/$25`**。
+
+### 變更
+
+- `.claude/rules/opus47-best-practices.md` → 改名 **`opus-best-practices.md`**（版本中性），內容全面改寫對齊 4.8；同步更新 `core.md` / `prompts-advanced.md` / `sources.md` 的引用。
+- `.claude/settings.json`：`advisorModel` `claude-opus-4-7` → `claude-opus-4-8`。
+- Advisor 策略全面更新：`subagent-strategy.md`、`subagent-advanced.md`、`reviewer.md`、`docs/advisor-strategy.md`（顧問模型 → Opus 4.8）。
+- `context-management.md`：新增 4.8 **mid-conversation system messages**（保留 prompt cache）與 cache 門檻降至 1,024 token 的規則。
+- `subagent-advanced.md`：tool triggering 已改善，移除過度的「請積極使用工具」提示。
+- `REFERENCES.md`：新增 4.8 What's New / Migration / Effort / mid-conversation 官方對照列。
+- `spec-interview` SKILL：`--model claude-opus-4-7` → `claude-opus-4-8`。
+- `CLAUDE.md` / `README.md` / `prompts.md` / `Memory.md`：同步版本字串與決策記錄。
+
+---
+
+## 2026-06-01 — docs/ 盤點精簡：只留 workspace 會用的文件
+
+### 移除（9 個）
+
+- `docs/archive/`（7 個檔案）— 已被取代或純歷史記錄，無活躍機制引用。
+- `docs/opus47-migration.md` — Opus 4.6→4.7 遷移指引，僅 INDEX 編目。
+- `docs/best-practices-research-2026-04-18.md` — dotfiles 研究，僅 INDEX 編目。
+
+### 同步更新
+
+- `docs/INDEX.md`：移除上述檔案的編目列與「歸檔」段落。
+- `CLAUDE.md` / `README.md` / `scripts/load-plan.sh`：移除 `docs/archive` 引用，改指向 `docs/INDEX.md`。
+- 保留 12 個仍接上活躍機制或 INDEX 知識庫的 docs（含 `2026-05-16-claude-code-best-practices.md`、`karpathy-claude-code-insights-2026-04-18.md`）。
+
+---
+
 ## 2026-04-17 (opus-4.7-rewrite v2) — 導入 blog-archive 最新洞察深化 Opus 4.7 優化
 
 ### 改寫依據（本輪新增）

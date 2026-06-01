@@ -1,14 +1,14 @@
 ---
-description: Sub Agent 進階：Opus 4.7 行為差異 + Tasks 跨 session + 工具使用引導
+description: Sub Agent 進階：Opus 4.8 行為差異 + Tasks 跨 session + 工具使用引導
 tier: on-demand
 triggers: ["Tasks", "Opus 調校", "多 Agent 協調", "跨 session", "subagent 平行化"]
 ---
 
 # Sub Agent 進階策略
 
-## Opus 4.7 的 subagent 行為差異
+## Opus 4.8 的 subagent 行為差異
 
-- **IMPORTANT**: Opus 4.7 預設**較少自動開 subagent**，需要平行化時**必須明確指示**，否則會傾向直接在主對話解決。
+- **IMPORTANT**: Opus 4.8 延續 4.7，預設**較少自動開 subagent**，需要平行化時**必須明確指示**，否則會傾向直接在主對話解決。
 - 判斷原則（Anthropic 官方心智模型）：
   > **Will I need this tool output again, or just the conclusion?**
   - 只需要結論 → 委派 subagent（中間產物留在 child context）
@@ -40,13 +40,17 @@ triggers: ["Tasks", "Opus 調校", "多 Agent 協調", "跨 session", "subagent 
 請建立 Tasks 追蹤以下子任務，並 fan-out 給各個 subagent...
 ```
 
-## 工具使用引導（Opus 4.7 每輪適用）
+## 工具使用引導（Opus 4.8）
 
-Opus 4.7 **預設工具呼叫次數較少**。agentic 作業時明確要求積極驗證：
+Opus 4.8 官方已**改善 tool triggering**（較不會漏掉任務需要的工具呼叫，修正 4.7 的回報問題）。因此**不需**像 4.7 那樣到處強塞「請積極使用工具」；保留必要的明確指示即可，避免過度提示。
+
+仍需嚴格驗證時（如疑難除錯）再加：
 
 ```
-積極使用 Grep 和 Read 確認現有程式碼，每個假設應由工具呼叫驗證而非直接推斷。
+每個假設應由 Grep / Read 工具呼叫驗證而非直接推斷。
 ```
+
+> 來源：[What's new in Opus 4.8](https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8)（Better tool triggering）。
 
 ## API 層 Advisor 工具
 

@@ -29,7 +29,7 @@
 | 🔴 **真實載入** | SessionStart Hook | `session-init.sh` + `CLAUDE.md` 本體 | ~708 tok |
 | 🟡 **自動載入** | 每次 session | `core.md` + `subagent-strategy.md` + `context-management.md` | ~1,184 tok |
 | 🟢 **按需載入** | 說出觸發詞 | 16 skills + 6 rules（按需，說了才載入）| 0 ～ 2,000 tok |
-| ⚪ **不必載入** | 手動 Read | docs/archive、reference docs | — |
+| ⚪ **不必載入** | 手動 Read | docs/INDEX.md、reference docs | — |
 
 **設計原則**：每次 session 固定消耗 ~1,892 tokens（CLAUDE.md ~423 + 3 rules ~1,184 + 85% cache 折扣後實付 ~284），其餘零成本直到真正需要。
 
@@ -67,7 +67,7 @@
 |------|------|------|
 | 執行者 | Sonnet 4.6 | 日常任務：實作、測試、搜尋 |
 | 搜尋 | Haiku 4.5 | 探索 10+ 檔案的研究任務 |
-| 顧問 | Opus 4.7 | 僅在架構決策、安全審計、邊界判斷時介入 |
+| 顧問 | Opus 4.8 | 僅在架構決策、安全審計、邊界判斷時介入 |
 
 ### 自動化 Hooks（10 種事件）
 
@@ -158,7 +158,7 @@ Then run `/load-plan` to see all available tools with token cost estimates.
 | 🔴 **Real-time** | SessionStart Hook | `session-init.sh` + `CLAUDE.md` | ~708 tok |
 | 🟡 **Auto** | Every session | 3 core rules (language/git/subagent/context) | ~1,184 tok |
 | 🟢 **On-demand** | Say trigger keyword | 16 skills + 6 rules | 0–2,000 tok |
-| ⚪ **Skip** | Manual Read only | docs/archive, reference docs | — |
+| ⚪ **Skip** | Manual Read only | docs/INDEX.md, reference docs | — |
 
 **Design principle**: Fixed overhead of ~1,892 tokens per session (~284 effective with 85% prompt caching). Everything else costs zero until needed.
 
@@ -179,7 +179,7 @@ Then run `/load-plan` to see all available tools with token cost estimates.
 |------|-------|---------------|
 | Executor | Sonnet 4.6 | Daily tasks: implementation, testing, search |
 | Explorer | Haiku 4.5 | Research tasks spanning 10+ files |
-| Advisor | Opus 4.7 | Architecture decisions, security audits only |
+| Advisor | Opus 4.8 | Architecture decisions, security audits only |
 
 ### Cross-Project Usage
 

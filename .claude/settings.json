@@ -2,7 +2,7 @@
   "autoMemoryEnabled": true,
   "model": "claude-sonnet-4-6",
   "alwaysThinkingEnabled": false,
-  "advisorModel": "claude-opus-4-7",
+  "advisorModel": "claude-opus-4-8",
   "env": {
     "CLAUDE_ENABLE_STREAM_WATCHDOG": "1",
     "CLAUDE_STREAM_IDLE_TIMEOUT_MS": "120000",

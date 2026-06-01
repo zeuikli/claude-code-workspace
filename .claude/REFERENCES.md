@@ -1,7 +1,7 @@
 # 官方文件對照表（References）
 
 > 本 workspace 所有設計決策的官方來源。每個 hook / agent / skill / config 的註解都會指向這裡。
-> 最後更新：2026-04-17 Opus 4.7 優化
+> 最後更新：2026-06-01 Opus 4.8 對齊
 
 ---
 
@@ -45,6 +45,10 @@
 | **Claude Code Desktop Redesign** | https://claude.com/blog/claude-code-desktop-redesign | `archive/articles/claude-code-desktop-redesign.md` | `rules/session-management.md`（Side Chat 第 6 種分支選項） |
 | **AgentOpt 論文** | https://arxiv.org/html/2604.06296v1 | — (arXiv) | Advisor Strategy 學理依據 |
 | **Opus 4.7 Best Practices** | https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code | `archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md` | `CLAUDE.md`、`rules/quality.md`、`rules/subagent-strategy.md`、`docs/advisor-strategy.md` |
+| **Opus 4.8 What's New** | https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8 | — | `rules/opus-best-practices.md`、`settings.json`（advisorModel）|
+| **Opus 4.7→4.8 Migration** | https://platform.claude.com/docs/en/about-claude/models/migration-guide#migrating-from-claude-opus-47 | — | `rules/opus-best-practices.md` |
+| **Effort 參數（5 級，預設 high）** | https://platform.claude.com/docs/en/build-with-claude/effort | — | `rules/opus-best-practices.md`、`rules/core.md` |
+| **Mid-conversation system messages** | https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages | — | `rules/context-management.md` |
 | **Subagents in Claude Code** | https://claude.com/blog/subagents-in-claude-code | `archive/articles/subagents-in-claude-code.md` | `rules/subagent-strategy.md`、`.claude/agents/*.md` |
 | **1M Context GA** | https://claude.com/blog/1m-context-ga | `archive/articles/1m-context-ga.md` | `rules/context-management.md` |
 | **Session Management & 1M Context** | https://claude.com/blog/using-claude-code-session-management-and-1m-context | `archive/articles/using-claude-code-session-management-and-1m-context.md` | `rules/session-management.md` |

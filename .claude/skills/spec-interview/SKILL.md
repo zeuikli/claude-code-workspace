@@ -112,7 +112,7 @@ Claude 會用 AskUserQuestionTool 逐一訪問（modal UI 阻塞 agent loop，�
 ```bash
 #!/usr/bin/env bash
 # 讀取 plan 檔案，啟動訪談模式
-# 用法：claude --model claude-opus-4-7 "$(cat interview-prompt.txt)" < "$1"
+# 用法：claude --model claude-opus-4-8 "$(cat interview-prompt.txt)" < "$1"
 PLAN_FILE="${1:-plan.md}"
 cat <<EOF
 Read this plan file and interview me in detail using the AskUserQuestionTool
