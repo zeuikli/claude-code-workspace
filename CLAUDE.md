@@ -10,7 +10,7 @@
 🔴 Real-time  — session-init.sh hook + CLAUDE.md 本體
 🟡 Auto       — 3 rules @-imported (core/subagent/context) ~1,184 tok
 🟢 On-demand  — 16 skills + 6 rules：說觸發詞才載入
-⚪ Skip       — docs/archive, reference docs：手動 Read 即可
+⚪ Skip       — docs/INDEX.md, reference docs：手動 Read 即可
 ```
 
 > 💡 `/load-plan` 查看完整清單含 token 估算

@@ -4,6 +4,22 @@
 
 ---
 
+## 2026-06-01 — docs/ 盤點精簡：只留 workspace 會用的文件
+
+### 移除（9 個）
+
+- `docs/archive/`（7 個檔案）— 已被取代或純歷史記錄，無活躍機制引用。
+- `docs/opus47-migration.md` — Opus 4.6→4.7 遷移指引，僅 INDEX 編目。
+- `docs/best-practices-research-2026-04-18.md` — dotfiles 研究，僅 INDEX 編目。
+
+### 同步更新
+
+- `docs/INDEX.md`：移除上述檔案的編目列與「歸檔」段落。
+- `CLAUDE.md` / `README.md` / `scripts/load-plan.sh`：移除 `docs/archive` 引用，改指向 `docs/INDEX.md`。
+- 保留 12 個仍接上活躍機制或 INDEX 知識庫的 docs（含 `2026-05-16-claude-code-best-practices.md`、`karpathy-claude-code-insights-2026-04-18.md`）。
+
+---
+
 ## 2026-04-17 (opus-4.7-rewrite v2) — 導入 blog-archive 最新洞察深化 Opus 4.7 優化
 
 ### 改寫依據（本輪新增）
