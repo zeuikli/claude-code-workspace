@@ -34,7 +34,7 @@
 > 💡 完整清單與 token 估算：執行 `/load-plan`
 
 - **Workspace**：`/load-plan`、冷啟接手 codebase、session 回顧、context 效率
-- **Opus 調校 / Tasks / 多 Agent**：Tasks 跨 session、Opus 4.7 subagent 平行化、工具使用引導
+- **Opus 調校 / Tasks / 多 Agent**：Tasks 跨 session、Opus 4.8 subagent 平行化、工具使用引導
 - **開發**：除錯測試失敗、效能分析、大型重構、commit 前審查、需求訪談
 - **排程 / CLI**：排程 webhook routine、CLI 工具 ast-grep yq、新增 skill/agent
 - **行銷 / 研究 / PM**：行銷策略文案 SEO、市場調查競品、Sprint PM 多 agent

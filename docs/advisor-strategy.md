@@ -1,10 +1,10 @@
 # Advisor Strategy — 顧問模式指南
 
-> **核心理念**：Haiku 4.5 / Sonnet 4.6 跑主迴圈當執行者，Opus 4.7 退居幕後當「顧問」。
+> **核心理念**：Haiku 4.5 / Sonnet 4.6 跑主迴圈當執行者，Opus 4.8 退居幕後當「顧問」。
 >
-> 基於 [AgentOpt 論文](https://arxiv.org/html/2604.06296v1)、[Anthropic 官方 Advisor Strategy](https://claude.com/blog/the-advisor-strategy)、[Opus 4.7 Best Practices](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code) 整理。
+> 基於 [AgentOpt 論文](https://arxiv.org/html/2604.06296v1)、[Anthropic 官方 Advisor Strategy](https://claude.com/blog/the-advisor-strategy)、[Opus 4.8 What's New](https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8) 整理。
 >
-> 最後更新：2026-04-17（Opus 4.7 GA）
+> 最後更新：2026-06-01（Opus 4.8 對齊）
 
 ---
 
@@ -66,7 +66,7 @@
 | 角色 | 模型 | 職責 | 特性 |
 |------|------|------|------|
 | **執行者（Executor）** | Haiku 4.5 / Sonnet 4.6 | 驅動主迴圈、呼叫工具、讀寫檔案、產出結果 | 快速、便宜、忠實遵循流程 |
-| **顧問（Advisor）** | Opus 4.7（`xhigh`） | 提供高階策略、架構決策、邊界案例判斷 | 按需出場、僅回傳建議（400–700 token）|
+| **顧問（Advisor）** | Opus 4.8（顯式設 `xhigh`） | 提供高階策略、架構決策、邊界案例判斷 | 按需出場、僅回傳建議（400–700 token）|
 
 ---
 
@@ -85,7 +85,7 @@ response = client.messages.create(
         {
             "type": "advisor_20260301",
             "name": "advisor",
-            "model": "claude-opus-4-7",  # 顧問（Opus 4.7）
+            "model": "claude-opus-4-8",  # 顧問（Opus 4.8）
             "max_uses": 3,  # 每次請求最多諮詢 3 次（控制成本）
         },
         # ... 其他工具（搜尋、程式碼執行等）
@@ -105,7 +105,7 @@ response = client.messages.create(
 |------|------|
 | `model`（外層） | 執行者模型：`claude-sonnet-4-6` 或 `claude-haiku-4-5-20251001` |
 | `type` | 固定為 `advisor_20260301` |
-| `model`（工具內） | 顧問模型：`claude-opus-4-7`（推薦）或 `claude-opus-4-6` |
+| `model`（工具內） | 顧問模型：`claude-opus-4-8`（推薦）或 `claude-opus-4-7` |
 | `max_uses` | 每次 API 請求中，執行者最多可諮詢顧問的次數（建議 2–5） |
 
 ### 計費說明
@@ -184,20 +184,20 @@ response = client.messages.create(
 
 ---
 
-## Opus 4.7 在 Advisor 模式中的特性
+## Opus 4.8 在 Advisor 模式中的特性
 
-> 來源：[Best practices for using Claude Opus 4.7 with Claude Code](https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code)
-> 📦 離線歸檔：[`archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md`](https://github.com/zeuikli/claude-code-workspace/blob/blog-archive/archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md)
+> 來源：[What's new in Claude Opus 4.8](https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8)、[Effort 參數](https://platform.claude.com/docs/en/build-with-claude/effort)、[4.7→4.8 遷移指引](https://platform.claude.com/docs/en/about-claude/models/migration-guide#migrating-from-claude-opus-47)
 
-### 建議以 `xhigh` 努力級別運作
+### Effort 預設為 `high`，Advisor 顯式設 `xhigh`
 
-Opus 4.7 的預設努力級別為 `xhigh`（介於 `high` 和 `max` 之間），是 Advisor 角色的最佳設定：
-- 提供強大的推理能力，適合架構決策與邊界案例分析
+**IMPORTANT**：Opus 4.8 官方 effort **預設為 `high`**（不是 xhigh）。Advisor 角色處理架構決策時建議**顯式設 `xhigh`**：
+- `xhigh` 提供長時 agentic 與深度推理能力，適合架構決策與邊界案例分析
 - 不會像 `max` 那樣過度思考導致 token 暴增
+- 4.8 各 effort 級別已重新校準（vs 4.7：medium↑、high↓、xhigh↑↑），調參前先重新建立基準
 
 ### 自適應思考（Adaptive Thinking）
 
-Opus 4.7 不支援固定 thinking budget，改用自適應思考：
+Opus 4.8 僅支援自適應思考（不支援固定 thinking budget），且比 4.7 更少浪費思考 token：
 - 簡單查詢：直接回應，跳過推理步驟
 - 複雜問題：自動投入更多推理 token
 
@@ -208,13 +208,19 @@ Think carefully and step-by-step before responding; this is an architecture-crit
 
 ### 首輪前置規格原則
 
-對 Opus 4.7 下任務時，第一輪就給完整規格效果最好：
+對 Opus 4.8 下任務時，第一輪就給完整規格效果最好：
 - 意圖（為什麼做）
 - 限制（不能做什麼）
 - 驗收標準（怎樣算完成）
 - 相關檔案路徑
 
-這樣可以減少互動次數，也避免 Opus 4.7 在多輪對話中累積過多 token。
+這樣可以減少互動次數，也避免 Opus 4.8 在多輪對話中累積過多 token。
+
+### 4.8 對 Advisor 模式的增益
+
+- **Tool triggering 改善**：執行者較不會漏掉必要工具呼叫，減少 Advisor 介入頻率。
+- **Mid-conversation system messages**：可在長 agentic loop 中途追加指令而**保留 prompt cache hit**，降低 Advisor 來回成本。
+- **長 context 改善**：compaction 更少、recovery 更好，利於長 session 的 Advisor 接手。
 
 ---
 

@@ -8,13 +8,16 @@ disable-model-invocation: true
 
 > 依據 [Claude Agent SDK Cost Tracking](https://code.claude.com/docs/en/agent-sdk/cost-tracking)
 
-## 定價表（2026-04）
+## 定價表（2026-05，官方 Opus 4.8 發布後）
 
 | 模型 | Input ($/1M tokens) | Output ($/1M tokens) | Cache Read ($/1M) | Cache Write ($/1M) |
 |------|---------------------|----------------------|--------------------|---------------------|
-| **Opus 4.6** | $15.00 | $75.00 | $1.50 | $18.75 |
+| **Opus 4.8** | $5.00 | $25.00 | $0.50 | $6.25 |
 | **Sonnet 4.6** | $3.00 | $15.00 | $0.30 | $3.75 |
-| **Haiku 4.5** | $0.80 | $4.00 | $0.08 | $1.00 |
+| **Haiku 4.5** | $1.00 | $5.00 | $0.10 | $1.25 |
+
+> 來源：[Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)、[Pricing](https://platform.claude.com/docs/en/about-claude/pricing)。
+> Cache Read = 0.1× input、Cache Write(5m) = 1.25× input。Opus 4.8 fast mode 為 premium 定價，不在此表。
 
 ## 使用方式
 

@@ -55,7 +55,7 @@
 | `WorktreeCreate` hook | 為 worktree 初始化非 git VCS 環境 | auto-sync.md |
 | `--add-dir` / `/add-dir` | 多 repo 同時可見，跨目錄授權 | cli-enhancers.md |
 | PostToolUse auto-format | `bun run format` 在 Edit/Write 後自動執行 | auto-sync.md（已記錄）|
-| Auto Mode（Shift+Tab） | classifier 自動批准安全命令 | opus47-best-practices.md |
+| Auto Mode（Shift+Tab） | classifier 自動批准安全命令 | opus-best-practices.md |
 
 ## Thariq 完整 Skill 設計原則（T1–T9）
 

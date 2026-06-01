@@ -37,4 +37,4 @@ tier: auto
 - **IMPORTANT**: Commit 前必跑 `/deep-review`；前端變更套用 `frontend-design` skill。
 - 大規模重構或方案不確定時，先按 **`Shift+Tab`** 進入 Plan Mode 規劃，確認後再執行。
 
-> Opus 4.7 努力級別（`low`/`medium`/`high`/`xhigh`/`max`）與自適應思考指引：按需載入 `.claude/rules/opus47-best-practices.md`。
+> Opus 4.8 努力級別（`low`/`medium`/`high`(預設)/`xhigh`/`max`）與自適應思考指引：按需載入 `.claude/rules/opus-best-practices.md`。

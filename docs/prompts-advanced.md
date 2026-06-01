@@ -12,14 +12,15 @@
 
 ---
 
-## B. 新專案初始化（含 Opus 4.7 設定）
+## B. 新專案初始化（含 Opus 4.8 設定）
 
 ```
-請幫我在這個專案建立 .claude/settings.json，加入 SessionStart Hook 自動載入 workspace，並設定 Opus 4.7 xhigh：
+請幫我在這個專案建立 .claude/settings.json，加入 SessionStart Hook 自動載入 workspace。
+Opus 4.8 effort 預設為 high，編碼/agentic 工作顯式設 xhigh：
 
 {
   "autoMemoryEnabled": true,
-  "model": "claude-opus-4-7",
+  "model": "claude-opus-4-8",
   "effortLevel": "xhigh",
   "alwaysThinkingEnabled": false,
   "hooks": {
@@ -48,15 +49,15 @@
 請執行標準開場後依序讀取：
 1. ${DIR}/CLAUDE.md
 2. ${DIR}/docs/advisor-strategy.md
-3. ${DIR}/.claude/rules/opus47-best-practices.md
+3. ${DIR}/.claude/rules/opus-best-practices.md
 4. 回報：目前載入的規則摘要 + 待辦事項
 ```
 
 ---
 
-## D. Opus 4.7 任務規格範本（task-upfront）
+## D. Opus 4.8 任務規格範本（task-upfront）
 
-> **IMPORTANT**：Opus 4.7 第一輪就要給完整規格，避免多輪補充耗 token。
+> **IMPORTANT**：Opus 4.8 第一輪就要給完整規格，避免多輪補充耗 token。
 
 ```
 Task: <一句話描述目標>
@@ -77,13 +78,13 @@ Relevant files:
 
 Execution hints:
 - Spawn multiple subagents in the same turn when fanning out across files.
-- Use xhigh effort (default). Switch to high if token budget is tight.
+- Default effort is high; set xhigh explicitly for coding/agentic work.
 - Prioritize responding quickly unless a step clearly benefits from deeper thinking.
 ```
 
 ---
 
-## E. 控制 Opus 4.7 思考量
+## E. 控制 Opus 4.8 思考量
 
 **要更深入思考**：
 ```

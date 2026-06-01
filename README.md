@@ -67,7 +67,7 @@
 |------|------|------|
 | 執行者 | Sonnet 4.6 | 日常任務：實作、測試、搜尋 |
 | 搜尋 | Haiku 4.5 | 探索 10+ 檔案的研究任務 |
-| 顧問 | Opus 4.7 | 僅在架構決策、安全審計、邊界判斷時介入 |
+| 顧問 | Opus 4.8 | 僅在架構決策、安全審計、邊界判斷時介入 |
 
 ### 自動化 Hooks（10 種事件）
 
@@ -179,7 +179,7 @@ Then run `/load-plan` to see all available tools with token cost estimates.
 |------|-------|---------------|
 | Executor | Sonnet 4.6 | Daily tasks: implementation, testing, search |
 | Explorer | Haiku 4.5 | Research tasks spanning 10+ files |
-| Advisor | Opus 4.7 | Architecture decisions, security audits only |
+| Advisor | Opus 4.8 | Architecture decisions, security audits only |
 
 ### Cross-Project Usage
 

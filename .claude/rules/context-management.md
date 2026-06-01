@@ -35,3 +35,6 @@ tier: auto
 | **工具列表不能 mid-session 改變** | tools 是 cached prefix 的一部分，session 中途新增 / 移除工具會讓整個對話 cache 失效 |
 | **不能 mid-session 換模型** | caching 是 per-model，換模型 = 清空所有 cache（成本驟增）|
 | **`defer_loading: true`** | 解法：工具以輕量 stub 存在（不展開 schema），模型透過 `ToolSearch` 動態取得需要的工具。讓 cached prefix 保持穩定 |
+| **Mid-conversation system messages（Opus 4.8 新增）** | 4.8 允許在 user turn 後插入 `role:"system"` 更新指令，**保留前段 prompt cache hit**、降低 agentic loop 成本（無需 beta header）。長 session 中途追加指令不必重建整段歷史。⚠️ 仍不可 mid-session 改工具列表或換模型。來源：[mid-conversation system messages](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages) |
+
+> **Opus 4.8 prompt cache 門檻**：最低可 cache prompt 長度降至 **1,024 token**（低於 4.7），原本太短無法 cache 的 prompt 現在也能建立 cache entry。來源：[whats-new-claude-4-8](https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8)
