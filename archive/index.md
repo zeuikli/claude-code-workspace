@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-06-05 05:13 UTC
-> 共 25 篇文章，本次新增 0 篇
+> 最後更新：2026-06-06 04:51 UTC
+> 共 25 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -16,8 +16,8 @@
 | Claude now works with more security and compliance tools | [文章](articles/compliance-api-security-partners.md) / [原文](https://claude.com/blog/compliance-api-security-partners) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
-| How an Anthropic sales leader uses Claude Cowork to run a 4,000-account book | [文章](articles/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book.md) / [原文](https://claude.com/blog/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book) |
 | How Anthropic enables self-service data analytics with Claude | [文章](articles/how-anthropic-enables-self-service-data-analytics-with-claude.md) / [原文](https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude) |
+| How one Anthropic seller rebuilt his team&#x27;s workflows with Claude Code | [文章](articles/how-anthropic-uses-claude-gtm-engineering.md) / [原文](https://claude.com/blog/how-anthropic-uses-claude-gtm-engineering) |
 | How Anthropic&#x27;s finance team uses Claude to shape the narrative behind the numbers | [文章](articles/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers.md) / [原文](https://claude.com/blog/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers) |
 | How CodeRabbit used Claude to build an agent orchestration system | [文章](articles/how-coderabbit-used-claude-to-build-an-agent-orchestration-system.md) / [原文](https://claude.com/blog/how-coderabbit-used-claude-to-build-an-agent-orchestration-system) |
 | How enterprises are building AI agents in 2026 | [文章](articles/how-enterprises-are-building-ai-agents-in-2026.md) / [原文](https://claude.com/blog/how-enterprises-are-building-ai-agents-in-2026) |
@@ -27,7 +27,7 @@
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Running an AI-native engineering org | [文章](articles/running-an-ai-native-engineering-org.md) / [原文](https://claude.com/blog/running-an-ai-native-engineering-org) |
-| Using Claude Code: The unreasonable effectiveness of HTML | [文章](articles/using-claude-code-the-unreasonable-effectiveness-of-html.md) / [原文](https://claude.com/blog/using-claude-code-the-unreasonable-effectiveness-of-html) |
+| The Claude Cowork product guide | [文章](articles/the-claude-cowork-product-guide.md) / [原文](https://claude.com/blog/the-claude-cowork-product-guide) |
 | Using LLMs to secure source code | [文章](articles/using-llms-to-secure-source-code.md) / [原文](https://claude.com/blog/using-llms-to-secure-source-code) |
 | Zero Trust for AI agents | [文章](articles/zero-trust-for-ai-agents.md) / [原文](https://claude.com/blog/zero-trust-for-ai-agents) |
 
