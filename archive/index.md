@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-06-09 05:02 UTC
-> 共 24 篇文章，本次新增 2 篇
+> 最後更新：2026-06-10 05:15 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -18,7 +18,6 @@
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | How Anthropic enables self-service data analytics with Claude | [文章](articles/how-anthropic-enables-self-service-data-analytics-with-claude.md) / [原文](https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude) |
 | How one Anthropic seller rebuilt his team&#x27;s workflows with Claude Code | [文章](articles/how-anthropic-uses-claude-gtm-engineering.md) / [原文](https://claude.com/blog/how-anthropic-uses-claude-gtm-engineering) |
-| How Anthropic&#x27;s finance team uses Claude to shape the narrative behind the numbers | [文章](articles/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers.md) / [原文](https://claude.com/blog/how-anthropics-finance-team-uses-claude-to-shape-the-narrative-behind-the-numbers) |
 | How CodeRabbit used Claude to build an agent orchestration system | [文章](articles/how-coderabbit-used-claude-to-build-an-agent-orchestration-system.md) / [原文](https://claude.com/blog/how-coderabbit-used-claude-to-build-an-agent-orchestration-system) |
 | Introducing dynamic workflows | [文章](articles/introducing-dynamic-workflows-in-claude-code.md) / [原文](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code) |
 | Lessons from building Claude Code: How we use skills | [文章](articles/lessons-from-building-claude-code-how-we-use-skills.md) / [原文](https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills) |
@@ -28,5 +27,6 @@
 | Running an AI-native engineering org | [文章](articles/running-an-ai-native-engineering-org.md) / [原文](https://claude.com/blog/running-an-ai-native-engineering-org) |
 | The Claude Cowork product guide | [文章](articles/the-claude-cowork-product-guide.md) / [原文](https://claude.com/blog/the-claude-cowork-product-guide) |
 | Using LLMs to secure source code | [文章](articles/using-llms-to-secure-source-code.md) / [原文](https://claude.com/blog/using-llms-to-secure-source-code) |
+| New in Claude Managed Agents: run agents on a schedule and store environment variables in vaults | [文章](articles/whats-new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/whats-new-in-claude-managed-agents) |
 | Zero Trust for AI agents | [文章](articles/zero-trust-for-ai-agents.md) / [原文](https://claude.com/blog/zero-trust-for-ai-agents) |
 
