@@ -1,19 +1,19 @@
 # Claude Blog Archive
 
-> 最後更新：2026-06-10 05:15 UTC
+> 最後更新：2026-06-11 05:26 UTC
 > 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
 | A harness for every task: dynamic workflows in Claude Code  | [文章](articles/a-harness-for-every-task-dynamic-workflows-in-claude-code.md) / [原文](https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code) |
 | Best practices for getting started with Claude Cowork | [文章](articles/best-practices-for-getting-started-with-claude-cowork.md) / [原文](https://claude.com/blog/best-practices-for-getting-started-with-claude-cowork) |
+| The evolution of agentic surfaces: building with Claude Managed Agents | [文章](articles/building-with-claude-managed-agents.md) / [原文](https://claude.com/blog/building-with-claude-managed-agents) |
 | Claude builds interactive visuals right in your conversation | [文章](articles/claude-builds-visuals.md) / [原文](https://claude.com/blog/claude-builds-visuals) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
 | Claude Managed Agents: get to production 10x faster | [文章](articles/claude-managed-agents.md) / [原文](https://claude.com/blog/claude-managed-agents) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
 | New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels | [文章](articles/claude-managed-agents-updates.md) / [原文](https://claude.com/blog/claude-managed-agents-updates) |
-| Code w/ Claude London 2026: Rethinking how we build | [文章](articles/code-w-claude-london-2026-rethinking-how-we-build.md) / [原文](https://claude.com/blog/code-w-claude-london-2026-rethinking-how-we-build) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | How Anthropic enables self-service data analytics with Claude | [文章](articles/how-anthropic-enables-self-service-data-analytics-with-claude.md) / [原文](https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude) |
