@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-06-15 06:21 UTC
-> 共 24 篇文章，本次新增 0 篇
+> 最後更新：2026-06-16 06:31 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -21,6 +21,7 @@
 | How CodeRabbit used Claude to build an agent orchestration system | [文章](articles/how-coderabbit-used-claude-to-build-an-agent-orchestration-system.md) / [原文](https://claude.com/blog/how-coderabbit-used-claude-to-build-an-agent-orchestration-system) |
 | Introducing dynamic workflows | [文章](articles/introducing-dynamic-workflows-in-claude-code.md) / [原文](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code) |
 | Lessons from building Claude Code: How we use skills | [文章](articles/lessons-from-building-claude-code-how-we-use-skills.md) / [原文](https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills) |
+| Meet the winners of the Built with Opus 4.7 Claude Code hackathon | [文章](articles/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon.md) / [原文](https://claude.com/blog/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Connector Observability and In-App Directory Submission | [文章](articles/observability-for-developers-building-connectors.md) / [原文](https://claude.com/blog/observability-for-developers-building-connectors) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
@@ -28,5 +29,4 @@
 | The Claude Cowork product guide | [文章](articles/the-claude-cowork-product-guide.md) / [原文](https://claude.com/blog/the-claude-cowork-product-guide) |
 | Using LLMs to secure source code | [文章](articles/using-llms-to-secure-source-code.md) / [原文](https://claude.com/blog/using-llms-to-secure-source-code) |
 | New in Claude Managed Agents: run agents on a schedule and store environment variables in vaults | [文章](articles/whats-new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/whats-new-in-claude-managed-agents) |
-| Zero Trust for AI agents | [文章](articles/zero-trust-for-ai-agents.md) / [原文](https://claude.com/blog/zero-trust-for-ai-agents) |
 
