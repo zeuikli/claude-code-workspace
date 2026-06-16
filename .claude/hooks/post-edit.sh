@@ -3,8 +3,13 @@
 # 官方文件：https://code.claude.com/docs/en/hooks
 
 # 從 stdin 取得 hook payload（JSON）
+# 官方 PostToolUse payload：檔案路徑在 tool_input.file_path（巢狀 snake_case）
 PAYLOAD=$(cat)
-FILE=$(echo "$PAYLOAD" | grep -o '"path":"[^"]*"' | head -1 | cut -d'"' -f4)
+if command -v jq >/dev/null 2>&1; then
+  FILE=$(printf '%s' "$PAYLOAD" | jq -r '.tool_input.file_path // empty' 2>/dev/null)
+else
+  FILE=$(printf '%s' "$PAYLOAD" | grep -o '"file_path"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*"\([^"]*\)"$/\1/')
+fi
 
 # 只在有明確檔案路徑時執行
 [ -z "$FILE" ] && exit 0
