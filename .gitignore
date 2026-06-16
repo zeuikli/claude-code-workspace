@@ -30,3 +30,6 @@ __pycache__/
 *.pyo
 node_modules/
 .cache/
+
+# session-init.sh fetch 時間戳快取（非追蹤）
+.fetch_ts
