@@ -28,7 +28,7 @@ context: fork
 3. **讀取專案文件**（按優先順序）
    - `@README.md`（若存在）
    - `@CLAUDE.md`（若存在）
-   - `@docs/INDEX.md`（若存在）
+   - `@.claude/REFERENCES.md`（若存在）
 
 4. **產出 Context 摘要**，包含：
    - 專案目的（1-2 句）

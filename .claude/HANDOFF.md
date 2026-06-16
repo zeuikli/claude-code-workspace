@@ -32,4 +32,4 @@
 
 ---
 
-> 參考：`.claude/rules/session-management.md` — Rewind 前的 Handoff 技巧
+> 參考：`.claude/rules/context-management.md` — Compact / Rewind 前的 Handoff 技巧

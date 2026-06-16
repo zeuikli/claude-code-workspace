@@ -20,9 +20,9 @@ disable-model-invocation: true
    - `.claude/agents/` — 新增或修改 Agent 定義
    - `.claude/skills/` — 新增或修改 Skill
    - `CLAUDE.md` — 新增規則
-   - `docs/advisor-strategy.md` — 更新策略
+   - `.claude/rules/` — 更新策略規則
 5. **產出建議**：列出具體的變更建議，不直接修改
-6. **更新報告**：將分析結果附加到 `docs/blog-analysis-report.md`
+6. **更新報告**：將分析結果記錄到 `CHANGELOG.md`
 
 ## 輸出格式
 

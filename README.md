@@ -27,11 +27,11 @@
 | 層級 | 觸發 | 內容 | 預估成本 |
 |------|------|------|---------|
 | 🔴 **真實載入** | SessionStart Hook | `session-init.sh` + `CLAUDE.md` 本體 | ~708 tok |
-| 🟡 **自動載入** | 每次 session | `core.md` + `subagent-strategy.md` + `context-management.md` | ~1,184 tok |
-| 🟢 **按需載入** | 說出觸發詞 | 16 skills + 6 rules（按需，說了才載入）| 0 ～ 2,000 tok |
-| ⚪ **不必載入** | 手動 Read | docs/INDEX.md、reference docs | — |
+| 🟡 **自動載入** | 每次 session | `core.md` + `subagent-strategy.md` + `context-management.md` + `output-discipline.md` | ~3,600 tok |
+| 🟢 **按需載入** | 說出觸發詞 | skills（按需，說了才載入）| 0 ～ 2,000 tok |
+| ⚪ **不必載入** | 手動 Read | docs/ 參考文件、REFERENCES.md | — |
 
-**設計原則**：每次 session 固定消耗 ~1,892 tokens（CLAUDE.md ~423 + 3 rules ~1,184 + 85% cache 折扣後實付 ~284），其餘零成本直到真正需要。
+**設計原則**：每次 session 固定消耗 ~4,160 tokens（CLAUDE.md ~560 + 4 rules ~3,600；85% cache 折扣後實付 ~625），其餘零成本直到真正需要。
 
 ---
 
@@ -156,11 +156,11 @@ Then run `/load-plan` to see all available tools with token cost estimates.
 | Tier | Trigger | Content | Est. Cost |
 |------|---------|---------|-----------|
 | 🔴 **Real-time** | SessionStart Hook | `session-init.sh` + `CLAUDE.md` | ~708 tok |
-| 🟡 **Auto** | Every session | 3 core rules (language/git/subagent/context) | ~1,184 tok |
-| 🟢 **On-demand** | Say trigger keyword | 16 skills + 6 rules | 0–2,000 tok |
-| ⚪ **Skip** | Manual Read only | docs/INDEX.md, reference docs | — |
+| 🟡 **Auto** | Every session | 4 core rules (loop/subagent/context/output) | ~3,600 tok |
+| 🟢 **On-demand** | Say trigger keyword | skills | 0–2,000 tok |
+| ⚪ **Skip** | Manual Read only | docs/ reference files, REFERENCES.md | — |
 
-**Design principle**: Fixed overhead of ~1,892 tokens per session (~284 effective with 85% prompt caching). Everything else costs zero until needed.
+**Design principle**: Fixed overhead of ~4,160 tokens per session (~625 effective with 85% prompt caching). Everything else costs zero until needed.
 
 ### Domain Coverage
 

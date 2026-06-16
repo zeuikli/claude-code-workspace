@@ -1,6 +1,6 @@
 ---
 name: context-report
-description: 分析當前專案的 Claude Code session 資料，產出 context 效率報告（模型用量、工具效率、委派比例、TodoWrite 使用率）。搭配 token-efficiency.md 使用。
+description: 分析當前專案的 Claude Code session 資料，產出 context 效率報告（模型用量、工具效率、委派比例、TodoWrite 使用率）。搭配 context-management.md 使用。
 disable-model-invocation: true
 context: fork
 allowed-tools: Bash(jq:*), Bash(find:*), Bash(wc:*), Bash(du:*), Bash(sort:*), Bash(uniq:*), Bash(head:*), Bash(cat:*), Bash(basename:*), Bash(bc:*), Bash(date:*), Bash(ls:*), Bash(tr:*), Bash(grep:*), Bash(sed:*), Bash(echo:*), Bash(printf:*)
@@ -13,7 +13,7 @@ allowed-tools: Bash(jq:*), Bash(find:*), Bash(wc:*), Bash(du:*), Bash(sort:*), B
 - 評估一個 project 的 Claude Code 使用效率
 - 做成本最佳化分析（過高 Opus 比例時）
 - 專案完成後的 session 回顧
-- 配合 `.claude/rules/token-efficiency.md` 做 context 壓縮決策
+- 配合 `.claude/rules/context-management.md` 做 context 壓縮決策
 
 ## 執行腳本
 
@@ -182,5 +182,5 @@ echo "Generated: $(date '+%Y-%m-%d %H:%M')"
 
 ## 搭配使用
 
-- 與 `.claude/rules/token-efficiency.md` 對照：score <60 時觸發 Compressed 層級
+- 與 `.claude/rules/context-management.md` 對照：score <60 時觸發 Compressed 層級
 - 委派比例 <1:1 時，參考 `.claude/rules/subagent-strategy.md` 調整

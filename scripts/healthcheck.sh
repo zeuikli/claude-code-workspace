@@ -257,7 +257,7 @@ fi
 # ============================================================
 echo ""
 echo "--- Git Configuration ---"
-cd "$WORKSPACE_DIR" || { fail "無法切換到 workspace 目錄"; }
+cd "$WORKSPACE_DIR" || { fail "無法切換到 workspace 目錄"; exit 1; }
 
 # 7a. remote 可達
 REMOTE_URL=$(git remote get-url origin 2>/dev/null || echo "")
@@ -317,7 +317,7 @@ if [ -f "$SETTINGS_FILE" ]; then
     if grep -q "\"$env_name\"" "$SETTINGS_FILE"; then
       pass "env.$env_name 已在 settings.json 設定"
     else
-      warn "env.$env_name 未設定（參考 docs/timeout-guide.md）"
+      warn "env.$env_name 未設定（參考 settings.json env 區塊）"
     fi
   done
 fi
@@ -329,14 +329,18 @@ echo ""
 echo "--- Hook Event Coverage ---"
 if [ -f "$SETTINGS_FILE" ]; then
   REFERENCED_HOOKS=$(grep -oE '\.claude/hooks/[a-z-]+\.sh' "$SETTINGS_FILE" | sort -u)
-  for hook_ref in $REFERENCED_HOOKS; do
-    hook_name=$(basename "$hook_ref")
-    if [ -f "$HOOKS_DIR/$hook_name" ]; then
-      pass "settings.json 引用的 $hook_name 存在"
-    else
-      fail "settings.json 引用的 $hook_name 不存在"
-    fi
-  done
+  if [ -z "$REFERENCED_HOOKS" ]; then
+    warn "settings.json 中未找到 hook 引用（格式可能已變更）"
+  else
+    while IFS= read -r hook_ref; do
+      hook_name=$(basename "$hook_ref")
+      if [ -f "$HOOKS_DIR/$hook_name" ]; then
+        pass "settings.json 引用的 $hook_name 存在"
+      else
+        fail "settings.json 引用的 $hook_name 不存在"
+      fi
+    done <<< "$REFERENCED_HOOKS"
+  fi
 fi
 
 # ============================================================

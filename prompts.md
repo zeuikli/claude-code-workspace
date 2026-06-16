@@ -1,15 +1,15 @@
-# 萬用 Prompt 集（Core）
+# 萬用 Prompt 集
 
-> 常用 3 條開場／結束 prompt。進階模板見 `docs/prompts-advanced.md`。
+> 常用 3 條開場／結束 prompt。
 
 ---
 
 ## 1. 標準開場（推薦）
 
 ```
-請執行：DIR="${CLAUDE_CODE_REMOTE:+/tmp/claude-code-workspace}"; DIR="${DIR:-$HOME/claude-code-workspace}"; command -v git >/dev/null 2>&1 && (([ -d "$DIR/.git" ] && git -C "$DIR" pull -q origin main || (rm -rf "$DIR" 2>/dev/null; git clone --depth 1 -q https://github.com/zeuikli/claude-code-workspace.git "$DIR")) && mkdir -p ~/.claude && printf "@${DIR}/CLAUDE.md\n" > ~/.claude/CLAUDE.md)
+請 clone 這個 repo：git clone https://github.com/zeuikli/claude-code-workspace.git
 
-完成後讀取並遵循 ${DIR}/CLAUDE.md。跨對話記憶由官方 Auto Memory 自動管理。
+完成後讀取並遵循 claude-code-workspace/CLAUDE.md。跨對話記憶由官方 Auto Memory 自動管理。
 ```
 
 ---
@@ -17,7 +17,8 @@
 ## 2. 極簡版
 
 ```
-請確認已載入 claude-code-workspace 的 CLAUDE.md，列出目前的指令規則摘要。
+請確認已載入 workspace 的 CLAUDE.md，列出目前的指令規則摘要，
+並覆述 The Loop 六階段（OBSERVE → IDENTIFY → PROPOSE → APPLY → TEST → RECORD）作為載入驗證。
 ```
 
 ---
@@ -36,4 +37,4 @@ session 結束前：
 
 ---
 
-> 進階：接續工作、新專案初始化、Opus 4.8 task-upfront、平行 subagent、Auto Mode、Prompt Caching 最大化等見 `docs/prompts-advanced.md`。
+> 進階模板（接續工作、新專案初始化、平行 subagent、Prompt Caching 最大化）可依需求自行擴充。

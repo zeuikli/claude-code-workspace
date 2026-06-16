@@ -23,7 +23,7 @@
 
 | 主題 | 官方 URL | 本 workspace 對應 |
 |---|---|---|
-| **Context Editing API** | https://platform.claude.com/docs/en/build-with-claude/context-editing | `docs/auto-memory-hybrid.md` |
+| **Context Editing API** | https://platform.claude.com/docs/en/build-with-claude/context-editing | `rules/context-management.md` |
 | **Memory Tool** | https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool | 同上 |
 | **Structured Outputs** | https://platform.claude.com/docs/en/build-with-claude/structured-outputs | Hook JSON `additionalContext` 格式 |
 | **Prompt Caching** | https://platform.claude.com/docs/en/build-with-claude/prompt-caching | `cost-tracker` 定價表 |
@@ -37,22 +37,22 @@
 
 | 主題 | 官方 URL | 📦 離線歸檔 | 對應檔案 |
 |---|---|---|---|
-| **Advisor Strategy** | https://claude.com/blog/the-advisor-strategy | `archive/articles/the-advisor-strategy.md` | `docs/advisor-strategy.md`、`.claude/rules/subagent-strategy.md` |
-| **Multi-Agent Coordination** | https://claude.com/blog/multi-agent-coordination-patterns | `archive/articles/multi-agent-coordination-patterns.md` | `docs/multi-agent-coordination.md`、`agent-team` Skill |
+| **Advisor Strategy** | https://claude.com/blog/the-advisor-strategy | `archive/articles/the-advisor-strategy.md` | `.claude/rules/subagent-strategy.md` |
+| **Multi-Agent Coordination** | https://claude.com/blog/multi-agent-coordination-patterns | `archive/articles/multi-agent-coordination-patterns.md` | `agent-team` Skill、`rules/subagent-strategy.md` |
 | **Improving Frontend Design** | https://claude.com/blog/improving-frontend-design-through-skills | `archive/articles/improving-frontend-design-through-skills.md` | `frontend-design` Skill |
 | **Harnessing Claude's Intelligence** | https://claude.com/blog/harnessing-claudes-intelligence | `archive/articles/harnessing-claudes-intelligence.md` | 三層 Agent 分工、`rules/context-management.md`（Prompt Caching 靜態優先） |
 | **Seeing Like an Agent** | https://claude.com/blog/seeing-like-an-agent | `archive/articles/seeing-like-an-agent.md` | `rules/subagent-strategy.md`（工具設計心智模型 + Progressive Disclosure） |
-| **Claude Code Desktop Redesign** | https://claude.com/blog/claude-code-desktop-redesign | `archive/articles/claude-code-desktop-redesign.md` | `rules/session-management.md`（Side Chat 第 6 種分支選項） |
+| **Claude Code Desktop Redesign** | https://claude.com/blog/claude-code-desktop-redesign | `archive/articles/claude-code-desktop-redesign.md` | `rules/context-management.md`（分支 / compact 策略） |
 | **AgentOpt 論文** | https://arxiv.org/html/2604.06296v1 | — (arXiv) | Advisor Strategy 學理依據 |
-| **Opus 4.7 Best Practices** | https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code | `archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md` | `CLAUDE.md`、`rules/quality.md`、`rules/subagent-strategy.md`、`docs/advisor-strategy.md` |
-| **Opus 4.8 What's New** | https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8 | — | `rules/opus-best-practices.md`、`settings.json`（advisorModel）|
-| **Opus 4.7→4.8 Migration** | https://platform.claude.com/docs/en/about-claude/models/migration-guide#migrating-from-claude-opus-47 | — | `rules/opus-best-practices.md` |
-| **Effort 參數（5 級，預設 high）** | https://platform.claude.com/docs/en/build-with-claude/effort | — | `rules/opus-best-practices.md`、`rules/core.md` |
+| **Opus 4.7 Best Practices** | https://claude.com/blog/best-practices-for-using-claude-opus-4-7-with-claude-code | `archive/articles/best-practices-for-using-claude-opus-4-7-with-claude-code.md` | `CLAUDE.md`、`rules/core.md`、`rules/subagent-strategy.md` |
+| **Opus 4.8 What's New** | https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8 | — | `rules/subagent-strategy.md`（模型分層）、`settings.json` |
+| **Opus 4.7→4.8 Migration** | https://platform.claude.com/docs/en/about-claude/models/migration-guide#migrating-from-claude-opus-47 | — | `rules/subagent-strategy.md` |
+| **Effort 參數（5 級，預設 high）** | https://platform.claude.com/docs/en/build-with-claude/effort | — | `rules/core.md`（模式與 Effort） |
 | **Mid-conversation system messages** | https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages | — | `rules/context-management.md` |
 | **Subagents in Claude Code** | https://claude.com/blog/subagents-in-claude-code | `archive/articles/subagents-in-claude-code.md` | `rules/subagent-strategy.md`、`.claude/agents/*.md` |
 | **1M Context GA** | https://claude.com/blog/1m-context-ga | `archive/articles/1m-context-ga.md` | `rules/context-management.md` |
-| **Session Management & 1M Context** | https://claude.com/blog/using-claude-code-session-management-and-1m-context | `archive/articles/using-claude-code-session-management-and-1m-context.md` | `rules/session-management.md` |
-| **Introducing Routines** | https://claude.com/blog/introducing-routines-in-claude-code | `archive/articles/introducing-routines-in-claude-code.md` | `rules/routines.md` |
+| **Session Management & 1M Context** | https://claude.com/blog/using-claude-code-session-management-and-1m-context | `archive/articles/using-claude-code-session-management-and-1m-context.md` | `rules/context-management.md` |
+| **Introducing Routines** | https://claude.com/blog/introducing-routines-in-claude-code | `archive/articles/introducing-routines-in-claude-code.md` | `/schedule` Skill |
 
 ## 工具與 Lint
 
@@ -63,7 +63,7 @@
 | **ShellCheck SC2164** | https://www.shellcheck.net/wiki/SC2164 | `memory-pull.sh` |
 | **ShellCheck SC2034** | https://www.shellcheck.net/wiki/SC2034 | `memory-sync.sh` |
 | **markdownlint 規則** | https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md | `.markdownlint.json` |
-| **Mermaid sequenceDiagram** | https://mermaid.ai/open-source/syntax/sequenceDiagram.html | `docs/hook-lifecycle.md` |
+| **Mermaid sequenceDiagram** | https://mermaid.ai/open-source/syntax/sequenceDiagram.html | `.claude/hooks/` |
 
 ## Git 效能參考
 
@@ -80,7 +80,7 @@
 | [#23478](https://github.com/anthropics/claude-code/issues/23478) | Path-scoped rules `paths:` 只在 Read 觸發 | 暫緩實作 `.claude/rules/*.md` 的 `paths:` frontmatter |
 | [#21858](https://github.com/anthropics/claude-code/issues/21858) | User-level `~/.claude/rules/` `paths:` 失效 | 同上 |
 | [#17204](https://github.com/anthropics/claude-code/issues/17204) | 部分 YAML 格式解析錯誤 | 同上 |
-| [#45224](https://github.com/anthropics/claude-code/issues/45224) | SSE keep-alive heartbeat | 影響 stream timeout，見 `docs/timeout-guide.md` |
+| [#45224](https://github.com/anthropics/claude-code/issues/45224) | SSE keep-alive heartbeat | 影響 stream timeout，見 `settings.json` env 設定 |
 | [#46987](https://github.com/anthropics/claude-code/issues/46987) | Stream idle timeout 回歸（v2.1.92）| 同上 |
 | [#47252](https://github.com/anthropics/claude-code/issues/47252) | Ultraplan 重複 timeout | 同上 |
 | [#47555](https://github.com/anthropics/claude-code/issues/47555) | 大檔案寫入時 timeout | 同上 |

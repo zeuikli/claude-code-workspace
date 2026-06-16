@@ -1,50 +1,25 @@
 # 進階文件索引
 
-> 此目錄存放深度分析與設計文件，**不會自動載入**到 Claude context。
-> 需要時透過 `Read /tmp/claude-code-workspace/docs/<file>.md` 主動讀取，避免占用 token 預算。
-> 最後更新：2026-05-17（v4 — 新增 Claude Code 各面向最佳實踐完整研究報告）
-
-## 設計論述與官方對齊
-
-| 檔案 | 主題 | 何時讀 |
-|---|---|---|
-| `advisor-strategy.md` | Advisor 模式完整論述（Haiku 4.5 / Sonnet 4.6 / Opus 4.7 三層分工 + `advisor_20260301` API） | 設計新 Sub Agent 工作流、評估是否升級顧問呼叫時 |
-| `multi-agent-coordination.md` | **5 種多 agent 協調模式決策表**（Generator-Verifier / Orchestrator-Subagent / Agent Teams / Message Bus / Shared State） | 評估平行 subagent 架構、選擇協調模式前 |
-| `tool-design-principles.md` | **工具設計心智模型**（Seeing like an agent — 高門檻加工具 / Progressive Disclosure / 動作分類 / Subagent = 動作空間擴充） | 新增 `.claude/agents/` 或 `.claude/skills/` 前，設計工具前 |
-| `auto-memory-hybrid.md` | 官方 Auto Memory vs 自製 Memory.md 對比與 Hybrid 採用指南 | 評估啟用 Auto Memory、跨機器同步策略 |
+> 此目錄存放深度分析與參考文件，**不會自動載入**到 Claude context。
+> 需要時透過 `Read docs/<file>.md` 主動讀取，避免占用 token 預算。
 
 ## 研究報告
 
 | 檔案 | 主題 | 何時讀 |
 |---|---|---|
-| `2026-05-16-claude-code-best-practices.md` | **Claude Code 各面向最佳實踐完整報告**（CLAUDE.md 設計、Hooks 架構、Prompt Caching、Subagent 委派、Skill 封裝、MCP 整合、安全部署、Routines、成本工程九大章節；來源：29 篇最佳實踐 + 52 篇官方 blog） | 全面了解 Claude Code 最佳實踐、建立新 workspace、進行系統改進評估時 |
-| `karpathy-claude-code-insights-2026-04-18.md` | Karpathy × Claude Code 洞察：4 大原則、AutoResearch、官方驗證 | 評估 workspace 對齊 Karpathy 建議時 |
-| `blog-analysis-report.md` | 22 篇 Anthropic Blog 文章可操作洞察萃取 | 尋找 prompt engineering / agent 設計靈感 |
-
-## 工程與除錯
-
-| 檔案 | 主題 | 何時讀 |
-|---|---|---|
-| `timeout-guide.md` | **Stream timeout 完整指南**（整合自三份 timeout 文件） | 遇到串流中斷、長 Bash 卡住、調整 timeout 設定前 |
-| `hook-lifecycle.md` | 10 個 Hook 腳本 + 7 種事件的 sequenceDiagram + 競態防護 + 除錯指南 | Hook 除錯、新人理解 hook 生命週期 |
+| `2026-05-16-claude-code-best-practices.md` | **Claude Code 各面向最佳實踐完整報告**（CLAUDE.md 設計、Hooks 架構、Prompt Caching、Subagent 委派、Skill 封裝、MCP 整合、安全部署、成本工程） | 全面了解 Claude Code 最佳實踐、建立新 workspace、進行系統改進評估時 |
 
 ## 載入策略
 
 | 場景 | 策略 |
 |---|---|
-| 一般任務 | 主 CLAUDE.md + `.claude/rules/` 即足夠 |
-| **查看所有可用工具** | `/load-plan` 指令（動態顯示） |
-| 架構決策 | 主動讀取 `advisor-strategy.md` |
-| 多 agent 協調設計 | 主動讀取 `multi-agent-coordination.md` |
-| Prompt 設計研究 | 主動讀取 `blog-analysis-report.md` |
-| Hook / Timeout 除錯 | 主動讀取 `timeout-guide.md`（整合版本） |
-| 新增 Skill / Agent / Tool | 主動讀取 `tool-design-principles.md` |
-| **全面了解 Claude Code 最佳實踐** | 主動讀取 `2026-05-16-claude-code-best-practices.md` |
+| 一般任務 | 主 CLAUDE.md + `.claude/rules/`（The Loop 六階段）即足夠 |
+| 查看所有可用工具 | `/load-plan` 指令（動態顯示） |
+| 全面了解 Claude Code 最佳實踐 | 主動讀取 `2026-05-16-claude-code-best-practices.md` |
 
 ## 文件貢獻
 
 新增 doc 時：
-1. 在此 INDEX 加一行（檔名 + 主題 + 何時讀），置於合適的分類下
-2. doc 頂部加 `> tags: [...]` 或來源 URL 方便搜尋
+1. 在此 INDEX 加一行（檔名 + 主題 + 何時讀）
+2. doc 頂部加來源 URL 方便搜尋
 3. **不要**在 CLAUDE.md / `.claude/rules/` 加 `@docs/...` 引用，避免破壞 lazy-load 設計
-4. 整合型文件（如 `timeout-guide.md`）應在原始檔頂部標註已被整合，並保留供歷史追溯
