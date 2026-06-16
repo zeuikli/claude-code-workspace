@@ -11,7 +11,7 @@
 |---|---|---|
 | **Hooks 完整事件清單（25+）** | https://code.claude.com/docs/en/hooks | `.claude/hooks/*.sh`、`.claude/settings.json` |
 | **Hooks 使用指南** | https://code.claude.com/docs/en/hooks-guide | 同上 |
-| **Memory 機制（200 行/25KB 上限）** | https://code.claude.com/docs/en/memory | `memory-archive.sh`、`memory-pull.sh`、`memory-sync.sh`、`Memory.md` |
+| **Memory 機制（官方 Auto Memory）** | https://code.claude.com/docs/en/memory | `autoMemoryEnabled: true`、`Memory.md`（相容性佔位）|
 | **Sub-agents 定義** | https://code.claude.com/docs/en/sub-agents | `.claude/agents/*.md` |
 | **Skills 完整 frontmatter** | https://code.claude.com/docs/en/skills | `.claude/skills/*/SKILL.md` |
 | **Permissions（permissionMode）** | https://code.claude.com/docs/en/permissions | `implementer.md`、`test-writer.md`、`doc-writer.md` |
@@ -60,8 +60,7 @@
 |---|---|---|
 | **ShellCheck wiki（SC 編號）** | https://www.shellcheck.net/wiki/ | CI shellcheck job |
 | **ShellCheck SC2086** | https://www.shellcheck.net/wiki/SC2086 | `.claude/hooks/*.sh` |
-| **ShellCheck SC2164** | https://www.shellcheck.net/wiki/SC2164 | `memory-pull.sh` |
-| **ShellCheck SC2034** | https://www.shellcheck.net/wiki/SC2034 | `memory-sync.sh` |
+| **ShellCheck SC2164** | https://www.shellcheck.net/wiki/SC2164 | `.claude/hooks/*.sh`（`cd` 須接 `\|\| exit`）|
 | **markdownlint 規則** | https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md | `.markdownlint.json` |
 | **Mermaid sequenceDiagram** | https://mermaid.ai/open-source/syntax/sequenceDiagram.html | `.claude/hooks/` |
 
@@ -84,13 +83,6 @@
 | [#46987](https://github.com/anthropics/claude-code/issues/46987) | Stream idle timeout 回歸（v2.1.92）| 同上 |
 | [#47252](https://github.com/anthropics/claude-code/issues/47252) | Ultraplan 重複 timeout | 同上 |
 | [#47555](https://github.com/anthropics/claude-code/issues/47555) | 大檔案寫入時 timeout | 同上 |
-
-## POSIX / 系統工具
-
-| 主題 | 參考 URL | 對應檔案 |
-|---|---|---|
-| **flock(2)** | https://man7.org/linux/man-pages/man2/flock.2.html | `memory-sync.sh`（序列化 git push）|
-| **flock(1) 命令** | https://man7.org/linux/man-pages/man1/flock.1.html | 同上 |
 
 ## 競品借鏡
 
