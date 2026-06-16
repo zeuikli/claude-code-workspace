@@ -75,8 +75,8 @@
 |------|------|
 | `SessionStart` | 拉取最新設定；防止 double-load（當專案即 workspace 時） |
 | `UserPromptSubmit` | 注入 Sub Agent 委派提醒 |
-| `PreToolUse(bash)` | Commit 前強制執行 `/deep-review` |
-| `PostToolUse(Edit/Write)` | 自動驗證 .sh/.json/.py 語法 |
+| `PreToolUse(Bash)` | Commit 前提醒執行 `/deep-review` |
+| `PostToolUse(Edit/Write)` | 自動驗證 .sh/.json/.py 語法（解析 `tool_input.file_path`）|
 | `PreCompact/PostCompact` | Auto Memory 保存提醒 |
 
 ### 記憶管理
