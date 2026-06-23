@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-06-22 06:26 UTC
-> 共 23 篇文章，本次新增 0 篇
+> 最後更新：2026-06-23 04:57 UTC
+> 共 23 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -18,7 +18,6 @@
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | How Anthropic enables self-service data analytics with Claude | [文章](articles/how-anthropic-enables-self-service-data-analytics-with-claude.md) / [原文](https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude) |
 | How one Anthropic seller rebuilt his team&#x27;s workflows with Claude Code | [文章](articles/how-anthropic-uses-claude-gtm-engineering.md) / [原文](https://claude.com/blog/how-anthropic-uses-claude-gtm-engineering) |
-| Lessons from building Claude Code: How we use skills | [文章](articles/lessons-from-building-claude-code-how-we-use-skills.md) / [原文](https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills) |
 | Meet the winners of the Built with Opus 4.7 Claude Code hackathon | [文章](articles/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon.md) / [原文](https://claude.com/blog/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon) |
 | Meet the winners of our Claude Opus 4.8 Build Day hackathon | [文章](articles/meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon.md) / [原文](https://claude.com/blog/meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
@@ -26,6 +25,7 @@
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Steering Claude Code: skills, hooks, subagents and more | [文章](articles/steering-claude-code-skills-hooks-rules-subagents-and-more.md) / [原文](https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more) |
 | The Claude Cowork product guide | [文章](articles/the-claude-cowork-product-guide.md) / [原文](https://claude.com/blog/the-claude-cowork-product-guide) |
+| Claude Desktop on AWS, Google Cloud, and Microsoft Foundry | [文章](articles/the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry.md) / [原文](https://claude.com/blog/the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry) |
 | New in Claude Managed Agents: run agents on a schedule and store environment variables in vaults | [文章](articles/whats-new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/whats-new-in-claude-managed-agents) |
 | Workload Identity Federation (WIF) is now generally available on the Claude Platform. | [文章](articles/workload-identity-federation.md) / [原文](https://claude.com/blog/workload-identity-federation) |
 
