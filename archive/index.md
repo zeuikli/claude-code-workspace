@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-06-30 04:59 UTC
-> 共 23 篇文章，本次新增 2 篇
+> 最後更新：2026-07-01 05:19 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -18,6 +18,7 @@
 | New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels | [文章](articles/claude-managed-agents-updates.md) / [原文](https://claude.com/blog/claude-managed-agents-updates) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Centrally manage authorization for MCP connectors  | [文章](articles/enterprise-managed-auth.md) / [原文](https://claude.com/blog/enterprise-managed-auth) |
+| Getting started with loops | Claude by Anthropic | [文章](articles/getting-started-with-loops.md) / [原文](https://claude.com/blog/getting-started-with-loops) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud | Claude by Anthropic | [文章](articles/introducing-the-claude-apps-gateway.md) / [原文](https://claude.com/blog/introducing-the-claude-apps-gateway) |
 | Meet the winners of the Built with Opus 4.7 Claude Code hackathon | [文章](articles/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon.md) / [原文](https://claude.com/blog/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon) |
