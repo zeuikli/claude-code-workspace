@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-07-02 04:55 UTC
-> 共 24 篇文章，本次新增 0 篇
+> 最後更新：2026-07-03 04:39 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -19,6 +19,7 @@
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Centrally manage authorization for MCP connectors  | [文章](articles/enterprise-managed-auth.md) / [原文](https://claude.com/blog/enterprise-managed-auth) |
 | Getting started with loops | Claude by Anthropic | [文章](articles/getting-started-with-loops.md) / [原文](https://claude.com/blog/getting-started-with-loops) |
+| New analytics and cost controls are available for Claude Enterprise | Claude by Anthropic | [文章](articles/giving-admins-more-visibility-and-control-over-claude-usage-and-spend.md) / [原文](https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud | Claude by Anthropic | [文章](articles/introducing-the-claude-apps-gateway.md) / [原文](https://claude.com/blog/introducing-the-claude-apps-gateway) |
 | Meet the winners of the Built with Opus 4.7 Claude Code hackathon | [文章](articles/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon.md) / [原文](https://claude.com/blog/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon) |
@@ -27,6 +28,5 @@
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Steering Claude Code: skills, hooks, subagents and more | [文章](articles/steering-claude-code-skills-hooks-rules-subagents-and-more.md) / [原文](https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more) |
 | Claude Desktop on AWS, Google Cloud, and Microsoft Foundry | [文章](articles/the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry.md) / [原文](https://claude.com/blog/the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry) |
-| New in Claude Managed Agents: run agents on a schedule and store environment variables in vaults | [文章](articles/whats-new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/whats-new-in-claude-managed-agents) |
 | Workload Identity Federation (WIF) is now generally available on the Claude Platform. | [文章](articles/workload-identity-federation.md) / [原文](https://claude.com/blog/workload-identity-federation) |
 
