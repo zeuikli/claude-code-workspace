@@ -1,14 +1,14 @@
 # Claude Blog Archive
 
-> 最後更新：2026-07-06 05:08 UTC
-> 共 24 篇文章，本次新增 0 篇
+> 最後更新：2026-07-07 04:49 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
+| A field guide to Claude Fable 5: Finding your unknowns | Claude | Claude by Anthropic | [文章](articles/a-field-guide-to-claude-fable-finding-your-unknowns.md) / [原文](https://claude.com/blog/a-field-guide-to-claude-fable-finding-your-unknowns) |
 | Agent identity: a new access model for autonomous, team-wide AI | [文章](articles/agent-identity-access-model.md) / [原文](https://claude.com/blog/agent-identity-access-model) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
 | Lessons from Anthropic on building effective human-agent teams | Claude by Anthropic | [文章](articles/building-effective-human-agent-teams.md) / [原文](https://claude.com/blog/building-effective-human-agent-teams) |
-| The evolution of agentic surfaces: building with Claude Managed Agents | [文章](articles/building-with-claude-managed-agents.md) / [原文](https://claude.com/blog/building-with-claude-managed-agents) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
 | Claude Design now stays on brand for daily work | [文章](articles/claude-design-stays-on-brand-for-daily-work.md) / [原文](https://claude.com/blog/claude-design-stays-on-brand-for-daily-work) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
