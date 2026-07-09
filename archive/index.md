@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-07-08 04:11 UTC
-> 共 24 篇文章，本次新增 4 篇
+> 最後更新：2026-07-09 04:50 UTC
+> 共 25 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -19,14 +19,15 @@
 | Choosing a Claude model and effort level in Claude Code | Claude by Anthropic | [文章](articles/claude-model-and-effort-level-in-claude-code.md) / [原文](https://claude.com/blog/claude-model-and-effort-level-in-claude-code) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Claude Cowork on web and mobile: hand off work anywhere | Claude by Anthropic | [文章](articles/cowork-web-mobile.md) / [原文](https://claude.com/blog/cowork-web-mobile) |
-| Centrally manage authorization for MCP connectors  | [文章](articles/enterprise-managed-auth.md) / [原文](https://claude.com/blog/enterprise-managed-auth) |
 | Getting started with loops | Claude by Anthropic | [文章](articles/getting-started-with-loops.md) / [原文](https://claude.com/blog/getting-started-with-loops) |
 | New analytics and cost controls are available for Claude Enterprise | Claude by Anthropic | [文章](articles/giving-admins-more-visibility-and-control-over-claude-usage-and-spend.md) / [原文](https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
+| Using Claude Cowork in marketing operations to automate reporting and campaign building | Claude by Anthropic | [文章](articles/how-anthropics-marketing-operations-team-uses-claude-cowork-to-automate-reporting-and-campaign-builds.md) / [原文](https://claude.com/blog/how-anthropics-marketing-operations-team-uses-claude-cowork-to-automate-reporting-and-campaign-builds) |
 | How people are using Claude Cowork | Claude by Anthropic | [文章](articles/how-people-are-using-claude-cowork.md) / [原文](https://claude.com/blog/how-people-are-using-claude-cowork) |
 | Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud | Claude by Anthropic | [文章](articles/introducing-the-claude-apps-gateway.md) / [原文](https://claude.com/blog/introducing-the-claude-apps-gateway) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Steering Claude Code: skills, hooks, subagents and more | [文章](articles/steering-claude-code-skills-hooks-rules-subagents-and-more.md) / [原文](https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more) |
 | Claude Desktop on AWS, Google Cloud, and Microsoft Foundry | [文章](articles/the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry.md) / [原文](https://claude.com/blog/the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry) |
+| Working at the frontier: How Thomson Reuters builds AI for high- stakes professional work | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-thomson-reuters-builds-ai-for-high--stakes-professional-work.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-thomson-reuters-builds-ai-for-high--stakes-professional-work) |
 
