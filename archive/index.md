@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-07-10 04:48 UTC
-> 共 25 篇文章，本次新增 0 篇
+> 最後更新：2026-07-11 04:10 UTC
+> 共 25 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -27,7 +27,7 @@
 | Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud | Claude by Anthropic | [文章](articles/introducing-the-claude-apps-gateway.md) / [原文](https://claude.com/blog/introducing-the-claude-apps-gateway) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
-| Steering Claude Code: skills, hooks, subagents and more | [文章](articles/steering-claude-code-skills-hooks-rules-subagents-and-more.md) / [原文](https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more) |
 | Claude Desktop on AWS, Google Cloud, and Microsoft Foundry | [文章](articles/the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry.md) / [原文](https://claude.com/blog/the-full-claude-desktop-experience-on-aws-google-cloud-and-microsoft-foundry) |
+| Working at the frontier: How Cognition trusts Claude Fable 5 to work through the night | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-cognition-trusts-claude-fable-5-to-work-through-the-night.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-cognition-trusts-claude-fable-5-to-work-through-the-night) |
 | Working at the frontier: How Thomson Reuters builds AI for high- stakes professional work | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-thomson-reuters-builds-ai-for-high--stakes-professional-work.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-thomson-reuters-builds-ai-for-high--stakes-professional-work) |
 
