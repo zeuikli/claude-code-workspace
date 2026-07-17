@@ -1,17 +1,16 @@
 # Claude Blog Archive
 
-> 最後更新：2026-07-16 03:58 UTC
-> 共 25 篇文章，本次新增 1 篇
+> 最後更新：2026-07-17 03:57 UTC
+> 共 25 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
 | A field guide to Claude Fable 5: Finding your unknowns | Claude | Claude by Anthropic | [文章](articles/a-field-guide-to-claude-fable-finding-your-unknowns.md) / [原文](https://claude.com/blog/a-field-guide-to-claude-fable-finding-your-unknowns) |
+| How Anthropic runs large-scale code migrations with Claude Code | Claude by Anthropic | [文章](articles/ai-code-migration.md) / [原文](https://claude.com/blog/ai-code-migration) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
 | Bringing Claude Code and Claude Cowork to government | Claude by Anthropic | [文章](articles/bringing-claude-code-and-claude-cowork-to-government.md) / [原文](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government) |
-| Lessons from Anthropic on building effective human-agent teams | Claude by Anthropic | [文章](articles/building-effective-human-agent-teams.md) / [原文](https://claude.com/blog/building-effective-human-agent-teams) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
-| Claude in Microsoft Foundry is now generally available | Claude by Anthropic | [文章](articles/claude-in-microsoft-foundry.md) / [原文](https://claude.com/blog/claude-in-microsoft-foundry) |
 | Claude Managed Agents: get to production 10x faster | [文章](articles/claude-managed-agents.md) / [原文](https://claude.com/blog/claude-managed-agents) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
 | New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels | [文章](articles/claude-managed-agents-updates.md) / [原文](https://claude.com/blog/claude-managed-agents-updates) |
@@ -30,4 +29,5 @@
 | Working at the frontier: How Hebbia builds AI for financial diligence that can&#x27;t miss a detail | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-hebbia-builds-ai-for-financial-diligence-that-cant-miss-a-detail.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-hebbia-builds-ai-for-financial-diligence-that-cant-miss-a-detail) |
 | Working at the frontier: How Thomson Reuters builds AI for high- stakes professional work | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-thomson-reuters-builds-ai-for-high--stakes-professional-work.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-thomson-reuters-builds-ai-for-high--stakes-professional-work) |
 | Working at the frontier: How Base44 trusts Claude Fable 5 with their most challenging engineering work | Claude by Anthropic | [文章](articles/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work.md) / [原文](https://claude.com/blog/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work) |
+| Working with Claude Fable 5 in Claude Cowork | Claude by Anthropic | [文章](articles/working-with-claude-fable-5-in-claude-cowork.md) / [原文](https://claude.com/blog/working-with-claude-fable-5-in-claude-cowork) |
 
