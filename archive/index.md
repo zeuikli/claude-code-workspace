@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-07-20 04:33 UTC
-> 共 25 篇文章，本次新增 0 篇
+> 最後更新：2026-07-21 04:13 UTC
+> 共 25 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -18,7 +18,6 @@
 | Choosing a Claude model and effort level in Claude Code | Claude by Anthropic | [文章](articles/claude-model-and-effort-level-in-claude-code.md) / [原文](https://claude.com/blog/claude-model-and-effort-level-in-claude-code) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Claude Cowork on web and mobile: hand off work anywhere | Claude by Anthropic | [文章](articles/cowork-web-mobile.md) / [原文](https://claude.com/blog/cowork-web-mobile) |
-| New analytics and cost controls are available for Claude Enterprise | Claude by Anthropic | [文章](articles/giving-admins-more-visibility-and-control-over-claude-usage-and-spend.md) / [原文](https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | Using Claude Cowork in marketing operations to automate reporting and campaign building | Claude by Anthropic | [文章](articles/how-anthropics-marketing-operations-team-uses-claude-cowork-to-automate-reporting-and-campaign-builds.md) / [原文](https://claude.com/blog/how-anthropics-marketing-operations-team-uses-claude-cowork-to-automate-reporting-and-campaign-builds) |
 | How people are using Claude Cowork | Claude by Anthropic | [文章](articles/how-people-are-using-claude-cowork.md) / [原文](https://claude.com/blog/how-people-are-using-claude-cowork) |
@@ -28,6 +27,7 @@
 | Working at the frontier: How Cognition trusts Claude Fable 5 to work through the night | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-cognition-trusts-claude-fable-5-to-work-through-the-night.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-cognition-trusts-claude-fable-5-to-work-through-the-night) |
 | Working at the frontier: How Hebbia builds AI for financial diligence that can&#x27;t miss a detail | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-hebbia-builds-ai-for-financial-diligence-that-cant-miss-a-detail.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-hebbia-builds-ai-for-financial-diligence-that-cant-miss-a-detail) |
 | Working at the frontier: How Thomson Reuters builds AI for high- stakes professional work | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-thomson-reuters-builds-ai-for-high--stakes-professional-work.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-thomson-reuters-builds-ai-for-high--stakes-professional-work) |
+| How Rakuten builds agents overnight with Claude Fable 5 | Claude by Anthropic | [文章](articles/working-at-the-frontier-rakuten.md) / [原文](https://claude.com/blog/working-at-the-frontier-rakuten) |
 | Working at the frontier: How Base44 trusts Claude Fable 5 with their most challenging engineering work | Claude by Anthropic | [文章](articles/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work.md) / [原文](https://claude.com/blog/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work) |
 | Working with Claude Fable 5 in Claude Cowork | Claude by Anthropic | [文章](articles/working-with-claude-fable-5-in-claude-cowork.md) / [原文](https://claude.com/blog/working-with-claude-fable-5-in-claude-cowork) |
 
