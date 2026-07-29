@@ -1,12 +1,13 @@
 # Claude Blog Archive
 
-> 最後更新：2026-07-28 03:58 UTC
-> 共 25 篇文章，本次新增 0 篇
+> 最後更新：2026-07-29 04:09 UTC
+> 共 25 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
 | How Anthropic runs large-scale code migrations with Claude Code | Claude by Anthropic | [文章](articles/ai-code-migration.md) / [原文](https://claude.com/blog/ai-code-migration) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
+| MCP 2026-07-28 spec: stateless core, coming to Claude | Claude by Anthropic | [文章](articles/bringing-mcp-2026-07-28-to-claude.md) / [原文](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude) |
 | Building verification loops in Claude Code with skills | Claude by Anthropic | [文章](articles/building-verification-loops-in-claude-code-with-skills.md) / [原文](https://claude.com/blog/building-verification-loops-in-claude-code-with-skills) |
 | CISO&#x27;s guide to agentic AI | Claude by Anthropic | [文章](articles/ciso-guide-to-agentic-ai.md) / [原文](https://claude.com/blog/ciso-guide-to-agentic-ai) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
@@ -28,6 +29,5 @@
 | Think through hard problems in voice mode | Claude by Anthropic | [文章](articles/think-through-hard-problems-in-voice-mode.md) / [原文](https://claude.com/blog/think-through-hard-problems-in-voice-mode) |
 | How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems | Claude by Anthropic | [文章](articles/working-at-the-frontier-cursor.md) / [原文](https://claude.com/blog/working-at-the-frontier-cursor) |
 | How Rakuten builds agents overnight with Claude Fable 5 | Claude by Anthropic | [文章](articles/working-at-the-frontier-rakuten.md) / [原文](https://claude.com/blog/working-at-the-frontier-rakuten) |
-| Working at the frontier: How Base44 trusts Claude Fable 5 with their most challenging engineering work | Claude by Anthropic | [文章](articles/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work.md) / [原文](https://claude.com/blog/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work) |
 | Working with Claude Fable 5 in Claude Cowork | Claude by Anthropic | [文章](articles/working-with-claude-fable-5-in-claude-cowork.md) / [原文](https://claude.com/blog/working-with-claude-fable-5-in-claude-cowork) |
 
