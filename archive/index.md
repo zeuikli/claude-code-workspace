@@ -1,17 +1,17 @@
 # Claude Blog Archive
 
-> 最後更新：2026-08-05 03:57 UTC
+> 最後更新：2026-08-06 04:08 UTC
 > 共 25 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
 | A guide to cost visibility and control in Claude | Claude by Anthropic | [文章](articles/a-guide-to-cost-visibility-and-control-in-claude.md) / [原文](https://claude.com/blog/a-guide-to-cost-visibility-and-control-in-claude) |
-| How Anthropic runs large-scale code migrations with Claude Code | Claude by Anthropic | [文章](articles/ai-code-migration.md) / [原文](https://claude.com/blog/ai-code-migration) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
 | MCP 2026-07-28 spec: stateless core, coming to Claude | Claude by Anthropic | [文章](articles/bringing-mcp-2026-07-28-to-claude.md) / [原文](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude) |
 | Building verification loops in Claude Code with skills | Claude by Anthropic | [文章](articles/building-verification-loops-in-claude-code-with-skills.md) / [原文](https://claude.com/blog/building-verification-loops-in-claude-code-with-skills) |
 | CISO&#x27;s guide to agentic AI | Claude by Anthropic | [文章](articles/ciso-guide-to-agentic-ai.md) / [原文](https://claude.com/blog/ciso-guide-to-agentic-ai) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
+| Inference hooks: inline data loss prevention for Claude Enterprise | Claude by Anthropic | [文章](articles/claude-enterprise-inference-hooks.md) / [原文](https://claude.com/blog/claude-enterprise-inference-hooks) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
 | Claude Managed Agents: get to production 10x faster | [文章](articles/claude-managed-agents.md) / [原文](https://claude.com/blog/claude-managed-agents) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
