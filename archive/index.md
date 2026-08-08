@@ -1,12 +1,14 @@
 # Claude Blog Archive
 
-> 最後更新：2026-08-07 03:47 UTC
-> 共 25 篇文章，本次新增 1 篇
+> 最後更新：2026-08-08 02:52 UTC
+> 共 25 篇文章，本次新增 3 篇
 
 | 文章 | 連結 |
 |------|------|
 | A guide to cost visibility and control in Claude | Claude by Anthropic | [文章](articles/a-guide-to-cost-visibility-and-control-in-claude.md) / [原文](https://claude.com/blog/a-guide-to-cost-visibility-and-control-in-claude) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
+| Auto mode is now the default in Claude Code for Pro, Max, and Team plans | Claude by Anthropic | [文章](articles/auto-mode-default-in-claude-code.md) / [原文](https://claude.com/blog/auto-mode-default-in-claude-code) |
+| Running auto mode in production | Claude by Anthropic | [文章](articles/auto-mode-in-production.md) / [原文](https://claude.com/blog/auto-mode-in-production) |
 | MCP 2026-07-28 spec: stateless core, coming to Claude | Claude by Anthropic | [文章](articles/bringing-mcp-2026-07-28-to-claude.md) / [原文](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude) |
 | Building verification loops in Claude Code with skills | Claude by Anthropic | [文章](articles/building-verification-loops-in-claude-code-with-skills.md) / [原文](https://claude.com/blog/building-verification-loops-in-claude-code-with-skills) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
@@ -20,14 +22,12 @@
 | Four role-based certifications for the people who put Claude to work for customers | Claude by Anthropic | [文章](articles/four-role-based-claude-certifications.md) / [原文](https://claude.com/blog/four-role-based-claude-certifications) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | How Anthropic secures its AI-native software development lifecycle | Claude by Anthropic | [文章](articles/how-anthropic-secures-its-ai-native-software-development-lifecycle.md) / [原文](https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle) |
-| How Datadog built a “universal machine tool” for Claude Code | Claude by Anthropic | [文章](articles/how-datadog-built-a-universal-machine-tool-for-claude-code.md) / [原文](https://claude.com/blog/how-datadog-built-a-universal-machine-tool-for-claude-code) |
 | How Outtake built a cyber investigator on Claude | Claude by Anthropic | [文章](articles/how-outtake-built-a-cyber-investigator-on-claude.md) / [原文](https://claude.com/blog/how-outtake-built-a-cyber-investigator-on-claude) |
 | How the product designer who built Claude Design uses it | Claude by Anthropic | [文章](articles/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them.md) / [原文](https://claude.com/blog/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them) |
 | Millennium and Anthropic are building a digital risk analyst with Claude  | Claude by Anthropic | [文章](articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude.md) / [原文](https://claude.com/blog/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
+| Self-hosted environments for Claude Code | Claude by Anthropic | [文章](articles/run-claude-code-sessions-on-your-own-compute.md) / [原文](https://claude.com/blog/run-claude-code-sessions-on-your-own-compute) |
 | The new rules of context engineering for Claude 5 generation models  | Claude by Anthropic | [文章](articles/the-new-rules-of-context-engineering-for-claude-5-generation-models.md) / [原文](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models) |
 | Think through hard problems in voice mode | Claude by Anthropic | [文章](articles/think-through-hard-problems-in-voice-mode.md) / [原文](https://claude.com/blog/think-through-hard-problems-in-voice-mode) |
-| How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems | Claude by Anthropic | [文章](articles/working-at-the-frontier-cursor.md) / [原文](https://claude.com/blog/working-at-the-frontier-cursor) |
-| How Rakuten builds agents overnight with Claude Fable 5 | Claude by Anthropic | [文章](articles/working-at-the-frontier-rakuten.md) / [原文](https://claude.com/blog/working-at-the-frontier-rakuten) |
 
