@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-08-10 03:09 UTC
-> 共 25 篇文章，本次新增 0 篇
+> 最後更新：2026-08-11 03:02 UTC
+> 共 25 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -21,7 +21,7 @@
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Four role-based certifications for the people who put Claude to work for customers | Claude by Anthropic | [文章](articles/four-role-based-claude-certifications.md) / [原文](https://claude.com/blog/four-role-based-claude-certifications) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
-| How Anthropic secures its AI-native software development lifecycle | Claude by Anthropic | [文章](articles/how-anthropic-secures-its-ai-native-software-development-lifecycle.md) / [原文](https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle) |
+| How Anthropic&#x27;s business development team uses Claude to run inbound and outbound at scale | Claude by Anthropic | [文章](articles/how-anthropics-business-development-team-uses-claude-to-run-inbound-and-outbound-at-scale.md) / [原文](https://claude.com/blog/how-anthropics-business-development-team-uses-claude-to-run-inbound-and-outbound-at-scale) |
 | How Outtake built a cyber investigator on Claude | Claude by Anthropic | [文章](articles/how-outtake-built-a-cyber-investigator-on-claude.md) / [原文](https://claude.com/blog/how-outtake-built-a-cyber-investigator-on-claude) |
 | How the product designer who built Claude Design uses it | Claude by Anthropic | [文章](articles/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them.md) / [原文](https://claude.com/blog/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them) |
 | Millennium and Anthropic are building a digital risk analyst with Claude  | Claude by Anthropic | [文章](articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude.md) / [原文](https://claude.com/blog/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude) |
