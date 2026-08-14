@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-08-13 03:24 UTC
-> 共 25 篇文章，本次新增 1 篇
+> 最後更新：2026-08-14 03:22 UTC
+> 共 25 篇文章，本次新增 3 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -16,18 +16,18 @@
 | Claude Managed Agents: get to production 10x faster | [文章](articles/claude-managed-agents.md) / [原文](https://claude.com/blog/claude-managed-agents) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
 | New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels | [文章](articles/claude-managed-agents-updates.md) / [原文](https://claude.com/blog/claude-managed-agents-updates) |
-| Claude models explained: choosing the best model for your use case | Claude by Anthropic | [文章](articles/claude-models-explained-choosing-the-best-model-for-your-use-case.md) / [原文](https://claude.com/blog/claude-models-explained-choosing-the-best-model-for-your-use-case) |
+| Claude Tag now reads even more of the room | Claude by Anthropic | [文章](articles/claude-tag-now-reads-even-more-of-the-room.md) / [原文](https://claude.com/blog/claude-tag-now-reads-even-more-of-the-room) |
 | Compliance API coverage extends to Claude Cowork and Claude Code | Claude by Anthropic | [文章](articles/compliance-api-cowork-and-claude-code.md) / [原文](https://claude.com/blog/compliance-api-cowork-and-claude-code) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Claude Cowork comes to the Chrome side panel | Claude by Anthropic | [文章](articles/cowork-chrome-side-panel.md) / [原文](https://claude.com/blog/cowork-chrome-side-panel) |
-| Four role-based certifications for the people who put Claude to work for customers | Claude by Anthropic | [文章](articles/four-role-based-claude-certifications.md) / [原文](https://claude.com/blog/four-role-based-claude-certifications) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
 | How Anthropic&#x27;s business development team uses Claude to run inbound and outbound at scale | Claude by Anthropic | [文章](articles/how-anthropics-business-development-team-uses-claude-to-run-inbound-and-outbound-at-scale.md) / [原文](https://claude.com/blog/how-anthropics-business-development-team-uses-claude-to-run-inbound-and-outbound-at-scale) |
+| Securing the frontier: How JetBrains evaluates and deploys Claude Fable 5 | Claude by Anthropic | [文章](articles/how-jetbrains-evaluates-and-deploys-claude-fable-5.md) / [原文](https://claude.com/blog/how-jetbrains-evaluates-and-deploys-claude-fable-5) |
 | How the product designer who built Claude Design uses it | Claude by Anthropic | [文章](articles/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them.md) / [原文](https://claude.com/blog/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them) |
 | Millennium and Anthropic are building a digital risk analyst with Claude  | Claude by Anthropic | [文章](articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude.md) / [原文](https://claude.com/blog/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Self-hosted environments for Claude Code | Claude by Anthropic | [文章](articles/run-claude-code-sessions-on-your-own-compute.md) / [原文](https://claude.com/blog/run-claude-code-sessions-on-your-own-compute) |
+| Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic | [文章](articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions.md) / [原文](https://claude.com/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions) |
 | The new rules of context engineering for Claude 5 generation models  | Claude by Anthropic | [文章](articles/the-new-rules-of-context-engineering-for-claude-5-generation-models.md) / [原文](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models) |
-| Think through hard problems in voice mode | Claude by Anthropic | [文章](articles/think-through-hard-problems-in-voice-mode.md) / [原文](https://claude.com/blog/think-through-hard-problems-in-voice-mode) |
 
