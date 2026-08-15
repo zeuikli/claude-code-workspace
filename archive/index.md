@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-08-14 03:22 UTC
-> 共 25 篇文章，本次新增 3 篇
+> 最後更新：2026-08-15 02:11 UTC
+> 共 25 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -24,10 +24,10 @@
 | How Anthropic&#x27;s business development team uses Claude to run inbound and outbound at scale | Claude by Anthropic | [文章](articles/how-anthropics-business-development-team-uses-claude-to-run-inbound-and-outbound-at-scale.md) / [原文](https://claude.com/blog/how-anthropics-business-development-team-uses-claude-to-run-inbound-and-outbound-at-scale) |
 | Securing the frontier: How JetBrains evaluates and deploys Claude Fable 5 | Claude by Anthropic | [文章](articles/how-jetbrains-evaluates-and-deploys-claude-fable-5.md) / [原文](https://claude.com/blog/how-jetbrains-evaluates-and-deploys-claude-fable-5) |
 | How the product designer who built Claude Design uses it | Claude by Anthropic | [文章](articles/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them.md) / [原文](https://claude.com/blog/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them) |
+| Maximizing the value of your Claude Code sessions | Claude by Anthropic | [文章](articles/maximizing-the-value-of-your-claude-code-sessions.md) / [原文](https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions) |
 | Millennium and Anthropic are building a digital risk analyst with Claude  | Claude by Anthropic | [文章](articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude.md) / [原文](https://claude.com/blog/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Self-hosted environments for Claude Code | Claude by Anthropic | [文章](articles/run-claude-code-sessions-on-your-own-compute.md) / [原文](https://claude.com/blog/run-claude-code-sessions-on-your-own-compute) |
 | Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic | [文章](articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions.md) / [原文](https://claude.com/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions) |
-| The new rules of context engineering for Claude 5 generation models  | Claude by Anthropic | [文章](articles/the-new-rules-of-context-engineering-for-claude-5-generation-models.md) / [原文](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models) |
 
