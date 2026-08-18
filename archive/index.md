@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-08-17 02:17 UTC
-> 共 25 篇文章，本次新增 0 篇
+> 最後更新：2026-08-18 02:13 UTC
+> 共 25 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -21,9 +21,9 @@
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Claude Cowork comes to the Chrome side panel | Claude by Anthropic | [文章](articles/cowork-chrome-side-panel.md) / [原文](https://claude.com/blog/cowork-chrome-side-panel) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/blog/harnessing-claudes-intelligence) |
+| How ABC Legal turned every employee into a builder with Claude Managed Agents | Claude by Anthropic | [文章](articles/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents.md) / [原文](https://claude.com/blog/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents) |
 | How Anthropic&#x27;s business development team uses Claude to run inbound and outbound at scale | Claude by Anthropic | [文章](articles/how-anthropics-business-development-team-uses-claude-to-run-inbound-and-outbound-at-scale.md) / [原文](https://claude.com/blog/how-anthropics-business-development-team-uses-claude-to-run-inbound-and-outbound-at-scale) |
 | Securing the frontier: How JetBrains evaluates and deploys Claude Fable 5 | Claude by Anthropic | [文章](articles/how-jetbrains-evaluates-and-deploys-claude-fable-5.md) / [原文](https://claude.com/blog/how-jetbrains-evaluates-and-deploys-claude-fable-5) |
-| How the product designer who built Claude Design uses it | Claude by Anthropic | [文章](articles/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them.md) / [原文](https://claude.com/blog/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them) |
 | Maximizing the value of your Claude Code sessions | Claude by Anthropic | [文章](articles/maximizing-the-value-of-your-claude-code-sessions.md) / [原文](https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions) |
 | Millennium and Anthropic are building a digital risk analyst with Claude  | Claude by Anthropic | [文章](articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude.md) / [原文](https://claude.com/blog/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
