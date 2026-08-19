@@ -1,15 +1,14 @@
 # Claude Blog Archive
 
-> 最後更新：2026-08-18 02:13 UTC
-> 共 25 篇文章，本次新增 1 篇
+> 最後更新：2026-08-19 02:16 UTC
+> 共 25 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
-| A guide to cost visibility and control in Claude | Claude by Anthropic | [文章](articles/a-guide-to-cost-visibility-and-control-in-claude.md) / [原文](https://claude.com/blog/a-guide-to-cost-visibility-and-control-in-claude) |
+| How Claude Tag serves as Anthropic’s first responder for CI/CD failures | Claude by Anthropic | [文章](articles/ai-ci-cd-on-call.md) / [原文](https://claude.com/blog/ai-ci-cd-on-call) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
 | Auto mode is now the default in Claude Code for Pro, Max, and Team plans | Claude by Anthropic | [文章](articles/auto-mode-default-in-claude-code.md) / [原文](https://claude.com/blog/auto-mode-default-in-claude-code) |
 | Running auto mode in production | Claude by Anthropic | [文章](articles/auto-mode-in-production.md) / [原文](https://claude.com/blog/auto-mode-in-production) |
-| MCP 2026-07-28 spec: stateless core, coming to Claude | Claude by Anthropic | [文章](articles/bringing-mcp-2026-07-28-to-claude.md) / [原文](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
 | Inference hooks: inline data loss prevention for Claude Enterprise | Claude by Anthropic | [文章](articles/claude-enterprise-inference-hooks.md) / [原文](https://claude.com/blog/claude-enterprise-inference-hooks) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
@@ -30,4 +29,5 @@
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Self-hosted environments for Claude Code | Claude by Anthropic | [文章](articles/run-claude-code-sessions-on-your-own-compute.md) / [原文](https://claude.com/blog/run-claude-code-sessions-on-your-own-compute) |
 | Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic | [文章](articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions.md) / [原文](https://claude.com/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions) |
+| The Claude Science product guide | Claude by Anthropic | [文章](articles/the-claude-science-product-guide.md) / [原文](https://claude.com/blog/the-claude-science-product-guide) |
 
