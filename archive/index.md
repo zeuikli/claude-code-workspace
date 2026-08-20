@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-08-19 02:16 UTC
-> 共 25 篇文章，本次新增 2 篇
+> 最後更新：2026-08-20 02:15 UTC
+> 共 25 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -10,7 +10,6 @@
 | Auto mode is now the default in Claude Code for Pro, Max, and Team plans | Claude by Anthropic | [文章](articles/auto-mode-default-in-claude-code.md) / [原文](https://claude.com/blog/auto-mode-default-in-claude-code) |
 | Running auto mode in production | Claude by Anthropic | [文章](articles/auto-mode-in-production.md) / [原文](https://claude.com/blog/auto-mode-in-production) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
-| Inference hooks: inline data loss prevention for Claude Enterprise | Claude by Anthropic | [文章](articles/claude-enterprise-inference-hooks.md) / [原文](https://claude.com/blog/claude-enterprise-inference-hooks) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
 | Claude Managed Agents: get to production 10x faster | [文章](articles/claude-managed-agents.md) / [原文](https://claude.com/blog/claude-managed-agents) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
@@ -30,4 +29,5 @@
 | Self-hosted environments for Claude Code | Claude by Anthropic | [文章](articles/run-claude-code-sessions-on-your-own-compute.md) / [原文](https://claude.com/blog/run-claude-code-sessions-on-your-own-compute) |
 | Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic | [文章](articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions.md) / [原文](https://claude.com/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions) |
 | The Claude Science product guide | Claude by Anthropic | [文章](articles/the-claude-science-product-guide.md) / [原文](https://claude.com/blog/the-claude-science-product-guide) |
+| Turning conversation into knowledge: how Slack builds human-agent teams | Claude by Anthropic | [文章](articles/turning-conversation-into-knowledge-how-slack-builds-human-agent-teams.md) / [原文](https://claude.com/blog/turning-conversation-into-knowledge-how-slack-builds-human-agent-teams) |
 
