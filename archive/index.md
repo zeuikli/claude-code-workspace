@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-09-02 05:25 UTC
-> 共 23 篇文章，本次新增 0 篇
+> 最後更新：2026-09-03 05:27 UTC
+> 共 23 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -11,13 +11,13 @@
 | Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders | Claude by Anthropic | [文章](articles/bringing-claude-mythos-5-to-more-defenders.md) / [原文](https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
 | The Claude Code Guide For Startups | Claude by Anthropic | [文章](articles/claude-code-guide-for-startups.md) / [原文](https://claude.com/blog/claude-code-guide-for-startups) |
+| Building Commerce Agents with Claude | Claude by Anthropic | [文章](articles/claude-for-commerce-agents.md) / [原文](https://claude.com/blog/claude-for-commerce-agents) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
 | Claude for Teachers, now available for U.S. K-12 schools and districts | Claude by Anthropic | [文章](articles/claude-for-teachers-now-available-for-schools-and-districts.md) / [原文](https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts) |
 | Claude in Chrome is generally available | Claude by Anthropic | [文章](articles/claude-in-chrome-generally-available.md) / [原文](https://claude.com/blog/claude-in-chrome-generally-available) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
 | New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels | [文章](articles/claude-managed-agents-updates.md) / [原文](https://claude.com/blog/claude-managed-agents-updates) |
 | Claude&#x27;s memory works everywhere, and you decide what&#x27;s in it | Claude by Anthropic | [文章](articles/claudes-memory-works-everywhere-and-you-decide-whats-in-it.md) / [原文](https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it) |
-| Build production agents with computer use, the Skills API, and the Files API | Claude by Anthropic | [文章](articles/computer-use-skills-api-files-api.md) / [原文](https://claude.com/blog/computer-use-skills-api-files-api) |
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Claude Cowork gets a built-in browser: nothing to install | Claude by Anthropic | [文章](articles/cowork-built-in-browser.md) / [原文](https://claude.com/blog/cowork-built-in-browser) |
 | How an Anthropic field marketer uses Claude Code to send weekly personalized updates to every sales rep | Claude by Anthropic | [文章](articles/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep.md) / [原文](https://claude.com/blog/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep) |
@@ -27,5 +27,5 @@
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | The AI-Native SDLC playbook | Claude by Anthropic | [文章](articles/the-ai-native-sdlc-playbook.md) / [原文](https://claude.com/blog/the-ai-native-sdlc-playbook) |
-| Turning conversation into knowledge: how Slack builds human-agent teams | Claude by Anthropic | [文章](articles/turning-conversation-into-knowledge-how-slack-builds-human-agent-teams.md) / [原文](https://claude.com/blog/turning-conversation-into-knowledge-how-slack-builds-human-agent-teams) |
+| A guide to the anatomy of effective commerce agents | Claude by Anthropic | [文章](articles/the-anatomy-of-effective-commerce-agents.md) / [原文](https://claude.com/blog/the-anatomy-of-effective-commerce-agents) |
 
