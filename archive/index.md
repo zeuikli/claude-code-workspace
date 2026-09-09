@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-09-08 05:34 UTC
-> 共 23 篇文章，本次新增 0 篇
+> 最後更新：2026-09-09 05:41 UTC
+> 共 23 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -10,7 +10,6 @@
 | Bain &amp; Company joins the Claude Partner Network as a Global Premier partner | Claude by Anthropic | [文章](articles/bain-company-joins-the-claude-partner-network-as-a-global-premier-partner.md) / [原文](https://claude.com/blog/bain-company-joins-the-claude-partner-network-as-a-global-premier-partner) |
 | Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders | Claude by Anthropic | [文章](articles/bringing-claude-mythos-5-to-more-defenders.md) / [原文](https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
-| The Claude Code Guide For Startups | Claude by Anthropic | [文章](articles/claude-code-guide-for-startups.md) / [原文](https://claude.com/blog/claude-code-guide-for-startups) |
 | Building Commerce Agents with Claude | Claude by Anthropic | [文章](articles/claude-for-commerce-agents.md) / [原文](https://claude.com/blog/claude-for-commerce-agents) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
 | Claude for Teachers, now available for U.S. K-12 schools and districts | Claude by Anthropic | [文章](articles/claude-for-teachers-now-available-for-schools-and-districts.md) / [原文](https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts) |
@@ -26,6 +25,7 @@
 | How Warp builds self-improving agents on Claude | Claude by Anthropic | [文章](articles/how-warp-builds-self-improving-agents-on-claude.md) / [原文](https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
+| Reducing cost and improving performance with Claude Platform | Claude by Anthropic | [文章](articles/reducing-cost-and-improving-performance-with-claude-platform.md) / [原文](https://claude.com/blog/reducing-cost-and-improving-performance-with-claude-platform) |
 | The AI-Native SDLC playbook | Claude by Anthropic | [文章](articles/the-ai-native-sdlc-playbook.md) / [原文](https://claude.com/blog/the-ai-native-sdlc-playbook) |
 | A guide to the anatomy of effective commerce agents | Claude by Anthropic | [文章](articles/the-anatomy-of-effective-commerce-agents.md) / [原文](https://claude.com/blog/the-anatomy-of-effective-commerce-agents) |
 
