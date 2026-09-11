@@ -1,11 +1,10 @@
 # Claude Blog Archive
 
-> 最後更新：2026-09-10 05:33 UTC
-> 共 23 篇文章，本次新增 0 篇
+> 最後更新：2026-09-11 05:35 UTC
+> 共 23 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
-| Anthropic’s approach to teaching and learning AI | Claude by Anthropic | [文章](articles/anthropics-approach-to-teaching-and-learning-ai.md) / [原文](https://claude.com/blog/anthropics-approach-to-teaching-and-learning-ai) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
 | Bain &amp; Company joins the Claude Partner Network as a Global Premier partner | Claude by Anthropic | [文章](articles/bain-company-joins-the-claude-partner-network-as-a-global-premier-partner.md) / [原文](https://claude.com/blog/bain-company-joins-the-claude-partner-network-as-a-global-premier-partner) |
 | Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders | Claude by Anthropic | [文章](articles/bringing-claude-mythos-5-to-more-defenders.md) / [原文](https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders) |
@@ -21,11 +20,12 @@
 | Claude Cowork gets a built-in browser: nothing to install | Claude by Anthropic | [文章](articles/cowork-built-in-browser.md) / [原文](https://claude.com/blog/cowork-built-in-browser) |
 | How an Anthropic field marketer uses Claude Code to send weekly personalized updates to every sales rep | Claude by Anthropic | [文章](articles/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep.md) / [原文](https://claude.com/blog/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep) |
 | How Anthropic employees use Claude Tag | Claude by Anthropic | [文章](articles/how-anthropic-employees-use-claude-tag.md) / [原文](https://claude.com/blog/how-anthropic-employees-use-claude-tag) |
-| How monday.com transformed its platform into an agent-first product where humans and agents collaborate | Claude by Anthropic | [文章](articles/how-monday-com-transformed-its-platform-into-an-agent-first-product-where-humans-and-agents-collaborate.md) / [原文](https://claude.com/blog/how-monday-com-transformed-its-platform-into-an-agent-first-product-where-humans-and-agents-collaborate) |
 | How Warp builds self-improving agents on Claude | Claude by Anthropic | [文章](articles/how-warp-builds-self-improving-agents-on-claude.md) / [原文](https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Reducing cost and improving performance with Claude Platform | Claude by Anthropic | [文章](articles/reducing-cost-and-improving-performance-with-claude-platform.md) / [原文](https://claude.com/blog/reducing-cost-and-improving-performance-with-claude-platform) |
+| T. Rowe Price brings more of Claude to its investment process | Claude by Anthropic | [文章](articles/t-rowe-price-brings-more-of-claude-to-its-investment-process.md) / [原文](https://claude.com/blog/t-rowe-price-brings-more-of-claude-to-its-investment-process) |
 | The AI-Native SDLC playbook | Claude by Anthropic | [文章](articles/the-ai-native-sdlc-playbook.md) / [原文](https://claude.com/blog/the-ai-native-sdlc-playbook) |
 | A guide to the anatomy of effective commerce agents | Claude by Anthropic | [文章](articles/the-anatomy-of-effective-commerce-agents.md) / [原文](https://claude.com/blog/the-anatomy-of-effective-commerce-agents) |
+| What 1,000 small business owners taught us about AI | Claude by Anthropic | [文章](articles/what-1-000-small-business-owners-taught-us-about-ai.md) / [原文](https://claude.com/blog/what-1-000-small-business-owners-taught-us-about-ai) |
 
