@@ -1,17 +1,18 @@
 # Claude Blog Archive
 
-> 最後更新：2026-09-15 05:46 UTC
-> 共 23 篇文章，本次新增 4 篇
+> 最後更新：2026-09-16 05:36 UTC
+> 共 24 篇文章，本次新增 3 篇
 
 | 文章 | 連結 |
 |------|------|
 | Agentic coding is straining CI. Here’s how we scaled test impact analysis at Anthropic | Claude by Anthropic | [文章](articles/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic.md) / [原文](https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
-| Bain &amp; Company joins the Claude Partner Network as a Global Premier partner | Claude by Anthropic | [文章](articles/bain-company-joins-the-claude-partner-network-as-a-global-premier-partner.md) / [原文](https://claude.com/blog/bain-company-joins-the-claude-partner-network-as-a-global-premier-partner) |
+| Building an AI-native revenue organization | Claude by Anthropic | [文章](articles/building-an-ai-native-revenue-organization.md) / [原文](https://claude.com/blog/building-an-ai-native-revenue-organization) |
 | Redesigning Claude Code on desktop for parallel agents | [文章](articles/claude-code-desktop-redesign.md) / [原文](https://claude.com/blog/claude-code-desktop-redesign) |
 | Building Commerce Agents with Claude | Claude by Anthropic | [文章](articles/claude-for-commerce-agents.md) / [原文](https://claude.com/blog/claude-for-commerce-agents) |
 | Claude for Financial Advisors | Claude by Anthropic | [文章](articles/claude-for-financial-advisors.md) / [原文](https://claude.com/blog/claude-for-financial-advisors) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
+| Claude for Small Business launches new workflows, integrations, and training programs | Claude by Anthropic | [文章](articles/claude-for-small-business-launches-new-workflows-integrations-and-training-programs.md) / [原文](https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs) |
 | Claude for Teachers, now available for U.S. K-12 schools and districts | Claude by Anthropic | [文章](articles/claude-for-teachers-now-available-for-schools-and-districts.md) / [原文](https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts) |
 | Claude in Chrome is generally available | Claude by Anthropic | [文章](articles/claude-in-chrome-generally-available.md) / [原文](https://claude.com/blog/claude-in-chrome-generally-available) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
@@ -23,8 +24,8 @@
 | How healthcare organizations use Claude Tag | Claude by Anthropic | [文章](articles/how-healthcare-organizations-use-claude-tag.md) / [原文](https://claude.com/blog/how-healthcare-organizations-use-claude-tag) |
 | How Warp builds self-improving agents on Claude | Claude by Anthropic | [文章](articles/how-warp-builds-self-improving-agents-on-claude.md) / [原文](https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
-| Preparing your security program for AI-accelerated offense | [文章](articles/preparing-your-security-program-for-ai-accelerated-offense.md) / [原文](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense) |
 | Reducing cost and improving performance with Claude Platform | Claude by Anthropic | [文章](articles/reducing-cost-and-improving-performance-with-claude-platform.md) / [原文](https://claude.com/blog/reducing-cost-and-improving-performance-with-claude-platform) |
+| Salesforce in Claude | Claude by Anthropic | [文章](articles/salesforce-in-claude.md) / [原文](https://claude.com/blog/salesforce-in-claude) |
 | T. Rowe Price brings more of Claude to its investment process | Claude by Anthropic | [文章](articles/t-rowe-price-brings-more-of-claude-to-its-investment-process.md) / [原文](https://claude.com/blog/t-rowe-price-brings-more-of-claude-to-its-investment-process) |
 | A guide to the anatomy of effective commerce agents | Claude by Anthropic | [文章](articles/the-anatomy-of-effective-commerce-agents.md) / [原文](https://claude.com/blog/the-anatomy-of-effective-commerce-agents) |
 | What 1,000 small business owners taught us about AI | Claude by Anthropic | [文章](articles/what-1-000-small-business-owners-taught-us-about-ai.md) / [原文](https://claude.com/blog/what-1-000-small-business-owners-taught-us-about-ai) |
