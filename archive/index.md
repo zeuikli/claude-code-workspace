@@ -1,14 +1,13 @@
 # Claude Blog Archive
 
-> 最後更新：2026-09-22 05:49 UTC
-> 共 23 篇文章，本次新增 0 篇
+> 最後更新：2026-09-23 05:28 UTC
+> 共 23 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
 | Agentic coding is straining CI. Here’s how we scaled test impact analysis at Anthropic | Claude by Anthropic | [文章](articles/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic.md) / [原文](https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
 | Building an AI-native revenue organization | Claude by Anthropic | [文章](articles/building-an-ai-native-revenue-organization.md) / [原文](https://claude.com/blog/building-an-ai-native-revenue-organization) |
-| Building Commerce Agents with Claude | Claude by Anthropic | [文章](articles/claude-for-commerce-agents.md) / [原文](https://claude.com/blog/claude-for-commerce-agents) |
 | Claude for Financial Advisors | Claude by Anthropic | [文章](articles/claude-for-financial-advisors.md) / [原文](https://claude.com/blog/claude-for-financial-advisors) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
 | Claude for Small Business launches new workflows, integrations, and training programs | Claude by Anthropic | [文章](articles/claude-for-small-business-launches-new-workflows-integrations-and-training-programs.md) / [原文](https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs) |
@@ -27,5 +26,6 @@
 | T. Rowe Price brings more of Claude to its investment process | Claude by Anthropic | [文章](articles/t-rowe-price-brings-more-of-claude-to-its-investment-process.md) / [原文](https://claude.com/blog/t-rowe-price-brings-more-of-claude-to-its-investment-process) |
 | A guide to the anatomy of effective commerce agents | Claude by Anthropic | [文章](articles/the-anatomy-of-effective-commerce-agents.md) / [原文](https://claude.com/blog/the-anatomy-of-effective-commerce-agents) |
 | What 1,000 small business owners taught us about AI | Claude by Anthropic | [文章](articles/what-1-000-small-business-owners-taught-us-about-ai.md) / [原文](https://claude.com/blog/what-1-000-small-business-owners-taught-us-about-ai) |
+| What a task costs on Opus 5.5 | Claude by Anthropic | [文章](articles/what-a-task-costs-on-opus-5-5.md) / [原文](https://claude.com/blog/what-a-task-costs-on-opus-5-5) |
 | Working at the frontier: How Balyasny Asset Management evaluates and governs Claude Fable 5 | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5) |
 
