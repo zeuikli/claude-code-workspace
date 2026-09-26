@@ -1,12 +1,13 @@
 # Claude Blog Archive
 
-> 最後更新：2026-09-25 05:45 UTC
-> 共 23 篇文章，本次新增 2 篇
+> 最後更新：2026-09-26 05:49 UTC
+> 共 23 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
 | Agentic coding is straining CI. Here’s how we scaled test impact analysis at Anthropic | Claude by Anthropic | [文章](articles/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic.md) / [原文](https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
+| Build plugins for Claude with the directory submission portal | Claude by Anthropic | [文章](articles/build-plugins-for-claude.md) / [原文](https://claude.com/blog/build-plugins-for-claude) |
 | Building an AI-native revenue organization | Claude by Anthropic | [文章](articles/building-an-ai-native-revenue-organization.md) / [原文](https://claude.com/blog/building-an-ai-native-revenue-organization) |
 | Claude for Financial Advisors | Claude by Anthropic | [文章](articles/claude-for-financial-advisors.md) / [原文](https://claude.com/blog/claude-for-financial-advisors) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
@@ -26,6 +27,5 @@
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Projects redesigned: from folder to conversation | Claude by Anthropic | [文章](articles/projects-redesigned.md) / [原文](https://claude.com/blog/projects-redesigned) |
 | Salesforce in Claude | Claude by Anthropic | [文章](articles/salesforce-in-claude.md) / [原文](https://claude.com/blog/salesforce-in-claude) |
-| What a task costs on Opus 5.5 | Claude by Anthropic | [文章](articles/what-a-task-costs-on-opus-5-5.md) / [原文](https://claude.com/blog/what-a-task-costs-on-opus-5-5) |
 | Working at the frontier: How Balyasny Asset Management evaluates and governs Claude Fable 5 | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5) |
 
