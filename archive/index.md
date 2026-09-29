@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-09-28 06:17 UTC
-> 共 23 篇文章，本次新增 0 篇
+> 最後更新：2026-09-29 06:33 UTC
+> 共 23 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -21,8 +21,8 @@
 | New connectors in Claude for everyday life | [文章](articles/connectors-for-everyday-life.md) / [原文](https://claude.com/blog/connectors-for-everyday-life) |
 | Claude Cowork gets a built-in browser: nothing to install | Claude by Anthropic | [文章](articles/cowork-built-in-browser.md) / [原文](https://claude.com/blog/cowork-built-in-browser) |
 | Claude Cowork and chat are now one Claude | Claude by Anthropic | [文章](articles/cowork-is-now-claude.md) / [原文](https://claude.com/blog/cowork-is-now-claude) |
+| Giving companies more control over their AI agents, with NVIDIA | Claude by Anthropic | [文章](articles/giving-companies-more-control-over-their-ai-agents-with-nvidia.md) / [原文](https://claude.com/blog/giving-companies-more-control-over-their-ai-agents-with-nvidia) |
 | CodeRabbit, Power Digital, ThoughtSpot on Claude Marketplace | Claude by Anthropic | [文章](articles/how-coderabbit-power-digital-and-thoughtspot-scale-with-snowflake-and-vercel-on-claude-marketplace.md) / [原文](https://claude.com/blog/how-coderabbit-power-digital-and-thoughtspot-scale-with-snowflake-and-vercel-on-claude-marketplace) |
-| How healthcare organizations use Claude Tag | Claude by Anthropic | [文章](articles/how-healthcare-organizations-use-claude-tag.md) / [原文](https://claude.com/blog/how-healthcare-organizations-use-claude-tag) |
 | How to prepare for AI-driven code modernization projects  | Claude by Anthropic | [文章](articles/how-to-prepare-for-ai-driven-code-modernization-projects.md) / [原文](https://claude.com/blog/how-to-prepare-for-ai-driven-code-modernization-projects) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Projects redesigned: from folder to conversation | Claude by Anthropic | [文章](articles/projects-redesigned.md) / [原文](https://claude.com/blog/projects-redesigned) |
