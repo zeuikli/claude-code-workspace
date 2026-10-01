@@ -1,16 +1,16 @@
 # Claude Blog Archive
 
-> 最後更新：2026-09-30 06:16 UTC
-> 共 23 篇文章，本次新增 1 篇
+> 最後更新：2026-10-01 06:48 UTC
+> 共 24 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
-| Agentic coding is straining CI. Here’s how we scaled test impact analysis at Anthropic | Claude by Anthropic | [文章](articles/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic.md) / [原文](https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic) |
 | Agents you can coach: how Asana builds human-agent teams with Claude | Claude by Anthropic | [文章](articles/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude.md) / [原文](https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
 | Build plugins for Claude with the directory submission portal | Claude by Anthropic | [文章](articles/build-plugins-for-claude.md) / [原文](https://claude.com/blog/build-plugins-for-claude) |
 | Building an AI-native revenue organization | Claude by Anthropic | [文章](articles/building-an-ai-native-revenue-organization.md) / [原文](https://claude.com/blog/building-an-ai-native-revenue-organization) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
+| Claude for Government is now generally available | Claude by Anthropic | [文章](articles/claude-for-government-is-now-generally-available.md) / [原文](https://claude.com/blog/claude-for-government-is-now-generally-available) |
 | Claude for Small Business launches new workflows, integrations, and training programs | Claude by Anthropic | [文章](articles/claude-for-small-business-launches-new-workflows-integrations-and-training-programs.md) / [原文](https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs) |
 | Claude in Chrome is generally available | Claude by Anthropic | [文章](articles/claude-in-chrome-generally-available.md) / [原文](https://claude.com/blog/claude-in-chrome-generally-available) |
 | Built-in memory for Claude Managed Agents | [文章](articles/claude-managed-agents-memory.md) / [原文](https://claude.com/blog/claude-managed-agents-memory) |
@@ -22,6 +22,7 @@
 | Claude Cowork gets a built-in browser: nothing to install | Claude by Anthropic | [文章](articles/cowork-built-in-browser.md) / [原文](https://claude.com/blog/cowork-built-in-browser) |
 | Claude Cowork and chat are now one Claude | Claude by Anthropic | [文章](articles/cowork-is-now-claude.md) / [原文](https://claude.com/blog/cowork-is-now-claude) |
 | Giving companies more control over their AI agents, with NVIDIA | Claude by Anthropic | [文章](articles/giving-companies-more-control-over-their-ai-agents-with-nvidia.md) / [原文](https://claude.com/blog/giving-companies-more-control-over-their-ai-agents-with-nvidia) |
+| How Anthropic&#x27;s sales team rebuilt inbound with Claude Managed Agents | Claude by Anthropic | [文章](articles/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents.md) / [原文](https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents) |
 | CodeRabbit, Power Digital, ThoughtSpot on Claude Marketplace | Claude by Anthropic | [文章](articles/how-coderabbit-power-digital-and-thoughtspot-scale-with-snowflake-and-vercel-on-claude-marketplace.md) / [原文](https://claude.com/blog/how-coderabbit-power-digital-and-thoughtspot-scale-with-snowflake-and-vercel-on-claude-marketplace) |
 | How to prepare for AI-driven code modernization projects  | Claude by Anthropic | [文章](articles/how-to-prepare-for-ai-driven-code-modernization-projects.md) / [原文](https://claude.com/blog/how-to-prepare-for-ai-driven-code-modernization-projects) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
