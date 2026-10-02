@@ -1,14 +1,14 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-01 06:48 UTC
-> 共 24 篇文章，本次新增 2 篇
+> 最後更新：2026-10-02 06:39 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
 | Agents you can coach: how Asana builds human-agent teams with Claude | Claude by Anthropic | [文章](articles/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude.md) / [原文](https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude) |
 | Claude Code now supports artifacts | [文章](articles/artifacts-in-claude-code.md) / [原文](https://claude.com/blog/artifacts-in-claude-code) |
 | Build plugins for Claude with the directory submission portal | Claude by Anthropic | [文章](articles/build-plugins-for-claude.md) / [原文](https://claude.com/blog/build-plugins-for-claude) |
-| Building an AI-native revenue organization | Claude by Anthropic | [文章](articles/building-an-ai-native-revenue-organization.md) / [原文](https://claude.com/blog/building-an-ai-native-revenue-organization) |
+| Customize Claude Code with mods in TypeScript | Claude by Anthropic | [文章](articles/claude-code-mods.md) / [原文](https://claude.com/blog/claude-code-mods) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/blog/claude-for-foundation-models) |
 | Claude for Government is now generally available | Claude by Anthropic | [文章](articles/claude-for-government-is-now-generally-available.md) / [原文](https://claude.com/blog/claude-for-government-is-now-generally-available) |
 | Claude for Small Business launches new workflows, integrations, and training programs | Claude by Anthropic | [文章](articles/claude-for-small-business-launches-new-workflows-integrations-and-training-programs.md) / [原文](https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs) |
