@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-05 06:31 UTC
-> 共 24 篇文章，本次新增 0 篇
+> 最後更新：2026-10-06 07:09 UTC
+> 共 24 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -24,9 +24,9 @@
 | Giving companies more control over their AI agents, with NVIDIA | Claude by Anthropic | [文章](articles/giving-companies-more-control-over-their-ai-agents-with-nvidia.md) / [原文](https://claude.com/blog/giving-companies-more-control-over-their-ai-agents-with-nvidia) |
 | How Anthropic&#x27;s sales team rebuilt inbound with Claude Managed Agents | Claude by Anthropic | [文章](articles/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents.md) / [原文](https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents) |
 | CodeRabbit, Power Digital, ThoughtSpot on Claude Marketplace | Claude by Anthropic | [文章](articles/how-coderabbit-power-digital-and-thoughtspot-scale-with-snowflake-and-vercel-on-claude-marketplace.md) / [原文](https://claude.com/blog/how-coderabbit-power-digital-and-thoughtspot-scale-with-snowflake-and-vercel-on-claude-marketplace) |
+| How Cresta turned CX expertise into an agent builder on the Claude Agent SDK | Claude by Anthropic | [文章](articles/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk.md) / [原文](https://claude.com/blog/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk) |
 | How to prepare for AI-driven code modernization projects  | Claude by Anthropic | [文章](articles/how-to-prepare-for-ai-driven-code-modernization-projects.md) / [原文](https://claude.com/blog/how-to-prepare-for-ai-driven-code-modernization-projects) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/blog/new-in-claude-managed-agents) |
 | Projects redesigned: from folder to conversation | Claude by Anthropic | [文章](articles/projects-redesigned.md) / [原文](https://claude.com/blog/projects-redesigned) |
-| Salesforce in Claude | Claude by Anthropic | [文章](articles/salesforce-in-claude.md) / [原文](https://claude.com/blog/salesforce-in-claude) |
 | Working at the frontier: How Balyasny Asset Management evaluates and governs Claude Fable 5 | Claude by Anthropic | [文章](articles/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5.md) / [原文](https://claude.com/blog/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5) |
 
