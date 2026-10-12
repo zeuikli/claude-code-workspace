@@ -6,7 +6,8 @@ set -e
 # 抓取 https://claude.com/blog 的所有文章並以 Markdown 格式歸檔
 # ============================================
 
-BLOG_URL="https://claude.com/blog"
+BLOG_URL="https://claude.com/resources/articles"
+LINK_PREFIX="/resources/articles/"
 ARCHIVE_DIR="$(cd "$(dirname "$0")/.." && pwd)/archive"
 INDEX_FILE="$ARCHIVE_DIR/index.md"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M UTC')
@@ -78,8 +79,8 @@ if [ -z "$BLOG_HTML" ]; then
   exit 1
 fi
 
-# 提取所有 /blog/xxx 連結（去重，排除 blog 根路徑）
-LINKS=$(echo "$BLOG_HTML" | grep -oP 'href="/blog/[^"#?]+' | sed 's/href="//' | grep -v '^/blog/$' | sort -u)
+# 提取所有文章連結（2026-10 起 /blog 改為 /resources/articles；舊 /blog/ 一併相容並正規化）
+LINKS=$(echo "$BLOG_HTML" | grep -oP 'href="(https://claude\.com)?/(blog|resources/articles)/[^"#?/]+' | sed -E 's#^href="(https://claude\.com)?/(blog|resources/articles)/#/resources/articles/#' | sort -u)
 
 if [ -z "$LINKS" ]; then
   echo "[fetch-blog] ERROR: No article links found"
@@ -95,7 +96,7 @@ NEW_COUNT=0
 
 for LINK in $LINKS; do
   COUNT=$((COUNT + 1))
-  SLUG="${LINK#/blog/}"
+  SLUG="${LINK#$LINK_PREFIX}"
   ARTICLE_FILE="$ARCHIVE_DIR/articles/${SLUG}.md"
 
   if [ -f "$ARTICLE_FILE" ]; then
@@ -157,24 +158,24 @@ done
 # --- 3. 更新索引檔 ---
 echo "[fetch-blog] Updating index..."
 
+ARCHIVED=$(ls "$ARCHIVE_DIR/articles"/*.md | wc -l)
+
 cat > "$INDEX_FILE" << EOINDEX
 # Claude Blog Archive
 
 > 最後更新：${TIMESTAMP}
-> 共 ${TOTAL} 篇文章，本次新增 ${NEW_COUNT} 篇
+> 共 ${ARCHIVED} 篇文章，本次新增 ${NEW_COUNT} 篇
 
 | 文章 | 連結 |
 |------|------|
 EOINDEX
 
-for LINK in $LINKS; do
-  SLUG="${LINK#/blog/}"
-  ARTICLE_FILE="$ARCHIVE_DIR/articles/${SLUG}.md"
-  if [ -f "$ARTICLE_FILE" ]; then
-    TITLE=$(head -5 "$ARTICLE_FILE" | grep '^title:' | sed 's/title: "//;s/"$//')
-    [ -z "$TITLE" ] && TITLE="$SLUG"
-    echo "| ${TITLE} | [文章](articles/${SLUG}.md) / [原文](https://claude.com${LINK}) |" >> "$INDEX_FILE"
-  fi
+# 索引涵蓋所有已歸檔文章（列表頁僅顯示近期文章，不能以當次連結為準）
+for ARTICLE_FILE in "$ARCHIVE_DIR/articles"/*.md; do
+  SLUG=$(basename "$ARTICLE_FILE" .md)
+  TITLE=$(head -5 "$ARTICLE_FILE" | grep '^title:' | sed 's/title: "//;s/"$//')
+  [ -z "$TITLE" ] && TITLE="$SLUG"
+  echo "| ${TITLE} | [文章](articles/${SLUG}.md) / [原文](https://claude.com${LINK_PREFIX}${SLUG}) |" >> "$INDEX_FILE"
 done
 
 echo "" >> "$INDEX_FILE"
