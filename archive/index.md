@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-13 07:19 UTC
-> 共 176 篇文章，本次新增 0 篇
+> 最後更新：2026-10-14 05:46 UTC
+> 共 177 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -164,6 +164,7 @@
 | The new rules of context engineering for Claude 5 generation models  | Claude by Anthropic | [文章](articles/the-new-rules-of-context-engineering-for-claude-5-generation-models.md) / [原文](https://claude.com/resources/articles/the-new-rules-of-context-engineering-for-claude-5-generation-models) |
 | Think through hard problems in voice mode | Claude by Anthropic | [文章](articles/think-through-hard-problems-in-voice-mode.md) / [原文](https://claude.com/resources/articles/think-through-hard-problems-in-voice-mode) |
 | Turning conversation into knowledge: how Slack builds human-agent teams | Claude by Anthropic | [文章](articles/turning-conversation-into-knowledge-how-slack-builds-human-agent-teams.md) / [原文](https://claude.com/resources/articles/turning-conversation-into-knowledge-how-slack-builds-human-agent-teams) |
+| Uber&#x27;s CISO on building an insider threat program for AI | [文章](articles/uber-s-ciso-on-building-an-insider-threat-program-for-ai.md) / [原文](https://claude.com/resources/articles/uber-s-ciso-on-building-an-insider-threat-program-for-ai) |
 | Using Claude Code: session management and 1M context | [文章](articles/using-claude-code-session-management-and-1m-context.md) / [原文](https://claude.com/resources/articles/using-claude-code-session-management-and-1m-context) |
 | Using Claude Code: The unreasonable effectiveness of HTML | [文章](articles/using-claude-code-the-unreasonable-effectiveness-of-html.md) / [原文](https://claude.com/resources/articles/using-claude-code-the-unreasonable-effectiveness-of-html) |
 | Using LLMs to secure source code | [文章](articles/using-llms-to-secure-source-code.md) / [原文](https://claude.com/resources/articles/using-llms-to-secure-source-code) |
