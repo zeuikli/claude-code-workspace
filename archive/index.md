@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-14 05:46 UTC
-> 共 177 篇文章，本次新增 1 篇
+> 最後更新：2026-10-15 05:31 UTC
+> 共 178 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -10,6 +10,7 @@
 | A guide to cost visibility and control in Claude | Claude by Anthropic | [文章](articles/a-guide-to-cost-visibility-and-control-in-claude.md) / [原文](https://claude.com/resources/articles/a-guide-to-cost-visibility-and-control-in-claude) |
 | A harness for every task: dynamic workflows in Claude Code  | [文章](articles/a-harness-for-every-task-dynamic-workflows-in-claude-code.md) / [原文](https://claude.com/resources/articles/a-harness-for-every-task-dynamic-workflows-in-claude-code) |
 | Agent identity: a new access model for autonomous, team-wide AI | [文章](articles/agent-identity-access-model.md) / [原文](https://claude.com/resources/articles/agent-identity-access-model) |
+| Trace agents with OpenTelemetry on the Claude Platform | [文章](articles/agent-observability-on-the-claude-platform.md) / [原文](https://claude.com/resources/articles/agent-observability-on-the-claude-platform) |
 | Agent view in Claude Code | [文章](articles/agent-view-in-claude-code.md) / [原文](https://claude.com/resources/articles/agent-view-in-claude-code) |
 | Agentic coding is straining CI. Here’s how we scaled test impact analysis at Anthropic | Claude by Anthropic | [文章](articles/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic.md) / [原文](https://claude.com/resources/articles/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic) |
 | Agents you can coach: how Asana builds human-agent teams with Claude | Claude by Anthropic | [文章](articles/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude.md) / [原文](https://claude.com/resources/articles/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude) |
