@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-15 05:31 UTC
-> 共 178 篇文章，本次新增 1 篇
+> 最後更新：2026-10-16 05:24 UTC
+> 共 179 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -71,6 +71,7 @@
 | Claude Tag now reads even more of the room | Claude by Anthropic | [文章](articles/claude-tag-now-reads-even-more-of-the-room.md) / [原文](https://claude.com/resources/articles/claude-tag-now-reads-even-more-of-the-room) |
 | Claude Tag now supports personal connectors in channels | Claude by Anthropic | [文章](articles/claude-tag-now-supports-personal-connectors-in-channels.md) / [原文](https://claude.com/resources/articles/claude-tag-now-supports-personal-connectors-in-channels) |
 | Claude&#x27;s memory works everywhere, and you decide what&#x27;s in it | Claude by Anthropic | [文章](articles/claudes-memory-works-everywhere-and-you-decide-whats-in-it.md) / [原文](https://claude.com/resources/articles/claudes-memory-works-everywhere-and-you-decide-whats-in-it) |
+| Code Review is now generally available | [文章](articles/code-review-is-now-generally-available.md) / [原文](https://claude.com/resources/articles/code-review-is-now-generally-available) |
 | Code w/ Claude London 2026: Rethinking how we build | [文章](articles/code-w-claude-london-2026-rethinking-how-we-build.md) / [原文](https://claude.com/resources/articles/code-w-claude-london-2026-rethinking-how-we-build) |
 | Code w/ Claude SF 2026: Building on the AI exponential  | [文章](articles/code-w-claude-sf-2026-sf.md) / [原文](https://claude.com/resources/articles/code-w-claude-sf-2026-sf) |
 | Code with Claude comes to San Francisco, London, and Tokyo | [文章](articles/code-with-claude-san-francisco-london-tokyo.md) / [原文](https://claude.com/resources/articles/code-with-claude-san-francisco-london-tokyo) |
