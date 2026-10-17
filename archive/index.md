@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-16 05:24 UTC
-> 共 179 篇文章，本次新增 1 篇
+> 最後更新：2026-10-17 05:17 UTC
+> 共 180 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -99,6 +99,7 @@
 | How a non-technical project manager built and shipped a stress management app with Claude Code in six weeks | [文章](articles/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks.md) / [原文](https://claude.com/resources/articles/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks) |
 | How ABC Legal turned every employee into a builder with Claude Managed Agents | Claude by Anthropic | [文章](articles/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents.md) / [原文](https://claude.com/resources/articles/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents) |
 | How an Anthropic field marketer uses Claude Code to send weekly personalized updates to every sales rep | Claude by Anthropic | [文章](articles/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep.md) / [原文](https://claude.com/resources/articles/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep) |
+| How an Anthropic Japan BDR runs his day with a fleet of Claude agents | [文章](articles/how-an-anthropic-japan-business-development-representative-runs-his-day.md) / [原文](https://claude.com/resources/articles/how-an-anthropic-japan-business-development-representative-runs-his-day) |
 | How an Anthropic sales leader uses Claude Cowork to run a 4,000-account book | [文章](articles/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book.md) / [原文](https://claude.com/resources/articles/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book) |
 | How Anthropic employees use Claude Tag | Claude by Anthropic | [文章](articles/how-anthropic-employees-use-claude-tag.md) / [原文](https://claude.com/resources/articles/how-anthropic-employees-use-claude-tag) |
 | How Anthropic enables self-service data analytics with Claude | [文章](articles/how-anthropic-enables-self-service-data-analytics-with-claude.md) / [原文](https://claude.com/resources/articles/how-anthropic-enables-self-service-data-analytics-with-claude) |
