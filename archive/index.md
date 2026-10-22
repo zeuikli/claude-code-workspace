@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-21 05:41 UTC
-> 共 180 篇文章，本次新增 0 篇
+> 最後更新：2026-10-22 05:44 UTC
+> 共 183 篇文章，本次新增 3 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -46,6 +46,7 @@
 | Customize Claude Code with mods in TypeScript | Claude by Anthropic | [文章](articles/claude-code-mods.md) / [原文](https://claude.com/resources/articles/claude-code-mods) |
 | Claude Code on the web | [文章](articles/claude-code-on-the-web.md) / [原文](https://claude.com/resources/articles/claude-code-on-the-web) |
 | Claude Design now stays on brand for daily work | [文章](articles/claude-design-stays-on-brand-for-daily-work.md) / [原文](https://claude.com/resources/articles/claude-design-stays-on-brand-for-daily-work) |
+| Introducing Claude Duet | [文章](articles/claude-duet.md) / [原文](https://claude.com/resources/articles/claude-duet) |
 | Inference hooks: inline data loss prevention for Claude Enterprise | Claude by Anthropic | [文章](articles/claude-enterprise-inference-hooks.md) / [原文](https://claude.com/resources/articles/claude-enterprise-inference-hooks) |
 | Piloting Claude in Chrome | [文章](articles/claude-for-chrome.md) / [原文](https://claude.com/resources/articles/claude-for-chrome) |
 | Building Commerce Agents with Claude | Claude by Anthropic | [文章](articles/claude-for-commerce-agents.md) / [原文](https://claude.com/resources/articles/claude-for-commerce-agents) |
@@ -67,6 +68,7 @@
 | Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind. | Claude by Anthropic | [文章](articles/claude-opus-5-5-built-for-coding-sessions-that-use-more-context.md) / [原文](https://claude.com/resources/articles/claude-opus-5-5-built-for-coding-sessions-that-use-more-context) |
 | Audit Claude Platform activity with the Compliance API | [文章](articles/claude-platform-compliance-api.md) / [原文](https://claude.com/resources/articles/claude-platform-compliance-api) |
 | Introducing the Claude Platform on AWS | [文章](articles/claude-platform-on-aws.md) / [原文](https://claude.com/resources/articles/claude-platform-on-aws) |
+| Claude Security now scans continuously and tracks fixes | [文章](articles/claude-security-now-scans-continuously-and-tracks-fixes.md) / [原文](https://claude.com/resources/articles/claude-security-now-scans-continuously-and-tracks-fixes) |
 | Claude Security is now in public beta | [文章](articles/claude-security-public-beta.md) / [原文](https://claude.com/resources/articles/claude-security-public-beta) |
 | Claude Tag now reads even more of the room | Claude by Anthropic | [文章](articles/claude-tag-now-reads-even-more-of-the-room.md) / [原文](https://claude.com/resources/articles/claude-tag-now-reads-even-more-of-the-room) |
 | Claude Tag now supports personal connectors in channels | Claude by Anthropic | [文章](articles/claude-tag-now-supports-personal-connectors-in-channels.md) / [原文](https://claude.com/resources/articles/claude-tag-now-supports-personal-connectors-in-channels) |
@@ -96,6 +98,7 @@
 | New analytics and cost controls are available for Claude Enterprise | Claude by Anthropic | [文章](articles/giving-admins-more-visibility-and-control-over-claude-usage-and-spend.md) / [原文](https://claude.com/resources/articles/giving-admins-more-visibility-and-control-over-claude-usage-and-spend) |
 | Giving companies more control over their AI agents, with NVIDIA | Claude by Anthropic | [文章](articles/giving-companies-more-control-over-their-ai-agents-with-nvidia.md) / [原文](https://claude.com/resources/articles/giving-companies-more-control-over-their-ai-agents-with-nvidia) |
 | Harnessing Claude&#x27;s Intelligence | 3 Key Patterns for Building Apps | [文章](articles/harnessing-claudes-intelligence.md) / [原文](https://claude.com/resources/articles/harnessing-claudes-intelligence) |
+| HCLTech becomes a Global Premier Partner for Claude | [文章](articles/hcltech-joins-claude-partner-network.md) / [原文](https://claude.com/resources/articles/hcltech-joins-claude-partner-network) |
 | How a non-technical project manager built and shipped a stress management app with Claude Code in six weeks | [文章](articles/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks.md) / [原文](https://claude.com/resources/articles/how-a-non-technical-project-manager-built-and-shipped-a-stress-management-app-with-claude-code-in-six-weeks) |
 | How ABC Legal turned every employee into a builder with Claude Managed Agents | Claude by Anthropic | [文章](articles/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents.md) / [原文](https://claude.com/resources/articles/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents) |
 | How an Anthropic field marketer uses Claude Code to send weekly personalized updates to every sales rep | Claude by Anthropic | [文章](articles/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep.md) / [原文](https://claude.com/resources/articles/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep) |
