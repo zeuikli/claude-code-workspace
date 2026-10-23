@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-22 05:44 UTC
-> 共 183 篇文章，本次新增 3 篇
+> 最後更新：2026-10-23 05:42 UTC
+> 共 185 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -30,6 +30,7 @@
 | MCP 2026-07-28 spec: stateless core, coming to Claude | Claude by Anthropic | [文章](articles/bringing-mcp-2026-07-28-to-claude.md) / [原文](https://claude.com/resources/articles/bringing-mcp-2026-07-28-to-claude) |
 | Build plugins for Claude with the directory submission portal | Claude by Anthropic | [文章](articles/build-plugins-for-claude.md) / [原文](https://claude.com/resources/articles/build-plugins-for-claude) |
 | Building agents that reach production systems with MCP | [文章](articles/building-agents-that-reach-production-systems-with-mcp.md) / [原文](https://claude.com/resources/articles/building-agents-that-reach-production-systems-with-mcp) |
+| Building agents: When to fold subagents into your main agent loop  | [文章](articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop.md) / [原文](https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop) |
 | Building AI agents for the enterprise | [文章](articles/building-ai-agents-for-the-enterprise.md) / [原文](https://claude.com/resources/articles/building-ai-agents-for-the-enterprise) |
 | Building AI agents for financial services | [文章](articles/building-ai-agents-in-financial-services.md) / [原文](https://claude.com/resources/articles/building-ai-agents-in-financial-services) |
 | Building an AI-native revenue organization | Claude by Anthropic | [文章](articles/building-an-ai-native-revenue-organization.md) / [原文](https://claude.com/resources/articles/building-an-ai-native-revenue-organization) |
@@ -64,6 +65,7 @@
 | Claude Marketplace: plugins and connectors, products and agents, and service partners | Claude by Anthropic | [文章](articles/claude-marketplace.md) / [原文](https://claude.com/resources/articles/claude-marketplace) |
 | Choosing a Claude model and effort level in Claude Code | Claude by Anthropic | [文章](articles/claude-model-and-effort-level-in-claude-code.md) / [原文](https://claude.com/resources/articles/claude-model-and-effort-level-in-claude-code) |
 | Claude models explained: choosing the best model for your use case | Claude by Anthropic | [文章](articles/claude-models-explained-choosing-the-best-model-for-your-use-case.md) / [原文](https://claude.com/resources/articles/claude-models-explained-choosing-the-best-model-for-your-use-case) |
+| Claude Platform is now available on Google Cloud | [文章](articles/claude-models-on-google-cloud-anthropic-managed.md) / [原文](https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed) |
 | Claude now works with Google Docs, Sheets, and Slides | [文章](articles/claude-now-works-in-google-docs-sheets-and-slides.md) / [原文](https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides) |
 | Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind. | Claude by Anthropic | [文章](articles/claude-opus-5-5-built-for-coding-sessions-that-use-more-context.md) / [原文](https://claude.com/resources/articles/claude-opus-5-5-built-for-coding-sessions-that-use-more-context) |
 | Audit Claude Platform activity with the Compliance API | [文章](articles/claude-platform-compliance-api.md) / [原文](https://claude.com/resources/articles/claude-platform-compliance-api) |
