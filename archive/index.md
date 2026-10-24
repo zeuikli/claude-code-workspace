@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-23 05:42 UTC
-> 共 185 篇文章，本次新增 2 篇
+> 最後更新：2026-10-24 05:21 UTC
+> 共 187 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -47,6 +47,7 @@
 | Customize Claude Code with mods in TypeScript | Claude by Anthropic | [文章](articles/claude-code-mods.md) / [原文](https://claude.com/resources/articles/claude-code-mods) |
 | Claude Code on the web | [文章](articles/claude-code-on-the-web.md) / [原文](https://claude.com/resources/articles/claude-code-on-the-web) |
 | Claude Design now stays on brand for daily work | [文章](articles/claude-design-stays-on-brand-for-daily-work.md) / [原文](https://claude.com/resources/articles/claude-design-stays-on-brand-for-daily-work) |
+| Claude Duet Safety, Privacy, and Security | [文章](articles/claude-duet-safety-privacy-and-security.md) / [原文](https://claude.com/resources/articles/claude-duet-safety-privacy-and-security) |
 | Introducing Claude Duet | [文章](articles/claude-duet.md) / [原文](https://claude.com/resources/articles/claude-duet) |
 | Inference hooks: inline data loss prevention for Claude Enterprise | Claude by Anthropic | [文章](articles/claude-enterprise-inference-hooks.md) / [原文](https://claude.com/resources/articles/claude-enterprise-inference-hooks) |
 | Piloting Claude in Chrome | [文章](articles/claude-for-chrome.md) / [原文](https://claude.com/resources/articles/claude-for-chrome) |
@@ -173,6 +174,7 @@
 | Think through hard problems in voice mode | Claude by Anthropic | [文章](articles/think-through-hard-problems-in-voice-mode.md) / [原文](https://claude.com/resources/articles/think-through-hard-problems-in-voice-mode) |
 | Turning conversation into knowledge: how Slack builds human-agent teams | Claude by Anthropic | [文章](articles/turning-conversation-into-knowledge-how-slack-builds-human-agent-teams.md) / [原文](https://claude.com/resources/articles/turning-conversation-into-knowledge-how-slack-builds-human-agent-teams) |
 | Uber&#x27;s CISO on building an insider threat program for AI | [文章](articles/uber-s-ciso-on-building-an-insider-threat-program-for-ai.md) / [原文](https://claude.com/resources/articles/uber-s-ciso-on-building-an-insider-threat-program-for-ai) |
+| Claude Cowork and chat come together for Enterprise | [文章](articles/unified-claude-enterprise.md) / [原文](https://claude.com/resources/articles/unified-claude-enterprise) |
 | Using Claude Code: session management and 1M context | [文章](articles/using-claude-code-session-management-and-1m-context.md) / [原文](https://claude.com/resources/articles/using-claude-code-session-management-and-1m-context) |
 | Using Claude Code: The unreasonable effectiveness of HTML | [文章](articles/using-claude-code-the-unreasonable-effectiveness-of-html.md) / [原文](https://claude.com/resources/articles/using-claude-code-the-unreasonable-effectiveness-of-html) |
 | Using LLMs to secure source code | [文章](articles/using-llms-to-secure-source-code.md) / [原文](https://claude.com/resources/articles/using-llms-to-secure-source-code) |
