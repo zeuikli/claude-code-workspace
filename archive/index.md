@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-26 05:45 UTC
-> 共 187 篇文章，本次新增 0 篇
+> 最後更新：2026-10-27 05:57 UTC
+> 共 188 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -96,6 +96,7 @@
 | Deploying Claude across the legal industry | [文章](articles/deploying-claude-across-the-legal-industry.md) / [原文](https://claude.com/resources/articles/deploying-claude-across-the-legal-industry) |
 | Put Claude to work on your computer  | [文章](articles/dispatch-and-computer-use.md) / [原文](https://claude.com/resources/articles/dispatch-and-computer-use) |
 | Centrally manage authorization for MCP connectors  | [文章](articles/enterprise-managed-auth.md) / [原文](https://claude.com/resources/articles/enterprise-managed-auth) |
+| Expanding Claude for Nonprofits | [文章](articles/expanding-claude-for-nonprofits.md) / [原文](https://claude.com/resources/articles/expanding-claude-for-nonprofits) |
 | Four role-based certifications for the people who put Claude to work for customers | Claude by Anthropic | [文章](articles/four-role-based-claude-certifications.md) / [原文](https://claude.com/resources/articles/four-role-based-claude-certifications) |
 | Getting started with loops | Claude by Anthropic | [文章](articles/getting-started-with-loops.md) / [原文](https://claude.com/resources/articles/getting-started-with-loops) |
 | New analytics and cost controls are available for Claude Enterprise | Claude by Anthropic | [文章](articles/giving-admins-more-visibility-and-control-over-claude-usage-and-spend.md) / [原文](https://claude.com/resources/articles/giving-admins-more-visibility-and-control-over-claude-usage-and-spend) |
