@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-27 05:57 UTC
-> 共 188 篇文章，本次新增 1 篇
+> 最後更新：2026-10-28 06:36 UTC
+> 共 189 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -133,6 +133,7 @@
 | How Outtake built a cyber investigator on Claude | Claude by Anthropic | [文章](articles/how-outtake-built-a-cyber-investigator-on-claude.md) / [原文](https://claude.com/resources/articles/how-outtake-built-a-cyber-investigator-on-claude) |
 | How people are using Claude Cowork | Claude by Anthropic | [文章](articles/how-people-are-using-claude-cowork.md) / [原文](https://claude.com/resources/articles/how-people-are-using-claude-cowork) |
 | How the product designer who built Claude Design uses it | Claude by Anthropic | [文章](articles/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them.md) / [原文](https://claude.com/resources/articles/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them) |
+| Manage costs and demonstrate ROI for Claude Code on Google Cloud | [文章](articles/how-to-manage-costs-and-demonstrate-roi-for-claude-code-on-google-cloud.md) / [原文](https://claude.com/resources/articles/how-to-manage-costs-and-demonstrate-roi-for-claude-code-on-google-cloud) |
 | How to prepare for AI-driven code modernization projects  | Claude by Anthropic | [文章](articles/how-to-prepare-for-ai-driven-code-modernization-projects.md) / [原文](https://claude.com/resources/articles/how-to-prepare-for-ai-driven-code-modernization-projects) |
 | How Warp builds self-improving agents on Claude | Claude by Anthropic | [文章](articles/how-warp-builds-self-improving-agents-on-claude.md) / [原文](https://claude.com/resources/articles/how-warp-builds-self-improving-agents-on-claude) |
 | Improving frontend design through Skills | [文章](articles/improving-frontend-design-through-skills.md) / [原文](https://claude.com/resources/articles/improving-frontend-design-through-skills) |
