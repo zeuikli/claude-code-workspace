@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-10-28 06:36 UTC
-> 共 189 篇文章，本次新增 1 篇
+> 最後更新：2026-10-29 06:43 UTC
+> 共 192 篇文章，本次新增 3 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -136,7 +136,9 @@
 | Manage costs and demonstrate ROI for Claude Code on Google Cloud | [文章](articles/how-to-manage-costs-and-demonstrate-roi-for-claude-code-on-google-cloud.md) / [原文](https://claude.com/resources/articles/how-to-manage-costs-and-demonstrate-roi-for-claude-code-on-google-cloud) |
 | How to prepare for AI-driven code modernization projects  | Claude by Anthropic | [文章](articles/how-to-prepare-for-ai-driven-code-modernization-projects.md) / [原文](https://claude.com/resources/articles/how-to-prepare-for-ai-driven-code-modernization-projects) |
 | How Warp builds self-improving agents on Claude | Claude by Anthropic | [文章](articles/how-warp-builds-self-improving-agents-on-claude.md) / [原文](https://claude.com/resources/articles/how-warp-builds-self-improving-agents-on-claude) |
+| IDC brings Quanta into Claude and adopts Claude across the company | [文章](articles/idc-brings-quanta-into-claude-and-adopts-claude-across-the-company.md) / [原文](https://claude.com/resources/articles/idc-brings-quanta-into-claude-and-adopts-claude-across-the-company) |
 | Improving frontend design through Skills | [文章](articles/improving-frontend-design-through-skills.md) / [原文](https://claude.com/resources/articles/improving-frontend-design-through-skills) |
+| Introducing artifacts for legal work with Claude | [文章](articles/introducing-artifacts-for-legal-work.md) / [原文](https://claude.com/resources/articles/introducing-artifacts-for-legal-work) |
 | Introducing dynamic workflows | [文章](articles/introducing-dynamic-workflows-in-claude-code.md) / [原文](https://claude.com/resources/articles/introducing-dynamic-workflows-in-claude-code) |
 | Introducing routines in Claude Code | [文章](articles/introducing-routines-in-claude-code.md) / [原文](https://claude.com/resources/articles/introducing-routines-in-claude-code) |
 | Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud | Claude by Anthropic | [文章](articles/introducing-the-claude-apps-gateway.md) / [原文](https://claude.com/resources/articles/introducing-the-claude-apps-gateway) |
@@ -162,6 +164,7 @@
 | Salesforce in Claude | Claude by Anthropic | [文章](articles/salesforce-in-claude.md) / [原文](https://claude.com/resources/articles/salesforce-in-claude) |
 | Seeing like an agent: how we design tools in Claude Code | [文章](articles/seeing-like-an-agent.md) / [原文](https://claude.com/resources/articles/seeing-like-an-agent) |
 | Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic | [文章](articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions.md) / [原文](https://claude.com/resources/articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions) |
+| Smart reports, surveys, and pooled group budgets for Claude Enterprise | [文章](articles/smart-reports-surveys-pooled-budgets.md) / [原文](https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets) |
 | Steering Claude Code: skills, hooks, subagents and more | [文章](articles/steering-claude-code-skills-hooks-rules-subagents-and-more.md) / [原文](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) |
 | How and when to use subagents in Claude Code | [文章](articles/subagents-in-claude-code.md) / [原文](https://claude.com/resources/articles/subagents-in-claude-code) |
 | T. Rowe Price brings more of Claude to its investment process | Claude by Anthropic | [文章](articles/t-rowe-price-brings-more-of-claude-to-its-investment-process.md) / [原文](https://claude.com/resources/articles/t-rowe-price-brings-more-of-claude-to-its-investment-process) |
