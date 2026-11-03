@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-02 07:10 UTC
-> 共 192 篇文章，本次新增 0 篇
+> 最後更新：2026-11-03 07:31 UTC
+> 共 193 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -148,6 +148,7 @@
 | Meet the winners of the Built with Opus 4.7 Claude Code hackathon | [文章](articles/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon.md) / [原文](https://claude.com/resources/articles/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon) |
 | Meet the winners of our Built with Opus 4.6 Claude Code hackathon  | [文章](articles/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon.md) / [原文](https://claude.com/resources/articles/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon) |
 | Meet the winners of our Claude Opus 4.8 Build Day hackathon | [文章](articles/meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon.md) / [原文](https://claude.com/resources/articles/meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon) |
+| Make long-running agents faster with message threads | [文章](articles/message-threads.md) / [原文](https://claude.com/resources/articles/message-threads) |
 | Millennium and Anthropic are building a digital risk analyst with Claude  | Claude by Anthropic | [文章](articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude.md) / [原文](https://claude.com/resources/articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude) |
 | Multi-agent coordination patterns: Five approaches and when to use them | [文章](articles/multi-agent-coordination-patterns.md) / [原文](https://claude.com/resources/articles/multi-agent-coordination-patterns) |
 | Deploying Claude across the enterprise with Claude Cowork | [文章](articles/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork.md) / [原文](https://claude.com/resources/articles/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork) |
