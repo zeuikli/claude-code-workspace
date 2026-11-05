@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-04 07:12 UTC
-> 共 193 篇文章，本次新增 0 篇
+> 最後更新：2026-11-05 07:40 UTC
+> 共 194 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -151,6 +151,7 @@
 | Make long-running agents faster with message threads | [文章](articles/message-threads.md) / [原文](https://claude.com/resources/articles/message-threads) |
 | Millennium and Anthropic are building a digital risk analyst with Claude  | Claude by Anthropic | [文章](articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude.md) / [原文](https://claude.com/resources/articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude) |
 | Multi-agent coordination patterns: Five approaches and when to use them | [文章](articles/multi-agent-coordination-patterns.md) / [原文](https://claude.com/resources/articles/multi-agent-coordination-patterns) |
+| New agents and products on Claude Marketplace | [文章](articles/new-agents-and-products-claude-marketplace.md) / [原文](https://claude.com/resources/articles/new-agents-and-products-claude-marketplace) |
 | Deploying Claude across the enterprise with Claude Cowork | [文章](articles/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork.md) / [原文](https://claude.com/resources/articles/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork) |
 | New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration | [文章](articles/new-in-claude-managed-agents.md) / [原文](https://claude.com/resources/articles/new-in-claude-managed-agents) |
 | Connector Observability and In-App Directory Submission | [文章](articles/observability-for-developers-building-connectors.md) / [原文](https://claude.com/resources/articles/observability-for-developers-building-connectors) |
