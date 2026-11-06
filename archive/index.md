@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-05 07:40 UTC
-> 共 194 篇文章，本次新增 1 篇
+> 最後更新：2026-11-06 07:38 UTC
+> 共 196 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -50,6 +50,7 @@
 | Claude Duet Safety, Privacy, and Security | [文章](articles/claude-duet-safety-privacy-and-security.md) / [原文](https://claude.com/resources/articles/claude-duet-safety-privacy-and-security) |
 | Introducing Claude Duet | [文章](articles/claude-duet.md) / [原文](https://claude.com/resources/articles/claude-duet) |
 | Inference hooks: inline data loss prevention for Claude Enterprise | Claude by Anthropic | [文章](articles/claude-enterprise-inference-hooks.md) / [原文](https://claude.com/resources/articles/claude-enterprise-inference-hooks) |
+| More visibility and control over Claude Enterprise for security teams | [文章](articles/claude-enterprise-security-updates.md) / [原文](https://claude.com/resources/articles/claude-enterprise-security-updates) |
 | Piloting Claude in Chrome | [文章](articles/claude-for-chrome.md) / [原文](https://claude.com/resources/articles/claude-for-chrome) |
 | Building Commerce Agents with Claude | Claude by Anthropic | [文章](articles/claude-for-commerce-agents.md) / [原文](https://claude.com/resources/articles/claude-for-commerce-agents) |
 | Claude for Financial Advisors | Claude by Anthropic | [文章](articles/claude-for-financial-advisors.md) / [原文](https://claude.com/resources/articles/claude-for-financial-advisors) |
@@ -140,6 +141,7 @@
 | Improving frontend design through Skills | [文章](articles/improving-frontend-design-through-skills.md) / [原文](https://claude.com/resources/articles/improving-frontend-design-through-skills) |
 | Introducing artifacts for legal work with Claude | [文章](articles/introducing-artifacts-for-legal-work.md) / [原文](https://claude.com/resources/articles/introducing-artifacts-for-legal-work) |
 | Introducing dynamic workflows | [文章](articles/introducing-dynamic-workflows-in-claude-code.md) / [原文](https://claude.com/resources/articles/introducing-dynamic-workflows-in-claude-code) |
+| Introducing Personal Finance in Claude | [文章](articles/introducing-personal-finance-in-claude.md) / [原文](https://claude.com/resources/articles/introducing-personal-finance-in-claude) |
 | Introducing routines in Claude Code | [文章](articles/introducing-routines-in-claude-code.md) / [原文](https://claude.com/resources/articles/introducing-routines-in-claude-code) |
 | Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud | Claude by Anthropic | [文章](articles/introducing-the-claude-apps-gateway.md) / [原文](https://claude.com/resources/articles/introducing-the-claude-apps-gateway) |
 | Lessons from building Claude Code: How we use skills | [文章](articles/lessons-from-building-claude-code-how-we-use-skills.md) / [原文](https://claude.com/resources/articles/lessons-from-building-claude-code-how-we-use-skills) |
