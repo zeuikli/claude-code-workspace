@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-09 07:37 UTC
-> 共 196 篇文章，本次新增 0 篇
+> 最後更新：2026-11-10 07:58 UTC
+> 共 197 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -144,6 +144,7 @@
 | Introducing Personal Finance in Claude | [文章](articles/introducing-personal-finance-in-claude.md) / [原文](https://claude.com/resources/articles/introducing-personal-finance-in-claude) |
 | Introducing routines in Claude Code | [文章](articles/introducing-routines-in-claude-code.md) / [原文](https://claude.com/resources/articles/introducing-routines-in-claude-code) |
 | Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud | Claude by Anthropic | [文章](articles/introducing-the-claude-apps-gateway.md) / [原文](https://claude.com/resources/articles/introducing-the-claude-apps-gateway) |
+| JPMorganChase expands Claude Code to more employees | [文章](articles/jpmorganchase-expands-claude-code.md) / [原文](https://claude.com/resources/articles/jpmorganchase-expands-claude-code) |
 | Lessons from building Claude Code: How we use skills | [文章](articles/lessons-from-building-claude-code-how-we-use-skills.md) / [原文](https://claude.com/resources/articles/lessons-from-building-claude-code-how-we-use-skills) |
 | Lessons from building Claude Code: Prompt caching is everything | [文章](articles/lessons-from-building-claude-code-prompt-caching-is-everything.md) / [原文](https://claude.com/resources/articles/lessons-from-building-claude-code-prompt-caching-is-everything) |
 | Maximizing the value of your Claude Code sessions | Claude by Anthropic | [文章](articles/maximizing-the-value-of-your-claude-code-sessions.md) / [原文](https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions) |
