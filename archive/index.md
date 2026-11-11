@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-10 07:58 UTC
-> 共 197 篇文章，本次新增 1 篇
+> 最後更新：2026-11-11 07:28 UTC
+> 共 201 篇文章，本次新增 4 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -124,6 +124,7 @@
 | How CodeRabbit used Claude to build an agent orchestration system | [文章](articles/how-coderabbit-used-claude-to-build-an-agent-orchestration-system.md) / [原文](https://claude.com/resources/articles/how-coderabbit-used-claude-to-build-an-agent-orchestration-system) |
 | How Comcast and Booz Allen use Claude Mythos to find exploit chains and secure their codebases | [文章](articles/how-comcast-booz-allen-use-claude-mythos-to-secure-their-codebases.md) / [原文](https://claude.com/resources/articles/how-comcast-booz-allen-use-claude-mythos-to-secure-their-codebases) |
 | How Cresta turned CX expertise into an agent builder on the Claude Agent SDK | Claude by Anthropic | [文章](articles/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk.md) / [原文](https://claude.com/resources/articles/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk) |
+| How Curative is building a national provider network with agents on Claude | [文章](articles/how-curative-is-building-a-national-provider-network-with-agents-on-claude.md) / [原文](https://claude.com/resources/articles/how-curative-is-building-a-national-provider-network-with-agents-on-claude) |
 | How Datadog built a “universal machine tool” for Claude Code | Claude by Anthropic | [文章](articles/how-datadog-built-a-universal-machine-tool-for-claude-code.md) / [原文](https://claude.com/resources/articles/how-datadog-built-a-universal-machine-tool-for-claude-code) |
 | How enterprises are building AI agents in 2026 | [文章](articles/how-enterprises-are-building-ai-agents-in-2026.md) / [原文](https://claude.com/resources/articles/how-enterprises-are-building-ai-agents-in-2026) |
 | How healthcare organizations use Claude Tag | Claude by Anthropic | [文章](articles/how-healthcare-organizations-use-claude-tag.md) / [原文](https://claude.com/resources/articles/how-healthcare-organizations-use-claude-tag) |
@@ -139,6 +140,7 @@
 | How Warp builds self-improving agents on Claude | Claude by Anthropic | [文章](articles/how-warp-builds-self-improving-agents-on-claude.md) / [原文](https://claude.com/resources/articles/how-warp-builds-self-improving-agents-on-claude) |
 | IDC brings Quanta into Claude and adopts Claude across the company | [文章](articles/idc-brings-quanta-into-claude-and-adopts-claude-across-the-company.md) / [原文](https://claude.com/resources/articles/idc-brings-quanta-into-claude-and-adopts-claude-across-the-company) |
 | Improving frontend design through Skills | [文章](articles/improving-frontend-design-through-skills.md) / [原文](https://claude.com/resources/articles/improving-frontend-design-through-skills) |
+| Open your apps in Claude and work in them together | [文章](articles/interactive-connectors-full-tool.md) / [原文](https://claude.com/resources/articles/interactive-connectors-full-tool) |
 | Introducing artifacts for legal work with Claude | [文章](articles/introducing-artifacts-for-legal-work.md) / [原文](https://claude.com/resources/articles/introducing-artifacts-for-legal-work) |
 | Introducing dynamic workflows | [文章](articles/introducing-dynamic-workflows-in-claude-code.md) / [原文](https://claude.com/resources/articles/introducing-dynamic-workflows-in-claude-code) |
 | Introducing Personal Finance in Claude | [文章](articles/introducing-personal-finance-in-claude.md) / [原文](https://claude.com/resources/articles/introducing-personal-finance-in-claude) |
@@ -153,6 +155,7 @@
 | Meet the winners of our Claude Opus 4.8 Build Day hackathon | [文章](articles/meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon.md) / [原文](https://claude.com/resources/articles/meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon) |
 | Make long-running agents faster with message threads | [文章](articles/message-threads.md) / [原文](https://claude.com/resources/articles/message-threads) |
 | Millennium and Anthropic are building a digital risk analyst with Claude  | Claude by Anthropic | [文章](articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude.md) / [原文](https://claude.com/resources/articles/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude) |
+| Working with Claude Sheets, Whiteboards, and Interactive Connectors | [文章](articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors.md) / [原文](https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors) |
 | Multi-agent coordination patterns: Five approaches and when to use them | [文章](articles/multi-agent-coordination-patterns.md) / [原文](https://claude.com/resources/articles/multi-agent-coordination-patterns) |
 | New agents and products on Claude Marketplace | [文章](articles/new-agents-and-products-claude-marketplace.md) / [原文](https://claude.com/resources/articles/new-agents-and-products-claude-marketplace) |
 | Deploying Claude across the enterprise with Claude Cowork | [文章](articles/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork.md) / [原文](https://claude.com/resources/articles/new-guide-deploying-claude-across-the-enterprise-with-claude-cowork) |
@@ -169,6 +172,7 @@
 | Salesforce in Claude | Claude by Anthropic | [文章](articles/salesforce-in-claude.md) / [原文](https://claude.com/resources/articles/salesforce-in-claude) |
 | Seeing like an agent: how we design tools in Claude Code | [文章](articles/seeing-like-an-agent.md) / [原文](https://claude.com/resources/articles/seeing-like-an-agent) |
 | Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic | [文章](articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions.md) / [原文](https://claude.com/resources/articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions) |
+| Claude Whiteboards, Claude Sheets, and Claude Data | [文章](articles/sheets-whiteboards-data.md) / [原文](https://claude.com/resources/articles/sheets-whiteboards-data) |
 | Smart reports, surveys, and pooled group budgets for Claude Enterprise | [文章](articles/smart-reports-surveys-pooled-budgets.md) / [原文](https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets) |
 | Steering Claude Code: skills, hooks, subagents and more | [文章](articles/steering-claude-code-skills-hooks-rules-subagents-and-more.md) / [原文](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) |
 | How and when to use subagents in Claude Code | [文章](articles/subagents-in-claude-code.md) / [原文](https://claude.com/resources/articles/subagents-in-claude-code) |
