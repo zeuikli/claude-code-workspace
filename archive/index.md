@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-12 07:56 UTC
-> 共 201 篇文章，本次新增 0 篇
+> 最後更新：2026-11-13 07:34 UTC
+> 共 207 篇文章，本次新增 6 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -56,6 +56,7 @@
 | Claude for Financial Advisors | Claude by Anthropic | [文章](articles/claude-for-financial-advisors.md) / [原文](https://claude.com/resources/articles/claude-for-financial-advisors) |
 | Claude support for Apple&#x27;s Foundation Models framework | [文章](articles/claude-for-foundation-models.md) / [原文](https://claude.com/resources/articles/claude-for-foundation-models) |
 | Claude for Government is now generally available | Claude by Anthropic | [文章](articles/claude-for-government-is-now-generally-available.md) / [原文](https://claude.com/resources/articles/claude-for-government-is-now-generally-available) |
+| Claude for Manufacturing: AI plugin for plant teams | [文章](articles/claude-for-manufacturing.md) / [原文](https://claude.com/resources/articles/claude-for-manufacturing) |
 | Claude for Small Business launches new workflows, integrations, and training programs | Claude by Anthropic | [文章](articles/claude-for-small-business-launches-new-workflows-integrations-and-training-programs.md) / [原文](https://claude.com/resources/articles/claude-for-small-business-launches-new-workflows-integrations-and-training-programs) |
 | Claude for Teachers, now available for U.S. K-12 schools and districts | Claude by Anthropic | [文章](articles/claude-for-teachers-now-available-for-schools-and-districts.md) / [原文](https://claude.com/resources/articles/claude-for-teachers-now-available-for-schools-and-districts) |
 | Claude for the legal industry | [文章](articles/claude-for-the-legal-industry.md) / [原文](https://claude.com/resources/articles/claude-for-the-legal-industry) |
@@ -65,6 +66,7 @@
 | New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels | [文章](articles/claude-managed-agents-updates.md) / [原文](https://claude.com/resources/articles/claude-managed-agents-updates) |
 | Claude Managed Agents: get to production 10x faster | [文章](articles/claude-managed-agents.md) / [原文](https://claude.com/resources/articles/claude-managed-agents) |
 | Claude Marketplace: plugins and connectors, products and agents, and service partners | Claude by Anthropic | [文章](articles/claude-marketplace.md) / [原文](https://claude.com/resources/articles/claude-marketplace) |
+| Introducing Claude Meetings, now in beta | [文章](articles/claude-meetings.md) / [原文](https://claude.com/resources/articles/claude-meetings) |
 | Choosing a Claude model and effort level in Claude Code | Claude by Anthropic | [文章](articles/claude-model-and-effort-level-in-claude-code.md) / [原文](https://claude.com/resources/articles/claude-model-and-effort-level-in-claude-code) |
 | Claude models explained: choosing the best model for your use case | Claude by Anthropic | [文章](articles/claude-models-explained-choosing-the-best-model-for-your-use-case.md) / [原文](https://claude.com/resources/articles/claude-models-explained-choosing-the-best-model-for-your-use-case) |
 | Claude Platform is now available on Google Cloud | [文章](articles/claude-models-on-google-cloud-anthropic-managed.md) / [原文](https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed) |
@@ -74,6 +76,7 @@
 | Introducing the Claude Platform on AWS | [文章](articles/claude-platform-on-aws.md) / [原文](https://claude.com/resources/articles/claude-platform-on-aws) |
 | Claude Security now scans continuously and tracks fixes | [文章](articles/claude-security-now-scans-continuously-and-tracks-fixes.md) / [原文](https://claude.com/resources/articles/claude-security-now-scans-continuously-and-tracks-fixes) |
 | Claude Security is now in public beta | [文章](articles/claude-security-public-beta.md) / [原文](https://claude.com/resources/articles/claude-security-public-beta) |
+| The Claude Tag guide for startups | [文章](articles/claude-tag-guide-for-startups.md) / [原文](https://claude.com/resources/articles/claude-tag-guide-for-startups) |
 | Claude Tag now reads even more of the room | Claude by Anthropic | [文章](articles/claude-tag-now-reads-even-more-of-the-room.md) / [原文](https://claude.com/resources/articles/claude-tag-now-reads-even-more-of-the-room) |
 | Claude Tag now supports personal connectors in channels | Claude by Anthropic | [文章](articles/claude-tag-now-supports-personal-connectors-in-channels.md) / [原文](https://claude.com/resources/articles/claude-tag-now-supports-personal-connectors-in-channels) |
 | Claude&#x27;s memory works everywhere, and you decide what&#x27;s in it | Claude by Anthropic | [文章](articles/claudes-memory-works-everywhere-and-you-decide-whats-in-it.md) / [原文](https://claude.com/resources/articles/claudes-memory-works-everywhere-and-you-decide-whats-in-it) |
@@ -146,6 +149,7 @@
 | Introducing Personal Finance in Claude | [文章](articles/introducing-personal-finance-in-claude.md) / [原文](https://claude.com/resources/articles/introducing-personal-finance-in-claude) |
 | Introducing routines in Claude Code | [文章](articles/introducing-routines-in-claude-code.md) / [原文](https://claude.com/resources/articles/introducing-routines-in-claude-code) |
 | Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud | Claude by Anthropic | [文章](articles/introducing-the-claude-apps-gateway.md) / [原文](https://claude.com/resources/articles/introducing-the-claude-apps-gateway) |
+| J.Crew’s Style Advisor: an AI stylist built with Claude | [文章](articles/j-crew-style-advisor-with-claude.md) / [原文](https://claude.com/resources/articles/j-crew-style-advisor-with-claude) |
 | JPMorganChase expands Claude Code to more employees | [文章](articles/jpmorganchase-expands-claude-code.md) / [原文](https://claude.com/resources/articles/jpmorganchase-expands-claude-code) |
 | Lessons from building Claude Code: How we use skills | [文章](articles/lessons-from-building-claude-code-how-we-use-skills.md) / [原文](https://claude.com/resources/articles/lessons-from-building-claude-code-how-we-use-skills) |
 | Lessons from building Claude Code: Prompt caching is everything | [文章](articles/lessons-from-building-claude-code-prompt-caching-is-everything.md) / [原文](https://claude.com/resources/articles/lessons-from-building-claude-code-prompt-caching-is-everything) |
@@ -171,6 +175,7 @@
 | Running an AI-native engineering org | [文章](articles/running-an-ai-native-engineering-org.md) / [原文](https://claude.com/resources/articles/running-an-ai-native-engineering-org) |
 | Salesforce in Claude | Claude by Anthropic | [文章](articles/salesforce-in-claude.md) / [原文](https://claude.com/resources/articles/salesforce-in-claude) |
 | Seeing like an agent: how we design tools in Claude Code | [文章](articles/seeing-like-an-agent.md) / [原文](https://claude.com/resources/articles/seeing-like-an-agent) |
+| Operate Claude Managed Agents inside your security perimeter | [文章](articles/self-hosted-claude-managed-agents.md) / [原文](https://claude.com/resources/articles/self-hosted-claude-managed-agents) |
 | Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic | [文章](articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions.md) / [原文](https://claude.com/resources/articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions) |
 | Claude Whiteboards, Claude Sheets, and Claude Data | [文章](articles/sheets-whiteboards-data.md) / [原文](https://claude.com/resources/articles/sheets-whiteboards-data) |
 | Smart reports, surveys, and pooled group budgets for Claude Enterprise | [文章](articles/smart-reports-surveys-pooled-budgets.md) / [原文](https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets) |
@@ -191,6 +196,7 @@
 | Claude Cowork and chat come together for Enterprise | [文章](articles/unified-claude-enterprise.md) / [原文](https://claude.com/resources/articles/unified-claude-enterprise) |
 | Using Claude Code: session management and 1M context | [文章](articles/using-claude-code-session-management-and-1m-context.md) / [原文](https://claude.com/resources/articles/using-claude-code-session-management-and-1m-context) |
 | Using Claude Code: The unreasonable effectiveness of HTML | [文章](articles/using-claude-code-the-unreasonable-effectiveness-of-html.md) / [原文](https://claude.com/resources/articles/using-claude-code-the-unreasonable-effectiveness-of-html) |
+| Which Claude model is best to use for knowledge work | [文章](articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work.md) / [原文](https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work) |
 | Using LLMs to secure source code | [文章](articles/using-llms-to-secure-source-code.md) / [原文](https://claude.com/resources/articles/using-llms-to-secure-source-code) |
 | We’re expanding the Claude Startups program to help founders build | [文章](articles/were-expanding-the-claude-startups-program-to-help-founders-build.md) / [原文](https://claude.com/resources/articles/were-expanding-the-claude-startups-program-to-help-founders-build) |
 | What 1,000 small business owners taught us about AI | Claude by Anthropic | [文章](articles/what-1-000-small-business-owners-taught-us-about-ai.md) / [原文](https://claude.com/resources/articles/what-1-000-small-business-owners-taught-us-about-ai) |
