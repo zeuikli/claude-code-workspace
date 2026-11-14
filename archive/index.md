@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-13 07:34 UTC
-> 共 207 篇文章，本次新增 6 篇
+> 最後更新：2026-11-14 07:19 UTC
+> 共 208 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -33,6 +33,7 @@
 | Building agents: When to fold subagents into your main agent loop  | [文章](articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop.md) / [原文](https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop) |
 | Building AI agents for the enterprise | [文章](articles/building-ai-agents-for-the-enterprise.md) / [原文](https://claude.com/resources/articles/building-ai-agents-for-the-enterprise) |
 | Building AI agents for financial services | [文章](articles/building-ai-agents-in-financial-services.md) / [原文](https://claude.com/resources/articles/building-ai-agents-in-financial-services) |
+| Building always-on agents | [文章](articles/building-always-on-agents.md) / [原文](https://claude.com/resources/articles/building-always-on-agents) |
 | Building an AI-native revenue organization | Claude by Anthropic | [文章](articles/building-an-ai-native-revenue-organization.md) / [原文](https://claude.com/resources/articles/building-an-ai-native-revenue-organization) |
 | Lessons from Anthropic on building effective human-agent teams | Claude by Anthropic | [文章](articles/building-effective-human-agent-teams.md) / [原文](https://claude.com/resources/articles/building-effective-human-agent-teams) |
 | Building verification loops in Claude Code with skills | Claude by Anthropic | [文章](articles/building-verification-loops-in-claude-code-with-skills.md) / [原文](https://claude.com/resources/articles/building-verification-loops-in-claude-code-with-skills) |
