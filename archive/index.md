@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-16 07:37 UTC
-> 共 208 篇文章，本次新增 0 篇
+> 最後更新：2026-11-17 08:46 UTC
+> 共 209 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -172,6 +172,7 @@
 | Product management on the AI exponential  | [文章](articles/product-management-on-the-ai-exponential.md) / [原文](https://claude.com/resources/articles/product-management-on-the-ai-exponential) |
 | Projects redesigned: from folder to conversation | Claude by Anthropic | [文章](articles/projects-redesigned.md) / [原文](https://claude.com/resources/articles/projects-redesigned) |
 | Reducing cost and improving performance with Claude Platform | Claude by Anthropic | [文章](articles/reducing-cost-and-improving-performance-with-claude-platform.md) / [原文](https://claude.com/resources/articles/reducing-cost-and-improving-performance-with-claude-platform) |
+| Claude articles | [文章](articles/rss.xml.md) / [原文](https://claude.com/resources/articles/rss.xml) |
 | Self-hosted environments for Claude Code | Claude by Anthropic | [文章](articles/run-claude-code-sessions-on-your-own-compute.md) / [原文](https://claude.com/resources/articles/run-claude-code-sessions-on-your-own-compute) |
 | Running an AI-native engineering org | [文章](articles/running-an-ai-native-engineering-org.md) / [原文](https://claude.com/resources/articles/running-an-ai-native-engineering-org) |
 | Salesforce in Claude | Claude by Anthropic | [文章](articles/salesforce-in-claude.md) / [原文](https://claude.com/resources/articles/salesforce-in-claude) |
