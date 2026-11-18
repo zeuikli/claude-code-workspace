@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-17 08:46 UTC
-> 共 209 篇文章，本次新增 1 篇
+> 最後更新：2026-11-18 08:10 UTC
+> 共 210 篇文章，本次新增 1 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -154,6 +154,7 @@
 | JPMorganChase expands Claude Code to more employees | [文章](articles/jpmorganchase-expands-claude-code.md) / [原文](https://claude.com/resources/articles/jpmorganchase-expands-claude-code) |
 | Lessons from building Claude Code: How we use skills | [文章](articles/lessons-from-building-claude-code-how-we-use-skills.md) / [原文](https://claude.com/resources/articles/lessons-from-building-claude-code-how-we-use-skills) |
 | Lessons from building Claude Code: Prompt caching is everything | [文章](articles/lessons-from-building-claude-code-prompt-caching-is-everything.md) / [原文](https://claude.com/resources/articles/lessons-from-building-claude-code-prompt-caching-is-everything) |
+| Linked billing on the Claude Platform | [文章](articles/linked-billing-on-claude-platform.md) / [原文](https://claude.com/resources/articles/linked-billing-on-claude-platform) |
 | Maximizing the value of your Claude Code sessions | Claude by Anthropic | [文章](articles/maximizing-the-value-of-your-claude-code-sessions.md) / [原文](https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions) |
 | Meet the winners of the Built with Opus 4.7 Claude Code hackathon | [文章](articles/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon.md) / [原文](https://claude.com/resources/articles/meet-the-winners-of-built-with-opus-4-7-claude-code-hackathon) |
 | Meet the winners of our Built with Opus 4.6 Claude Code hackathon  | [文章](articles/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon.md) / [原文](https://claude.com/resources/articles/meet-the-winners-of-our-built-with-opus-4-6-claude-code-hackathon) |
