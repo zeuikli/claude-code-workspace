@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-23 08:33 UTC
-> 共 210 篇文章，本次新增 0 篇
+> 最後更新：2026-11-24 10:39 UTC
+> 共 214 篇文章，本次新增 4 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -100,6 +100,7 @@
 | Deploying Claude across financial services | [文章](articles/deploying-claude-across-financial-services.md) / [原文](https://claude.com/resources/articles/deploying-claude-across-financial-services) |
 | Deploying Claude across the legal industry | [文章](articles/deploying-claude-across-the-legal-industry.md) / [原文](https://claude.com/resources/articles/deploying-claude-across-the-legal-industry) |
 | Put Claude to work on your computer  | [文章](articles/dispatch-and-computer-use.md) / [原文](https://claude.com/resources/articles/dispatch-and-computer-use) |
+| The enterprise guide to securing coding agents | [文章](articles/enterprise-guide-to-securing-coding-agents.md) / [原文](https://claude.com/resources/articles/enterprise-guide-to-securing-coding-agents) |
 | Centrally manage authorization for MCP connectors  | [文章](articles/enterprise-managed-auth.md) / [原文](https://claude.com/resources/articles/enterprise-managed-auth) |
 | Expanding Claude for Nonprofits | [文章](articles/expanding-claude-for-nonprofits.md) / [原文](https://claude.com/resources/articles/expanding-claude-for-nonprofits) |
 | Four role-based certifications for the people who put Claude to work for customers | Claude by Anthropic | [文章](articles/four-role-based-claude-certifications.md) / [原文](https://claude.com/resources/articles/four-role-based-claude-certifications) |
@@ -146,12 +147,14 @@
 | Improving frontend design through Skills | [文章](articles/improving-frontend-design-through-skills.md) / [原文](https://claude.com/resources/articles/improving-frontend-design-through-skills) |
 | Open your apps in Claude and work in them together | [文章](articles/interactive-connectors-full-tool.md) / [原文](https://claude.com/resources/articles/interactive-connectors-full-tool) |
 | Introducing artifacts for legal work with Claude | [文章](articles/introducing-artifacts-for-legal-work.md) / [原文](https://claude.com/resources/articles/introducing-artifacts-for-legal-work) |
+| Introducing Claude Ship | [文章](articles/introducing-claude-ship.md) / [原文](https://claude.com/resources/articles/introducing-claude-ship) |
 | Introducing dynamic workflows | [文章](articles/introducing-dynamic-workflows-in-claude-code.md) / [原文](https://claude.com/resources/articles/introducing-dynamic-workflows-in-claude-code) |
 | Introducing Personal Finance in Claude | [文章](articles/introducing-personal-finance-in-claude.md) / [原文](https://claude.com/resources/articles/introducing-personal-finance-in-claude) |
 | Introducing routines in Claude Code | [文章](articles/introducing-routines-in-claude-code.md) / [原文](https://claude.com/resources/articles/introducing-routines-in-claude-code) |
 | Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud | Claude by Anthropic | [文章](articles/introducing-the-claude-apps-gateway.md) / [原文](https://claude.com/resources/articles/introducing-the-claude-apps-gateway) |
 | J.Crew’s Style Advisor: an AI stylist built with Claude | [文章](articles/j-crew-style-advisor-with-claude.md) / [原文](https://claude.com/resources/articles/j-crew-style-advisor-with-claude) |
 | JPMorganChase expands Claude Code to more employees | [文章](articles/jpmorganchase-expands-claude-code.md) / [原文](https://claude.com/resources/articles/jpmorganchase-expands-claude-code) |
+| KPMG&#x27;s Todd Lohr on AI when your data is also your clients&#x27; data | [文章](articles/kpmg-todd-lohr-on-ai-when-your-data-is-also-your-clients-data.md) / [原文](https://claude.com/resources/articles/kpmg-todd-lohr-on-ai-when-your-data-is-also-your-clients-data) |
 | Lessons from building Claude Code: How we use skills | [文章](articles/lessons-from-building-claude-code-how-we-use-skills.md) / [原文](https://claude.com/resources/articles/lessons-from-building-claude-code-how-we-use-skills) |
 | Lessons from building Claude Code: Prompt caching is everything | [文章](articles/lessons-from-building-claude-code-prompt-caching-is-everything.md) / [原文](https://claude.com/resources/articles/lessons-from-building-claude-code-prompt-caching-is-everything) |
 | Linked billing on the Claude Platform | [文章](articles/linked-billing-on-claude-platform.md) / [原文](https://claude.com/resources/articles/linked-billing-on-claude-platform) |
@@ -214,5 +217,6 @@
 | Working at the frontier: How Base44 trusts Claude Fable 5 with their most challenging engineering work | Claude by Anthropic | [文章](articles/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work.md) / [原文](https://claude.com/resources/articles/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work) |
 | Working with Claude Fable 5 in Claude Cowork | Claude by Anthropic | [文章](articles/working-with-claude-fable-5-in-claude-cowork.md) / [原文](https://claude.com/resources/articles/working-with-claude-fable-5-in-claude-cowork) |
 | Workload Identity Federation (WIF) is now generally available on the Claude Platform. | [文章](articles/workload-identity-federation.md) / [原文](https://claude.com/resources/articles/workload-identity-federation) |
+| Zero data retention with Enterprise Frontier Safeguards is now in beta | [文章](articles/zero-data-retention-with-enterprise-frontier-safeguards.md) / [原文](https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards) |
 | Zero Trust for AI agents | [文章](articles/zero-trust-for-ai-agents.md) / [原文](https://claude.com/resources/articles/zero-trust-for-ai-agents) |
 
