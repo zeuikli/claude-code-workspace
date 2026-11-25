@@ -1,7 +1,7 @@
 # Claude Blog Archive
 
-> 最後更新：2026-11-24 10:39 UTC
-> 共 214 篇文章，本次新增 4 篇
+> 最後更新：2026-11-25 09:29 UTC
+> 共 216 篇文章，本次新增 2 篇
 
 | 文章 | 連結 |
 |------|------|
@@ -145,6 +145,7 @@
 | How Warp builds self-improving agents on Claude | Claude by Anthropic | [文章](articles/how-warp-builds-self-improving-agents-on-claude.md) / [原文](https://claude.com/resources/articles/how-warp-builds-self-improving-agents-on-claude) |
 | IDC brings Quanta into Claude and adopts Claude across the company | [文章](articles/idc-brings-quanta-into-claude-and-adopts-claude-across-the-company.md) / [原文](https://claude.com/resources/articles/idc-brings-quanta-into-claude-and-adopts-claude-across-the-company) |
 | Improving frontend design through Skills | [文章](articles/improving-frontend-design-through-skills.md) / [原文](https://claude.com/resources/articles/improving-frontend-design-through-skills) |
+| Turn artifacts into Mac and Windows apps | [文章](articles/install-as-app.md) / [原文](https://claude.com/resources/articles/install-as-app) |
 | Open your apps in Claude and work in them together | [文章](articles/interactive-connectors-full-tool.md) / [原文](https://claude.com/resources/articles/interactive-connectors-full-tool) |
 | Introducing artifacts for legal work with Claude | [文章](articles/introducing-artifacts-for-legal-work.md) / [原文](https://claude.com/resources/articles/introducing-artifacts-for-legal-work) |
 | Introducing Claude Ship | [文章](articles/introducing-claude-ship.md) / [原文](https://claude.com/resources/articles/introducing-claude-ship) |
@@ -184,6 +185,7 @@
 | Operate Claude Managed Agents inside your security perimeter | [文章](articles/self-hosted-claude-managed-agents.md) / [原文](https://claude.com/resources/articles/self-hosted-claude-managed-agents) |
 | Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic | [文章](articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions.md) / [原文](https://claude.com/resources/articles/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions) |
 | Claude Whiteboards, Claude Sheets, and Claude Data | [文章](articles/sheets-whiteboards-data.md) / [原文](https://claude.com/resources/articles/sheets-whiteboards-data) |
+| MCP servers can now ship skills, run tasks, and more with Claude | [文章](articles/skills-over-mcp-tasks-and-more.md) / [原文](https://claude.com/resources/articles/skills-over-mcp-tasks-and-more) |
 | Smart reports, surveys, and pooled group budgets for Claude Enterprise | [文章](articles/smart-reports-surveys-pooled-budgets.md) / [原文](https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets) |
 | Steering Claude Code: skills, hooks, subagents and more | [文章](articles/steering-claude-code-skills-hooks-rules-subagents-and-more.md) / [原文](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) |
 | How and when to use subagents in Claude Code | [文章](articles/subagents-in-claude-code.md) / [原文](https://claude.com/resources/articles/subagents-in-claude-code) |
